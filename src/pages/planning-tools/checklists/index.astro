@@ -1,0 +1,311 @@
+---
+/**
+ * Checklists Index Page
+ * Lists all available interactive checklists
+ */
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Checklists | YourWillPro</title>
+  <meta name="description" content="Free interactive checklists to help you plan your will: probate process, choosing executors and guardians, asset inventory, and preparation guides.">
+  <link rel="icon" type="image/png" href="/ywp-logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #2c3338; background: #ffffff;">
+
+<Header />
+
+<!-- Breadcrumb Navigation -->
+<nav class="breadcrumb" style="padding: 1rem 2rem; font-size: 0.85rem; color: #7a7a7a; background: white; border-bottom: 1px solid #e2e2e2;">
+  <a href="/" style="color: #7a7a7a; text-decoration: none;">Home</a>
+  <span style="margin: 0 0.5rem;">›</span>
+  <a href="/planning-tools/" style="color: #7a7a7a; text-decoration: none;">Planning Tools</a>
+  <span style="margin: 0 0.5rem;">›</span>
+  <span>Checklists</span>
+</nav>
+
+<main>
+  <!-- Hero Section -->
+  <section style="background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%); padding: 80px 64px; color: white;">
+    <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+      <div style="display: inline-block; background: rgba(255, 255, 255, 0.15); padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: 500; margin-bottom: 20px;">
+        📋 Interactive Tools
+      </div>
+      <h1 style="font-size: 48px; font-weight: 700; margin: 0 0 20px 0; line-height: 1.2;">
+        Interactive Checklists
+      </h1>
+      <p style="font-size: 20px; line-height: 1.6; opacity: 0.95; max-width: 700px; margin: 0 auto;">
+        Work through these checklists at your own pace. Your progress is saved automatically in your browser.
+      </p>
+    </div>
+  </section>
+
+  <!-- Checklists with Sidebar -->
+  <div style="display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px;">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="checklist-sidebar" style="width: 280px; flex-shrink: 0;">
+      <nav style="position: sticky; top: 100px;">
+        <h3 style="font-family: Inter, -apple-system, sans-serif; font-size: 13px; font-weight: 600; color: #c9a227; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 16px 0;">Checklists</h3>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+          <li>
+            <a href="/planning-tools/checklists/probate" class="sidebar-link" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: #1a2e44; text-decoration: none; border-bottom: none; padding: 8px 12px; border-radius: 6px; display: block; transition: background 0.2s;">
+              Probate Checklist
+            </a>
+          </li>
+          <li>
+            <a href="/planning-tools/checklists/choosing-will-service" class="sidebar-link" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: #1a2e44; text-decoration: none; border-bottom: none; padding: 8px 12px; border-radius: 6px; display: block; transition: background 0.2s;">
+              Choosing a Will Service
+            </a>
+          </li>
+          <li>
+            <a href="/planning-tools/checklists/executor" class="sidebar-link" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: #1a2e44; text-decoration: none; border-bottom: none; padding: 8px 12px; border-radius: 6px; display: block; transition: background 0.2s;">
+              Choosing an Executor
+            </a>
+          </li>
+          <li>
+            <a href="/planning-tools/checklists/guardian" class="sidebar-link" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: #1a2e44; text-decoration: none; border-bottom: none; padding: 8px 12px; border-radius: 6px; display: block; transition: background 0.2s;">
+              Choosing a Guardian
+            </a>
+          </li>
+          <li>
+            <a href="/planning-tools/checklists/preparation" class="sidebar-link" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: #1a2e44; text-decoration: none; border-bottom: none; padding: 8px 12px; border-radius: 6px; display: block; transition: background 0.2s;">
+              Preparation for Making a Will
+            </a>
+          </li>
+          <li>
+            <a href="/planning-tools/checklists/asset-inventory" class="sidebar-link" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: #1a2e44; text-decoration: none; border-bottom: none; padding: 8px 12px; border-radius: 6px; display: block; transition: background 0.2s;">
+              Asset Inventory
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <section style="flex: 1;">
+
+    <!-- Checklist 1: Probate -->
+    <a href="/planning-tools/checklists/probate" style="display: block; background: white; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; margin-bottom: 24px; text-decoration: none; transition: all 0.2s ease;">
+      <div style="display: flex; align-items: flex-start; gap: 24px;">
+        <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px;">
+          ⚖️
+        </div>
+        <div style="flex: 1;">
+          <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 8px 0;">
+            Probate Checklist
+          </h2>
+          <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0 0 12px 0;">
+            When someone dies, their executor must locate assets, notify relevant parties, and usually apply for probate. This comprehensive 99-item checklist covers immediate steps, gathering documents, financial accounts, death notifications, and the entire probate process.
+          </p>
+          <div style="display: inline-flex; align-items: center; gap: 8px; color: #c9a227; font-weight: 600; font-size: 14px;">
+            <span>Start Checklist</span>
+            <span>→</span>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Checklist 2: Choosing a Will Service -->
+    <a href="/planning-tools/checklists/choosing-will-service" style="display: block; background: white; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; margin-bottom: 24px; text-decoration: none; transition: all 0.2s ease;">
+      <div style="display: flex; align-items: flex-start; gap: 24px;">
+        <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px;">
+          🏢
+        </div>
+        <div style="flex: 1;">
+          <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 8px 0;">
+            Choosing a Will Service Checklist
+          </h2>
+          <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0 0 12px 0;">
+            Should you use a DIY kit, online service, or solicitor? This 79-item checklist helps you evaluate your situation's complexity and compare the pros, cons, and costs of each option to make the right choice for your circumstances.
+          </p>
+          <div style="display: inline-flex; align-items: center; gap: 8px; color: #c9a227; font-weight: 600; font-size: 14px;">
+            <span>Start Checklist</span>
+            <span>→</span>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Checklist 3: Choosing an Executor -->
+    <a href="/planning-tools/checklists/executor" style="display: block; background: white; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; margin-bottom: 24px; text-decoration: none; transition: all 0.2s ease;">
+      <div style="display: flex; align-items: flex-start; gap: 24px;">
+        <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px;">
+          👤
+        </div>
+        <div style="flex: 1;">
+          <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 8px 0;">
+            Choosing an Executor Checklist
+          </h2>
+          <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0 0 12px 0;">
+            Your executor handles everything after you die. This 51-item checklist covers essential qualities, practical considerations, potential conflicts, co-executor options, questions to discuss with your chosen person, and red flags to watch for.
+          </p>
+          <div style="display: inline-flex; align-items: center; gap: 8px; color: #c9a227; font-weight: 600; font-size: 14px;">
+            <span>Start Checklist</span>
+            <span>→</span>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Checklist 4: Choosing a Guardian -->
+    <a href="/planning-tools/checklists/guardian" style="display: block; background: white; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; margin-bottom: 24px; text-decoration: none; transition: all 0.2s ease;">
+      <div style="display: flex; align-items: flex-start; gap: 24px;">
+        <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px;">
+          👨‍👩‍👧‍👦
+        </div>
+        <div style="flex: 1;">
+          <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 8px 0;">
+            Choosing a Guardian Checklist
+          </h2>
+          <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0 0 12px 0;">
+            If you have children under 18, choosing who would raise them is critical. This 70-item checklist explores essential qualities, practical considerations, values alignment, relationship factors, special needs considerations, and difficult situations to think through.
+          </p>
+          <div style="display: inline-flex; align-items: center; gap: 8px; color: #c9a227; font-weight: 600; font-size: 14px;">
+            <span>Start Checklist</span>
+            <span>→</span>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Checklist 5: Preparation for Making a Will -->
+    <a href="/planning-tools/checklists/preparation" style="display: block; background: white; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; margin-bottom: 24px; text-decoration: none; transition: all 0.2s ease;">
+      <div style="display: flex; align-items: flex-start; gap: 24px;">
+        <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px;">
+          📝
+        </div>
+        <div style="flex: 1;">
+          <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 8px 0;">
+            Preparation for Making a Will Checklist
+          </h2>
+          <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0 0 12px 0;">
+            Before you create your will, gather essential information. This 53-item checklist covers your personal details, family situation, beneficiaries, executor and guardian choices, specific gifts, special instructions, and documents to have ready.
+          </p>
+          <div style="display: inline-flex; align-items: center; gap: 8px; color: #c9a227; font-weight: 600; font-size: 14px;">
+            <span>Start Checklist</span>
+            <span>→</span>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Checklist 6: Asset Inventory -->
+    <a href="/planning-tools/checklists/asset-inventory" style="display: block; background: white; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; margin-bottom: 24px; text-decoration: none; transition: all 0.2s ease;">
+      <div style="display: flex; align-items: flex-start; gap: 24px;">
+        <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px;">
+          📊
+        </div>
+        <div style="flex: 1;">
+          <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 8px 0;">
+            Asset Inventory Checklist
+          </h2>
+          <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0 0 12px 0;">
+            Get a clear picture of what you own. This 66-item checklist covers property, money and banking, superannuation, investments, vehicles, valuables, household contents, digital assets, business assets, and debts. Estimates are fine for most items.
+          </p>
+          <div style="display: inline-flex; align-items: center; gap: 8px; color: #c9a227; font-weight: 600; font-size: 14px;">
+            <span>Start Checklist</span>
+            <span>→</span>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    </section>
+
+  </div>
+
+  <!-- CTA Section -->
+  <section style="background: #f9f6f1; border-top: 2px solid #e5e2dd; padding: 60px 64px;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <h2 style="font-size: 32px; font-weight: 700; color: #1a2e44; margin: 0 0 16px 0;">
+        Ready to Create Your Will?
+      </h2>
+      <p style="font-size: 18px; line-height: 1.6; color: #4b5563; margin: 0 0 32px 0;">
+        Once you've worked through the relevant checklists, you're ready to create your will.
+      </p>
+      <a href="https://yourwillpro.com.au" style="display: inline-block; background: #c9a227; color: white; padding: 16px 32px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; transition: background 0.2s;">
+        Start Your Will
+      </a>
+    </div>
+  </section>
+</main>
+
+<Footer />
+
+<style>
+  /* Breadcrumb hover */
+  .breadcrumb a:hover {
+    color: #c9a227;
+  }
+
+  /* Sidebar link hover */
+  .sidebar-link:hover {
+    background: #faf6e9 !important;
+  }
+
+  /* Hover effects for checklist cards */
+  a[href^="/planning-tools/checklists/"]:hover {
+    border-color: #c9a227 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Prevent hover on sidebar links from affecting card styles */
+  .sidebar-link:hover {
+    border-color: transparent !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* CTA button hover */
+  a[href="https://yourwillpro.com.au"]:hover {
+    background: #b08920 !important;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .checklist-sidebar {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 900px) {
+    main section:first-child {
+      padding: 60px 32px !important;
+    }
+    main section:first-child h1 {
+      font-size: 36px !important;
+    }
+    main section:last-child {
+      padding: 48px 32px !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    main section:first-child {
+      padding: 40px 20px !important;
+    }
+    main section:first-child h1 {
+      font-size: 28px !important;
+    }
+    main section:first-child p {
+      font-size: 16px !important;
+    }
+    main section:last-child {
+      padding: 40px 20px !important;
+    }
+    main section:last-child h2 {
+      font-size: 24px !important;
+    }
+  }
+</style>
+
+</body>
+</html>

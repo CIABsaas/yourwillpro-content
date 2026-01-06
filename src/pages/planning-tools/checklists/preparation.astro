@@ -1,0 +1,1017 @@
+---
+/**
+ * Preparation for Making a Will Checklist - Interactive Astro Page
+ * Converted from preparation-for-will-checklist.md
+ */
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preparation for Making a Will Checklist | YourWillPro</title>
+  <meta name="description" content="Before you sit down to create your will, gather this information. Having everything ready will make the process faster and help you avoid missing anything important.">
+  <link rel="icon" type="image/png" href="/ywp-logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<Header />
+
+<main class="container">
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb" style="padding: 1rem 2rem; font-size: 0.85rem; color: #7a7a7a; background: white; border-bottom: 1px solid #e2e2e2;">
+    <a href="/" style="color: #7a7a7a; text-decoration: none;">Home</a>
+    <span style="margin: 0 0.5rem;">›</span>
+    <a href="/planning-tools/" style="color: #7a7a7a; text-decoration: none;">Planning Tools</a>
+    <span style="margin: 0 0.5rem;">›</span>
+    <a href="/planning-tools/checklists/" style="color: #7a7a7a; text-decoration: none;">Checklists</a>
+    <span style="margin: 0 0.5rem;">›</span>
+    <span>Preparation for Will</span>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">📝 Interactive Checklist</div>
+      <h1>Preparation for Making a Will Checklist</h1>
+      <p><strong>Before you sit down to create your will, gather this information.</strong> Having everything ready will make the process faster and help you avoid missing anything important.</p>
+    </div>
+  </section>
+
+  <div class="content-wrapper">
+
+    <aside class="sidebar">
+      <div class="progress-card">
+        <div class="progress-label">Your Progress</div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="progress-text">
+          <span id="checked-count">0</span> of <span id="total-count">0</span> items checked
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="#personal-details" class="nav-link">Your Personal Details <span class="item-count">4</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#family" class="nav-link">Your Family Situation <span class="item-count">8</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#assets" class="nav-link">Your Assets <span class="item-count">5</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#beneficiaries" class="nav-link">Your Beneficiaries <span class="item-count">6</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#executor" class="nav-link">Your Executor <span class="item-count">5</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#guardians" class="nav-link">Guardians for Children <span class="item-count">5</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#specific-gifts" class="nav-link">Specific Gifts <span class="item-count">4</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#special-instructions" class="nav-link">Special Instructions <span class="item-count">4</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#documents" class="nav-link">Documents to Have Handy <span class="item-count">7</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#questions" class="nav-link">Questions to Resolve <span class="item-count">5</span></a>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="checklist-content">
+
+      <section id="personal-details" class="checklist-section">
+        <h2>Your Personal Details</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="1">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Full legal name (as it appears on official documents)</span>
+          </div>
+          <div class="checklist-item" data-id="2">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Current address</span>
+          </div>
+          <div class="checklist-item" data-id="3">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Date of birth</span>
+          </div>
+          <div class="checklist-item" data-id="4">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Previous names (maiden name, former married names)</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="family" class="checklist-section">
+        <h2>Your Family Situation</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="5">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Current marital status (single/married/de facto/divorced/widowed)</span>
+          </div>
+          <div class="checklist-item" data-id="6">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Spouse or partner's full legal name</span>
+          </div>
+          <div class="checklist-item" data-id="7">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Children's full names and dates of birth</span>
+          </div>
+          <div class="checklist-item" data-id="8">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Stepchildren you wish to include</span>
+          </div>
+          <div class="checklist-item" data-id="9">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Grandchildren (if leaving anything directly to them)</span>
+          </div>
+          <div class="checklist-item" data-id="10">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Any dependants who rely on you financially</span>
+          </div>
+          <div class="checklist-item" data-id="11">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Any family members with special needs or disabilities</span>
+          </div>
+          <div class="checklist-item" data-id="12">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Any family members you're specifically excluding (and your reasons)</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="assets" class="checklist-section">
+        <h2>Your Assets</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="13">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Completed Asset Inventory Checklist (or equivalent list)</span>
+          </div>
+          <div class="checklist-item" data-id="14">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>How property is owned (sole name, joint tenants, tenants in common)</span>
+          </div>
+          <div class="checklist-item" data-id="15">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Superannuation fund details and current nominations</span>
+          </div>
+          <div class="checklist-item" data-id="16">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Any assets held in trusts</span>
+          </div>
+          <div class="checklist-item" data-id="17">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Business ownership details</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="beneficiaries" class="checklist-section">
+        <h2>Your Beneficiaries</h2>
+        <p class="section-intro">People or organisations who will receive something:</p>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="18">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Full legal names of all intended beneficiaries</span>
+          </div>
+          <div class="checklist-item" data-id="19">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Relationship to you</span>
+          </div>
+          <div class="checklist-item" data-id="20">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Current contact details or addresses</span>
+          </div>
+          <div class="checklist-item" data-id="21">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Charities — correct legal name and ABN if known</span>
+          </div>
+          <div class="checklist-item" data-id="22">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>What each beneficiary should receive (specific items or percentage of estate)</span>
+          </div>
+          <div class="checklist-item" data-id="23">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Backup beneficiaries if your first choice can't inherit</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="executor" class="checklist-section">
+        <h2>Your Executor</h2>
+        <p class="section-intro">The person who will administer your estate:</p>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="24">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Who do you want as executor?</span>
+          </div>
+          <div class="checklist-item" data-id="25">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Full legal name and contact details</span>
+          </div>
+          <div class="checklist-item" data-id="26">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Have you asked them if they're willing?</span>
+          </div>
+          <div class="checklist-item" data-id="27">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Backup executor if first choice can't act</span>
+          </div>
+          <div class="checklist-item" data-id="28">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Professional executor (solicitor/trustee company) if preferred</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="guardians" class="checklist-section">
+        <h2>Guardians for Children</h2>
+        <p class="section-intro">If you have children under 18:</p>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="29">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Who should raise your children if both parents die?</span>
+          </div>
+          <div class="checklist-item" data-id="30">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Full legal name and contact details</span>
+          </div>
+          <div class="checklist-item" data-id="31">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Have you discussed this with them?</span>
+          </div>
+          <div class="checklist-item" data-id="32">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Backup guardian if first choice can't act</span>
+          </div>
+          <div class="checklist-item" data-id="33">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Does the other parent agree with your choice?</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="specific-gifts" class="checklist-section">
+        <h2>Specific Gifts</h2>
+        <p class="section-intro">Particular items going to particular people:</p>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="34">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>List of specific items and who receives each</span>
+          </div>
+          <div class="checklist-item" data-id="35">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Items with sentimental value — who gets what</span>
+          </div>
+          <div class="checklist-item" data-id="36">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Family heirlooms</span>
+          </div>
+          <div class="checklist-item" data-id="37">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Pets — who will care for them</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="special-instructions" class="checklist-section">
+        <h2>Special Instructions</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="38">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Any conditions on gifts (e.g., age beneficiary must reach)</span>
+          </div>
+          <div class="checklist-item" data-id="39">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Funeral wishes (burial/cremation, service preferences)</span>
+          </div>
+          <div class="checklist-item" data-id="40">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Organ donation wishes</span>
+          </div>
+          <div class="checklist-item" data-id="41">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Any existing will that needs to be revoked</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="documents" class="checklist-section">
+        <h2>Documents to Have Handy</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="42">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Photo ID</span>
+          </div>
+          <div class="checklist-item" data-id="43">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Property titles or mortgage statements</span>
+          </div>
+          <div class="checklist-item" data-id="44">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Superannuation statements</span>
+          </div>
+          <div class="checklist-item" data-id="45">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Life insurance policies</span>
+          </div>
+          <div class="checklist-item" data-id="46">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Any existing will, codicil, or estate planning documents</span>
+          </div>
+          <div class="checklist-item" data-id="47">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Pre-nuptial or financial agreements</span>
+          </div>
+          <div class="checklist-item" data-id="48">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Divorce or separation documents</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="questions" class="checklist-section">
+        <h2>Questions to Resolve Before Starting</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="49">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Who gets the house? (If leaving to multiple people, will they need to sell?)</span>
+          </div>
+          <div class="checklist-item" data-id="50">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Equal or unequal shares between children?</span>
+          </div>
+          <div class="checklist-item" data-id="51">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>What happens if a beneficiary dies before you?</span>
+          </div>
+          <div class="checklist-item" data-id="52">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Do you want to leave anything to charity?</span>
+          </div>
+          <div class="checklist-item" data-id="53">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Does your super go through your will or direct to a nominee?</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <h2>What's Next?</h2>
+        <p>With this information gathered, you're ready to create your will.</p>
+        <p style="margin-bottom: 24px;"><strong>Start your will at <a href="https://yourwillpro.com.au" style="color: #1a2e44; text-decoration: underline;">YourWillPro.com.au</a></strong></p>
+        <div class="email-cta">
+          <p><strong>Want this as a PDF?</strong></p>
+          <p>Email us at <a href="mailto:hello@yourwillpro.com.au">hello@yourwillpro.com.au</a> and we'll send you a printable version.</p>
+        </div>
+        <p class="disclaimer">This checklist is for preparation purposes only. It does not constitute legal advice.</p>
+      </section>
+
+    </div>
+
+  </div>
+
+</main>
+
+<Footer />
+
+<style>
+  :root {
+    --navy: #1a2e44;
+    --gold: #c9a227;
+    --sage: #6b7f6e;
+    --cream: #f9f6f1;
+    --border-light: #e5e2dd;
+    --text-primary: #2c3338;
+    --text-secondary: #4b5563;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #2a4560 100%);
+    padding: 80px 64px;
+    color: white;
+  }
+
+  .hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.95;
+  }
+
+  /* Content Wrapper with Sidebar */
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 60px;
+    padding: 60px 64px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+  }
+
+  .progress-card {
+    background: var(--cream);
+    border: 2px solid var(--border-light);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+
+  .progress-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .progress-bar {
+    background: white;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+
+  .progress-fill {
+    background: linear-gradient(90deg, var(--gold) 0%, #e0b830 100%);
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+
+  .progress-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-align: center;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .nav-section {
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .nav-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover {
+    color: var(--gold);
+  }
+
+  .item-count {
+    background: var(--cream);
+    color: var(--text-secondary);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /* Checklist Content */
+  .checklist-content {
+    max-width: 800px;
+  }
+
+  .checklist-section {
+    margin-bottom: 48px;
+  }
+
+  .checklist-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .section-intro {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .checklist-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: white;
+    border: 2px solid var(--border-light);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .checklist-item:hover {
+    border-color: var(--gold);
+    background: var(--cream);
+  }
+
+  .checklist-item.checked {
+    background: #f0f9f0;
+    border-color: #6b7f6e;
+  }
+
+  .checklist-item.checked span {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+  }
+
+  .checkbox {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border-light);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    transition: all 0.2s ease;
+  }
+
+  .checklist-item:hover .checkbox {
+    border-color: var(--gold);
+  }
+
+  .checklist-item.checked .checkbox {
+    background: var(--sage);
+    border-color: var(--sage);
+  }
+
+  .checkmark {
+    width: 16px;
+    height: 16px;
+    stroke: white;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .checklist-item.checked .checkmark {
+    opacity: 1;
+  }
+
+  .checklist-item span {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-primary);
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: var(--cream);
+    border: 2px solid var(--border-light);
+    border-radius: 12px;
+    padding: 32px;
+    margin-top: 48px;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 28px;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+
+  .cta-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+
+  .email-cta {
+    background: white;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 24px 0;
+  }
+
+  .email-cta p {
+    margin: 0;
+  }
+
+  .email-cta a {
+    color: var(--navy);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .disclaimer {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-top: 20px;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .content-wrapper {
+      grid-template-columns: 1fr;
+      padding: 40px 32px;
+      gap: 40px;
+    }
+
+    .sidebar {
+      position: static;
+    }
+
+    .hero {
+      padding: 60px 32px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero {
+      padding: 40px 20px;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+    }
+
+    .hero p {
+      font-size: 16px;
+    }
+
+    .content-wrapper {
+      padding: 32px 20px;
+    }
+
+    .checklist-section h2 {
+      font-size: 24px;
+    }
+
+    .checklist-item {
+      padding: 12px;
+    }
+
+    .checklist-item span {
+      font-size: 15px;
+    }
+  }
+
+  /* === PRINT BLOCKING === */
+  @media print {
+    body * {
+      display: none !important;
+    }
+
+    body::before {
+      content: "This checklist is not available for printing. Visit YourWillPro.com.au to download the PDF version.";
+      display: block !important;
+      font-family: Inter, -apple-system, sans-serif;
+      font-size: 18px;
+      color: #1a2e44;
+      text-align: center;
+      padding: 100px 40px;
+      line-height: 1.6;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const checklistItems = document.querySelectorAll('.checklist-item');
+    const progressFill = document.getElementById('progress-fill');
+    const checkedCount = document.getElementById('checked-count');
+    const totalCount = document.getElementById('total-count');
+
+    totalCount.textContent = checklistItems.length;
+
+    // Load saved state from localStorage
+    const savedState = JSON.parse(localStorage.getItem('preparation-checklist') || '{}');
+
+    checklistItems.forEach(item => {
+      const id = item.dataset.id;
+      if (savedState[id]) {
+        item.classList.add('checked');
+      }
+
+      item.addEventListener('click', function() {
+        this.classList.toggle('checked');
+        updateProgress();
+        saveState();
+      });
+    });
+
+    function updateProgress() {
+      const checked = document.querySelectorAll('.checklist-item.checked').length;
+      const total = checklistItems.length;
+      const percent = (checked / total) * 100;
+      progressFill.style.width = percent + '%';
+      checkedCount.textContent = checked;
+    }
+
+    function saveState() {
+      const state = {};
+      checklistItems.forEach(item => {
+        state[item.dataset.id] = item.classList.contains('checked');
+      });
+      localStorage.setItem('preparation-checklist', JSON.stringify(state));
+    }
+
+    updateProgress();
+  });
+</script>
+
+</body>
+</html>

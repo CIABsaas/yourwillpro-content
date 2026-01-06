@@ -1,0 +1,451 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story - YourWillPro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Breadcrumb hover */
+    .breadcrumb a:hover {
+      color: #c9a227;
+    }
+
+    :root {
+      --navy: #1a2e44;
+      --navy-light: #e9eef3;
+      --gold: #c9a227;
+      --gold-light: #faf6e9;
+      --bg: #ffffff;
+      --bg-light: #f7f8f9;
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --text-muted: #7a7a7a;
+      --border: #e2e2e2;
+      --font-display: 'Source Serif 4', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 100px;
+      left: 24px;
+      background: white;
+      color: var(--navy);
+      padding: 10px 16px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      z-index: 99;
+      transition: all 0.2s;
+    }
+
+    .back-button:hover {
+      background: var(--navy);
+      color: white;
+    }
+
+    /* Hero */
+    .story-hero {
+      padding: 60px 64px;
+      background: var(--bg-light);
+      text-align: center;
+    }
+
+    .story-hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .story-hero h1 {
+      font-family: var(--font-display);
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .story-hero h1 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .story-hero-lead {
+      font-size: 1.3rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* Logo showcase */
+    .logo-showcase {
+      padding: 40px 64px;
+      text-align: center;
+      background: white;
+    }
+
+    .logo-showcase img {
+      max-width: 400px;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+
+    .logo-showcase h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .logo-showcase p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Content sections */
+    .story-content {
+      padding: 50px 64px;
+      background: white;
+    }
+
+    .story-content.alt {
+      background: var(--bg-light);
+    }
+
+    .story-content-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .story-content h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 24px;
+    }
+
+    .story-content h2 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .story-content p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
+
+    .story-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .story-content strong {
+      color: var(--text-primary);
+    }
+
+    /* Japanese term highlight */
+    .japanese-term {
+      display: inline-block;
+      background: var(--navy);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-weight: 600;
+      margin-right: 8px;
+    }
+
+    .japanese-meaning {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Meaning grid */
+    .meaning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin: 40px 0;
+    }
+
+    .meaning-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+    }
+
+    .alt .meaning-card {
+      background: var(--bg-light);
+    }
+
+    .meaning-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .meaning-card p {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+
+    /* Highlight quote */
+    .highlight-quote {
+      background: var(--navy);
+      color: white;
+      padding: 60px;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      margin: 32px 0;
+    }
+
+    .highlight-quote p {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-style: italic;
+      color: white;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .highlight-quote span {
+      color: var(--gold);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-style: normal;
+    }
+
+    /* Connection list */
+    .connection-list {
+      margin: 32px 0;
+    }
+
+    .connection-item {
+      display: flex;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .connection-item:last-child {
+      border-bottom: none;
+    }
+
+    .connection-japanese {
+      flex-shrink: 0;
+      width: 140px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .connection-meaning {
+      flex: 1;
+    }
+
+    .connection-meaning strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    /* CTA section */
+    .story-cta {
+      padding: 60px 64px;
+      background: var(--navy);
+      text-align: center;
+      color: white;
+    }
+
+    .story-cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .story-cta h2 {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .story-cta h2 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .story-cta p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 36px;
+    }
+
+    .story-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: white;
+      padding: 18px 36px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+
+    .story-cta-btn:hover {
+      background: #b8922a;
+      transform: translateY(-2px);
+    }
+
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .meaning-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .story-hero { padding: 40px 24px; }
+      .story-hero h1 { font-size: 2.2rem; }
+      .logo-showcase { padding: 32px 24px; }
+      .story-content { padding: 36px 24px; }
+      .highlight-quote { padding: 40px 24px; }
+      .highlight-quote p { font-size: 1.4rem; }
+      .connection-item { flex-direction: column; gap: 8px; }
+      .connection-japanese { width: auto; }
+      .story-cta { padding: 48px 24px; }
+      .story-cta h2 { font-size: 1.8rem; }
+      .back-button { top: auto; bottom: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="javascript:history.back()" class="back-button">← Back</a>
+
+  <Header />
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb" style="padding: 1rem 2rem; font-size: 0.85rem; color: #7a7a7a; background: white; border-bottom: 1px solid #e2e2e2;">
+    <a href="/" style="color: #7a7a7a; text-decoration: none;">Home</a>
+    <span style="margin: 0 0.5rem;">›</span>
+    <span>Our Story</span>
+  </nav>
+
+  <section class="story-hero">
+    <div class="story-hero-inner">
+      <h1>One Stroke. <em>Complete Protection.</em></h1>
+      <p class="story-hero-lead">The story behind our logo — and our philosophy.</p>
+    </div>
+  </section>
+
+  <section class="logo-showcase">
+    <img src="/images/ywp-logo.png" alt="YourWillPro Logo">
+    <h2>The Yokoga</h2>
+    <p>A single horizontal brush stroke. The most fundamental mark in Japanese calligraphy — representing finality, completeness, and calm authority.</p>
+  </section>
+
+  <section class="story-content">
+    <div class="story-content-inner">
+      <h2>The <em>Fundamental</em> Stroke</h2>
+      <p>In Japanese calligraphy, the <span class="japanese-term">横画</span> <span class="japanese-meaning">(yokoga)</span> is the horizontal stroke — one of the eight basic brush strokes known as <strong>eiji happō</strong>.</p>
+      <p>It is more than just a line. The yokoga is considered the most fundamental of all strokes. It forms the character <strong>一 (ichi)</strong>, meaning "one" — and symbolically represents wholeness, unity, and completion.</p>
+      <p>In Zen calligraphy, a single horizontal stroke is used to express: <strong>"Nothing more is needed."</strong></p>
+    </div>
+  </section>
+
+  <section class="story-content">
+    <div class="story-content-inner">
+      <h2>Why This <em>Matters</em></h2>
+      <p>The yokoga represents everything we believe about estate planning:</p>
+
+      <div class="connection-list">
+        <div class="connection-item">
+          <div class="connection-japanese">Finality</div>
+          <div class="connection-meaning">
+            <strong>A will is your final word</strong>
+            Your wishes, clearly stated, protected by law
+          </div>
+        </div>
+        <div class="connection-item">
+          <div class="connection-japanese">Completeness</div>
+          <div class="connection-meaning">
+            <strong>"Nothing more is needed"</strong>
+            Once done properly, you have peace
+          </div>
+        </div>
+        <div class="connection-item">
+          <div class="connection-japanese">Stability</div>
+          <div class="connection-meaning">
+            <strong>Balance for your family</strong>
+            What a proper will brings — clarity, not conflict
+          </div>
+        </div>
+        <div class="connection-item">
+          <div class="connection-japanese">Calm Authority</div>
+          <div class="connection-meaning">
+            <strong>Confidence, not fear</strong>
+            Estate planning done thoughtfully, not rushed
+          </div>
+        </div>
+        <div class="connection-item">
+          <div class="connection-japanese">One Mark</div>
+          <div class="connection-meaning">
+            <strong>One document protects everything</strong>
+            Simple, fundamental, essential
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-content alt">
+    <div class="story-content-inner">
+      <div class="highlight-quote">
+        <p>"One stroke. Nothing more is needed."</p>
+        <span>— The philosophy behind YourWillPro</span>
+      </div>
+      <p>Our logo is a single brush stroke — beginning in navy (trust), ending in gold (value, protection). One confident motion that says everything.</p>
+      <p>That's our philosophy. Your will is the one document that protects everything you've built. Done right, it brings stability, balance, and peace — to you and your family.</p>
+    </div>
+  </section>
+
+  <section class="story-cta">
+    <div class="story-cta-inner">
+      <h2>Ready to Make <em>Your Mark?</em></h2>
+      <p>Learn everything you need to know about wills, probate, and protecting your family.</p>
+      <a href="/" class="story-cta-btn">Explore Our Resources →</a>
+    </div>
+  </section>
+
+  <Footer />
+
+</body>
+</html>

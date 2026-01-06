@@ -1,0 +1,1272 @@
+---
+/**
+ * Power of Attorney - Planning Tools
+ * YourWillPro Content Site
+ *
+ * Interactive educational page about POA in Australia
+ * Includes state selector, type comparison cards, and email capture
+ */
+
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+
+const pageTitle = "Power of Attorney Australia - Complete Guide";
+const pageDescription = "Learn about Power of Attorney in Australia. Understand types (General, Enduring, Medical), state requirements, and how to choose your attorney. Free guide.";
+
+// State data for the interactive selector
+const stateData = {
+  nsw: {
+    name: "New South Wales",
+    documents: "Enduring Power of Attorney (financial), Appointment of Enduring Guardian (personal/medical)",
+    witnessing: "POA requires a prescribed witness (solicitor, barrister, registrar, or licensee-in-charge). Enduring Guardian requires a solicitor.",
+    registration: "Optional but recommended for property transactions (registered at NSW Land Registry Services).",
+    law: "Powers of Attorney Act 2003, Guardianship Act 1987"
+  },
+  vic: {
+    name: "Victoria",
+    documents: "Enduring Power of Attorney (covers both financial and personal/medical in one document)",
+    witnessing: "Two adult witnesses, one must be authorised to witness affidavits (solicitor, etc.). Certificate of capacity recommended.",
+    registration: "Optional. Can be registered with Victorian Land Registry.",
+    law: "Powers of Attorney Act 2014"
+  },
+  qld: {
+    name: "Queensland",
+    documents: "Enduring Power of Attorney (covers financial and personal/health matters), Advance Health Directive",
+    witnessing: "One eligible witness (JP, solicitor, notary, commissioner for declarations). Witness must certify capacity.",
+    registration: "Not required but recommended for land dealings.",
+    law: "Powers of Attorney Act 1998"
+  },
+  sa: {
+    name: "South Australia",
+    documents: "Enduring Power of Attorney (financial), Advance Care Directive (medical/lifestyle)",
+    witnessing: "POA requires authorised witness. Advance Care Directive requires witness plus completed competency assessment.",
+    registration: "Not required.",
+    law: "Powers of Attorney and Agency Act 1984, Advance Care Directives Act 2013"
+  },
+  wa: {
+    name: "Western Australia",
+    documents: "Enduring Power of Attorney (financial), Enduring Power of Guardianship (personal/lifestyle), Advance Health Directive (medical treatment)",
+    witnessing: "Two witnesses required, at least one must be authorised (JP, solicitor, etc.).",
+    registration: "EPA must be registered with Landgate for property transactions.",
+    law: "Guardianship and Administration Act 1990"
+  },
+  tas: {
+    name: "Tasmania",
+    documents: "Enduring Power of Attorney (financial and personal), Advance Care Directive (medical)",
+    witnessing: "Two witnesses required, both must be over 18. Neither can be the attorney.",
+    registration: "Optional but recommended.",
+    law: "Powers of Attorney Act 2000"
+  },
+  nt: {
+    name: "Northern Territory",
+    documents: "Advance Personal Plan (combines financial, personal, and health decisions in one document)",
+    witnessing: "One authorised witness (police officer, lawyer, JP, or health professional for medical sections).",
+    registration: "Not required.",
+    law: "Advance Personal Planning Act 2013"
+  },
+  act: {
+    name: "Australian Capital Territory",
+    documents: "Enduring Power of Attorney (financial and personal), Health Direction (medical treatment)",
+    witnessing: "One witness required, must be a person authorised to witness statutory declarations.",
+    registration: "Optional. Can be registered with ACT Civil and Administrative Tribunal.",
+    law: "Powers of Attorney Act 2006, Guardianship and Management of Property Act 1991"
+  }
+};
+
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Planning Tools", href: "/planning-tools/" },
+  { label: "Power of Attorney", href: "/planning-tools/power-of-attorney/" }
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription}>
+  <link rel="icon" type="image/png" href="/ywp-logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<Header />
+
+<main class="poa-page">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        {breadcrumbs.map((crumb, index) => (
+          <li>
+            {index < breadcrumbs.length - 1 ? (
+              <a href={crumb.href}>{crumb.label}</a>
+            ) : (
+              <span aria-current="page">{crumb.label}</span>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Power of Attorney in Australia</h1>
+        <p class="hero-subtitle">Appoint someone you trust to make decisions when you cannot</p>
+        
+        <!-- State Selector -->
+        <div class="state-selector">
+          <label for="state-select">Select your state for specific requirements:</label>
+          <select id="state-select">
+            <option value="all">All States (General Information)</option>
+            <option value="nsw">New South Wales</option>
+            <option value="vic">Victoria</option>
+            <option value="qld">Queensland</option>
+            <option value="sa">South Australia</option>
+            <option value="wa">Western Australia</option>
+            <option value="tas">Tasmania</option>
+            <option value="nt">Northern Territory</option>
+            <option value="act">Australian Capital Territory</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <article class="content-wrapper">
+      
+      <!-- What is POA Section -->
+      <section class="content-section">
+        <h2>What is a Power of Attorney?</h2>
+        <p>A Power of Attorney (POA) is a legal document that allows you to appoint another person – called your "attorney" – to make decisions on your behalf. Despite the name, your attorney does not need to be a lawyer. They can be any trusted adult: a spouse, family member, or close friend.</p>
+        <p>Unlike a will, which only takes effect after death, a Power of Attorney operates while you are alive. It is designed to protect you if illness, accident, or age affects your ability to manage your own affairs.</p>
+        <p>Creating a Power of Attorney when you are healthy and mentally capable is one of the most important steps in estate planning. Without one, your family may need to apply to a tribunal or court for guardianship – an expensive, time-consuming, and emotionally difficult process.</p>
+      </section>
+
+      <!-- Why You Need POA -->
+      <section class="content-section scenarios-section">
+        <h2>Why You Need a Power of Attorney</h2>
+        
+        <div class="scenario-cards">
+          <div class="scenario-card">
+            <div class="scenario-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </div>
+            <h3>Medical Emergency</h3>
+            <p>You suffer a stroke and cannot communicate. Without an Enduring Power of Attorney, your spouse cannot access your bank accounts to pay the mortgage, cannot sell investments to cover medical costs, and cannot make decisions about your care.</p>
+          </div>
+          
+          <div class="scenario-card">
+            <div class="scenario-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <h3>Dementia</h3>
+            <p>Early-stage dementia gradually affects your judgment. An Enduring POA created while you still have capacity allows a smooth transition of decision-making to your chosen attorney, rather than a crisis-driven tribunal application by your family.</p>
+          </div>
+          
+          <div class="scenario-card">
+            <div class="scenario-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <h3>Extended Travel</h3>
+            <p>You plan to travel overseas for six months. A General (non-enduring) POA allows someone to handle your property sale, manage investments, or deal with government agencies while you are away.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Types of POA -->
+      <section class="content-section">
+        <h2>Types of Power of Attorney</h2>
+        <p>Australia has two main categories of Power of Attorney, though the exact names and requirements vary by state:</p>
+        
+        <div class="poa-types-grid">
+          <!-- General POA Card -->
+          <div class="poa-type-card" data-type="general">
+            <button class="poa-type-header" aria-expanded="false">
+              <div class="poa-type-title">
+                <h3>General POA</h3>
+                <span class="poa-type-badge">Financial</span>
+              </div>
+              <svg class="expand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="poa-type-content">
+              <p><strong>Purpose:</strong> Financial and legal decisions while you have mental capacity</p>
+              <p><strong>When it ends:</strong> Ends if you lose mental capacity</p>
+              <p><strong>Best for:</strong> Temporary arrangements like travel, hospital stays, or delegating specific transactions</p>
+              <p><strong>Limitations:</strong> Cannot be used once you lose capacity to make decisions yourself</p>
+            </div>
+          </div>
+
+          <!-- Enduring POA Card -->
+          <div class="poa-type-card" data-type="enduring">
+            <button class="poa-type-header" aria-expanded="false">
+              <div class="poa-type-title">
+                <h3>Enduring POA</h3>
+                <span class="poa-type-badge">Financial</span>
+              </div>
+              <svg class="expand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="poa-type-content">
+              <p><strong>Purpose:</strong> Financial and legal decisions that continue if you lose capacity</p>
+              <p><strong>When it ends:</strong> Continues through incapacity until death or revocation</p>
+              <p><strong>Best for:</strong> Long-term planning, protecting against future incapacity</p>
+              <p><strong>Key benefit:</strong> The "enduring" nature means it survives your loss of mental capacity – exactly when you need it most</p>
+            </div>
+          </div>
+
+          <!-- Medical POA Card -->
+          <div class="poa-type-card" data-type="medical">
+            <button class="poa-type-header" aria-expanded="false">
+              <div class="poa-type-title">
+                <h3>Medical POA / Advance Care Directive</h3>
+                <span class="poa-type-badge medical">Health</span>
+              </div>
+              <svg class="expand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="poa-type-content">
+              <p><strong>Purpose:</strong> Health and lifestyle decisions (treatment, living arrangements, end-of-life care)</p>
+              <p><strong>When it ends:</strong> Continues through incapacity until death or revocation</p>
+              <p><strong>Best for:</strong> Ensuring your healthcare wishes are followed when you cannot communicate them</p>
+              <p><strong>Note:</strong> Called different names in different states (Enduring Guardian, Advance Health Directive, etc.)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- State-Specific Panel -->
+      <section class="content-section state-panel" id="state-panel">
+        <h2>State-Specific Requirements</h2>
+
+        <div class="verification-notice">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+          </svg>
+          <div>
+            <strong>Important:</strong> State laws change regularly. The information below is current as of January 2025. Always verify specific requirements with your state's government website or a qualified legal professional before creating a Power of Attorney.
+          </div>
+        </div>
+
+        <!-- Default: All States Message -->
+        <div class="state-info" id="state-all">
+          <p class="state-prompt">Select your state above to see specific document names, witnessing requirements, and registration rules that apply to you.</p>
+          <p>Each Australian state and territory has its own legislation governing Powers of Attorney. While the core concepts are similar, the document names, witnessing requirements, and registration processes differ.</p>
+        </div>
+        
+        <!-- Individual State Panels -->
+        {Object.entries(stateData).map(([key, state]) => (
+          <div class="state-info" id={`state-${key}`} style="display: none;">
+            <h3>{state.name}</h3>
+            <div class="state-details">
+              <div class="state-detail">
+                <h4>Document Names</h4>
+                <p>{state.documents}</p>
+              </div>
+              <div class="state-detail">
+                <h4>Witnessing Requirements</h4>
+                <p>{state.witnessing}</p>
+              </div>
+              <div class="state-detail">
+                <h4>Registration</h4>
+                <p>{state.registration}</p>
+              </div>
+              <div class="state-detail">
+                <h4>Governing Law</h4>
+                <p>{state.law}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </section>
+
+      <!-- Choosing Your Attorney -->
+      <section class="content-section">
+        <h2>Choosing Your Attorney</h2>
+        <p>Selecting the right attorney is one of the most important decisions you will make. Consider:</p>
+        
+        <div class="criteria-list">
+          <div class="criteria-item">
+            <h4>Trustworthiness</h4>
+            <p>Your attorney will have significant power over your finances or health. Choose someone whose integrity you do not question.</p>
+          </div>
+          <div class="criteria-item">
+            <h4>Capability</h4>
+            <p>Can they manage financial matters competently? Do they understand your values regarding medical treatment? Are they organised enough to handle paperwork and deadlines?</p>
+          </div>
+          <div class="criteria-item">
+            <h4>Availability</h4>
+            <p>Will they be accessible when needed? Someone living overseas or with demanding work commitments may struggle to act promptly.</p>
+          </div>
+          <div class="criteria-item">
+            <h4>Willingness</h4>
+            <p>Have you discussed this with them? Being an attorney carries legal responsibilities and can be burdensome. Never assume someone will accept without asking.</p>
+          </div>
+          <div class="criteria-item">
+            <h4>Age</h4>
+            <p>Consider their age relative to yours. An attorney close to your age may develop capacity issues around the same time you do.</p>
+          </div>
+        </div>
+        
+        <p>You can appoint multiple attorneys to act jointly (all must agree), severally (each can act independently), or jointly and severally (either arrangement depending on the situation). Consider appointing a substitute attorney in case your first choice cannot act.</p>
+      </section>
+
+      <!-- POA vs Will -->
+      <section class="content-section comparison-section">
+        <h2>Power of Attorney vs Will</h2>
+        <p>A common misconception is that having a will is enough. It is not. A will and Power of Attorney serve completely different purposes:</p>
+        
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Will</th>
+                <th>Power of Attorney</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="row-label">When it operates</td>
+                <td>After death only</td>
+                <td>During your lifetime</td>
+              </tr>
+              <tr>
+                <td class="row-label">Purpose</td>
+                <td>Distributes your assets to beneficiaries</td>
+                <td>Manages your affairs while you are alive but incapacitated</td>
+              </tr>
+              <tr>
+                <td class="row-label">Decision maker</td>
+                <td>Executor</td>
+                <td>Attorney</td>
+              </tr>
+              <tr>
+                <td class="row-label">What happens at death</td>
+                <td>Takes effect</td>
+                <td>Automatically ends</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <p class="comparison-note">A complete estate plan includes both documents. Your will protects your wishes after death; your Power of Attorney protects you while alive.</p>
+      </section>
+
+      <!-- Common Questions -->
+      <section class="content-section faq-section">
+        <h2>Common Questions</h2>
+        
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Can I make a POA if I am already unwell?</summary>
+            <p>You must have mental capacity to create a valid POA. If you already have dementia or another condition affecting decision-making, it may be too late. A doctor's assessment may be required to confirm capacity. This is why creating a POA while healthy is essential.</p>
+          </details>
+          
+          <details class="faq-item">
+            <summary>Can I cancel or change my POA?</summary>
+            <p>Yes, as long as you still have mental capacity. You can revoke a POA at any time by creating a revocation document and notifying your attorney and any institutions that hold copies.</p>
+          </details>
+          
+          <details class="faq-item">
+            <summary>What if my attorney misuses their power?</summary>
+            <p>Attorneys have legal duties to act in your best interests, keep records, avoid conflicts of interest, and keep your property separate from theirs. Misuse of power is a criminal offence. If you suspect abuse, contact your state's civil and administrative tribunal.</p>
+          </details>
+          
+          <details class="faq-item">
+            <summary>Does my POA work interstate or overseas?</summary>
+            <p>Australian states have mutual recognition provisions, so a POA made in one state generally works in another. However, there are exceptions, and a POA made overseas may not be recognised in Australia. If you own property in multiple states, consider getting state-specific advice.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Coming Soon CTA -->
+      <section class="cta-section">
+        <div class="cta-content">
+          <h2>Create Your Power of Attorney Online</h2>
+          <p class="cta-subtitle">Coming Soon to YourWillPro</p>
+          <p>We are developing Australia's most user-friendly Power of Attorney creation service. State-specific templates, plain English guidance, and everything you need to protect your future decisions.</p>
+          
+          <form class="notify-form" id="poa-notify-form">
+            <div class="form-group">
+              <label for="notify-email" class="visually-hidden">Email address</label>
+              <input 
+                type="email" 
+                id="notify-email" 
+                name="email" 
+                placeholder="Enter your email address"
+                required
+                aria-describedby="email-note"
+              />
+              <button type="submit" class="btn-notify">Notify Me</button>
+            </div>
+            <p id="email-note" class="form-note">We'll email you once when POA creation launches. No spam, unsubscribe anytime.</p>
+          </form>
+          
+          <p class="success-message" id="form-success" style="display: none;">
+            Thank you! We'll notify you when our POA service launches.
+          </p>
+        </div>
+      </section>
+
+      <!-- Related Content -->
+      <section class="content-section related-section">
+        <h2>Related Resources</h2>
+        
+        <div class="related-grid">
+          <div class="related-group">
+            <h3>Dictionary Terms</h3>
+            <ul>
+              <li><a href="/dictionary/attorney/">Attorney</a></li>
+              <li><a href="/dictionary/enduring-power-of-attorney/">Enduring Power of Attorney</a></li>
+              <li><a href="/dictionary/advance-care-directive/">Advance Care Directive</a></li>
+              <li><a href="/dictionary/capacity/">Capacity</a></li>
+              <li><a href="/dictionary/guardianship/">Guardianship</a></li>
+              <li><a href="/dictionary/tribunal/">Tribunal</a></li>
+            </ul>
+          </div>
+          
+          <div class="related-group">
+            <h3>Guides</h3>
+            <ul>
+              <li><a href="/guides/how-to-choose-your-executor/">How to Choose Your Executor</a></li>
+              <li><a href="/guides/what-happens-without-a-will/">What Happens Without a Will</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </article>
+</main>
+
+<Footer />
+
+<style>
+  /* =====================================================
+     POWER OF ATTORNEY PAGE STYLES
+     YourWillPro - Planning Tools
+     ===================================================== */
+
+  /* CSS Variables - YWP Brand */
+  :root {
+    --navy: #1B365D;
+    --navy-dark: #132744;
+    --navy-light: #2a4a7a;
+    --gold: #B8860B;
+    --gold-light: #D4A84B;
+    --cream: #FAF8F5;
+    --gray-50: #F9FAFB;
+    --gray-100: #F3F4F6;
+    --gray-200: #E5E7EB;
+    --gray-300: #D1D5DB;
+    --gray-600: #4B5563;
+    --gray-700: #374151;
+    --gray-800: #1F2937;
+    --white: #FFFFFF;
+    --shadow-sm: 0 1px 2px rgba(27, 54, 93, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(27, 54, 93, 0.1), 0 2px 4px -1px rgba(27, 54, 93, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(27, 54, 93, 0.1), 0 4px 6px -2px rgba(27, 54, 93, 0.05);
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+  }
+
+  /* Page Container */
+  .poa-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Breadcrumbs */
+  .breadcrumbs {
+    padding: 1.5rem 0;
+    font-size: 0.875rem;
+  }
+
+  .breadcrumbs ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .breadcrumbs li:not(:last-child)::after {
+    content: "›";
+    margin-left: 0.5rem;
+    color: var(--gray-300);
+  }
+
+  .breadcrumbs a {
+    color: var(--navy);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover {
+    text-decoration: underline;
+  }
+
+  .breadcrumbs span[aria-current] {
+    color: var(--gray-600);
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2rem;
+    margin-bottom: 3rem;
+    color: var(--white);
+  }
+
+  .hero-content {
+    max-width: 800px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin: 0 0 2rem;
+    line-height: 1.5;
+  }
+
+  /* State Selector */
+  .state-selector {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.5rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .state-selector label {
+    display: block;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+  }
+
+  .state-selector select {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    color: var(--navy);
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+
+  .state-selector select:hover,
+  .state-selector select:focus {
+    border-color: var(--gold);
+    outline: none;
+  }
+
+  /* Content Wrapper */
+  .content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Content Sections */
+  .content-section {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .content-section:last-of-type {
+    border-bottom: none;
+  }
+
+  .content-section h2 {
+    font-size: 1.75rem;
+    color: var(--navy);
+    margin: 0 0 1.25rem;
+    font-weight: 700;
+  }
+
+  .content-section p {
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin: 0 0 1rem;
+  }
+
+  .content-section p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Scenario Cards */
+  .scenario-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .scenario-card {
+    background: var(--gray-50);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    border-left: 4px solid var(--gold);
+  }
+
+  .scenario-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .scenario-icon svg {
+    width: 24px;
+    height: 24px;
+    color: var(--white);
+  }
+
+  .scenario-card h3 {
+    font-size: 1.125rem;
+    color: var(--navy);
+    margin: 0 0 0.75rem;
+    font-weight: 600;
+  }
+
+  .scenario-card p {
+    font-size: 0.9375rem;
+    color: var(--gray-600);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* POA Types Grid */
+  .poa-types-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .poa-type-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+
+  .poa-type-card:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  .poa-type-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .poa-type-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .poa-type-title h3 {
+    font-size: 1.125rem;
+    color: var(--navy);
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .poa-type-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.75rem;
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 100px;
+  }
+
+  .poa-type-badge.medical {
+    background: var(--gold);
+    color: var(--navy-dark);
+  }
+
+  .expand-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--gray-600);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+
+  .poa-type-header[aria-expanded="true"] .expand-icon {
+    transform: rotate(180deg);
+  }
+
+  .poa-type-content {
+    display: none;
+    padding: 0 1.5rem 1.5rem;
+    border-top: 1px solid var(--gray-100);
+  }
+
+  .poa-type-content.expanded {
+    display: block;
+  }
+
+  .poa-type-content p {
+    font-size: 0.9375rem;
+    color: var(--gray-600);
+    margin: 1rem 0 0;
+    line-height: 1.6;
+  }
+
+  .poa-type-content p:first-child {
+    margin-top: 1rem;
+  }
+
+  .poa-type-content strong {
+    color: var(--gray-800);
+  }
+
+  /* State Panel */
+  .state-panel {
+    background: var(--cream);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+  }
+
+  .verification-notice {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-left: 4px solid #ff9800;
+    border-radius: var(--radius-sm);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .verification-notice svg {
+    width: 24px;
+    height: 24px;
+    color: #ff9800;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .verification-notice strong {
+    color: var(--navy);
+  }
+
+  .state-prompt {
+    font-style: italic;
+    color: var(--gray-600);
+  }
+
+  .state-info h3 {
+    font-size: 1.5rem;
+    color: var(--navy);
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .state-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .state-detail {
+    background: var(--white);
+    padding: 1.25rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .state-detail h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--navy);
+    margin: 0 0 0.5rem;
+  }
+
+  .state-detail p {
+    font-size: 0.9375rem;
+    color: var(--gray-700);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Criteria List */
+  .criteria-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+
+  .criteria-item {
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--gold);
+  }
+
+  .criteria-item h4 {
+    font-size: 1rem;
+    color: var(--navy);
+    margin: 0 0 0.25rem;
+    font-weight: 600;
+  }
+
+  .criteria-item p {
+    font-size: 0.9375rem;
+    color: var(--gray-600);
+    margin: 0;
+  }
+
+  /* Comparison Table */
+  .comparison-table-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .comparison-table thead th {
+    background: var(--navy);
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .comparison-table thead th:first-child {
+    border-radius: var(--radius-sm) 0 0 0;
+  }
+
+  .comparison-table thead th:last-child {
+    border-radius: 0 var(--radius-sm) 0 0;
+  }
+
+  .comparison-table .row-label {
+    font-weight: 600;
+    color: var(--navy);
+    background: var(--gray-50);
+  }
+
+  .comparison-table tbody tr:hover td {
+    background: var(--gray-50);
+  }
+
+  .comparison-table tbody tr:hover .row-label {
+    background: var(--gray-100);
+  }
+
+  .comparison-note {
+    font-weight: 500;
+    color: var(--navy);
+    background: var(--cream);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--gold);
+    margin-top: 1.5rem;
+  }
+
+  /* FAQ Section */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .faq-item {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .faq-item summary {
+    padding: 1.25rem 1.5rem;
+    font-weight: 600;
+    color: var(--navy);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: "+";
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--gray-600);
+    transition: transform 0.2s;
+  }
+
+  .faq-item[open] summary::after {
+    content: "−";
+  }
+
+  .faq-item p {
+    padding: 0 1.5rem 1.25rem;
+    margin: 0;
+    color: var(--gray-600);
+    line-height: 1.7;
+    border-top: 1px solid var(--gray-100);
+    padding-top: 1rem;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+    color: var(--white);
+    border-left: 6px solid var(--gold);
+  }
+
+  .cta-content {
+    max-width: 600px;
+  }
+
+  .cta-section h2 {
+    font-size: 1.75rem;
+    color: var(--white);
+    margin: 0 0 0.25rem;
+  }
+
+  .cta-subtitle {
+    font-size: 1.125rem;
+    color: var(--gold-light);
+    margin: 0 0 1rem;
+    font-weight: 500;
+  }
+
+  .cta-section p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin: 0 0 1.5rem;
+  }
+
+  /* Notify Form */
+  .notify-form {
+    margin-top: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .notify-form input[type="email"] {
+    flex: 1;
+    min-width: 250px;
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    color: var(--navy);
+  }
+
+  .notify-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+
+  .notify-form input[type="email"]::placeholder {
+    color: var(--gray-600);
+  }
+
+  .btn-notify {
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background: var(--gold);
+    color: var(--navy-dark);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .btn-notify:hover {
+    background: var(--gold-light);
+  }
+
+  .btn-notify:active {
+    transform: scale(0.98);
+  }
+
+  .form-note {
+    font-size: 0.8125rem;
+    opacity: 0.8;
+    margin: 0.75rem 0 0;
+  }
+
+  .success-message {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Related Section */
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .related-group h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .related-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .related-group li {
+    margin-bottom: 0.5rem;
+  }
+
+  .related-group a {
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    transition: color 0.2s;
+  }
+
+  .related-group a:hover {
+    color: var(--gold);
+    text-decoration: underline;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 2rem 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 1.875rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.125rem;
+    }
+
+    .content-section h2 {
+      font-size: 1.5rem;
+    }
+
+    .state-panel {
+      padding: 1.5rem;
+    }
+
+    .verification-notice {
+      flex-direction: row;
+      padding: 0.875rem 1rem;
+      font-size: 0.875rem;
+    }
+
+    .verification-notice svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .cta-section {
+      padding: 2rem 1.5rem;
+    }
+
+    .form-group {
+      flex-direction: column;
+    }
+
+    .notify-form input[type="email"] {
+      min-width: 100%;
+    }
+
+    .btn-notify {
+      width: 100%;
+    }
+
+    .comparison-table {
+      font-size: 0.875rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 0.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .poa-page {
+      padding: 0 1rem;
+    }
+
+    .hero {
+      padding: 1.5rem 1.25rem;
+      border-radius: var(--radius-md);
+    }
+
+    .hero h1 {
+      font-size: 1.625rem;
+    }
+
+    .scenario-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  // State Selector Functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const stateSelect = document.getElementById('state-select');
+    const stateInfos = document.querySelectorAll('.state-info');
+    
+    // Check localStorage for saved state
+    const savedState = localStorage.getItem('ywp-selected-state');
+    if (savedState && stateSelect) {
+      stateSelect.value = savedState;
+      updateStatePanel(savedState);
+    }
+    
+    stateSelect?.addEventListener('change', (e) => {
+      const selectedState = e.target.value;
+      localStorage.setItem('ywp-selected-state', selectedState);
+      updateStatePanel(selectedState);
+    });
+    
+    function updateStatePanel(state) {
+      stateInfos.forEach(info => {
+        info.style.display = 'none';
+      });
+      
+      const targetId = state === 'all' ? 'state-all' : `state-${state}`;
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.style.display = 'block';
+      }
+    }
+    
+    // POA Type Cards - Expand/Collapse
+    const typeHeaders = document.querySelectorAll('.poa-type-header');
+    
+    typeHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const isExpanded = header.getAttribute('aria-expanded') === 'true';
+        const content = header.nextElementSibling;
+        
+        // Toggle this card
+        header.setAttribute('aria-expanded', !isExpanded);
+        content.classList.toggle('expanded', !isExpanded);
+      });
+    });
+    
+    // Email Form Handler
+    const notifyForm = document.getElementById('poa-notify-form');
+    const successMessage = document.getElementById('form-success');
+    
+    notifyForm?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(notifyForm);
+      const email = formData.get('email');
+      
+      // Here you would connect to your email capture system
+      // For now, just show success message
+      console.log('POA notification signup:', email);
+      
+      notifyForm.style.display = 'none';
+      if (successMessage) {
+        successMessage.style.display = 'block';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Sidebar from '../../components/Sidebar.astro';
+
+export async function getStaticPaths() {
+  const letters = ['b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+  return letters.map(letter => ({ params: { letter } }));
+}
+
+const { letter } = Astro.params;
+const upperLetter = letter.toUpperCase();
+
+const articles = await getCollection('articles');
+const dictionaryArticles = articles
+  .filter(article => article.data.category === 'Dictionary')
+  .filter(article => article.data.title.charAt(0).toUpperCase() === upperLetter)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<BaseLayout title={`Dictionary - ${upperLetter} | YWP Guides`}>
+  <Sidebar slot="sidebar" currentCategory="dictionary" />
+
+  <h1>{upperLetter}</h1>
+
+  {dictionaryArticles.length > 0 ? (
+    <div class="terms-list">
+      {dictionaryArticles.map(article => (
+        <article class="term-card">
+          <h2>
+            <a href={`/dictionary/${article.data.slug}`}>{article.data.title}</a>
+          </h2>
+          {article.data.summary && <p>{article.data.summary}</p>}
+        </article>
+      ))}
+    </div>
+  ) : (
+    <p class="no-terms">No dictionary entries for this letter yet.</p>
+  )}
+</BaseLayout>
+
+<style>
+  h1 {
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+  }
+
+  .terms-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .term-card h2 {
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .term-card h2 a {
+    color: #1f2937;
+    border-bottom: 1px solid #d6d3d1;
+  }
+
+  .term-card h2 a:hover {
+    color: #44403c;
+    border-bottom-color: #44403c;
+  }
+
+  .term-card p {
+    color: #78716c;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .no-terms {
+    color: #78716c;
+    font-style: italic;
+  }
+</style>

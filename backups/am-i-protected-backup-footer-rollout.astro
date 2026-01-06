@@ -1,0 +1,1396 @@
+---
+import Header from '../components/Header.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Am I Protected? | YourWillPro</title>
+  </head>
+  <body>
+
+    <Header />
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>🎯</span>
+        Interactive Tools
+      </div>
+      <h1 class="hero-title">
+        Am I <span class="highlight">Protected?</span>
+      </h1>
+      <p class="hero-subtitle">
+        Find out where you stand. Our free tools help you understand your situation, identify gaps, and know exactly what to do next.
+      </p>
+    </div>
+  </section>
+
+  <!-- TOOLS GRID -->
+  <section class="tools-section">
+    <div class="tools-grid">
+
+      <!-- QUIZ -->
+      <div class="tool-card quiz">
+        <div class="tool-header">
+          <div class="tool-badge">Most Popular</div>
+          <div class="tool-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <h3 class="tool-title">Is Your Family Protected?</h3>
+          <p class="tool-tagline">10 questions. 3 minutes. Real answers.</p>
+        </div>
+        <div class="tool-body">
+          <p class="tool-description">
+            Answer simple questions about your situation and get a personalized protection score with specific recommendations.
+          </p>
+          <ul class="tool-features">
+            <li><span class="check">✓</span> Personalized results based on your answers</li>
+            <li><span class="check">✓</span> Identifies your biggest risk areas</li>
+            <li><span class="check">✓</span> Actionable next steps</li>
+          </ul>
+          <a href="#quiz-section" class="tool-cta">Start the Quiz →</a>
+        </div>
+      </div>
+
+      <!-- CHECKLIST -->
+      <div class="tool-card checklist">
+        <div class="tool-header">
+          <div class="tool-badge">Essential</div>
+          <div class="tool-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+          </div>
+          <h3 class="tool-title">Will Completeness Check</h3>
+          <p class="tool-tagline">Track what you have vs what you need</p>
+        </div>
+        <div class="tool-body">
+          <p class="tool-description">
+            A comprehensive checklist covering everything a complete estate plan should include. Check off what you have, see what's missing.
+          </p>
+          <ul class="tool-features">
+            <li><span class="check">✓</span> Covers will, POA, healthcare directives</li>
+            <li><span class="check">✓</span> Progress tracking</li>
+            <li><span class="check">✓</span> Downloadable PDF summary</li>
+          </ul>
+          <a href="#checklist-section" class="tool-cta">Start Checklist →</a>
+        </div>
+      </div>
+
+      <!-- COMPARISON -->
+      <div class="tool-card comparison">
+        <div class="tool-header">
+          <div class="tool-badge">Decision Helper</div>
+          <div class="tool-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"/>
+              <rect x="14" y="3" width="7" height="7"/>
+              <rect x="14" y="14" width="7" height="7"/>
+              <rect x="3" y="14" width="7" height="7"/>
+            </svg>
+          </div>
+          <h3 class="tool-title">Executor Options Compared</h3>
+          <p class="tool-tagline">Family vs professional vs co-executors</p>
+        </div>
+        <div class="tool-body">
+          <p class="tool-description">
+            Not sure who should be your executor? Compare the pros and cons of different options based on your family situation.
+          </p>
+          <ul class="tool-features">
+            <li><span class="check">✓</span> Side-by-side comparison</li>
+            <li><span class="check">✓</span> Real-world considerations</li>
+            <li><span class="check">✓</span> Links to relevant stories</li>
+          </ul>
+          <a href="#comparison-section" class="tool-cta">Compare Options →</a>
+        </div>
+      </div>
+
+      <!-- RISK RATER -->
+      <div class="tool-card risk">
+        <div class="tool-header">
+          <div class="tool-badge">Eye-Opening</div>
+          <div class="tool-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <h3 class="tool-title">Estate Dispute Risk Rater</h3>
+          <p class="tool-tagline">What's your family's conflict risk?</p>
+        </div>
+        <div class="tool-body">
+          <p class="tool-description">
+            Based on real court case patterns, assess the factors that increase the likelihood of family disputes over your estate.
+          </p>
+          <ul class="tool-features">
+            <li><span class="check">✓</span> Based on real case data</li>
+            <li><span class="check">✓</span> Identifies specific risk factors</li>
+            <li><span class="check">✓</span> Mitigation strategies</li>
+          </ul>
+          <a href="#risk-section" class="tool-cta">Check Your Risk →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- QUIZ PREVIEW SECTION -->
+  <section class="quiz-preview" id="quiz-section">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>Take the Quiz</h2>
+        <p>See how it works — here's a sample question</p>
+      </div>
+
+      <div class="quiz-question-card">
+        <div class="quiz-progress">
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill"></div>
+          </div>
+          <span class="quiz-progress-text">3 of 10</span>
+        </div>
+
+        <div class="quiz-question-number">3</div>
+        <h3 class="quiz-question-text">Do you have children from more than one relationship?</h3>
+
+        <div class="quiz-options">
+          <div class="quiz-option">
+            <div class="quiz-option-circle"></div>
+            <span class="quiz-option-text">Yes, I have a blended family</span>
+          </div>
+          <div class="quiz-option">
+            <div class="quiz-option-circle"></div>
+            <span class="quiz-option-text">No, all my children are from one relationship</span>
+          </div>
+          <div class="quiz-option">
+            <div class="quiz-option-circle"></div>
+            <span class="quiz-option-text">I don't have children</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="preview-note">
+        <p><strong>This is a preview.</strong> The full quiz has 10 questions and gives you a personalized protection score with specific recommendations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKLIST PREVIEW SECTION -->
+  <section class="checklist-preview" id="checklist-section">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>Will Completeness Checklist</h2>
+        <p>Track your progress — check off what you have in place</p>
+      </div>
+
+      <div class="checklist-card">
+        <div class="checklist-category">
+          <h3 class="checklist-category-title">
+            <span class="checklist-category-icon">📄</span>
+            Core Documents
+          </h3>
+          <div class="checklist-items">
+            <div class="checklist-item checked">
+              <div class="checklist-checkbox">✓</div>
+              <span class="checklist-item-text">Valid, signed will</span>
+            </div>
+            <div class="checklist-item checked">
+              <div class="checklist-checkbox">✓</div>
+              <span class="checklist-item-text">Enduring Power of Attorney (Financial)</span>
+            </div>
+            <div class="checklist-item">
+              <div class="checklist-checkbox"></div>
+              <span class="checklist-item-text">Enduring Power of Attorney (Medical/Healthcare)</span>
+            </div>
+            <div class="checklist-item">
+              <div class="checklist-checkbox"></div>
+              <span class="checklist-item-text">Advance Health Directive</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="checklist-category">
+          <h3 class="checklist-category-title">
+            <span class="checklist-category-icon">👥</span>
+            Key People
+          </h3>
+          <div class="checklist-items">
+            <div class="checklist-item checked">
+              <div class="checklist-checkbox">✓</div>
+              <span class="checklist-item-text">Executor named and has agreed</span>
+            </div>
+            <div class="checklist-item">
+              <div class="checklist-checkbox"></div>
+              <span class="checklist-item-text">Backup executor named</span>
+            </div>
+            <div class="checklist-item">
+              <div class="checklist-checkbox"></div>
+              <span class="checklist-item-text">Guardian for minor children named</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="checklist-score">
+          <div class="checklist-score-number">3/7</div>
+          <div class="checklist-score-label">Items completed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON PREVIEW SECTION -->
+  <section class="comparison-preview" id="comparison-section">
+    <div class="section-container wide">
+      <div class="section-header">
+        <h2>Executor Options Compared</h2>
+        <p>See which option might work best for your situation</p>
+      </div>
+
+      <div class="comparison-table">
+        <div class="comparison-header-row">
+          <div class="comparison-header-cell">Factor</div>
+          <div class="comparison-header-cell">Family Member</div>
+          <div class="comparison-header-cell highlight">Co-Executors</div>
+          <div class="comparison-header-cell">Professional</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-cell">Cost</div>
+          <div class="comparison-cell"><span class="comparison-check">✓</span></div>
+          <div class="comparison-cell highlight"><span class="comparison-check">✓</span></div>
+          <div class="comparison-cell"><span class="comparison-x">✗</span></div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-cell">Reduces family conflict</div>
+          <div class="comparison-cell"><span class="comparison-x">✗</span></div>
+          <div class="comparison-cell highlight"><span class="comparison-check">✓</span></div>
+          <div class="comparison-cell"><span class="comparison-check">✓</span></div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-cell">Expertise with complex estates</div>
+          <div class="comparison-cell"><span class="comparison-x">✗</span></div>
+          <div class="comparison-cell highlight"><span class="comparison-maybe">~</span></div>
+          <div class="comparison-cell"><span class="comparison-check">✓</span></div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-cell">Built-in accountability</div>
+          <div class="comparison-cell"><span class="comparison-x">✗</span></div>
+          <div class="comparison-cell highlight"><span class="comparison-check">✓</span></div>
+          <div class="comparison-cell"><span class="comparison-check">✓</span></div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-cell">Knows your family personally</div>
+          <div class="comparison-cell"><span class="comparison-check">✓</span></div>
+          <div class="comparison-cell highlight"><span class="comparison-check">✓</span></div>
+          <div class="comparison-cell"><span class="comparison-x">✗</span></div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-cell">Speed of decisions</div>
+          <div class="comparison-cell"><span class="comparison-check">✓</span></div>
+          <div class="comparison-cell highlight"><span class="comparison-maybe">~</span></div>
+          <div class="comparison-cell"><span class="comparison-check">✓</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RISK RATER PREVIEW SECTION -->
+  <section class="risk-preview" id="risk-section">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>Estate Dispute Risk Rater</h2>
+        <p>How likely is your estate to end up in conflict?</p>
+      </div>
+
+      <div class="risk-card">
+        <div class="risk-factors">
+          <div class="risk-factor">
+            <div class="risk-factor-left">
+              <span class="risk-factor-icon">👨‍👩‍👧‍👦</span>
+              <span class="risk-factor-text">Blended family / children from multiple relationships</span>
+            </div>
+            <div class="risk-factor-toggle">
+              <button class="risk-toggle-btn yes active">Yes</button>
+              <button class="risk-toggle-btn no">No</button>
+            </div>
+          </div>
+
+          <div class="risk-factor">
+            <div class="risk-factor-left">
+              <span class="risk-factor-icon">🏠</span>
+              <span class="risk-factor-text">Property or business to divide</span>
+            </div>
+            <div class="risk-factor-toggle">
+              <button class="risk-toggle-btn yes active">Yes</button>
+              <button class="risk-toggle-btn no">No</button>
+            </div>
+          </div>
+
+          <div class="risk-factor">
+            <div class="risk-factor-left">
+              <span class="risk-factor-icon">😤</span>
+              <span class="risk-factor-text">Existing tension between potential beneficiaries</span>
+            </div>
+            <div class="risk-factor-toggle">
+              <button class="risk-toggle-btn yes">Yes</button>
+              <button class="risk-toggle-btn no active">No</button>
+            </div>
+          </div>
+
+          <div class="risk-factor">
+            <div class="risk-factor-left">
+              <span class="risk-factor-icon">📝</span>
+              <span class="risk-factor-text">Will is more than 5 years old</span>
+            </div>
+            <div class="risk-factor-toggle">
+              <button class="risk-toggle-btn yes active">Yes</button>
+              <button class="risk-toggle-btn no">No</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="risk-result">
+          <div class="risk-meter">
+            <div class="risk-meter-indicator"></div>
+          </div>
+          <div class="risk-level">Elevated Risk</div>
+          <p class="risk-description">
+            Based on your answers, your estate has several factors that commonly lead to family disputes.
+            <a href="/user-stories">See what you can do to reduce risk →</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL CAPTURE -->
+  <section class="email-cta">
+    <div class="section-container">
+      <h3>Get your full results</h3>
+      <p>Complete any tool and we'll email you a detailed report with personalized recommendations.</p>
+      <form class="email-form">
+        <input type="email" class="email-input" placeholder="Enter your email" required>
+        <button type="submit" class="email-submit">Get Results</button>
+      </form>
+      <p class="email-note">No spam. Just your results and occasional tips to protect your family.</p>
+    </div>
+  </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="footer-logo">Y</div>
+            <div class="footer-brand-text">
+              <span class="footer-brand-name">YourWillPro</span>
+              <span class="footer-tagline">Protect what matters.</span>
+            </div>
+          </div>
+          <div class="footer-nav">
+            <div class="footer-nav-group">
+              <h4>Learn</h4>
+              <a href="/user-stories">Stories</a>
+              <a href="/dictionary">Dictionary</a>
+              <a href="/common-questions">Your Questions</a>
+            </div>
+            <div class="footer-nav-group">
+              <h4>Tools</h4>
+              <a href="/am-i-protected">Planning Tools</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 YourWillPro. All rights reserved.</span>
+          <span>Educational content only. Not legal advice.</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+      const toggleButton = document.getElementById('mobile-menu-toggle');
+      const closeButton = document.getElementById('mobile-menu-close');
+      const overlay = document.getElementById('mobile-menu-overlay');
+      const panel = document.getElementById('mobile-menu-panel');
+
+      function openMenu() {
+        overlay.classList.add('active');
+        panel.classList.add('active');
+        document.body.classList.add('menu-open');
+      }
+
+      function closeMenu() {
+        overlay.classList.remove('active');
+        panel.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      }
+
+      toggleButton?.addEventListener('click', openMenu);
+      closeButton?.addEventListener('click', closeMenu);
+      overlay?.addEventListener('click', closeMenu);
+    </script>
+
+  </body>
+</html>
+
+<style>
+  :root {
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', -apple-system, sans-serif;
+    --bg-warm: #FAFAF8;
+    --bg-cream: #f5f0e8;
+    --text-secondary: #5a5a5a;
+    --text-muted: #8a8a8a;
+    --border-light: #e8e6e1;
+    --brand-navy: #1e3a5f;
+    --accent-coral: #e85d4c;
+    --accent-coral-light: #fef0ee;
+    --accent-green: #2e7d32;
+    --accent-green-light: #e8f5e9;
+    --accent-amber: #c9a227;
+    --accent-amber-light: #fef9e6;
+    --accent-blue: #1976d2;
+    --accent-blue-light: #e3f2fd;
+    --accent-purple: #7b1fa2;
+    --accent-purple-light: #f3e5f5;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* === FOOTER === */
+  .footer {
+    background: #1a1a1a;
+    color: white;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 48px;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 64px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .footer-brand {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .footer-logo {
+    width: 48px;
+    height: 48px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-navy);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+  }
+
+  .footer-brand-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-brand-name {
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .footer-tagline {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+  }
+
+  .footer-nav {
+    display: flex;
+    gap: 64px;
+  }
+
+  .footer-nav-group h4 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .footer-nav-group a {
+    display: block;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 15px;
+    padding: 4px 0;
+    transition: color 0.2s;
+  }
+
+  .footer-nav-group a:hover {
+    color: white;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 32px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  @media (max-width: 768px) {
+    .footer-inner {
+      padding: 48px 24px;
+    }
+
+    .footer-top {
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .footer-nav {
+      gap: 48px;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+    }
+  }
+
+  .hero {
+    background: linear-gradient(135deg, var(--accent-coral-light) 0%, #fde8e5 50%, var(--accent-amber-light) 100%);
+    padding: 64px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '?';
+    position: absolute;
+    font-family: var(--font-display);
+    font-size: 400px;
+    font-weight: 800;
+    color: var(--accent-coral);
+    opacity: 0.05;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-coral);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .hero-title .highlight {
+    font-style: italic;
+    color: var(--accent-coral);
+  }
+
+  .hero-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    line-height: 1.7;
+  }
+
+  .tools-section {
+    padding: 64px 48px;
+    background: white;
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .tool-card {
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .tool-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  }
+
+  .tool-header {
+    padding: 32px 32px 24px;
+    position: relative;
+    color: white;
+  }
+
+  .tool-card.quiz .tool-header { background: linear-gradient(135deg, #e85d4c 0%, #d94a3a 100%); }
+  .tool-card.checklist .tool-header { background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%); }
+  .tool-card.comparison .tool-header { background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%); }
+  .tool-card.risk .tool-header { background: linear-gradient(135deg, #7b1fa2 0%, #6a1b9a 100%); }
+
+  .tool-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .tool-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: white;
+  }
+
+  .tool-badge {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: rgba(255,255,255,0.25);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .tool-title {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .tool-tagline {
+    opacity: 0.9;
+    font-size: 15px;
+  }
+
+  .tool-body {
+    padding: 28px 32px 32px;
+    background: var(--bg-warm);
+  }
+
+  .tool-description {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .tool-features {
+    list-style: none;
+    margin-bottom: 24px;
+    padding: 0;
+  }
+
+  .tool-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  .tool-features .check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .tool-card.quiz .tool-features .check { background: #fef0ee; color: #e85d4c; }
+  .tool-card.checklist .tool-features .check { background: #e8f5e9; color: #2e7d32; }
+  .tool-card.comparison .tool-features .check { background: #e3f2fd; color: #1976d2; }
+  .tool-card.risk .tool-features .check { background: #f3e5f5; color: #7b1fa2; }
+
+  .tool-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    color: white;
+    transition: all 0.2s;
+  }
+
+  .tool-card.quiz .tool-cta { background: #e85d4c; }
+  .tool-card.quiz .tool-cta:hover { background: #d94a3a; }
+  .tool-card.checklist .tool-cta { background: #2e7d32; }
+  .tool-card.checklist .tool-cta:hover { background: #1b5e20; }
+  .tool-card.comparison .tool-cta { background: #1976d2; }
+  .tool-card.comparison .tool-cta:hover { background: #1565c0; }
+  .tool-card.risk .tool-cta { background: #7b1fa2; }
+  .tool-card.risk .tool-cta:hover { background: #6a1b9a; }
+
+  .section-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .section-container.wide {
+    max-width: 1000px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .section-header h2 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+  }
+
+  .section-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+  }
+
+  .quiz-preview {
+    padding: 80px 48px;
+    background: var(--bg-cream);
+  }
+
+  .quiz-question-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    margin-bottom: 24px;
+  }
+
+  .quiz-progress {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .quiz-progress-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--border-light);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .quiz-progress-fill {
+    width: 30%;
+    height: 100%;
+    background: var(--accent-coral);
+    border-radius: 4px;
+  }
+
+  .quiz-progress-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  .quiz-question-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-coral);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .quiz-question-text {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin-bottom: 28px;
+    line-height: 1.4;
+  }
+
+  .quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .quiz-option {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 24px;
+    background: var(--bg-warm);
+    border: 2px solid var(--border-light);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .quiz-option:hover {
+    border-color: var(--accent-coral);
+    background: #fef0ee;
+  }
+
+  .quiz-option-circle {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border-light);
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+
+  .quiz-option:hover .quiz-option-circle {
+    border-color: var(--accent-coral);
+  }
+
+  .quiz-option-text {
+    font-size: 16px;
+  }
+
+  .preview-note {
+    text-align: center;
+    padding: 20px;
+    background: var(--accent-amber-light);
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-amber);
+  }
+
+  .preview-note p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .preview-note strong {
+    color: var(--accent-amber);
+  }
+
+  .checklist-preview {
+    padding: 80px 48px;
+    background: white;
+  }
+
+  .checklist-card {
+    background: var(--bg-warm);
+    border-radius: 20px;
+    padding: 40px;
+  }
+
+  .checklist-category {
+    margin-bottom: 32px;
+  }
+
+  .checklist-category:last-child {
+    margin-bottom: 0;
+  }
+
+  .checklist-category-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .checklist-category-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--accent-green);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+  }
+
+  .checklist-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+  }
+
+  .checklist-item:hover {
+    border-color: var(--accent-green-light);
+  }
+
+  .checklist-item.checked {
+    background: var(--accent-green-light);
+    border-color: var(--accent-green);
+  }
+
+  .checklist-checkbox {
+    width: 26px;
+    height: 26px;
+    border: 2px solid var(--border-light);
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .checklist-item.checked .checklist-checkbox {
+    background: var(--accent-green);
+    border-color: var(--accent-green);
+    color: white;
+  }
+
+  .checklist-item-text {
+    font-size: 15px;
+  }
+
+  .checklist-score {
+    margin-top: 32px;
+    padding: 24px;
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid var(--accent-green);
+  }
+
+  .checklist-score-number {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent-green);
+  }
+
+  .checklist-score-label {
+    color: var(--text-secondary);
+    font-size: 14px;
+  }
+
+  .comparison-preview {
+    padding: 80px 48px;
+    background: var(--bg-cream);
+  }
+
+  .comparison-table {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+
+  .comparison-header-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    background: var(--brand-navy);
+    color: white;
+  }
+
+  .comparison-header-cell {
+    padding: 24px 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  .comparison-header-cell:first-child {
+    text-align: left;
+  }
+
+  .comparison-header-cell.highlight {
+    background: var(--accent-coral);
+  }
+
+  .comparison-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .comparison-row:last-child {
+    border-bottom: none;
+  }
+
+  .comparison-cell {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  .comparison-cell:first-child {
+    justify-content: flex-start;
+    font-weight: 500;
+  }
+
+  .comparison-cell.highlight {
+    background: #fef0ee;
+  }
+
+  .comparison-check {
+    width: 28px;
+    height: 28px;
+    background: var(--accent-green-light);
+    color: var(--accent-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+
+  .comparison-x {
+    width: 28px;
+    height: 28px;
+    background: var(--accent-coral-light);
+    color: var(--accent-coral);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+
+  .comparison-maybe {
+    width: 28px;
+    height: 28px;
+    background: var(--accent-amber-light);
+    color: var(--accent-amber);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .risk-preview {
+    padding: 80px 48px;
+    background: white;
+  }
+
+  .risk-card {
+    background: linear-gradient(135deg, var(--accent-purple-light) 0%, #ede7f6 100%);
+    border-radius: 20px;
+    padding: 40px;
+    border: 2px solid rgba(123, 31, 162, 0.2);
+  }
+
+  .risk-factors {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .risk-factor {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .risk-factor-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .risk-factor-icon {
+    font-size: 24px;
+  }
+
+  .risk-factor-text {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .risk-factor-toggle {
+    display: flex;
+    gap: 8px;
+  }
+
+  .risk-toggle-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    background: var(--border-light);
+    color: var(--text-secondary);
+  }
+
+  .risk-toggle-btn.yes.active {
+    background: var(--accent-coral);
+    color: white;
+  }
+
+  .risk-toggle-btn.no.active {
+    background: var(--accent-green);
+    color: white;
+  }
+
+  .risk-result {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+  }
+
+  .risk-meter {
+    height: 16px;
+    background: linear-gradient(90deg, var(--accent-green) 0%, var(--accent-amber) 50%, var(--accent-coral) 100%);
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .risk-meter-indicator {
+    position: absolute;
+    top: -8px;
+    left: 65%;
+    width: 32px;
+    height: 32px;
+    background: white;
+    border: 4px solid var(--accent-coral);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  .risk-level {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-coral);
+    margin-bottom: 8px;
+  }
+
+  .risk-description {
+    color: var(--text-secondary);
+    font-size: 14px;
+  }
+
+  .risk-description a {
+    color: var(--accent-purple);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .email-cta {
+    padding: 80px 48px;
+    background: linear-gradient(135deg, var(--brand-navy) 0%, #152a45 100%);
+    text-align: center;
+  }
+
+  .email-cta h3 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 16px;
+  }
+
+  .email-cta p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+  }
+
+  .email-form {
+    display: flex;
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .email-input {
+    flex: 1;
+    padding: 18px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: inherit;
+  }
+
+  .email-input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .email-submit {
+    background: var(--accent-coral);
+    color: white;
+    padding: 18px 32px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+
+  .email-submit:hover {
+    background: #d94a3a;
+  }
+
+  .email-note {
+    margin-top: 16px;
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+  }
+
+  @media (max-width: 900px) {
+    .tools-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .comparison-header-row,
+    .comparison-row {
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero,
+    .tools-section,
+    .quiz-preview,
+    .checklist-preview,
+    .comparison-preview,
+    .risk-preview,
+    .email-cta {
+      padding: 48px 24px;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .quiz-question-card,
+    .checklist-card,
+    .risk-card {
+      padding: 28px;
+    }
+
+    .comparison-header-row,
+    .comparison-row {
+      grid-template-columns: 1fr;
+    }
+
+    .comparison-header-cell,
+    .comparison-cell {
+      padding: 16px;
+    }
+
+    .comparison-header-cell:first-child,
+    .comparison-cell:first-child {
+      background: var(--bg-cream);
+      font-weight: 600;
+    }
+
+    .email-form {
+      flex-direction: column;
+    }
+
+    .risk-factor {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

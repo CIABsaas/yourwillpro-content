@@ -1,0 +1,1180 @@
+---
+/**
+ * Guardian Checklist - Interactive Astro Page
+ * Converted from guardian-checklist.md
+ */
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choosing a Guardian Checklist | YourWillPro</title>
+  <meta name="description" content="If you have children under 18, choosing a guardian is one of the most important decisions you'll make. This checklist helps you think through your choice.">
+  <link rel="icon" type="image/png" href="/ywp-logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<Header />
+
+<main class="container">
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb" style="padding: 1rem 2rem; font-size: 0.85rem; color: #7a7a7a; background: white; border-bottom: 1px solid #e2e2e2;">
+    <a href="/" style="color: #7a7a7a; text-decoration: none;">Home</a>
+    <span style="margin: 0 0.5rem;">›</span>
+    <a href="/planning-tools/" style="color: #7a7a7a; text-decoration: none;">Planning Tools</a>
+    <span style="margin: 0 0.5rem;">›</span>
+    <a href="/planning-tools/checklists/" style="color: #7a7a7a; text-decoration: none;">Checklists</a>
+    <span style="margin: 0 0.5rem;">›</span>
+    <span>Choosing a Guardian</span>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">👨‍👩‍👧‍👦 Interactive Checklist</div>
+      <h1>Choosing a Guardian Checklist</h1>
+      <p><strong>If you have children under 18, choosing a guardian is one of the most important decisions you'll make.</strong> This is the person who would raise your children if both parents died. Use this checklist to think through your choice.</p>
+    </div>
+  </section>
+
+  <div class="content-wrapper">
+
+    <aside class="sidebar">
+      <div class="progress-card">
+        <div class="progress-label">Your Progress</div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="progress-text">
+          <span id="checked-count">0</span> of <span id="total-count">0</span> items checked
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="#before-start" class="nav-link">Before You Start <span class="item-count">3</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#essential-qualities" class="nav-link">Essential Qualities <span class="item-count">7</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#practical" class="nav-link">Practical Considerations <span class="item-count">7</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#values" class="nav-link">Values and Lifestyle <span class="item-count">6</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#relationship" class="nav-link">Relationship Factors <span class="item-count">5</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#options" class="nav-link">Your Guardian Options <span class="item-count">5</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#co-guardians" class="nav-link">Co-Guardians <span class="item-count">4</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#special-needs" class="nav-link">Children with Special Needs <span class="item-count">5</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#discuss" class="nav-link">Questions to Discuss <span class="item-count">6</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#backup" class="nav-link">Backup Planning <span class="item-count">3</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#document" class="nav-link">Things to Document <span class="item-count">8</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#difficult" class="nav-link">Difficult Situations <span class="item-count">4</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#red-flags" class="nav-link">Red Flags <span class="item-count">7</span></a>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="checklist-content">
+
+      <section id="before-start" class="checklist-section">
+        <h2>Before You Start</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="1">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Does the other parent agree with your choice? (disagreement creates problems)</span>
+          </div>
+          <div class="checklist-item" data-id="2">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Are you and the other parent making matching provisions?</span>
+          </div>
+          <div class="checklist-item" data-id="3">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Have you considered that guardianship only applies if BOTH parents die?</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="essential-qualities" class="checklist-section">
+        <h2>Essential Qualities</h2>
+        <p class="section-intro">Does your chosen guardian have:</p>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="4">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Genuine willingness to take on the role (have you asked them?)</span>
+          </div>
+          <div class="checklist-item" data-id="5">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Parenting values similar to yours</span>
+          </div>
+          <div class="checklist-item" data-id="6">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Emotional capacity to raise additional children</span>
+          </div>
+          <div class="checklist-item" data-id="7">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Stable home environment</span>
+          </div>
+          <div class="checklist-item" data-id="8">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Good relationship with your children already</span>
+          </div>
+          <div class="checklist-item" data-id="9">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Age and health to raise children for years to come</span>
+          </div>
+          <div class="checklist-item" data-id="10">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Patience and temperament suited to children</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="practical" class="checklist-section">
+        <h2>Practical Considerations</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="11">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Can they financially support additional children? (your estate may help, but not cover everything)</span>
+          </div>
+          <div class="checklist-item" data-id="12">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Do they have space in their home, or would they need to move?</span>
+          </div>
+          <div class="checklist-item" data-id="13">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Where do they live? Would your children need to change schools?</span>
+          </div>
+          <div class="checklist-item" data-id="14">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Would your children need to move away from friends and extended family?</span>
+          </div>
+          <div class="checklist-item" data-id="15">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Do they have their own children? How would yours fit in?</span>
+          </div>
+          <div class="checklist-item" data-id="16">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>What's their work situation? Do they have time for more children?</span>
+          </div>
+          <div class="checklist-item" data-id="17">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Are they in a stable relationship, or single? (both can work)</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="values" class="checklist-section">
+        <h2>Values and Lifestyle</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="18">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Do they share your views on education (public/private/religious)?</span>
+          </div>
+          <div class="checklist-item" data-id="19">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Do they share your religious or cultural values?</span>
+          </div>
+          <div class="checklist-item" data-id="20">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Do they share your views on discipline and parenting style?</span>
+          </div>
+          <div class="checklist-item" data-id="21">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Would they maintain relationships with both sides of your family?</span>
+          </div>
+          <div class="checklist-item" data-id="22">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Do they have similar views on screen time, diet, activities?</span>
+          </div>
+          <div class="checklist-item" data-id="23">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Would they support your children's existing interests and activities?</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="relationship" class="checklist-section">
+        <h2>Relationship Factors</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="24">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Do your children already know and like this person?</span>
+          </div>
+          <div class="checklist-item" data-id="25">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Would they maintain connection to your children's current community?</span>
+          </div>
+          <div class="checklist-item" data-id="26">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Would they keep your memory alive for your children?</span>
+          </div>
+          <div class="checklist-item" data-id="27">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Can they handle the emotional needs of grieving children?</span>
+          </div>
+          <div class="checklist-item" data-id="28">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Would they work with your family or shut them out?</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="options" class="checklist-section">
+        <h2>Your Guardian Options</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="29">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span><strong>Your parents</strong> — know your family, but consider age and energy levels</span>
+          </div>
+          <div class="checklist-item" data-id="30">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span><strong>Siblings</strong> — often know your children well, similar family values</span>
+          </div>
+          <div class="checklist-item" data-id="31">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span><strong>Close friends</strong> — may share your values, but less family connection</span>
+          </div>
+          <div class="checklist-item" data-id="32">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span><strong>Godparents</strong> — if chosen for this reason, but relationship may have changed</span>
+          </div>
+          <div class="checklist-item" data-id="33">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span><strong>Other relatives</strong> — aunts, uncles, cousins</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="co-guardians" class="checklist-section">
+        <h2>Co-Guardians</h2>
+        <p class="section-intro">If considering a couple:</p>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="34">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Are you appointing them as individuals or as a couple?</span>
+          </div>
+          <div class="checklist-item" data-id="35">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>What happens if they separate or divorce?</span>
+          </div>
+          <div class="checklist-item" data-id="36">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>What if one of them dies?</span>
+          </div>
+          <div class="checklist-item" data-id="37">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Do both partners genuinely want this responsibility?</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="special-needs" class="checklist-section">
+        <h2>Children with Special Needs</h2>
+        <p class="section-intro">Additional considerations:</p>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="38">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Does the guardian understand your child's specific needs?</span>
+          </div>
+          <div class="checklist-item" data-id="39">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Can they access appropriate services and support?</span>
+          </div>
+          <div class="checklist-item" data-id="40">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Do they have experience with your child's condition?</span>
+          </div>
+          <div class="checklist-item" data-id="41">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Is there a support network in their area?</span>
+          </div>
+          <div class="checklist-item" data-id="42">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Have you provided for additional financial support through your will or trust?</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="discuss" class="checklist-section">
+        <h2>Questions to Discuss With Your Chosen Guardian</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="43">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Are they genuinely willing? (this is a huge commitment — give them time to think)</span>
+          </div>
+          <div class="checklist-item" data-id="44">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Does their partner fully support the decision?</span>
+          </div>
+          <div class="checklist-item" data-id="45">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>What's their honest assessment of the challenges?</span>
+          </div>
+          <div class="checklist-item" data-id="46">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Would they keep your children together or might they need to separate siblings?</span>
+          </div>
+          <div class="checklist-item" data-id="47">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>How would they handle contact with the other side of the family?</span>
+          </div>
+          <div class="checklist-item" data-id="48">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>What would they tell your children about you?</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="backup" class="checklist-section">
+        <h2>Backup Planning</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="49">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Have you named an alternate guardian?</span>
+          </div>
+          <div class="checklist-item" data-id="50">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>What happens if your first choice can't act when needed?</span>
+          </div>
+          <div class="checklist-item" data-id="51">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Does your alternate also understand they're the backup?</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="document" class="checklist-section">
+        <h2>Things to Document</h2>
+        <p class="section-intro">Not legally binding, but helpful guidance for your guardian:</p>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="52">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Your children's routines and preferences</span>
+          </div>
+          <div class="checklist-item" data-id="53">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Medical information and doctors</span>
+          </div>
+          <div class="checklist-item" data-id="54">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>School and activity contacts</span>
+          </div>
+          <div class="checklist-item" data-id="55">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Important friendships to maintain</span>
+          </div>
+          <div class="checklist-item" data-id="56">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Family traditions you'd like continued</span>
+          </div>
+          <div class="checklist-item" data-id="57">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Your wishes for their education</span>
+          </div>
+          <div class="checklist-item" data-id="58">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>How you'd like your memory preserved</span>
+          </div>
+          <div class="checklist-item" data-id="59">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Any specific concerns or guidance</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="difficult" class="checklist-section">
+        <h2>Difficult Situations to Consider</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="60">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>What if a grandparent wants custody but isn't your choice?</span>
+          </div>
+          <div class="checklist-item" data-id="61">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>What if the other parent's family disagrees with your choice?</span>
+          </div>
+          <div class="checklist-item" data-id="62">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>What if your chosen guardian's circumstances change before they're needed?</span>
+          </div>
+          <div class="checklist-item" data-id="63">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>What if your children (especially older ones) want to live with someone else?</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="red-flags" class="checklist-section">
+        <h2>Red Flags — Reconsider If:</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="64">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>They're hesitant or reluctant when asked</span>
+          </div>
+          <div class="checklist-item" data-id="65">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Their partner isn't fully supportive</span>
+          </div>
+          <div class="checklist-item" data-id="66">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>They have significant health problems</span>
+          </div>
+          <div class="checklist-item" data-id="67">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>They're already overwhelmed with their own responsibilities</span>
+          </div>
+          <div class="checklist-item" data-id="68">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Your children don't have a relationship with them</span>
+          </div>
+          <div class="checklist-item" data-id="69">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>They live somewhere your children would be isolated from everyone they know</span>
+          </div>
+          <div class="checklist-item" data-id="70">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>They have very different values about things important to you</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <h2>What's Next?</h2>
+        <p>Once you've chosen a guardian and confirmed they're willing, you can name them in your will.</p>
+        <p style="margin-bottom: 24px;"><strong>Create your will at <a href="https://yourwillpro.com.au" style="color: #1a2e44; text-decoration: underline;">YourWillPro.com.au</a></strong></p>
+        <div class="email-cta">
+          <p><strong>Want this as a PDF?</strong></p>
+          <p>Email us at <a href="mailto:hello@yourwillpro.com.au">hello@yourwillpro.com.au</a> and we'll send you a printable version.</p>
+        </div>
+        <p class="disclaimer">This checklist is for guidance only. Guardianship appointments in wills express your wishes but may not be legally binding in all circumstances. Courts ultimately decide based on the child's best interests.</p>
+      </section>
+
+    </div>
+
+  </div>
+
+</main>
+
+<Footer />
+
+<style>
+  :root {
+    --navy: #1a2e44;
+    --gold: #c9a227;
+    --sage: #6b7f6e;
+    --cream: #f9f6f1;
+    --border-light: #e5e2dd;
+    --text-primary: #2c3338;
+    --text-secondary: #4b5563;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #2a4560 100%);
+    padding: 80px 64px;
+    color: white;
+  }
+
+  .hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.95;
+  }
+
+  /* Content Wrapper with Sidebar */
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 60px;
+    padding: 60px 64px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+  }
+
+  .progress-card {
+    background: var(--cream);
+    border: 2px solid var(--border-light);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+
+  .progress-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .progress-bar {
+    background: white;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+
+  .progress-fill {
+    background: linear-gradient(90deg, var(--gold) 0%, #e0b830 100%);
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+
+  .progress-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-align: center;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .nav-section {
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .nav-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover {
+    color: var(--gold);
+  }
+
+  .item-count {
+    background: var(--cream);
+    color: var(--text-secondary);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /* Checklist Content */
+  .checklist-content {
+    max-width: 800px;
+  }
+
+  .checklist-section {
+    margin-bottom: 48px;
+  }
+
+  .checklist-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .section-intro {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .checklist-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: white;
+    border: 2px solid var(--border-light);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .checklist-item:hover {
+    border-color: var(--gold);
+    background: var(--cream);
+  }
+
+  .checklist-item.checked {
+    background: #f0f9f0;
+    border-color: #6b7f6e;
+  }
+
+  .checklist-item.checked span {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+  }
+
+  .checkbox {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border-light);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    transition: all 0.2s ease;
+  }
+
+  .checklist-item:hover .checkbox {
+    border-color: var(--gold);
+  }
+
+  .checklist-item.checked .checkbox {
+    background: var(--sage);
+    border-color: var(--sage);
+  }
+
+  .checkmark {
+    width: 16px;
+    height: 16px;
+    stroke: white;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .checklist-item.checked .checkmark {
+    opacity: 1;
+  }
+
+  .checklist-item span {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-primary);
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: var(--cream);
+    border: 2px solid var(--border-light);
+    border-radius: 12px;
+    padding: 32px;
+    margin-top: 48px;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 28px;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+
+  .cta-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+
+  .email-cta {
+    background: white;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 24px 0;
+  }
+
+  .email-cta p {
+    margin: 0;
+  }
+
+  .email-cta a {
+    color: var(--navy);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .disclaimer {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-top: 20px;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .content-wrapper {
+      grid-template-columns: 1fr;
+      padding: 40px 32px;
+      gap: 40px;
+    }
+
+    .sidebar {
+      position: static;
+    }
+
+    .hero {
+      padding: 60px 32px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero {
+      padding: 40px 20px;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+    }
+
+    .hero p {
+      font-size: 16px;
+    }
+
+    .content-wrapper {
+      padding: 32px 20px;
+    }
+
+    .checklist-section h2 {
+      font-size: 24px;
+    }
+
+    .checklist-item {
+      padding: 12px;
+    }
+
+    .checklist-item span {
+      font-size: 15px;
+    }
+  }
+
+  /* === PRINT BLOCKING === */
+  @media print {
+    body * {
+      display: none !important;
+    }
+
+    body::before {
+      content: "This checklist is not available for printing. Visit YourWillPro.com.au to download the PDF version.";
+      display: block !important;
+      font-family: Inter, -apple-system, sans-serif;
+      font-size: 18px;
+      color: #1a2e44;
+      text-align: center;
+      padding: 100px 40px;
+      line-height: 1.6;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const checklistItems = document.querySelectorAll('.checklist-item');
+    const progressFill = document.getElementById('progress-fill');
+    const checkedCount = document.getElementById('checked-count');
+    const totalCount = document.getElementById('total-count');
+
+    totalCount.textContent = checklistItems.length;
+
+    // Load saved state from localStorage
+    const savedState = JSON.parse(localStorage.getItem('guardian-checklist') || '{}');
+
+    checklistItems.forEach(item => {
+      const id = item.dataset.id;
+      if (savedState[id]) {
+        item.classList.add('checked');
+      }
+
+      item.addEventListener('click', function() {
+        this.classList.toggle('checked');
+        updateProgress();
+        saveState();
+      });
+    });
+
+    function updateProgress() {
+      const checked = document.querySelectorAll('.checklist-item.checked').length;
+      const total = checklistItems.length;
+      const percent = (checked / total) * 100;
+      progressFill.style.width = percent + '%';
+      checkedCount.textContent = checked;
+    }
+
+    function saveState() {
+      const state = {};
+      checklistItems.forEach(item => {
+        state[item.dataset.id] = item.classList.contains('checked');
+      });
+      localStorage.setItem('guardian-checklist', JSON.stringify(state));
+    }
+
+    updateProgress();
+  });
+</script>
+
+</body>
+</html>

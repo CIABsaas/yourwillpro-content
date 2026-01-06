@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+---
+
+<BaseLayout title="Disclaimer">
+  <Sidebar slot="sidebar" />
+
+  <article class="disclaimer">
+    <h1>Disclaimer</h1>
+
+    <h2>General Information Only</h2>
+    <p>
+      The information on this website is provided to help you understand wills, estates, and related topics in a general way. It is intended for education and guidance, not as personalised advice.
+    </p>
+
+    <h2>Not Legal Advice</h2>
+    <p>
+      This is an educational resource. The content on this site does not replace advice from a qualified lawyer or other professional who understands your individual circumstances.
+<p>
+Laws relating to wills, estates, and succession can differ between states and territories and may change over time. If you need advice specific to your situation, it’s important to speak with a qualified professional.<p>
+    </p>
+
+    <h2>Accuracy and responsibility</h2>
+    <p>
+      We take care to keep the information on this site clear, accurate, and up to date. However, we can’t guarantee that everything will always apply to every situation.
+YWP does not accept responsibility for any loss or damage that may result from relying on the information on this website.
+    </p>
+
+    <h2>External Links</h2>
+    <p>
+      This website may include links to other websites for additional information. We don’t control those sites and aren’t responsible for their content or privacy practices.
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .disclaimer {
+    padding-top: 2rem;
+  }
+
+  .disclaimer h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #1f2937;
+  }
+
+  .disclaimer h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: #1f2937;
+  }
+
+  .disclaimer p {
+    color: #44403c;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+  }
+</style>

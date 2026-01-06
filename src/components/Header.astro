@@ -1,0 +1,86 @@
+---
+/**
+ * Header.astro
+ * Shared navigation component - single source of truth
+ * ALL values are explicit - no CSS variables
+ */
+---
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <img src="/images/ywp-logo.png" alt="YourWillPro" class="logo-img">
+    </a>
+    <nav class="main-nav">
+      <a href="/user-stories" class="nav-link">User Stories</a>
+      <a href="/dictionary" class="nav-link">Dictionary</a>
+      <a href="/guides" class="nav-link">Guides</a>
+      <a href="/common-questions" class="nav-link">Common Questions</a>
+      <a href="/planning-tools" class="nav-link">Planning Tools</a>
+      <a href="/feedback" class="nav-link">Feedback</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    background: white;
+    border-bottom: 1px solid #e2e2e2;
+    padding: 18px 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .logo-img {
+    height: 56px;
+    width: auto;
+  }
+
+  .main-nav {
+    display: flex;
+    gap: 36px;
+  }
+
+  .nav-link {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    text-decoration: none;
+    color: #4a4a4a;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+
+  .nav-link:hover {
+    color: #1a2e44;
+    border-bottom-color: #c9a227;
+  }
+
+  @media (max-width: 900px) {
+    .header {
+      padding: 16px 24px;
+    }
+
+    .main-nav {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,221 @@
+---
+/**
+ * Planning Tools Hub Page
+ * Main entry point for all planning tools
+ */
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planning Tools | YourWillPro</title>
+  <meta name="description" content="Interactive tools, checklists, and resources to help you plan your will and estate. Free guidance for Australian families.">
+  <link rel="icon" type="image/png" href="/ywp-logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #2c3338; background: #ffffff;">
+
+<Header />
+
+<!-- Breadcrumb Navigation -->
+<nav class="breadcrumb" style="padding: 1rem 2rem; font-size: 0.85rem; color: #7a7a7a; background: white; border-bottom: 1px solid #e2e2e2;">
+  <a href="/" style="color: #7a7a7a; text-decoration: none;">Home</a>
+  <span style="margin: 0 0.5rem;">›</span>
+  <span>Planning Tools</span>
+</nav>
+
+<main>
+  <!-- Hero Section -->
+  <section style="background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%); padding: 80px 64px; color: white;">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+      <div style="display: inline-block; background: rgba(255, 255, 255, 0.15); padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: 500; margin-bottom: 20px;">
+        🛠️ Free Resources
+      </div>
+      <h1 style="font-size: 48px; font-weight: 700; margin: 0 0 20px 0; line-height: 1.2;">
+        Planning Tools
+      </h1>
+      <p style="font-size: 20px; line-height: 1.6; opacity: 0.95; max-width: 700px; margin: 0 auto;">
+        Interactive checklists, comparisons, and tools to help you make informed decisions about your will and estate planning.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tools Grid -->
+  <section style="max-width: 1200px; margin: 0 auto; padding: 80px 64px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px;">
+
+      <!-- Card 1: Checklists -->
+      <a href="/planning-tools/checklists/" style="display: block; background: #f9f6f1; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; text-decoration: none; transition: all 0.2s ease; cursor: pointer;">
+        <div style="font-size: 48px; margin-bottom: 16px;">📋</div>
+        <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 12px 0;">
+          Interactive Checklists
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0 0 16px 0;">
+          6 interactive checklists covering probate, choosing executors and guardians, asset inventory, and more.
+        </p>
+        <div style="display: inline-flex; align-items: center; gap: 8px; color: #c9a227; font-weight: 600; font-size: 14px;">
+          <span>Explore Checklists</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Card 2: Top 10 Lists -->
+      <a href="/planning-tools/top-10/" style="display: block; background: #f9f6f1; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; text-decoration: none; transition: all 0.2s ease; cursor: pointer;">
+        <div style="font-size: 48px; margin-bottom: 16px;">📊</div>
+        <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 12px 0;">
+          Top 10 Lists
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0 0 16px 0;">
+          Quick reference guides covering will mistakes, reasons people delay, family disputes, and more.
+        </p>
+        <div style="display: inline-flex; align-items: center; gap: 8px; color: #c9a227; font-weight: 600; font-size: 14px;">
+          <span>Explore Lists</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Card 3: Power of Attorney -->
+      <a href="/planning-tools/power-of-attorney/" style="display: block; background: #f9f6f1; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; text-decoration: none; transition: all 0.2s ease; cursor: pointer;">
+        <div style="font-size: 48px; margin-bottom: 16px;">✍️</div>
+        <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 12px 0;">
+          Power of Attorney Guide
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0 0 16px 0;">
+          Complete guide to Power of Attorney in Australia. Understand types, state requirements, and how to choose your attorney.
+        </p>
+        <div style="display: inline-flex; align-items: center; gap: 8px; color: #c9a227; font-weight: 600; font-size: 14px;">
+          <span>Read Guide</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Card 4: Quiz (Coming Soon) -->
+      <div style="background: #f9f6f1; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; opacity: 0.6; position: relative;">
+        <div style="position: absolute; top: 16px; right: 16px; background: #c9a227; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">
+          COMING SOON
+        </div>
+        <div style="font-size: 48px; margin-bottom: 16px;">❓</div>
+        <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 12px 0;">
+          Do You Need a Will Quiz
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0;">
+          Answer a few questions to understand your situation and whether you need a will right now.
+        </p>
+      </div>
+
+      <!-- Card 5: Comparisons (Coming Soon) -->
+      <div style="background: #f9f6f1; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; opacity: 0.6; position: relative;">
+        <div style="position: absolute; top: 16px; right: 16px; background: #c9a227; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">
+          COMING SOON
+        </div>
+        <div style="font-size: 48px; margin-bottom: 16px;">⚖️</div>
+        <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 12px 0;">
+          Service Comparisons
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0;">
+          Side-by-side comparisons of DIY kits, online services, and solicitors to help you choose.
+        </p>
+      </div>
+
+      <!-- Card 6: Risk Rater (Coming Soon) -->
+      <div style="background: #f9f6f1; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; opacity: 0.6; position: relative;">
+        <div style="position: absolute; top: 16px; right: 16px; background: #c9a227; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">
+          COMING SOON
+        </div>
+        <div style="font-size: 48px; margin-bottom: 16px;">🎯</div>
+        <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 12px 0;">
+          Estate Planning Risk Rater
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0;">
+          Assess your situation's complexity and get personalized recommendations for next steps.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section style="background: #f9f6f1; border-top: 2px solid #e5e2dd; padding: 60px 64px;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <h2 style="font-size: 32px; font-weight: 700; color: #1a2e44; margin: 0 0 16px 0;">
+        Ready to Create Your Will?
+      </h2>
+      <p style="font-size: 18px; line-height: 1.6; color: #4b5563; margin: 0 0 32px 0;">
+        Use our planning tools to prepare, then create your legally valid will online.
+      </p>
+      <a href="https://yourwillpro.com.au" style="display: inline-block; background: #c9a227; color: white; padding: 16px 32px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; transition: background 0.2s;">
+        Start Your Will
+      </a>
+    </div>
+  </section>
+</main>
+
+<Footer />
+
+<style>
+  /* Breadcrumb hover */
+  .breadcrumb a:hover {
+    color: #c9a227;
+  }
+
+  /* Hover effects for interactive cards */
+  a[href="/planning-tools/checklists/"]:hover,
+  a[href="/planning-tools/top-10/"]:hover,
+  a[href="/planning-tools/power-of-attorney/"]:hover {
+    border-color: #c9a227 !important;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  /* CTA button hover */
+  a[href="https://yourwillpro.com.au"]:hover {
+    background: #b08920 !important;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 900px) {
+    main section:first-child {
+      padding: 60px 32px !important;
+    }
+    main section:first-child h1 {
+      font-size: 36px !important;
+    }
+    main section:nth-child(2) {
+      padding: 60px 32px !important;
+    }
+    main section:last-child {
+      padding: 48px 32px !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    main section:first-child {
+      padding: 40px 20px !important;
+    }
+    main section:first-child h1 {
+      font-size: 28px !important;
+    }
+    main section:first-child p {
+      font-size: 16px !important;
+    }
+    main section:nth-child(2) {
+      padding: 40px 20px !important;
+    }
+    main section:nth-child(2) > div {
+      grid-template-columns: 1fr !important;
+    }
+    main section:last-child {
+      padding: 40px 20px !important;
+    }
+    main section:last-child h2 {
+      font-size: 24px !important;
+    }
+  }
+</style>
+
+</body>
+</html>

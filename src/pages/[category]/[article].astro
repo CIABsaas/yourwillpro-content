@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StoryLayout from '../../layouts/StoryLayout.astro';
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import DictionaryTermLayout from '../../layouts/DictionaryTermLayout.astro';
+import QuestionLayout from '../../layouts/QuestionLayout.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const categories = await getCollection('categories');
+  const articles = await getCollection('articles');
+
+  return articles.map((article) => {
+    const category = categories.find((c) => c.data.title === article.data.category);
+    return {
+      params: {
+        category: category?.data.slug || 'uncategorized',
+        article: article.data.slug
+      },
+      props: { article, category },
+    };
+  });
+}
+
+const { article, category } = Astro.props;
+const { Content, headings } = await render(article);
+
+// Determine which layout to use based on category
+const isStory = category?.data.slug === 'user-stories' || article.data.category === 'Stories';
+const isGuide = category?.data.slug === 'guides' || article.data.category === 'Guides';
+const isDictionary = category?.data.slug === 'dictionary' || article.data.category === 'Dictionary';
+const isQuestion = category?.data.slug === 'common-questions' || article.data.category === 'Common Questions';
+---
+
+{isStory ? (
+  <!-- STORY LAYOUT - New branded design -->
+  <StoryLayout
+    title={article.data.title}
+    summary={article.data.summary}
+    heroImage={article.data.heroImage}
+    readTime={article.data.readTime}
+    author={article.data.author}
+    reviewer={article.data.reviewer}
+    jurisdiction={article.data.jurisdiction}
+    issue={article.data.issue}
+    headings={headings}
+  >
+    <Content />
+  </StoryLayout>
+) : isGuide ? (
+  <!-- GUIDE LAYOUT - Educational design -->
+  <GuideLayout
+    title={article.data.title}
+    summary={article.data.summary}
+    heroImage={article.data.heroImage}
+    readTime={article.data.readTime}
+    difficulty={article.data.difficulty}
+    author={article.data.author}
+    reviewer={article.data.reviewer}
+    headings={headings}
+  >
+    <Content />
+  </GuideLayout>
+) : isDictionary ? (
+  <!-- DICTIONARY TERM LAYOUT - Option B Educational design -->
+  <DictionaryTermLayout
+    title={article.data.title}
+    pronunciation={article.data.pronunciation}
+    wordType={article.data.wordType}
+    summary={article.data.summary}
+    jurisdictions={article.data.jurisdictions}
+    relatedTerms={article.data.relatedTerms}
+    relatedStory={article.data.relatedStory}
+  >
+    <Content />
+  </DictionaryTermLayout>
+) : isQuestion ? (
+  <!-- QUESTION LAYOUT - Magazine + Sidebar design -->
+  <QuestionLayout
+    title={article.data.title}
+    summary={article.data.summary}
+    quickAnswer={article.data.quickAnswer}
+    category={article.data.group}
+    relatedQuestions={article.data.relatedQuestions}
+    relatedGuides={article.data.relatedGuides}
+    relatedChecklists={article.data.relatedChecklists}
+  >
+    <Content />
+  </QuestionLayout>
+) : (
+  <!-- DEFAULT LAYOUT - Fallback -->
+  <BaseLayout title={article.data.title}>
+    <Sidebar
+      slot="sidebar"
+      currentCategory={category?.data.slug}
+      currentArticle={article.data.slug}
+    />
+
+    <article class="article-content">
+      <header>
+        <a href={`/${category?.data.slug}`} class="back-link">← {category?.data.title}</a>
+        <h1>{article.data.title}</h1>
+        {article.data.summary && <p class="summary">{article.data.summary}</p>}
+      </header>
+
+      <div class="content">
+        <Content />
+      </div>
+    </article>
+  </BaseLayout>
+)}
+
+<style>
+  .article-content {
+    padding-top: 1rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+  }
+
+  .back-link:hover {
+    color: #2563eb;
+  }
+
+  .article-content h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    color: #111827;
+  }
+
+  .summary {
+    font-size: 1.125rem;
+    color: #6b7280;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .content {
+    color: #374151;
+  }
+
+  .content :global(h2) {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+    color: #111827;
+  }
+
+  .content :global(h3) {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.75rem;
+    color: #111827;
+  }
+
+  .content :global(p) {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .content :global(ul),
+  .content :global(ol) {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .content :global(li) {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+  }
+
+  .content :global(blockquote) {
+    border-left: 3px solid #e5e7eb;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: #6b7280;
+    font-style: italic;
+  }
+
+  .content :global(code) {
+    background: #f3f4f6;
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+  }
+
+  .content :global(pre) {
+    background: #1f2937;
+    color: #f9fafb;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .content :global(pre code) {
+    background: none;
+    padding: 0;
+  }
+</style>

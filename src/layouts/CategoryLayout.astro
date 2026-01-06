@@ -1,0 +1,883 @@
+---
+/**
+ * CategoryLayout.astro
+ * Branded category listing pages matching StoryLayout design
+ * For: FAQ, Guides, Stories, Dictionary index pages
+ */
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  categorySlug: string;
+  articles?: any[];
+  showAlphabetFilter?: boolean;
+}
+
+const { 
+  title, 
+  description, 
+  categorySlug,
+  articles = [],
+  showAlphabetFilter = false
+} = Astro.props;
+
+// Group articles by first letter for dictionary
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+const articlesByLetter = alphabet.reduce((acc, letter) => {
+  acc[letter] = articles.filter(a => 
+    a.data.title.toUpperCase().startsWith(letter)
+  );
+  return acc;
+}, {} as Record<string, any[]>);
+
+// Category icons
+const categoryIcons: Record<string, string> = {
+  'common-questions': '<path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="12" r="10"/><path d="M12 17h.01"/>',
+  'guides': '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
+  'user-stories': '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+  'dictionary': '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>'
+};
+
+const icon = categoryIcons[categorySlug] || categoryIcons['guides'];
+
+// Category colors
+const categoryColors: Record<string, { bg: string; accent: string }> = {
+  'common-questions': { bg: 'var(--accent-blue-light)', accent: 'var(--accent-blue)' },
+  'guides': { bg: 'var(--accent-amber-light)', accent: 'var(--accent-amber)' },
+  'user-stories': { bg: 'var(--accent-coral-light)', accent: 'var(--accent-coral)' },
+  'dictionary': { bg: 'var(--accent-green-light)', accent: 'var(--accent-green)' }
+};
+
+const colors = categoryColors[categorySlug] || categoryColors['guides'];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>{title} | YourWillPro</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+
+    <a href="javascript:history.back()" class="back-button">← Back</a>
+
+    <Header />
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" style="padding: 1rem 2rem; font-size: 0.85rem; color: #7a7a7a; background: white; border-bottom: 1px solid #e2e2e2;">
+      <a href="/" style="color: #7a7a7a; text-decoration: none;">Home</a>
+      <span style="margin: 0 0.5rem;">›</span>
+      <span>{title}</span>
+    </nav>
+
+    <!-- Hero Section -->
+    {categorySlug === 'user-stories' ? (
+      <section class="category-hero">
+        <h1 class="category-title">These families learned the hard way.<br /><span class="title-highlight">You don't have to.</span></h1>
+        <div class="title-accent"></div>
+        <p class="category-subtitle">Real experiences from people who have been through the process.</p>
+        <div class="stat-bar">
+          <div class="stat-item"><strong>$2.3M</strong> lost to disputes</div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><strong>47 years</strong> in courts combined</div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><strong>{articles.length}</strong> families share their stories</div>
+        </div>
+      </section>
+    ) : categorySlug === 'guides' ? (
+      <section class="category-hero category-hero--guides">
+        <h1 class="category-title">Complex processes made simple.</h1>
+        <div class="title-accent title-accent--green"></div>
+        <p class="category-subtitle">Step-by-step walkthroughs to guide you through every decision.</p>
+        <div class="value-props">
+          <span class="value-prop">✓ Plain English</span>
+          <span class="value-prop">✓ Actionable steps</span>
+          <span class="value-prop">✓ Expert-reviewed</span>
+        </div>
+        <p class="library-note">Our guide library is growing — more coming soon.</p>
+      </section>
+    ) : categorySlug === 'dictionary' ? (
+      <section class="category-hero category-hero--dictionary">
+        <h1 class="category-title">Legal jargon, translated.</h1>
+        <div class="title-accent title-accent--navy"></div>
+        <p class="category-subtitle">Finally understand what lawyers, courts, and documents are actually saying.</p>
+        <p class="term-count"><strong>{articles.length}</strong> terms explained in plain English</p>
+
+        <div class="dictionary-search">
+          <div class="search-input-wrapper">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M21 21l-4.35-4.35"/>
+            </svg>
+            <input
+              type="text"
+              id="dictionary-search-input"
+              placeholder="Search for a term..."
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        {/* Alphabet navigation integrated into hero */}
+        <nav class="alpha-nav">
+          {alphabet.map(letter => (
+            <a
+              href={`#${letter}`}
+              class={`alpha-link ${articlesByLetter[letter].length > 0 ? 'has-content' : ''}`}
+            >
+              {letter}
+            </a>
+          ))}
+        </nav>
+      </section>
+    ) : (
+      <section class="hero" style={`--category-bg: ${colors.bg}; --category-accent: ${colors.accent}`}>
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+          <div class="category-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <Fragment set:html={icon} />
+            </svg>
+          </div>
+          <h1>{title}</h1>
+          <p class="hero-description">{description}</p>
+          <div class="hero-stats">
+            <span class="stat">
+              <strong>{articles.length}</strong> {articles.length === 1 ? 'article' : 'articles'}
+            </span>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-wrapper">
+
+        {/* Articles Grid */}
+        <div class="articles-grid">
+          {showAlphabetFilter ? (
+            // Dictionary view - grouped by letter
+            alphabet.map(letter => (
+              articlesByLetter[letter].length > 0 && (
+                <div class="letter-section" id={letter}>
+                  <h2 class="letter-heading">{letter}</h2>
+                  <div class="letter-articles">
+                    {articlesByLetter[letter].map((article: any) => (
+                      <a href={`/${categorySlug}/${article.data.slug}`} class="article-card">
+                        <h3>{article.data.title}</h3>
+                        <p>{article.data.summary}</p>
+                        <span class="read-more">Read definition →</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )
+            ))
+          ) : (
+            // Standard grid view
+            articles.map((article: any, index: number) => (
+              <a 
+                href={`/${categorySlug}/${article.data.slug}`} 
+                class="article-card"
+                style={`--delay: ${index * 0.05}s`}
+              >
+                {article.data.heroImage && (
+                  <div class="card-image">
+                    <img src={article.data.heroImage} alt="" />
+                  </div>
+                )}
+                <div class="card-content">
+                  <div class="card-meta">
+                    {article.data.readTime && <span class="read-time">{article.data.readTime}</span>}
+                    {article.data.issue && <span class="issue-tag">{article.data.issue}</span>}
+                  </div>
+                  <h3>{article.data.title}</h3>
+                  <p>{article.data.summary}</p>
+                  <span class="read-more">Read more →</span>
+                </div>
+              </a>
+            ))
+          )}
+        </div>
+        
+        {articles.length === 0 && (
+          <div class="empty-state">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <path d="M14 2v6h6"/>
+              <path d="M12 18v-6"/>
+              <path d="M9 15h6"/>
+            </svg>
+            <h3>Coming Soon</h3>
+            <p>We're working on content for this section.</p>
+          </div>
+        )}
+        
+      </div>
+    </main>
+
+    <Footer />
+
+    <!-- Dictionary Search Script -->
+    <script>
+      const searchInput = document.getElementById('dictionary-search-input');
+
+      if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+          const query = e.target.value.toLowerCase().trim();
+          const letterSections = document.querySelectorAll('.letter-section');
+
+          letterSections.forEach(section => {
+            const cards = section.querySelectorAll('.article-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+              const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
+              const summary = card.querySelector('p')?.textContent.toLowerCase() || '';
+
+              if (query === '' || title.includes(query) || summary.includes(query)) {
+                card.style.display = '';
+                visibleCount++;
+              } else {
+                card.style.display = 'none';
+              }
+            });
+
+            // Hide entire letter section if no matches
+            section.style.display = visibleCount > 0 ? '' : 'none';
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
+
+<style>
+  :root {
+    --font-display: 'Source Serif 4', Georgia, serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
+    --navy: #1a2e44;
+    --navy-light: #e9eef3;
+    --gold: #c9a227;
+    --gold-light: #faf6e9;
+    --sage: #4a7c59;
+    --bg: #ffffff;
+    --bg-light: #f7f8f9;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-muted: #7a7a7a;
+    --border: #e2e2e2;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2.5rem;
+    --space-xl: 4rem;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-body);
+    background-color: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-size: 17px;
+  }
+
+  /* === BREADCRUMB === */
+  .breadcrumb a:hover {
+    color: #c9a227;
+  }
+
+  /* === BACK BUTTON === */
+  .back-button {
+    position: fixed;
+    top: 100px;
+    left: 24px;
+    background: white;
+    color: var(--navy);
+    padding: 10px 16px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    z-index: 99;
+    transition: all 0.2s;
+  }
+
+  .back-button:hover {
+    background: var(--navy);
+    color: white;
+  }
+
+  /* === STORIES HERO === */
+  .category-hero {
+    position: relative;
+    background: var(--accent-blue-light);
+    padding: var(--space-xl) var(--space-lg) var(--space-lg);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .category-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.4;
+    background:
+      radial-gradient(circle at 20% 50%, var(--accent-blue) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, var(--accent-coral) 0%, transparent 50%);
+    filter: blur(60px);
+    z-index: 0;
+  }
+
+  .category-hero > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .category-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.3;
+    margin-bottom: var(--space-sm);
+  }
+
+  .title-highlight {
+    color: var(--accent-coral);
+  }
+
+  .title-accent {
+    width: 60px;
+    height: 3px;
+    background: var(--accent-coral);
+    margin: 0 auto var(--space-md);
+  }
+
+  .category-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  .stat-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+  }
+
+  .stat-item strong {
+    color: var(--brand-navy);
+    font-weight: 700;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 20px;
+    background: var(--border-light);
+  }
+
+  /* Guides hero variant */
+  .category-hero--guides {
+    position: relative;
+    background: var(--accent-blue-light);
+    overflow: hidden;
+  }
+
+  .category-hero--guides::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.4;
+    background:
+      radial-gradient(circle at 20% 50%, var(--accent-blue) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, var(--accent-coral) 0%, transparent 50%);
+    filter: blur(60px);
+    z-index: 0;
+  }
+
+  .category-hero--guides > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .title-accent--green {
+    background: var(--accent-green);
+  }
+
+  .value-props {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-sm);
+  }
+
+  .value-prop {
+    font-size: 0.95rem;
+    color: var(--accent-green);
+    font-weight: 500;
+  }
+
+  .library-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  /* Dictionary hero variant */
+  .category-hero--dictionary {
+    background: var(--navy);
+    color: white;
+    padding-bottom: var(--space-md);
+  }
+
+  .category-hero--dictionary .category-title {
+    color: white;
+  }
+
+  .category-hero--dictionary .category-subtitle {
+    color: rgba(255,255,255,0.8);
+  }
+
+  .category-hero--dictionary .term-count {
+    color: var(--gold);
+  }
+
+  .title-accent--navy {
+    background: var(--gold);
+  }
+
+  .term-count {
+    font-size: 0.95rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .term-count strong {
+    font-size: 1.1rem;
+  }
+
+  .dictionary-search {
+    margin-top: var(--space-md);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    color: var(--text-muted);
+    pointer-events: none;
+  }
+
+  #dictionary-search-input {
+    width: 100%;
+    padding: 16px 20px 16px 52px;
+    font-size: 16px;
+    font-family: var(--font-body);
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    outline: none;
+    transition: all 0.2s;
+  }
+
+  #dictionary-search-input::placeholder {
+    color: rgba(255,255,255,0.5);
+  }
+
+  #dictionary-search-input:focus {
+    border-color: var(--gold);
+    background: rgba(255,255,255,0.15);
+  }
+
+  .alpha-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: var(--space-lg);
+    padding: var(--space-md);
+    background: rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg);
+  }
+
+  .alpha-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .alpha-link.has-content {
+    color: white;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .alpha-link.has-content:hover {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  .alpha-link.has-content {
+    color: var(--brand-navy);
+    background: var(--bg-cream);
+  }
+
+  .alpha-link.has-content:hover {
+    background: var(--brand-navy);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  /* === HERO === */
+  .hero {
+    background: var(--accent-blue-light);
+    padding: var(--space-lg) var(--space-lg);
+    max-height: 30vh;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.4;
+    background:
+      radial-gradient(circle at 20% 50%, var(--accent-blue) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, var(--accent-coral) 0%, transparent 50%);
+    filter: blur(60px);
+  }
+  
+  .hero-content {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .category-icon {
+    width: 48px;
+    height: 48px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-sm);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  .category-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--category-accent);
+  }
+  
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: var(--space-md);
+    color: var(--text-primary);
+  }
+  
+  .hero-description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto var(--space-md);
+    line-height: 1.6;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+  }
+
+  .stat {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  .stat strong {
+    color: var(--category-accent);
+    font-weight: 700;
+  }
+  
+  /* === MAIN CONTENT === */
+  .main-content {
+    padding: var(--space-xl) var(--space-lg);
+  }
+  
+  .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* === LETTER SECTIONS === */
+  .letter-section {
+    margin-bottom: var(--space-xl);
+  }
+  
+  .letter-heading {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--brand-navy);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 3px solid var(--border-light);
+  }
+  
+  .letter-articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-md);
+  }
+  
+  /* === ARTICLES GRID === */
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--space-lg);
+  }
+  
+  .article-card {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+    animation: fadeInUp 0.5s ease forwards;
+    animation-delay: var(--delay, 0s);
+    opacity: 0;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .article-card:hover {
+    border-color: var(--navy);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  
+  .card-image {
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .article-card:hover .card-image img {
+    transform: scale(1.05);
+  }
+  
+  .card-content {
+    padding: var(--space-md);
+  }
+  
+  .card-meta {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .read-time {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  
+  .issue-tag {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 8px;
+    background: var(--accent-coral-light);
+    color: var(--accent-coral);
+    border-radius: 4px;
+  }
+  
+  .article-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .article-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .read-more {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gold);
+  }
+
+  .article-card:hover .read-more {
+    color: var(--navy);
+  }
+  
+  /* === EMPTY STATE === */
+  .empty-state {
+    text-align: center;
+    padding: var(--space-2xl);
+    color: var(--text-muted);
+  }
+  
+  .empty-state svg {
+    width: 64px;
+    height: 64px;
+    margin-bottom: var(--space-md);
+    opacity: 0.3;
+  }
+  
+  .empty-state h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin-bottom: var(--space-xs);
+    color: var(--text-secondary);
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 1400px) {
+    .back-button {
+      top: auto;
+      bottom: 24px;
+      left: 24px;
+    }
+  }
+
+  @media (max-width: 900px) {
+  }
+
+  @media (max-width: 768px) {
+    .dictionary-search {
+      padding: 0 24px;
+    }
+
+    #dictionary-search-input {
+      padding: 14px 16px 14px 48px;
+      font-size: 15px;
+    }
+
+    .hero {
+      padding: var(--space-xl) var(--space-sm);
+    }
+
+    .articles-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .letter-articles {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .stat-divider {
+      display: none;
+    }
+
+    .stat-bar {
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .value-props {
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .alpha-nav {
+      gap: 4px;
+      padding: var(--space-sm);
+    }
+
+    .alpha-link {
+      width: 32px;
+      height: 32px;
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .header-inner {
+      justify-content: center;
+    }
+  }
+</style>

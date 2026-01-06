@@ -1,0 +1,600 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  summary?: string;
+  pronunciation?: string;
+  wordType?: string;
+  relatedTerms?: string[];
+  relatedStory?: string;
+}
+
+const {
+  title,
+  summary = '',
+  pronunciation = '',
+  wordType = 'noun',
+  relatedTerms = [],
+  relatedStory = ''
+} = Astro.props;
+
+// Get first letter for breadcrumb
+const firstLetter = title.charAt(0).toUpperCase();
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title} | Dictionary | YourWillPro</title>
+  <meta name="description" content={summary} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <Header />
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb" style="padding: 1rem 2rem; font-size: 0.85rem; color: #7a7a7a; background: white; border-bottom: 1px solid #e2e2e2;">
+    <a href="/" style="color: #7a7a7a; text-decoration: none;">Home</a>
+    <span style="margin: 0 0.5rem;">›</span>
+    <a href="/dictionary/" style="color: #7a7a7a; text-decoration: none;">Dictionary</a>
+    <span style="margin: 0 0.5rem;">›</span>
+    <span>{title}</span>
+  </nav>
+
+  <!-- HERO -->
+  <section class="term-hero">
+    <div class="term-hero-inner">
+      <div class="term-title-row">
+        <h1 class="term-title">{title}</h1>
+        {wordType && <span class="term-type">{wordType}</span>}
+      </div>
+      {pronunciation && <p class="term-pronunciation">{pronunciation}</p>}
+    </div>
+  </section>
+
+  <main class="term-content">
+
+    <!-- IN A NUTSHELL -->
+    {summary && (
+      <div class="nutshell">
+        <div class="nutshell-label">In a Nutshell</div>
+        <p>{summary}</p>
+      </div>
+    )}
+
+    <!-- MARKDOWN CONTENT (definitions, when, example, compare, did-you-know) -->
+    <article class="term-article">
+      <slot />
+    </article>
+
+    <!-- RELATED TERMS -->
+    {relatedTerms.length > 0 && (
+      <div class="related-section">
+        <h3 class="related-title">Related Terms</h3>
+        <div class="related-grid">
+          {relatedTerms.map((term: string) => (
+            <a href={`/dictionary/${term.toLowerCase().replace(/\s+/g, '-')}`} class="related-card">
+              <span class="related-card-title">{term}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- SEE IT IN ACTION -->
+    {relatedStory && (
+      <div class="action-section">
+        <div class="action-text">
+          <h4>See it in action</h4>
+          <p>Read how this affected a real family</p>
+        </div>
+        <a href={`/user-stories/${relatedStory}`} class="action-btn">Read Story →</a>
+      </div>
+    )}
+
+  </main>
+
+  <Footer />
+
+  <style is:global>
+    :root {
+      --font-display: 'Source Serif 4', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --navy: #1a2e44;
+      --navy-light: #e9eef3;
+      --gold: #c9a227;
+      --gold-light: #faf6e9;
+      --sage: #4a7c59;
+      --sage-light: #f2f7f4;
+      --grey-cool: #f0f2f4;
+      --grey-border: #c5c9cd;
+      --bg: #ffffff;
+      --bg-light: #f7f8f9;
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --text-muted: #7a7a7a;
+      --border: #e2e2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    /* === BREADCRUMB === */
+    .breadcrumb a:hover {
+      color: #c9a227;
+    }
+
+    /* === HERO === */
+    .term-hero {
+      background: var(--navy);
+      padding: 48px 64px;
+    }
+
+    .term-hero-inner {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .term-title-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .term-title {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: white;
+      margin: 0;
+    }
+
+    .term-type {
+      background: rgba(255,255,255,0.15);
+      color: var(--gold);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .term-pronunciation {
+      color: rgba(255,255,255,0.7);
+      font-size: 16px;
+      font-style: italic;
+      margin-top: 8px;
+    }
+
+    /* === MAIN CONTENT === */
+    .term-content {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 48px 64px;
+    }
+
+    /* === NUTSHELL === */
+    .nutshell {
+      background: var(--gold-light);
+      border-left: 4px solid var(--gold);
+      padding: 24px 32px;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin-bottom: 32px;
+    }
+
+    .nutshell-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .nutshell p {
+      font-size: 1.15rem;
+      color: var(--text-primary);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* === MARKDOWN CONTENT STYLES === */
+    .term-article { margin-bottom: 32px; }
+
+    /* Two Column: Legal + Plain English */
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .column-card {
+      padding: 28px;
+      border-radius: var(--radius-md);
+    }
+
+    .column-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
+    }
+
+    /* Legal - formal, cold */
+    .legal-column {
+      background: var(--grey-cool);
+      border-left: 4px solid var(--grey-border);
+    }
+
+    .legal-column .column-label {
+      font-family: var(--font-display);
+      color: #5a6068;
+    }
+
+    .legal-column p {
+      font-family: var(--font-display);
+      font-size: 15px;
+      color: #3a3f44;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    /* Plain English - warm, friendly */
+    .plain-column {
+      background: var(--sage-light);
+      border-left: 4px solid var(--sage);
+    }
+
+    .plain-column .column-label {
+      font-family: var(--font-body);
+      color: var(--sage);
+    }
+
+    .plain-column p {
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* When Box */
+    .when-box {
+      background: var(--bg-light);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      margin-bottom: 32px;
+    }
+
+    .when-box h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .when-box ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .when-box li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .when-box li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .when-box li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    /* Example Box */
+    .example-box {
+      background: var(--bg-light);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      margin-bottom: 32px;
+    }
+
+    .example-box .example-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .example-box p {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--text-primary);
+      line-height: 1.7;
+      margin: 0;
+      padding-left: 20px;
+      border-left: 3px solid var(--gold);
+    }
+
+    /* Compare Box */
+    .compare-box {
+      background: var(--bg-light);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      margin-bottom: 32px;
+    }
+
+    .compare-box h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .compare-item {
+      padding: 20px;
+      background: white;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    .compare-term {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .compare-item p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Did You Know */
+    .did-you-know {
+      background: var(--gold-light);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      margin-bottom: 32px;
+    }
+
+    .did-you-know h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .did-you-know p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Why This Matters */
+    .why-matters {
+      background: var(--navy-light);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      margin-bottom: 32px;
+    }
+
+    .why-matters h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .why-matters p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin: 0 0 12px 0;
+    }
+
+    .why-matters p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Common Mistakes */
+    .common-mistakes {
+      background: #fef6f5;
+      border-left: 4px solid #c44536;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 28px 32px;
+      margin-bottom: 32px;
+    }
+
+    .common-mistakes h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #c44536;
+      margin-bottom: 16px;
+    }
+
+    .common-mistakes ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .common-mistakes li {
+      padding: 10px 0;
+      border-bottom: 1px solid #f5dbd8;
+      font-size: 15px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .common-mistakes li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .common-mistakes li::before {
+      content: '⚠';
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    /* === RELATED TERMS === */
+    .related-section { margin-bottom: 32px; }
+
+    .related-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .related-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .related-card:hover {
+      border-color: var(--navy);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .related-card-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 15px;
+    }
+
+    /* === SEE IT IN ACTION === */
+    .action-section {
+      background: var(--navy);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+
+    .action-text h4 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: white;
+      margin: 0 0 4px 0;
+    }
+
+    .action-text p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      margin: 0;
+    }
+
+    .action-btn {
+      background: var(--gold);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.2s;
+    }
+
+    .action-btn:hover { background: #b8922a; }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 900px) {
+      .two-column,
+      .compare-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .term-hero { padding: 32px 24px; }
+      .term-title { font-size: 2rem; }
+      .term-content { padding: 32px 24px; }
+
+      .action-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .related-grid { grid-template-columns: 1fr; }
+
+      .back-button {
+        top: auto;
+        bottom: 24px;
+      }
+    }
+  </style>
+
+</body>
+</html>

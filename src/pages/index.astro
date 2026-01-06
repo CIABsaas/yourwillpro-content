@@ -1,16 +1,1479 @@
 ---
-
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YourWillPro - Estate Planning Made Clear</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2e44;
+      --navy-light: #e9eef3;
+      --gold: #c9a227;
+      --gold-light: #faf6e9;
+      --sage: #4a7c59;
+      --sage-light: #eaf3ec;
+      --red: #c44536;
+      --red-light: #fceae8;
+
+      --bg: #ffffff;
+      --bg-light: #f7f8f9;
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --text-muted: #7a7a7a;
+      --border: #e2e2e2;
+
+      --font-display: 'Source Serif 4', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    .hero {
+      padding: 40px 64px 100px;
+      background: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-tagline {
+      background: #1a2e44;
+      width: 100%;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+    }
+
+    .hero-tagline-line1 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: white;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-tagline-line1 .gold {
+      color: #c9a227;
+    }
+
+    .hero-tagline-line2 {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .hero-content h1 {
+      font-family: var(--font-display);
+      font-size: 3.6rem;
+      font-weight: 700;
+      line-height: 1.12;
+      margin-bottom: 24px;
+      color: var(--navy);
+    }
+
+    .hero-content h1 em {
+      color: var(--gold);
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .hero-lead {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+
+    .hero-lead strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--navy);
+      color: white;
+      padding: 18px 32px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #0f1d2d;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(26, 46, 68, 0.3);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      color: var(--navy);
+      padding: 18px 32px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      border: 2px solid var(--navy);
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: var(--navy);
+      color: white;
+    }
+
+    .share-section {
+      padding: 60px 64px;
+      background: var(--bg-light);
+      text-align: center;
+    }
+
+    .share-section-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .share-section h3 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .share-section p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+
+    .share-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .share-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 100px;
+      background: white;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      border: 2px solid var(--border);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .share-btn:hover {
+      border-color: var(--navy);
+      color: var(--navy);
+    }
+
+    .share-btn.share-facebook:hover {
+      background: #1877f2;
+      border-color: #1877f2;
+      color: white;
+    }
+
+    .share-btn.share-twitter:hover {
+      background: #000000;
+      border-color: #000000;
+      color: white;
+    }
+
+    .share-btn.share-linkedin:hover {
+      background: #0a66c2;
+      border-color: #0a66c2;
+      color: white;
+    }
+
+    .share-btn.share-email:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: white;
+    }
+
+    .share-btn.share-copy:hover {
+      background: var(--sage);
+      border-color: var(--sage);
+      color: white;
+    }
+
+    .share-btn.copied {
+      background: var(--sage);
+      border-color: var(--sage);
+      color: white;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-img-main {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: url('/images/stories/hero-1.png') center/cover;
+      border-radius: var(--radius-xl);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.15);
+    }
+
+    .hero-img-secondary {
+      position: absolute;
+      bottom: -30px;
+      left: -40px;
+      width: 180px;
+      height: 180px;
+      background: url('/images/stories/hero-2.png') center/cover;
+      border-radius: var(--radius-lg);
+      border: 5px solid white;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    }
+
+    .hero-stat-card {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      background: #c9a227;
+      color: white;
+      padding: 20px 28px;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 32px rgba(201,162,39,0.3);
+    }
+
+    .hero-stat-number {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+
+    .hero-stat-label {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .callout-strip {
+      background: var(--navy);
+      color: white;
+      padding: 20px 64px;
+      text-align: center;
+    }
+
+    .callout-strip p {
+      font-size: 15px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .callout-strip strong { font-weight: 700; color: var(--gold); }
+    .callout-strip a { color: var(--gold); font-weight: 700; text-decoration: underline; }
+
+    .featured {
+      padding: 40px 64px 100px;
+      background: white;
+    }
+
+    .featured-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .featured-image-stack {
+      position: relative;
+    }
+
+    .featured-img-main {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: url('/images/stories/featured-1.png') center/cover;
+      border-radius: var(--radius-xl);
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      background: var(--gold);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .featured-pullquote {
+      position: absolute;
+      bottom: -40px;
+      right: -40px;
+      background: var(--navy);
+      color: white;
+      padding: 32px;
+      border-radius: var(--radius-lg);
+      max-width: 320px;
+      box-shadow: 0 16px 48px rgba(26,46,68,0.3);
+    }
+
+    .featured-pullquote p {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-style: italic;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .featured-pullquote cite {
+      font-family: var(--font-body);
+      font-style: normal;
+      font-size: 13px;
+      opacity: 0.8;
+    }
+
+    .featured-content {
+      padding-left: 20px;
+    }
+
+    .featured-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .featured-content h2 {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--navy);
+    }
+
+    .featured-content h2 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .featured-text {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .featured-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      background: var(--bg-light);
+      border-radius: var(--radius-md);
+      margin-bottom: 28px;
+    }
+
+    .featured-author-img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--navy-light);
+      border: 3px solid white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .featured-author-name {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--navy);
+    }
+
+    .featured-author-role {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .featured-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .featured-link:hover {
+      text-decoration: underline;
+      color: var(--gold);
+    }
+
+    .explore {
+      padding: 60px 64px 40px;
+      background: var(--bg-light);
+    }
+
+    .explore-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 48px;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .section-header h2 span { color: var(--gold); }
+
+    .section-link {
+      color: var(--text-muted);
+      font-size: 14px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .section-link:hover { color: var(--gold); }
+
+    .explore-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .explore-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .explore-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.12);
+    }
+
+    .explore-card-image {
+      height: 160px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .explore-card-tag {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .tag-stories { background: var(--navy); color: white; }
+    .tag-dictionary { background: var(--gold); color: white; }
+    .tag-questions { background: var(--sage); color: white; }
+    .tag-tools { background: var(--red); color: white; }
+    .tag-guides { background: var(--sage); color: white; }
+
+    .explore-card-content { padding: 24px; }
+
+    .explore-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+
+    .explore-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .explore-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .explore-card-footer span { color: var(--text-muted); }
+    .explore-card-footer strong { color: var(--navy); font-weight: 600; }
+
+    .info-boxes { padding: 40px 64px 60px; background: white; }
+
+    .info-boxes-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .info-boxes-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .info-boxes-header h2 {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .info-boxes-header p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .info-box {
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .info-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+    }
+
+    .info-box.tip { background: var(--sage-light); }
+    .info-box.tip::before { background: var(--sage); }
+    .info-box.tip .info-box-icon { background: var(--sage); }
+
+    .info-box.warning { background: var(--red-light); }
+    .info-box.warning::before { background: var(--red); }
+    .info-box.warning .info-box-icon { background: var(--red); }
+
+    .info-box.note { background: var(--gold-light); }
+    .info-box.note::before { background: var(--gold); }
+    .info-box.note .info-box-icon { background: var(--gold); }
+
+    .info-box-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .info-box-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .info-box-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+    }
+
+    .info-box.tip .info-box-label { color: var(--sage); }
+    .info-box.warning .info-box-label { color: var(--red); }
+    .info-box.note .info-box-label { color: var(--gold); }
+
+    .info-box h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    .info-box p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .info-box p strong { color: var(--text-primary); }
+
+    .info-box ul {
+      margin-top: 16px;
+      padding-left: 20px;
+    }
+
+    .info-box li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .did-you-know {
+      padding: 80px 64px;
+      background: var(--navy);
+      color: white;
+    }
+
+    .did-you-know-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .dyk-icon {
+      width: 100px;
+      height: 100px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .dyk-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .dyk-content h3 span {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      background: var(--gold);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .dyk-content p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+
+    .dyk-content p strong {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .dyk-source {
+      margin-top: 16px;
+      font-size: 13px;
+      opacity: 0.6;
+    }
+
+    .story-gallery {
+      padding: 60px 64px 50px;
+      background: var(--bg-light);
+    }
+
+    .story-gallery-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .story-gallery-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .story-gallery-header h2 {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .story-gallery-header p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+    }
+
+    .story-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .story-gallery-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s;
+    }
+
+    .story-gallery-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.12);
+    }
+
+    .story-gallery-image {
+      aspect-ratio: 1;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .story-gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,46,68,0.85) 0%, transparent 60%);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+    }
+
+    .story-gallery-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1.3;
+    }
+
+    .trust-strip {
+      padding: 50px 64px;
+      background: var(--navy);
+      color: white;
+    }
+
+    .trust-strip-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .trust-quote {
+      flex: 1;
+    }
+
+    .trust-quote p {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-style: italic;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .trust-quote cite {
+      font-family: var(--font-body);
+      font-style: normal;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+    .trust-stats {
+      display: flex;
+      gap: 48px;
+    }
+
+    .trust-stat {
+      text-align: center;
+    }
+
+    .trust-stat-number {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .trust-stat-label {
+      font-size: 13px;
+      opacity: 0.8;
+    }
+
+    .stats-section { padding: 60px 64px 40px; background: var(--bg-light); }
+
+    .section-divider {
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .stats-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+
+    .stat-card {
+      background: var(--bg-light);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .stat-card-image {
+      height: 120px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .stat-card-content { padding: 28px 20px; }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .stat-source {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .cta {
+      padding: 50px 64px 80px;
+      background: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .cta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    .cta h2 {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 20px;
+      line-height: 1.15;
+    }
+
+    .cta h2 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .cta p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--navy);
+      color: white;
+      padding: 22px 44px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      transition: all 0.2s;
+      box-shadow: 0 8px 24px rgba(26,46,68,0.25);
+    }
+
+    .cta-btn:hover {
+      background: #0f1d2d;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(26,46,68,0.35);
+    }
+
+
+    .back-button {
+      position: fixed;
+      top: 100px;
+      left: 24px;
+      background: white;
+      color: var(--navy);
+      padding: 10px 16px;
+      border-radius: 100px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      z-index: 99;
+      transition: all 0.2s;
+    }
+
+    .back-button:hover {
+      background: var(--navy);
+      color: white;
+    }
+
+    @media (max-width: 1400px) {
+      .back-button {
+        top: auto;
+        bottom: 24px;
+        left: 24px;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero-visual { max-width: 500px; margin: 0 auto; }
+      .hero-img-secondary { left: 0; bottom: -20px; }
+      .featured-inner { grid-template-columns: 1fr; gap: 80px; }
+      .featured-pullquote { right: 20px; bottom: -30px; }
+      .explore-grid { grid-template-columns: repeat(2, 1fr); }
+      .info-grid { grid-template-columns: 1fr; }
+      .did-you-know-inner { grid-template-columns: 1fr; text-align: center; }
+      .dyk-icon { margin: 0 auto; }
+      .story-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .trust-strip-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .trust-stats {
+        justify-content: center;
+      }
+
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 64px 24px; }
+      .hero-tagline {
+        padding: 1rem 1rem;
+      }
+      .hero-tagline-line1 {
+        font-size: 1rem;
+      }
+      .hero-tagline-line2 {
+        font-size: 0.85rem;
+      }
+      .hero-content h1 { font-size: 2.4rem; }
+      .hero-stat-card { top: auto; bottom: -20px; right: 20px; }
+      .callout-strip { padding: 16px 24px; }
+      .featured { padding: 80px 24px; }
+      .featured-pullquote { position: relative; bottom: 0; right: 0; margin-top: 24px; max-width: 100%; }
+      .explore { padding: 64px 24px; }
+      .explore-grid { grid-template-columns: 1fr; }
+      .info-boxes { padding: 64px 24px; }
+      .did-you-know { padding: 64px 24px; }
+      .story-gallery { padding: 64px 24px; }
+      .story-gallery-grid { grid-template-columns: 1fr 1fr; }
+      .trust-strip { padding: 40px 24px; }
+      .trust-quote p { font-size: 1.2rem; }
+      .trust-stats { gap: 32px; }
+      .stats-section { padding: 64px 24px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+      .cta { padding: 80px 24px; }
+      .cta h2 { font-size: 2.2rem; }
+      .share-section { padding: 48px 24px; }
+      .share-section h3 { font-size: 1.5rem; }
+      .share-btn { padding: 12px 20px; font-size: 14px; }
+      .share-btn span { display: none; }
+      .share-btn { padding: 14px; border-radius: 50%; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="javascript:history.back()" class="back-button">← Back</a>
+
+  <Header />
+
+  <div class="hero-tagline">
+    <div class="hero-tagline-line1">Everything you need to know — <span class="gold">in plain English.</span></div>
+    <div class="hero-tagline-line2">Your free estate planning resource centre</div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>Protect the people you love. <em>Learn from others.</em></h1>
+        <p class="hero-lead"><strong>Real stories</strong> from real families. <strong>Plain-English guides</strong> that actually make sense. Everything you need to understand wills, probate, and estate planning — without the legal jargon.</p>
+        <div class="hero-ctas">
+          <a href="/user-stories" class="btn-primary">Read Real Stories →</a>
+          <a href="/planning-tools" class="btn-secondary">Planning Tools</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-img-main"></div>
+        <div class="hero-img-secondary"></div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-number">12,000+</div>
+          <div class="hero-stat-label">Families helped</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Here Banner -->
+  <div style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <div style="background: #faf6e9; border: 2px solid #c9a227; border-radius: 12px; padding: 1.5rem 2rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+      <div style="font-size: 2.5rem;">🧭</div>
+      <div style="flex: 1; min-width: 250px;">
+        <h3 style="font-family: 'Source Serif 4', serif; color: #1a2e44; font-size: 1.2rem; margin: 0 0 0.25rem 0;">New here? Start with the basics.</h3>
+        <p style="color: #4a4a4a; font-size: 0.9rem; margin: 0;">With 600+ pages of guides, stories, and tools, it's easy to get lost. Let us point you in the right direction.</p>
+      </div>
+      <div>
+        <a href="/start-here" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.25rem; background: #1a2e44; color: white; border-radius: 6px; font-size: 0.9rem; font-weight: 500; text-decoration: none;">Take Me to "Start Here" →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout-strip">
+    <p>⚠️ <strong>Did you know?</strong> 60% of Australians don't have a valid will. <a href="/am-i-protected">Check if you're protected →</a></p>
+  </div>
+
+  <section class="stats-section">
+    <div class="stats-inner">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-card-image" style="background-image: url('/images/stories/stats-1.png')"></div>
+          <div class="stat-card-content">
+            <div class="stat-number">60%</div>
+            <div class="stat-label">of adults have no will</div>
+            <div class="stat-source">ABS 2023</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-image" style="background-image: url('/images/stories/stats-2.png')"></div>
+          <div class="stat-card-content">
+            <div class="stat-number">9-18</div>
+            <div class="stat-label">months average probate</div>
+            <div class="stat-source">State Courts</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-image" style="background-image: url('/images/stories/stats-3.png')"></div>
+          <div class="stat-card-content">
+            <div class="stat-number">$35k</div>
+            <div class="stat-label">avg contested will cost</div>
+            <div class="stat-source">Law Society</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-image" style="background-image: url('/images/stories/stats-4.png')"></div>
+          <div class="stat-card-content">
+            <div class="stat-number">73%</div>
+            <div class="stat-label">disputes avoidable</div>
+            <div class="stat-source">Legal Studies</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="featured">
+    <div class="featured-inner">
+      <div class="featured-image-stack">
+        <div class="featured-img-main"></div>
+        <span class="featured-badge">📖 Featured Story</span>
+        <div class="featured-pullquote">
+          <p>"The house sat empty for three years while the lawyers argued."</p>
+          <cite>— A Family Left Waiting</cite>
+        </div>
+      </div>
+      <div class="featured-content">
+        <span class="featured-eyebrow">Real Family Case</span>
+        <h2>Six Siblings, <em>Zero Trust</em></h2>
+        <p class="featured-text">They were close once. Sunday dinners, shared holidays, inside jokes spanning decades. Then their mother died without clear instructions, and everything changed. This is what went wrong — and how 30 minutes of planning could have saved them years of heartache.</p>
+        <a href="/user-stories/six-siblings-zero-trust" class="featured-link">Read the full story →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="explore">
+    <div class="explore-inner">
+      <div class="section-header">
+        <h2>Explore <span>Our Resources</span></h2>
+        <a href="/user-stories" class="section-link">View all →</a>
+      </div>
+      <div class="explore-grid">
+        <a href="/user-stories" class="explore-card">
+          <div class="explore-card-image" style="background-image: url('/images/stories/explore-1.png')">
+            <span class="explore-card-tag tag-stories">Stories</span>
+          </div>
+          <div class="explore-card-content">
+            <h3>The Court Threw It Out</h3>
+            <p>A will rejected due to a simple oversight. Here's what the family wishes they'd known.</p>
+            <div class="explore-card-footer">
+              <span>8 min read</span>
+              <strong>Read now →</strong>
+            </div>
+          </div>
+        </a>
+
+        <a href="/dictionary" class="explore-card">
+          <div class="explore-card-image" style="background-image: url('/images/stories/explore-2.png')">
+            <span class="explore-card-tag tag-dictionary">Dictionary</span>
+          </div>
+          <div class="explore-card-content">
+            <h3>What is Probate?</h3>
+            <p>The court process explained in plain English. No jargon.</p>
+            <div class="explore-card-footer">
+              <span>250+ terms</span>
+              <strong>Learn →</strong>
+            </div>
+          </div>
+        </a>
+
+        <a href="/common-questions" class="explore-card">
+          <div class="explore-card-image" style="background-image: url('/images/stories/explore-3.png')">
+            <span class="explore-card-tag tag-questions">Questions</span>
+          </div>
+          <div class="explore-card-content">
+            <h3>Do I Need a Lawyer?</h3>
+            <p>When professional help is worth the cost.</p>
+            <div class="explore-card-footer">
+              <span>100+ FAQs</span>
+              <strong>Answer →</strong>
+            </div>
+          </div>
+        </a>
+
+        <a href="/am-i-protected" class="explore-card">
+          <div class="explore-card-image" style="background-image: url('/images/stories/explore-4.png')">
+            <span class="explore-card-tag tag-tools">Tools</span>
+          </div>
+          <div class="explore-card-content">
+            <h3>Planning Tools</h3>
+            <p>3-minute quiz to check your coverage.</p>
+            <div class="explore-card-footer">
+              <span>Free tool</span>
+              <strong>Start →</strong>
+            </div>
+          </div>
+        </a>
+
+        <a href="/guides/who-do-you-really-trust" class="explore-card">
+          <div class="explore-card-image" style="background-image: url('/images/stories/explore-5.png')">
+            <span class="explore-card-tag tag-guides">Guides</span>
+          </div>
+          <div class="explore-card-content">
+            <h3>Who Do You Really Trust?</h3>
+            <p>Choosing the right people for your will isn't about love — it's about capability, reliability, and difficult honest conversations.</p>
+            <div class="explore-card-footer">
+              <span>8 min read</span>
+              <strong>Read →</strong>
+            </div>
+          </div>
+        </a>
+
+        <a href="/planning-tools/checklists/" class="explore-card">
+          <div class="explore-card-image" style="background-image: url('/images/stories/explore-6.png')">
+            <span class="explore-card-tag tag-tools">Checklists</span>
+          </div>
+          <div class="explore-card-content">
+            <h3>Estate Planning Checklist</h3>
+            <p>Everything you need to get your affairs in order.</p>
+            <div class="explore-card-footer">
+              <span>Free download</span>
+              <strong>Get it →</strong>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-boxes">
+    <div class="info-boxes-inner">
+      <div class="info-boxes-header">
+        <h2>Quick Guides</h2>
+        <p>Essential knowledge in bite-sized boxes</p>
+      </div>
+      <div class="info-grid">
+        <div class="info-box tip">
+          <div class="info-box-header">
+            <div class="info-box-icon">💡</div>
+            <span class="info-box-label">Pro Tip</span>
+          </div>
+          <h3>Update Your Will After These Events</h3>
+          <p>Your will should be reviewed whenever your life changes significantly:</p>
+          <ul>
+            <li><strong>Marriage or divorce</strong> — may automatically revoke your will</li>
+            <li><strong>Birth or adoption</strong> of children</li>
+            <li><strong>Buying property</strong> or major assets</li>
+            <li><strong>Death of a beneficiary</strong> or executor</li>
+            <li><strong>Moving to another state</strong> or country</li>
+          </ul>
+        </div>
+        <div class="info-box warning">
+          <div class="info-box-header">
+            <div class="info-box-icon">⚠️</div>
+            <span class="info-box-label">Warning</span>
+          </div>
+          <h3>DIY Will Mistakes to Avoid</h3>
+          <p>Common errors that can <strong>invalidate your entire will</strong>:</p>
+          <ul>
+            <li>Witnesses who are also beneficiaries</li>
+            <li>Missing signatures on any page</li>
+            <li>Unclear or ambiguous language</li>
+            <li>Not accounting for all assets</li>
+            <li>Forgetting about superannuation</li>
+          </ul>
+        </div>
+        <div class="info-box note">
+          <div class="info-box-header">
+            <div class="info-box-icon">📝</div>
+            <span class="info-box-label">Good to Know</span>
+          </div>
+          <h3>Superannuation Doesn't Follow Your Will</h3>
+          <p>Your super is often your <strong>biggest asset</strong> — but it's not automatically covered by your will. You need to:</p>
+          <ul>
+            <li>Complete a binding death benefit nomination</li>
+            <li>Update it every 3 years (non-lapsing) or as required</li>
+            <li>Consider who you want to receive it</li>
+            <li>Check your fund's specific rules</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="did-you-know">
+    <div class="did-you-know-inner">
+      <div class="dyk-icon">🧠</div>
+      <div class="dyk-content">
+        <h3>Did You Know? <span>FACT</span></h3>
+        <p><strong>73% of family disputes over estates</strong> could have been avoided with proper planning and clear communication. The average contested will costs families <strong>$35,000 in legal fees</strong> — and often much more in broken relationships.</p>
+        <div class="dyk-source">Source: Australian Law Society, 2023</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-gallery">
+    <div class="story-gallery-inner">
+      <div class="story-gallery-header">
+        <h2>More Real Stories</h2>
+        <p>Learn from families who've been through it</p>
+      </div>
+      <div class="story-gallery-grid">
+        <a href="/user-stories" class="story-gallery-card">
+          <div class="story-gallery-image" style="background-image: url('/images/stories/gallery-1.png')">
+            <div class="story-gallery-overlay">
+              <span class="story-gallery-title">Mother Took It All</span>
+            </div>
+          </div>
+        </a>
+        <a href="/user-stories" class="story-gallery-card">
+          <div class="story-gallery-image" style="background-image: url('/images/stories/gallery-2.png')">
+            <div class="story-gallery-overlay">
+              <span class="story-gallery-title">The Excavator & The Auction</span>
+            </div>
+          </div>
+        </a>
+        <a href="/user-stories" class="story-gallery-card">
+          <div class="story-gallery-image" style="background-image: url('/images/stories/gallery-3.png')">
+            <div class="story-gallery-overlay">
+              <span class="story-gallery-title">A Suspended Sentence</span>
+            </div>
+          </div>
+        </a>
+        <a href="/user-stories" class="story-gallery-card">
+          <div class="story-gallery-image" style="background-image: url('/images/stories/gallery-4.png')">
+            <div class="story-gallery-overlay">
+              <span class="story-gallery-title">Brother-In-Law Did Nothing</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-strip">
+    <div class="trust-strip-inner">
+      <div class="trust-quote">
+        <p>"I wish we'd understood this before Mum passed. It would have saved us years of heartache."</p>
+        <cite>— Sarah M., Melbourne</cite>
+      </div>
+      <div class="trust-stats">
+        <div class="trust-stat">
+          <span class="trust-stat-number">4.9</span>
+          <span class="trust-stat-label">Reader rating</span>
+        </div>
+        <div class="trust-stat">
+          <span class="trust-stat-number">12k+</span>
+          <span class="trust-stat-label">Families helped</span>
+        </div>
+        <div class="trust-stat">
+          <span class="trust-stat-number">250+</span>
+          <span class="trust-stat-label">Free guides</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="share-section">
+    <div class="share-section-inner">
+      <h3>Found this helpful?</h3>
+      <p>Share with someone who needs to see this</p>
+      <div class="share-buttons">
+        <a href="#" class="share-btn share-facebook" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), 'facebook-share', 'width=580,height=296'); return false;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <span>Facebook</span>
+        </a>
+        <a href="#" class="share-btn share-twitter" title="Share on X" onclick="window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(document.title), 'twitter-share', 'width=580,height=296'); return false;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <span>X</span>
+        </a>
+        <a href="#" class="share-btn share-linkedin" title="Share on LinkedIn" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href), 'linkedin-share', 'width=580,height=296'); return false;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="#" class="share-btn share-email" title="Share via Email" onclick="window.location.href='mailto:?subject=' + encodeURIComponent(document.title) + '&body=' + encodeURIComponent(window.location.href); return false;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <span>Email</span>
+        </a>
+        <button class="share-btn share-copy" title="Copy link" onclick="navigator.clipboard.writeText(window.location.href); this.classList.add('copied'); this.querySelector('span').textContent='Copied!'; setTimeout(() => { this.classList.remove('copied'); this.querySelector('span').textContent='Copy Link'; }, 2000);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          <span>Copy Link</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta-inner">
+      <div class="cta-badge">🛡️ Free Assessment</div>
+      <h2>Is your family <em>protected?</em></h2>
+      <p>Take our 3-minute quiz to find out if you're covered — and discover any gaps that could leave your family vulnerable.</p>
+      <a href="/am-i-protected" class="cta-btn">Check My Protection →</a>
+    </div>
+  </section>
+
+  <Footer />
+
+</body>
 </html>

@@ -1,0 +1,16 @@
+---
+import CategoryLayout from '../../layouts/CategoryLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allArticles = await getCollection('articles');
+const articles = allArticles.filter(article => article.data.category === 'Dictionary' && article.data.status === 'published');
+const sortedArticles = articles.sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<CategoryLayout
+  title="Legal Dictionary"
+  description="Plain-language explanations of common will and estate terms."
+  categorySlug="dictionary"
+  articles={sortedArticles}
+  showAlphabetFilter={true}
+/>

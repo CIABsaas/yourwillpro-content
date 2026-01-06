@@ -1,0 +1,1127 @@
+---
+/**
+ * Asset Inventory Checklist - Interactive Astro Page
+ * Converted from listing-assets-checklist.md
+ */
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asset Inventory Checklist | YourWillPro</title>
+  <meta name="description" content="Before creating your will, get a clear picture of what you own. Use this checklist to gather information about your assets. Estimates are fine for most items.">
+  <link rel="icon" type="image/png" href="/ywp-logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<Header />
+
+<main class="container">
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb" style="padding: 1rem 2rem; font-size: 0.85rem; color: #7a7a7a; background: white; border-bottom: 1px solid #e2e2e2;">
+    <a href="/" style="color: #7a7a7a; text-decoration: none;">Home</a>
+    <span style="margin: 0 0.5rem;">›</span>
+    <a href="/planning-tools/" style="color: #7a7a7a; text-decoration: none;">Planning Tools</a>
+    <span style="margin: 0 0.5rem;">›</span>
+    <a href="/planning-tools/checklists/" style="color: #7a7a7a; text-decoration: none;">Checklists</a>
+    <span style="margin: 0 0.5rem;">›</span>
+    <span>Asset Inventory</span>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">📊 Interactive Checklist</div>
+      <h1>Asset Inventory Checklist</h1>
+      <p><strong>Before creating your will, you'll need a clear picture of what you own.</strong> Use this checklist to gather information about your assets. You don't need exact values for everything—estimates are fine for most items.</p>
+    </div>
+  </section>
+
+  <div class="content-wrapper">
+
+    <aside class="sidebar">
+      <div class="progress-card">
+        <div class="progress-label">Your Progress</div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="progress-text">
+          <span id="checked-count">0</span> of <span id="total-count">0</span> items checked
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <a href="#property" class="nav-link">Property & Real Estate <span class="item-count">6</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#banking" class="nav-link">Money & Banking <span class="item-count">7</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#super-insurance" class="nav-link">Super & Insurance <span class="item-count">5</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#investments" class="nav-link">Investments <span class="item-count">6</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#vehicles" class="nav-link">Vehicles & Watercraft <span class="item-count">5</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#valuables" class="nav-link">Valuables & Collections <span class="item-count">7</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#household" class="nav-link">Household Contents <span class="item-count">4</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#digital" class="nav-link">Digital Assets <span class="item-count">7</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#business" class="nav-link">Business Assets <span class="item-count">7</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#other" class="nav-link">Other Assets <span class="item-count">6</span></a>
+        </div>
+        <div class="nav-section">
+          <a href="#debts" class="nav-link">Debts & Liabilities <span class="item-count">6</span></a>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="checklist-content">
+
+      <section id="property" class="checklist-section">
+        <h2>Property & Real Estate</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="1">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Family home — address, ownership type (sole/joint/tenants in common)</span>
+          </div>
+          <div class="checklist-item" data-id="2">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Investment properties — addresses, ownership details</span>
+          </div>
+          <div class="checklist-item" data-id="3">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Holiday home or timeshare</span>
+          </div>
+          <div class="checklist-item" data-id="4">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Vacant land</span>
+          </div>
+          <div class="checklist-item" data-id="5">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Property overseas</span>
+          </div>
+          <div class="checklist-item" data-id="6">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Outstanding mortgages on any property</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="banking" class="checklist-section">
+        <h2>Money & Banking</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="7">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Everyday bank accounts — bank name, approximate balance</span>
+          </div>
+          <div class="checklist-item" data-id="8">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Savings accounts</span>
+          </div>
+          <div class="checklist-item" data-id="9">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Term deposits</span>
+          </div>
+          <div class="checklist-item" data-id="10">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Offset accounts</span>
+          </div>
+          <div class="checklist-item" data-id="11">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Joint accounts — names of other account holders</span>
+          </div>
+          <div class="checklist-item" data-id="12">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Cash kept at home</span>
+          </div>
+          <div class="checklist-item" data-id="13">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Money owed to you by others</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="super-insurance" class="checklist-section">
+        <h2>Superannuation & Insurance</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="14">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Superannuation fund(s) — fund name, approximate balance</span>
+          </div>
+          <div class="checklist-item" data-id="15">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Current binding death benefit nomination? (Yes/No/Unsure)</span>
+          </div>
+          <div class="checklist-item" data-id="16">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Life insurance policies — provider, sum insured</span>
+          </div>
+          <div class="checklist-item" data-id="17">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Income protection or TPD insurance</span>
+          </div>
+          <div class="checklist-item" data-id="18">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Insurance held inside super</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="investments" class="checklist-section">
+        <h2>Investments</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="19">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Shares — companies, approximate value</span>
+          </div>
+          <div class="checklist-item" data-id="20">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Managed funds</span>
+          </div>
+          <div class="checklist-item" data-id="21">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Bonds or fixed interest investments</span>
+          </div>
+          <div class="checklist-item" data-id="22">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Cryptocurrency holdings</span>
+          </div>
+          <div class="checklist-item" data-id="23">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Investment apps (Raiz, Spaceship, etc.)</span>
+          </div>
+          <div class="checklist-item" data-id="24">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Business ownership or partnership interests</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="vehicles" class="checklist-section">
+        <h2>Vehicles & Watercraft</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="25">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Cars — make, model, approximate value</span>
+          </div>
+          <div class="checklist-item" data-id="26">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Motorcycles</span>
+          </div>
+          <div class="checklist-item" data-id="27">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Caravan or camper trailer</span>
+          </div>
+          <div class="checklist-item" data-id="28">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Boat or jet ski</span>
+          </div>
+          <div class="checklist-item" data-id="29">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Other recreational vehicles</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="valuables" class="checklist-section">
+        <h2>Valuables & Collections</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="30">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Jewellery — significant pieces</span>
+          </div>
+          <div class="checklist-item" data-id="31">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Artwork</span>
+          </div>
+          <div class="checklist-item" data-id="32">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Antiques or collectibles</span>
+          </div>
+          <div class="checklist-item" data-id="33">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Wine collection</span>
+          </div>
+          <div class="checklist-item" data-id="34">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Musical instruments</span>
+          </div>
+          <div class="checklist-item" data-id="35">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Sporting memorabilia</span>
+          </div>
+          <div class="checklist-item" data-id="36">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Firearms (note: special rules apply to transfer)</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="household" class="checklist-section">
+        <h2>Household Contents</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="37">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Furniture — any significant pieces</span>
+          </div>
+          <div class="checklist-item" data-id="38">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Electronics and appliances</span>
+          </div>
+          <div class="checklist-item" data-id="39">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Tools and equipment</span>
+          </div>
+          <div class="checklist-item" data-id="40">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Approximate total value of general household contents</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="digital" class="checklist-section">
+        <h2>Digital Assets</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="41">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Online accounts with monetary value (PayPal, store credits)</span>
+          </div>
+          <div class="checklist-item" data-id="42">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Domain names or websites</span>
+          </div>
+          <div class="checklist-item" data-id="43">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Digital music, movies, ebooks (note: most are licensed, not owned)</span>
+          </div>
+          <div class="checklist-item" data-id="44">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Cryptocurrency wallets — how to access</span>
+          </div>
+          <div class="checklist-item" data-id="45">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Online businesses or income streams</span>
+          </div>
+          <div class="checklist-item" data-id="46">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Social media accounts with commercial value</span>
+          </div>
+          <div class="checklist-item" data-id="47">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Photos and files you want preserved</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="business" class="checklist-section">
+        <h2>Business Assets</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="48">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Business name and structure (sole trader/company/partnership/trust)</span>
+          </div>
+          <div class="checklist-item" data-id="49">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Business property or equipment</span>
+          </div>
+          <div class="checklist-item" data-id="50">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Stock or inventory</span>
+          </div>
+          <div class="checklist-item" data-id="51">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Business bank accounts</span>
+          </div>
+          <div class="checklist-item" data-id="52">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Accounts receivable</span>
+          </div>
+          <div class="checklist-item" data-id="53">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Intellectual property (trademarks, patents)</span>
+          </div>
+          <div class="checklist-item" data-id="54">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Goodwill value</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="other" class="checklist-section">
+        <h2>Other Assets</h2>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="55">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Frequent flyer points (some transferable, some not)</span>
+          </div>
+          <div class="checklist-item" data-id="56">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Prepaid memberships or subscriptions</span>
+          </div>
+          <div class="checklist-item" data-id="57">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Storage unit contents</span>
+          </div>
+          <div class="checklist-item" data-id="58">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Items on loan to others</span>
+          </div>
+          <div class="checklist-item" data-id="59">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Expected inheritance from others</span>
+          </div>
+          <div class="checklist-item" data-id="60">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Pending legal claims or settlements</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="debts" class="checklist-section">
+        <h2>Debts & Liabilities</h2>
+        <p class="section-intro">These reduce your estate value and should also be listed:</p>
+        <div class="checklist-items">
+          <div class="checklist-item" data-id="61">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Credit cards — balances</span>
+          </div>
+          <div class="checklist-item" data-id="62">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Personal loans</span>
+          </div>
+          <div class="checklist-item" data-id="63">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Car finance</span>
+          </div>
+          <div class="checklist-item" data-id="64">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>HECS/HELP debt</span>
+          </div>
+          <div class="checklist-item" data-id="65">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Money you owe others</span>
+          </div>
+          <div class="checklist-item" data-id="66">
+            <div class="checkbox">
+              <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>Guarantees you've provided for others' debts</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <h2>What's Next?</h2>
+        <p>With your asset list complete, you're ready to start thinking about who should receive what.</p>
+        <p style="margin-bottom: 24px;"><strong>Ready to create your will?</strong> Visit <a href="https://yourwillpro.com.au" style="color: #1a2e44; text-decoration: underline;">YourWillPro.com.au</a> to get started.</p>
+        <div class="email-cta">
+          <p><strong>Want this as a PDF?</strong></p>
+          <p>Email us at <a href="mailto:hello@yourwillpro.com.au">hello@yourwillpro.com.au</a> and we'll send you a printable version.</p>
+        </div>
+        <p class="disclaimer">This checklist is for information gathering only. It does not constitute legal advice.</p>
+      </section>
+
+    </div>
+
+  </div>
+
+</main>
+
+<Footer />
+
+<style>
+  :root {
+    --navy: #1a2e44;
+    --gold: #c9a227;
+    --sage: #6b7f6e;
+    --cream: #f9f6f1;
+    --border-light: #e5e2dd;
+    --text-primary: #2c3338;
+    --text-secondary: #4b5563;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #2a4560 100%);
+    padding: 80px 64px;
+    color: white;
+  }
+
+  .hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.95;
+  }
+
+  /* Content Wrapper with Sidebar */
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 60px;
+    padding: 60px 64px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+  }
+
+  .progress-card {
+    background: var(--cream);
+    border: 2px solid var(--border-light);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+
+  .progress-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .progress-bar {
+    background: white;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+
+  .progress-fill {
+    background: linear-gradient(90deg, var(--gold) 0%, #e0b830 100%);
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+
+  .progress-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-align: center;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .nav-section {
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .nav-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover {
+    color: var(--gold);
+  }
+
+  .item-count {
+    background: var(--cream);
+    color: var(--text-secondary);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /* Checklist Content */
+  .checklist-content {
+    max-width: 800px;
+  }
+
+  .checklist-section {
+    margin-bottom: 48px;
+  }
+
+  .checklist-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .section-intro {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .checklist-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: white;
+    border: 2px solid var(--border-light);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .checklist-item:hover {
+    border-color: var(--gold);
+    background: var(--cream);
+  }
+
+  .checklist-item.checked {
+    background: #f0f9f0;
+    border-color: #6b7f6e;
+  }
+
+  .checklist-item.checked span {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+  }
+
+  .checkbox {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border-light);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    transition: all 0.2s ease;
+  }
+
+  .checklist-item:hover .checkbox {
+    border-color: var(--gold);
+  }
+
+  .checklist-item.checked .checkbox {
+    background: var(--sage);
+    border-color: var(--sage);
+  }
+
+  .checkmark {
+    width: 16px;
+    height: 16px;
+    stroke: white;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .checklist-item.checked .checkmark {
+    opacity: 1;
+  }
+
+  .checklist-item span {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-primary);
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: var(--cream);
+    border: 2px solid var(--border-light);
+    border-radius: 12px;
+    padding: 32px;
+    margin-top: 48px;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 28px;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+
+  .cta-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+
+  .email-cta {
+    background: white;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 24px 0;
+  }
+
+  .email-cta p {
+    margin: 0;
+  }
+
+  .email-cta a {
+    color: var(--navy);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .disclaimer {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-top: 20px;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .content-wrapper {
+      grid-template-columns: 1fr;
+      padding: 40px 32px;
+      gap: 40px;
+    }
+
+    .sidebar {
+      position: static;
+    }
+
+    .hero {
+      padding: 60px 32px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero {
+      padding: 40px 20px;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+    }
+
+    .hero p {
+      font-size: 16px;
+    }
+
+    .content-wrapper {
+      padding: 32px 20px;
+    }
+
+    .checklist-section h2 {
+      font-size: 24px;
+    }
+
+    .checklist-item {
+      padding: 12px;
+    }
+
+    .checklist-item span {
+      font-size: 15px;
+    }
+  }
+
+  /* === PRINT BLOCKING === */
+  @media print {
+    body * {
+      display: none !important;
+    }
+
+    body::before {
+      content: "This checklist is not available for printing. Visit YourWillPro.com.au to download the PDF version.";
+      display: block !important;
+      font-family: Inter, -apple-system, sans-serif;
+      font-size: 18px;
+      color: #1a2e44;
+      text-align: center;
+      padding: 100px 40px;
+      line-height: 1.6;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const checklistItems = document.querySelectorAll('.checklist-item');
+    const progressFill = document.getElementById('progress-fill');
+    const checkedCount = document.getElementById('checked-count');
+    const totalCount = document.getElementById('total-count');
+
+    totalCount.textContent = checklistItems.length;
+
+    // Load saved state from localStorage
+    const savedState = JSON.parse(localStorage.getItem('asset-inventory-checklist') || '{}');
+
+    checklistItems.forEach(item => {
+      const id = item.dataset.id;
+      if (savedState[id]) {
+        item.classList.add('checked');
+      }
+
+      item.addEventListener('click', function() {
+        this.classList.toggle('checked');
+        updateProgress();
+        saveState();
+      });
+    });
+
+    function updateProgress() {
+      const checked = document.querySelectorAll('.checklist-item.checked').length;
+      const total = checklistItems.length;
+      const percent = (checked / total) * 100;
+      progressFill.style.width = percent + '%';
+      checkedCount.textContent = checked;
+    }
+
+    function saveState() {
+      const state = {};
+      checklistItems.forEach(item => {
+        state[item.dataset.id] = item.classList.contains('checked');
+      });
+      localStorage.setItem('asset-inventory-checklist', JSON.stringify(state));
+    }
+
+    updateProgress();
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,356 @@
+---
+/**
+ * Top 10 Lists Hub Page
+ * Lists all Top 10 guides for estate planning
+ */
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 10 Lists | YourWillPro</title>
+  <meta name="description" content="Quick reference guides covering the top 10 things you need to know about wills, estate planning, and avoiding common mistakes.">
+  <link rel="icon" type="image/png" href="/ywp-logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #2c3338; background: #ffffff;">
+
+<Header />
+
+<!-- Breadcrumb Navigation -->
+<nav class="breadcrumb" style="padding: 1rem 2rem; font-size: 0.85rem; color: #7a7a7a; background: white; border-bottom: 1px solid #e2e2e2;">
+  <a href="/" style="color: #7a7a7a; text-decoration: none;">Home</a>
+  <span style="margin: 0 0.5rem;">›</span>
+  <a href="/planning-tools/" style="color: #7a7a7a; text-decoration: none;">Planning Tools</a>
+  <span style="margin: 0 0.5rem;">›</span>
+  <span>Top 10</span>
+</nav>
+
+<main>
+  <!-- Hero Section -->
+  <section style="background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%); padding: 80px 64px; color: white;">
+    <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+      <div style="display: inline-block; background: rgba(255, 255, 255, 0.15); padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: 500; margin-bottom: 20px;">
+        📊 Quick Reference Guides
+      </div>
+      <h1 style="font-size: 48px; font-weight: 700; margin: 0 0 20px 0; line-height: 1.2;">
+        Top 10 Lists
+      </h1>
+      <p style="font-size: 20px; line-height: 1.6; opacity: 0.95; max-width: 700px; margin: 0 auto;">
+        Quick, actionable lists covering the most important aspects of wills and estate planning.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content with Sidebar -->
+  <div style="display: flex; max-width: 1200px; margin: 0 auto; padding: 40px 24px; gap: 40px;">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="top10-sidebar" style="width: 240px; flex-shrink: 0;">
+      <nav style="position: sticky; top: 100px;">
+        <h3 style="font-family: Inter, -apple-system, sans-serif; font-size: 13px; font-weight: 600; color: #c9a227; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 16px 0;">Top 10 Lists</h3>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+          <li>
+            <a href="/planning-tools/top-10/reasons-people-delay" class="sidebar-link" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: #1a2e44; text-decoration: none; border-bottom: none; padding: 8px 12px; border-radius: 6px; display: block; transition: background 0.2s;">
+              Reasons People Delay
+            </a>
+          </li>
+          <li>
+            <a href="/planning-tools/top-10/mistakes" class="sidebar-link" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: #1a2e44; text-decoration: none; border-bottom: none; padding: 8px 12px; border-radius: 6px; display: block; transition: background 0.2s;">
+              Mistakes Writing a Will
+            </a>
+          </li>
+          <li>
+            <a href="/planning-tools/top-10/reasons-wills-challenged" class="sidebar-link" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: #1a2e44; text-decoration: none; border-bottom: none; padding: 8px 12px; border-radius: 6px; display: block; transition: background 0.2s;">
+              Reasons Wills Are Challenged
+            </a>
+          </li>
+          <li>
+            <a href="/planning-tools/top-10/myths" class="sidebar-link" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: #1a2e44; text-decoration: none; border-bottom: none; padding: 8px 12px; border-radius: 6px; display: block; transition: background 0.2s;">
+              Myths About Wills
+            </a>
+          </li>
+          <li>
+            <a href="/planning-tools/top-10/when-to-update" class="sidebar-link" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: #1a2e44; text-decoration: none; border-bottom: none; padding: 8px 12px; border-radius: 6px; display: block; transition: background 0.2s;">
+              When to Update Your Will
+            </a>
+          </li>
+          <li>
+            <a href="/planning-tools/top-10/things-will-doesnt-do" class="sidebar-link" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: #1a2e44; text-decoration: none; border-bottom: none; padding: 8px 12px; border-radius: 6px; display: block; transition: background 0.2s;">
+              Things a Will Doesn't Do
+            </a>
+          </li>
+          <li>
+            <a href="/planning-tools/top-10/executor-responsibilities" class="sidebar-link" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: #1a2e44; text-decoration: none; border-bottom: none; padding: 8px 12px; border-radius: 6px; display: block; transition: background 0.2s;">
+              Executor Responsibilities
+            </a>
+          </li>
+          <li>
+            <a href="/planning-tools/top-10/family-disputes" class="sidebar-link" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: #1a2e44; text-decoration: none; border-bottom: none; padding: 8px 12px; border-radius: 6px; display: block; transition: background 0.2s;">
+              Family Disputes
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <section style="flex: 1;">
+
+      <!-- List 1: Reasons People Delay -->
+      <a href="/planning-tools/top-10/reasons-people-delay" style="display: block; background: white; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; margin-bottom: 24px; text-decoration: none; transition: all 0.2s ease;">
+        <div style="display: flex; align-items: flex-start; gap: 24px;">
+          <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; font-weight: 700;">
+            1
+          </div>
+          <div style="flex: 1;">
+            <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 8px 0;">
+              Top 10 Reasons People Delay Writing a Will
+            </h2>
+            <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0 0 12px 0;">
+              Understanding why people put off writing a will—and why those reasons don't hold up—can help you overcome the same barriers.
+            </p>
+            <div style="display: inline-flex; align-items: center; gap: 8px; color: #c9a227; font-weight: 600; font-size: 14px;">
+              <span>Read List</span>
+              <span>→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- List 2: Mistakes -->
+      <a href="/planning-tools/top-10/mistakes" style="display: block; background: white; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; margin-bottom: 24px; text-decoration: none; transition: all 0.2s ease;">
+        <div style="display: flex; align-items: flex-start; gap: 24px;">
+          <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; font-weight: 700;">
+            2
+          </div>
+          <div style="flex: 1;">
+            <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 8px 0;">
+              Top 10 Mistakes People Make Writing a Will
+            </h2>
+            <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0 0 12px 0;">
+              Common errors that can invalidate your will, create confusion, or lead to family disputes.
+            </p>
+            <div style="display: inline-flex; align-items: center; gap: 8px; color: #c9a227; font-weight: 600; font-size: 14px;">
+              <span>Read List</span>
+              <span>→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- List 3: Reasons Wills Challenged -->
+      <a href="/planning-tools/top-10/reasons-wills-challenged" style="display: block; background: white; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; margin-bottom: 24px; text-decoration: none; transition: all 0.2s ease;">
+        <div style="display: flex; align-items: flex-start; gap: 24px;">
+          <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; font-weight: 700;">
+            3
+          </div>
+          <div style="flex: 1;">
+            <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 8px 0;">
+              Top 10 Reasons Wills Are Challenged
+            </h2>
+            <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0 0 12px 0;">
+              Legal grounds and family circumstances that lead to contested wills—and how to minimize the risk.
+            </p>
+            <div style="display: inline-flex; align-items: center; gap: 8px; color: #c9a227; font-weight: 600; font-size: 14px;">
+              <span>Read List</span>
+              <span>→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- List 4: Myths -->
+      <a href="/planning-tools/top-10/myths" style="display: block; background: white; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; margin-bottom: 24px; text-decoration: none; transition: all 0.2s ease;">
+        <div style="display: flex; align-items: flex-start; gap: 24px;">
+          <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; font-weight: 700;">
+            4
+          </div>
+          <div style="flex: 1;">
+            <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 8px 0;">
+              Top 10 Myths About Wills
+            </h2>
+            <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0 0 12px 0;">
+              Debunking common misconceptions about who needs a will, what it covers, and how it works.
+            </p>
+            <div style="display: inline-flex; align-items: center; gap: 8px; color: #c9a227; font-weight: 600; font-size: 14px;">
+              <span>Read List</span>
+              <span>→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- List 5: When to Update -->
+      <a href="/planning-tools/top-10/when-to-update" style="display: block; background: white; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; margin-bottom: 24px; text-decoration: none; transition: all 0.2s ease;">
+        <div style="display: flex; align-items: flex-start; gap: 24px;">
+          <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; font-weight: 700;">
+            5
+          </div>
+          <div style="flex: 1;">
+            <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 8px 0;">
+              Top 10 Times to Update Your Will
+            </h2>
+            <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0 0 12px 0;">
+              Life events and changes that should trigger a review and update of your estate plan.
+            </p>
+            <div style="display: inline-flex; align-items: center; gap: 8px; color: #c9a227; font-weight: 600; font-size: 14px;">
+              <span>Read List</span>
+              <span>→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- List 6: Things Will Doesn't Do -->
+      <a href="/planning-tools/top-10/things-will-doesnt-do" style="display: block; background: white; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; margin-bottom: 24px; text-decoration: none; transition: all 0.2s ease;">
+        <div style="display: flex; align-items: flex-start; gap: 24px;">
+          <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; font-weight: 700;">
+            6
+          </div>
+          <div style="flex: 1;">
+            <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 8px 0;">
+              Top 10 Things a Will Doesn't Do
+            </h2>
+            <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0 0 12px 0;">
+              Common misconceptions about what a will can accomplish—and what you need instead.
+            </p>
+            <div style="display: inline-flex; align-items: center; gap: 8px; color: #c9a227; font-weight: 600; font-size: 14px;">
+              <span>Read List</span>
+              <span>→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- List 7: Executor Responsibilities -->
+      <a href="/planning-tools/top-10/executor-responsibilities" style="display: block; background: white; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; margin-bottom: 24px; text-decoration: none; transition: all 0.2s ease;">
+        <div style="display: flex; align-items: flex-start; gap: 24px;">
+          <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; font-weight: 700;">
+            7
+          </div>
+          <div style="flex: 1;">
+            <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 8px 0;">
+              Top 10 Executor Responsibilities
+            </h2>
+            <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0 0 12px 0;">
+              What your executor must do after your death—and why choosing the right person matters.
+            </p>
+            <div style="display: inline-flex; align-items: center; gap: 8px; color: #c9a227; font-weight: 600; font-size: 14px;">
+              <span>Read List</span>
+              <span>→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- List 8: Family Disputes -->
+      <a href="/planning-tools/top-10/family-disputes" style="display: block; background: white; border: 2px solid #e5e2dd; border-radius: 12px; padding: 32px; margin-bottom: 24px; text-decoration: none; transition: all 0.2s ease;">
+        <div style="display: flex; align-items: flex-start; gap: 24px;">
+          <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; font-weight: 700;">
+            8
+          </div>
+          <div style="flex: 1;">
+            <h2 style="font-size: 24px; font-weight: 700; color: #1a2e44; margin: 0 0 8px 0;">
+              Top 10 Family Disputes Over Estates
+            </h2>
+            <p style="font-size: 16px; line-height: 1.6; color: #4b5563; margin: 0 0 12px 0;">
+              The most common conflicts that tear families apart—and how to prevent them.
+            </p>
+            <div style="display: inline-flex; align-items: center; gap: 8px; color: #c9a227; font-weight: 600; font-size: 14px;">
+              <span>Read List</span>
+              <span>→</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </section>
+
+  </div>
+
+  <!-- CTA Section -->
+  <section style="background: #f9f6f1; border-top: 2px solid #e5e2dd; padding: 60px 64px;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <h2 style="font-size: 32px; font-weight: 700; color: #1a2e44; margin: 0 0 16px 0;">
+        Ready to Create Your Will?
+      </h2>
+      <p style="font-size: 18px; line-height: 1.6; color: #4b5563; margin: 0 0 32px 0;">
+        Use these guides to inform your decisions, then create your legally valid will online.
+      </p>
+      <a href="https://yourwillpro.com.au" style="display: inline-block; background: #c9a227; color: white; padding: 16px 32px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; transition: background 0.2s;">
+        Start Your Will
+      </a>
+    </div>
+  </section>
+</main>
+
+<Footer />
+
+<style>
+  /* Breadcrumb hover */
+  .breadcrumb a:hover {
+    color: #c9a227;
+  }
+
+  /* Sidebar link hover (only active links) */
+  .sidebar-link:not(.disabled):hover {
+    background: #faf6e9 !important;
+  }
+
+  /* Active list card hover */
+  a[href^="/planning-tools/top-10/"]:hover {
+    border-color: #c9a227 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  /* CTA button hover */
+  a[href="https://yourwillpro.com.au"]:hover {
+    background: #b08920 !important;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .top10-sidebar {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 900px) {
+    main section:first-child {
+      padding: 60px 32px !important;
+    }
+    main section:first-child h1 {
+      font-size: 36px !important;
+    }
+    main section:last-child {
+      padding: 48px 32px !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    main section:first-child {
+      padding: 40px 20px !important;
+    }
+    main section:first-child h1 {
+      font-size: 28px !important;
+    }
+    main section:first-child p {
+      font-size: 16px !important;
+    }
+    main section:last-child {
+      padding: 40px 20px !important;
+    }
+    main section:last-child h2 {
+      font-size: 24px !important;
+    }
+  }
+</style>
+
+</body>
+</html>

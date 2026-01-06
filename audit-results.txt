@@ -1,0 +1,180 @@
+=== DICTIONARY AUDIT REPORT ===
+
+## LIST A: MISSING SECTIONS
+| Term | Missing |
+|------|---------|
+| abatement | Example, Related Terms |
+| ademption | Example, Related Terms |
+| administration-period | Example, Related Terms |
+| administrator-with-will-annexed | Example, Related Terms |
+| advance-care-directive | Example, Related Terms |
+| advance-directive | Example, Related Terms |
+| advancement | Related Terms |
+| affidavit | Related Terms |
+| affinity | Example, Related Terms |
+| age-of-majority | Example, Related Terms |
+| agent | Example, Related Terms |
+| agnate | Example, Related Terms |
+| alternate-beneficiary | Related Terms |
+| ancillary-administration | Example, Related Terms |
+| ancillary-probate | Example, Related Terms |
+| ancillary-will | Legal Definition, When you'll encounter, Related Terms |
+| annuity | Example, Related Terms |
+| appraisal | Example, Related Terms |
+| asset-protection-trust | Example, Related Terms |
+| assets | Example, Related Terms |
+| attestation-clause | Example, Related Terms |
+| attestation | Example, Related Terms |
+| attorney-in-fact | Example, Related Terms |
+| augmented-estate | Example, Related Terms |
+| beneficiary-designation | Related Terms |
+| beneficiary | Example, Related Terms |
+| bequest | Example, Related Terms |
+| binding-death-benefit-nomination | Example, Related Terms |
+| blended-family | Example, Related Terms |
+| bloodline-will | Legal Definition, When you'll encounter, Example, Related Terms |
+| bond | Example, Related Terms |
+| business-succession | Example, Related Terms |
+| buy-sell-agreement | Example, Related Terms |
+| capacity | Example, Related Terms |
+| charitable-remainder-trust | Example, Related Terms |
+| charitable-trust | Example, Related Terms |
+| charitable-will | Legal Definition, When you'll encounter, Example, Related Terms |
+| children | Example, Related Terms |
+| codicil | Example, Related Terms |
+| cognates | Example, Related Terms |
+| common-disaster-clause | Example, Related Terms |
+| common-law-marriage | Example, Related Terms |
+| community-property | Example, Related Terms |
+| competent | Example, Related Terms |
+| conditional-bequest | Example, Related Terms |
+| conditional-will | Legal Definition, When you'll encounter, Related Terms |
+| conservator | Example, Related Terms |
+| conservatorship | Example, Related Terms |
+| contested-will | Legal Definition, When you'll encounter, Related Terms |
+| contingent-beneficiary | Example, Related Terms |
+| contingent-will | Legal Definition, When you'll encounter, Related Terms |
+| corpus | Example, Related Terms |
+| court | Example, Related Terms |
+| creditor | Example, Related Terms |
+| curtesy | Example, Related Terms |
+| custodian | Example, Related Terms |
+| death-benefit | Example, Related Terms |
+| death-certificate | Example, Related Terms |
+| death-taxes | Example, Related Terms |
+| deathbed-will | Legal Definition, When you'll encounter, Related Terms |
+| debts | Example, Related Terms |
+| decedent | Example, Related Terms |
+| declaration-of-trust | Related Terms |
+| deed | Example, Related Terms |
+| dependent | Related Terms |
+| descendants | Related Terms |
+| descent | Related Terms |
+| devise | Related Terms |
+| digital-assets | Related Terms |
+| digital-will | Legal Definition, When you'll encounter, Related Terms |
+| disinherit | Example, Related Terms |
+| disposition | Related Terms |
+| distribution | Related Terms |
+| divorce | Example, Related Terms |
+| domicile | Related Terms |
+| donee | Example, Related Terms |
+| donor | Example, Related Terms |
+| dower | Example, Related Terms |
+| durable-power-of-attorney | Example, Related Terms |
+| elective-share | Related Terms |
+| enduring-guardian | Example, Related Terms |
+| enduring-power-of-attorney | Example, Related Terms |
+| estate-administration | Example, Related Terms |
+| estate-planning | Example, Related Terms |
+| estate-tax-return | Related Terms |
+| estate-tax | Related Terms |
+| estate | Example, Related Terms |
+| executrix | Example, Related Terms |
+| fair-market-value | Example, Related Terms |
+| family-allowance | Example, Related Terms |
+| family-trust | Example, Related Terms |
+| fiduciary-duty | Example, Related Terms |
+| fiduciary | Related Terms |
+| final-distribution | Related Terms |
+| force-and-effect | Example, Related Terms |
+| formal-will | Example, Related Terms |
+| fraudulent-conveyance | Example, Related Terms |
+| generation-skipping-transfer-tax | Example, Related Terms |
+| gift-tax | Related Terms |
+| gift | Example, Related Terms |
+| grantor | Example, Related Terms |
+| gross-estate | Example, Related Terms |
+| guardian-ad-litem | Related Terms |
+| guardian | Example, Related Terms |
+| guardianship | Example, Related Terms |
+| heir-apparent | Example, Related Terms |
+| heir | Example, Related Terms |
+| heirs-at-law | Example, Related Terms |
+| holographic-will | Example, Related Terms |
+| homestead-exemption | Example, Related Terms |
+| homestead | Example, Related Terms |
+| illegitimate | Example, Related Terms |
+| incapacity | Example, Related Terms |
+| income-beneficiary | Related Terms |
+| incompetent | Related Terms |
+| inheritance-tax | Related Terms |
+| inheritance | Example, Related Terms |
+| insolvent | Example, Related Terms |
+| intangible-property | Related Terms |
+| inter-vivos-trust | Example, Related Terms |
+| interested-party | Example, Related Terms |
+| intestacy | Example, Related Terms |
+| intestate-succession | Example, Related Terms |
+| intestate | Example, Related Terms |
+| inventory | Example, Related Terms |
+| irrevocable-trust | Example, Related Terms |
+| issue | Related Terms |
+| joint-tenancy-with-right-of-survivorship | Example, Related Terms |
+| joint-tenancy | Example, Related Terms |
+| joint-will | Example, Related Terms |
+| kindred | Example, Related Terms |
+| lapsed-gift | Related Terms |
+| legacy | Related Terms |
+| legatee | Example, Related Terms |
+| letters-of-administration | Example, Related Terms |
+| letters-testamentary | Related Terms |
+| life-estate | Example, Related Terms |
+| life-insurance-trust | Example, Related Terms |
+| life-insurance | Related Terms |
+| life-interest | Related Terms |
+| life-tenant | Related Terms |
+| lifetime-gift | Example, Related Terms |
+| living-trust | Related Terms |
+| living-will | Related Terms |
+| marital-deduction | Related Terms |
+| mental-capacity | Example, Related Terms |
+| minor | Related Terms |
+| mirror-will | Example, Related Terms |
+| mutual-will | Related Terms |
+| next-of-kin | Example, Related Terms |
+| no-contest-clause | Example, Related Terms |
+| nominee | Related Terms |
+| non-probate-assets | Related Terms |
+| notary-public | Example, Related Terms |
+| notice-to-creditors | Example, Related Terms |
+| nuncupative-will | Related Terms |
+| oral-will | Example, Related Terms |
+| parent | Related Terms |
+| partial-intestacy | Related Terms |
+| pay-on-death-account | Related Terms |
+| per-capita | Related Terms |
+| per-stirpes | Related Terms |
+| personal-effects | Related Terms |
+| yourwillpro | Legal Definition, When you'll encounter |
+
+## LIST B: TEXT TOO LONG
+| Term | Section | Issue |
+|------|---------|-------|
+| (none) | - | - |
+
+## SUMMARY
+- Total entries reviewed: 257
+- Entries with missing sections: 164
+- Entries with text too long: 0
+- Entries that are good: 93

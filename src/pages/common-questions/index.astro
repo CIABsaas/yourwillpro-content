@@ -1,0 +1,553 @@
+---
+import { getCollection } from 'astro:content';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const allArticles = await getCollection('articles');
+const questions = allArticles.filter(article =>
+  article.data.status === 'published' &&
+  (article.data.category === 'Common Questions' ||
+   article.data.category === 'Life Stage' ||
+   article.data.category === 'Relationships' ||
+   article.data.category === 'Parenting' ||
+   article.data.category === 'Work & Assets' ||
+   article.data.category === 'Health & Wellbeing')
+);
+const sortedQuestions = questions.sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
+
+// Group questions by category
+const categories = [
+  { id: 'getting-started', icon: '👋', title: 'Getting Started', questions: [] },
+  { id: 'writing-a-will', icon: '📝', title: 'Writing a Will', questions: [] },
+  { id: 'executors', icon: '👔', title: 'Executors', questions: [] },
+  { id: 'after-death', icon: '⚖️', title: 'After Death', questions: [] },
+  { id: 'life-stage', icon: '👤', title: 'Life Stage', questions: [] },
+  { id: 'relationships', icon: '💑', title: 'Relationships', questions: [] },
+  { id: 'parenting', icon: '👶', title: 'Parenting', questions: [] },
+  { id: 'work-assets', icon: '🏢', title: 'Work & Assets', questions: [] },
+  { id: 'health-wellbeing', icon: '❤️', title: 'Health & Wellbeing', questions: [] }
+];
+
+// Map questions to categories
+sortedQuestions.forEach(q => {
+  if (q.data.category === 'Common Questions') {
+    // Use group field for Common Questions
+    const group = q.data.group || 'Getting Started';
+    if (group === 'Getting Started') {
+      categories[0].questions.push(q);
+    } else if (group === 'Writing a Will') {
+      categories[1].questions.push(q);
+    } else if (group === 'Executors') {
+      categories[2].questions.push(q);
+    } else if (group === 'After Death') {
+      categories[3].questions.push(q);
+    } else if (group === 'Parenting') {
+      categories[6].questions.push(q);
+    } else if (group === 'Life Stage') {
+      categories[4].questions.push(q);
+    } else if (group === 'Relationships') {
+      categories[5].questions.push(q);
+    } else if (group === 'Work & Assets') {
+      categories[7].questions.push(q);
+    } else if (group === 'Health & Wellbeing') {
+      categories[8].questions.push(q);
+    }
+  } else if (q.data.category === 'Life Stage') {
+    categories[4].questions.push(q);
+  } else if (q.data.category === 'Relationships') {
+    categories[5].questions.push(q);
+  } else if (q.data.category === 'Parenting') {
+    categories[6].questions.push(q);
+  } else if (q.data.category === 'Work & Assets') {
+    categories[7].questions.push(q);
+  } else if (q.data.category === 'Health & Wellbeing') {
+    categories[8].questions.push(q);
+  }
+});
+
+// Filter out empty categories
+const activeCategories = categories.filter(cat => cat.questions.length > 0);
+const totalQuestions = sortedQuestions.length;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/ywp-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Common Questions | YourWillPro</title>
+    <meta name="description" content="Simple, clear answers to the questions everyone asks." />
+  </head>
+  <body>
+
+    <Header />
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" style="padding: 1rem 2rem; font-size: 0.85rem; color: #7a7a7a; background: white; border-bottom: 1px solid #e2e2e2;">
+      <a href="/" style="color: #7a7a7a; text-decoration: none;">Home</a>
+      <span style="margin: 0 0.5rem;">›</span>
+      <span>Common Questions</span>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Common Questions</h1>
+        <p class="subheading">Simple, clear answers to the questions everyone asks.</p>
+
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.35-4.35"/>
+          </svg>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search questions..."
+            autocomplete="off"
+          />
+        </div>
+
+        <p class="question-count">{totalQuestions} questions answered</p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      {activeCategories.map((category, index) => (
+        <div class="accordion-item" data-category={category.id}>
+          <button
+            class="accordion-header"
+            data-open={index === 0 ? 'true' : 'false'}
+            aria-expanded={index === 0 ? 'true' : 'false'}
+          >
+            <span class="header-left">
+              <span class="category-icon">{category.icon}</span>
+              <span class="category-title">{category.title}</span>
+            </span>
+            <span class="header-right">
+              <span class="count-badge">{category.questions.length}</span>
+              <svg class="toggle-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div class="accordion-content" style={index === 0 ? '' : 'display: none;'}>
+            <ul class="question-list">
+              {category.questions.map((q: any) => (
+                <li class="question-item" data-title={q.data.title.toLowerCase()}>
+                  <a href={`/common-questions/${q.data.slug}`} class="question-link">
+                    <span class="question-text">{q.data.title}</span>
+                    <svg class="link-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+
+    </main>
+
+    <Footer />
+
+  </body>
+</html>
+
+<style>
+  /* === VARIABLES === */
+  :root {
+    --navy: #1a2e44;
+    --gold: #c9a227;
+    --cream: #faf6e9;
+    --bg-light: #f7f8f9;
+    --text-primary: #1a2e44;
+    --text-secondary: #4a4a4a;
+    --text-muted: #7a7a7a;
+    --border: #e2e2e2;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-secondary);
+    background: var(--bg-light);
+    line-height: 1.6;
+  }
+
+  /* === BREADCRUMB === */
+  .breadcrumb a:hover {
+    color: var(--gold);
+  }
+
+  /* === HERO SECTION === */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #2a4560 100%);
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .subheading {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+  }
+
+  .search-box {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto 1rem;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: var(--text-muted);
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 0.875rem 1rem 0.875rem 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: rgba(255, 255, 255, 0.95);
+    transition: all 0.2s;
+  }
+
+  .search-box input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.1);
+    background: #fff;
+  }
+
+  .question-count {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+  }
+
+  /* === MAIN CONTENT === */
+  .main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* === ACCORDION === */
+  .accordion-item {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s;
+  }
+
+  .accordion-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .accordion-item.hidden {
+    display: none;
+  }
+
+  /* Accordion Header */
+  .accordion-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+
+  .accordion-header:hover {
+    background: var(--cream);
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .category-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .category-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .count-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    padding: 0 0.5rem;
+    background: var(--cream);
+    color: var(--navy);
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 14px;
+  }
+
+  .toggle-arrow {
+    color: var(--text-muted);
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-header[data-open="true"] .toggle-arrow {
+    transform: rotate(180deg);
+  }
+
+  /* Accordion Content */
+  .accordion-content {
+    border-top: 1px solid var(--border);
+    animation: slideDown 0.3s ease;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      max-height: 0;
+    }
+    to {
+      opacity: 1;
+      max-height: 1000px;
+    }
+  }
+
+  /* Question List */
+  .question-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .question-item {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .question-item:last-child {
+    border-bottom: none;
+  }
+
+  .question-item.hidden {
+    display: none;
+  }
+
+  .question-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .question-link:hover {
+    color: var(--navy);
+    background: rgba(201, 162, 39, 0.05);
+  }
+
+  .question-text {
+    flex: 1;
+    font-size: 0.9375rem;
+  }
+
+  .link-arrow {
+    color: var(--text-muted);
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+
+  .question-link:hover .link-arrow {
+    color: var(--gold);
+    transform: translateX(3px);
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 900px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .subheading {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding: 2rem 1.5rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 1.75rem;
+    }
+
+    .main-content {
+      padding: 1.5rem 1rem;
+    }
+
+    .accordion-header {
+      padding: 1rem 1.25rem;
+    }
+
+    .category-title {
+      font-size: 1rem;
+    }
+
+    .category-icon {
+      font-size: 1.25rem;
+    }
+
+    .question-link {
+      padding: 0.625rem 1.25rem;
+    }
+
+    .question-text {
+      font-size: 0.875rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  // Accordion functionality
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const isOpen = header.getAttribute('data-open') === 'true';
+      const content = header.nextElementSibling as HTMLElement;
+
+      if (isOpen) {
+        // Close this accordion
+        header.setAttribute('data-open', 'false');
+        header.setAttribute('aria-expanded', 'false');
+        content.style.display = 'none';
+      } else {
+        // Open this accordion
+        header.setAttribute('data-open', 'true');
+        header.setAttribute('aria-expanded', 'true');
+        content.style.display = 'block';
+      }
+    });
+  });
+
+  // Search functionality
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const accordionItems = document.querySelectorAll('.accordion-item');
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = (e.target as HTMLInputElement).value.toLowerCase().trim();
+
+      if (searchTerm === '') {
+        // Show all items and reset
+        accordionItems.forEach((item, index) => {
+          item.classList.remove('hidden');
+          const header = item.querySelector('.accordion-header') as HTMLElement;
+          const content = item.querySelector('.accordion-content') as HTMLElement;
+          const questions = item.querySelectorAll('.question-item');
+
+          // Show all questions
+          questions.forEach(q => q.classList.remove('hidden'));
+
+          // Reset to first open
+          if (index === 0) {
+            header.setAttribute('data-open', 'true');
+            header.setAttribute('aria-expanded', 'true');
+            content.style.display = 'block';
+          } else {
+            header.setAttribute('data-open', 'false');
+            header.setAttribute('aria-expanded', 'false');
+            content.style.display = 'none';
+          }
+        });
+      } else {
+        // Filter questions
+        accordionItems.forEach(item => {
+          const questions = item.querySelectorAll('.question-item');
+          let hasVisibleQuestions = false;
+
+          questions.forEach(q => {
+            const title = q.getAttribute('data-title') || '';
+            if (title.includes(searchTerm)) {
+              q.classList.remove('hidden');
+              hasVisibleQuestions = true;
+            } else {
+              q.classList.add('hidden');
+            }
+          });
+
+          // Show/hide category and open if has matches
+          if (hasVisibleQuestions) {
+            item.classList.remove('hidden');
+            const header = item.querySelector('.accordion-header') as HTMLElement;
+            const content = item.querySelector('.accordion-content') as HTMLElement;
+            header.setAttribute('data-open', 'true');
+            header.setAttribute('aria-expanded', 'true');
+            content.style.display = 'block';
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      }
+    });
+  }
+</script>

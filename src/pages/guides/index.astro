@@ -1,0 +1,440 @@
+---
+/**
+ * Guides Hub Page - Concept C Design
+ * Category tabs with filterable guide cards
+ */
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+// Fetch all published guides
+const allArticles = await getCollection('articles');
+const guides = allArticles
+  .filter(article => article.data.category === 'Guides' && article.data.status === 'published')
+  .sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
+
+// Helper function to get icon based on guide title/topic
+function getGuideIcon(title: string): string {
+  const lowerTitle = title.toLowerCase();
+  if (lowerTitle.includes('executor')) return '👤';
+  if (lowerTitle.includes('type of will') || lowerTitle.includes('choosing')) return '📜';
+  if (lowerTitle.includes('guardian')) return '👨‍👩‍👧';
+  if (lowerTitle.includes('probate')) return '⚖️';
+  if (lowerTitle.includes('asset')) return '🏠';
+  if (lowerTitle.includes('tax')) return '💰';
+  if (lowerTitle.includes('business')) return '💼';
+  if (lowerTitle.includes('trust')) return '🛡️';
+  if (lowerTitle.includes('power of attorney')) return '✍️';
+  return '📋'; // default icon
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guides | YourWillPro</title>
+  <meta name="description" content="Step-by-step walkthroughs to guide you through every estate planning decision.">
+  <link rel="icon" type="image/png" href="/ywp-logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<Header />
+
+<!-- Breadcrumb Navigation -->
+<nav class="breadcrumb" style="padding: 1rem 2rem; font-size: 0.85rem; color: #7a7a7a; background: white; border-bottom: 1px solid #e2e2e2;">
+  <a href="/" style="color: #7a7a7a; text-decoration: none;">Home</a>
+  <span style="margin: 0 0.5rem;">›</span>
+  <span>Guides</span>
+</nav>
+
+<!-- Hero Section with Tabs -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+      </svg>
+      GUIDES
+    </div>
+    <h1>Guides</h1>
+    <p class="tagline">Step-by-step walkthroughs to guide you through every estate planning decision.</p>
+  </div>
+
+  <!-- Category Tabs -->
+  <div class="tabs">
+    <button class="tab active" data-category="all">All Guides</button>
+    <button class="tab" data-category="Getting Started">Getting Started</button>
+    <button class="tab" data-category="Deep Dives">Deep Dives</button>
+    <button class="tab" data-category="Special Situations">Special Situations</button>
+  </div>
+</section>
+
+<!-- Cards Grid -->
+<main class="main-content">
+  <div class="cards-grid">
+    {guides.map((guide) => (
+      <a
+        href={`/guides/${guide.data.slug}`}
+        class="guide-card"
+        data-group={guide.data.group || 'Getting Started'}
+      >
+        <div class="card-icon">{getGuideIcon(guide.data.title)}</div>
+        <h2 class="card-title">{guide.data.title}</h2>
+        <p class="card-description">{guide.data.summary}</p>
+        <div class="card-footer">
+          <span class="read-time">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+            {guide.data.readTime || '10 min read'}
+          </span>
+          <span class="difficulty" data-difficulty={guide.data.difficulty || 'Beginner'}>
+            {guide.data.difficulty || 'Beginner'}
+          </span>
+        </div>
+      </a>
+    ))}
+  </div>
+
+  <!-- Empty State (hidden by default, shown when no results) -->
+  <div class="empty-state" style="display: none;">
+    <div class="empty-icon">📚</div>
+    <h3>No guides found in this category yet</h3>
+    <p>We're working on adding more content. Check back soon!</p>
+  </div>
+</main>
+
+<Footer />
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #ffffff;
+    color: #2c3338;
+  }
+
+  /* === BREADCRUMB === */
+  .breadcrumb a:hover {
+    color: #c9a227;
+  }
+
+  /* === HERO SECTION === */
+  .hero {
+    background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%);
+    padding: 80px 64px 0 64px;
+    color: white;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 20px;
+  }
+
+  .badge svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+
+  .tagline {
+    font-size: 20px;
+    line-height: 1.6;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* === TABS === */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 0 20px 32px 20px;
+  }
+
+  .tab {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .tab:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .tab.active {
+    background: white;
+    color: #1a2e44;
+  }
+
+  /* === MAIN CONTENT === */
+  .main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 64px;
+  }
+
+  /* === CARDS GRID === */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .guide-card {
+    background: white;
+    border: 2px solid #e5e2dd;
+    border-radius: 12px;
+    padding: 32px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .guide-card:hover {
+    border-color: #c9a227;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  .card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a2e44;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .card-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4b5563;
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid #e5e2dd;
+    font-size: 14px;
+  }
+
+  .read-time {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #6b7280;
+  }
+
+  .read-time svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .difficulty {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  .difficulty[data-difficulty="Beginner"],
+  .difficulty[data-difficulty="Easy"] {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
+
+  .difficulty[data-difficulty="Intermediate"],
+  .difficulty[data-difficulty="Medium"] {
+    background: #fff3e0;
+    color: #c9a227;
+  }
+
+  .difficulty[data-difficulty="Advanced"],
+  .difficulty[data-difficulty="Complex"] {
+    background: #fef0ee;
+    color: #e85d4c;
+  }
+
+  /* === EMPTY STATE === */
+  .empty-state {
+    text-align: center;
+    padding: 80px 20px;
+  }
+
+  .empty-icon {
+    font-size: 80px;
+    margin-bottom: 24px;
+    opacity: 0.5;
+  }
+
+  .empty-state h3 {
+    font-size: 24px;
+    color: #1a2e44;
+    margin-bottom: 12px;
+  }
+
+  .empty-state p {
+    font-size: 16px;
+    color: #6b7280;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 900px) {
+    .hero {
+      padding: 60px 32px 0 32px;
+    }
+
+    h1 {
+      font-size: 42px;
+    }
+
+    .tagline {
+      font-size: 18px;
+    }
+
+    .main-content {
+      padding: 60px 32px;
+    }
+
+    .cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero {
+      padding: 40px 20px 0 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+    }
+
+    .tagline {
+      font-size: 16px;
+    }
+
+    .tabs {
+      padding: 0 12px 24px 12px;
+    }
+
+    .tab {
+      padding: 10px 16px;
+      font-size: 14px;
+    }
+
+    .main-content {
+      padding: 40px 20px;
+    }
+
+    .cards-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .guide-card {
+      padding: 24px;
+    }
+
+    .card-title {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<script>
+  // Tab filtering functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.tab');
+    const cards = document.querySelectorAll('.guide-card');
+    const emptyState = document.querySelector('.empty-state') as HTMLElement;
+    const cardsGrid = document.querySelector('.cards-grid') as HTMLElement;
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Update active tab
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // Get selected category
+        const category = tab.getAttribute('data-category');
+
+        // Filter cards
+        let visibleCount = 0;
+        cards.forEach(card => {
+          const cardGroup = card.getAttribute('data-group');
+
+          if (category === 'all' || cardGroup === category) {
+            (card as HTMLElement).style.display = 'flex';
+            visibleCount++;
+          } else {
+            (card as HTMLElement).style.display = 'none';
+          }
+        });
+
+        // Show/hide empty state
+        if (visibleCount === 0) {
+          cardsGrid.style.display = 'none';
+          emptyState.style.display = 'block';
+        } else {
+          cardsGrid.style.display = 'grid';
+          emptyState.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

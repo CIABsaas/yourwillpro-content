@@ -1,0 +1,189 @@
+---
+import { getCollection } from 'astro:content';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+const categories = await getCollection('categories');
+const sortedCategories = categories.sort((a, b) => a.data.order - b.data.order);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <title>{title} | YourWillPro</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+  </head>
+  <body>
+    <Header />
+
+    <div class="layout">
+      <aside class="sidebar">
+        <slot name="sidebar" />
+      </aside>
+      <main class="main-content">
+        <slot />
+      </main>
+    </div>
+
+    <Footer />
+
+    <script is:inline src="/pagefind/pagefind-ui.js">
+    <script is:inline>
+      window.addEventListener('DOMContentLoaded', () => {
+        new PagefindUI({
+          element: "#search",
+          showSubResults: true,
+          showImages: false
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', -apple-system, sans-serif;
+    --bg-warm: #FAFAF8;
+    --bg-cream: #f5f0e8;
+    --text-primary: #1a1a1a;
+    --text-secondary: #5a5a5a;
+    --text-muted: #8a8a8a;
+    --brand-navy: #1e3a5f;
+    --accent-coral: #e85d4c;
+    --border-light: #e8e6e1;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: #ffffff;
+    color: #1f2937;
+    line-height: 1.8;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+
+  a {
+    color: #4b5563;
+    text-decoration: none;
+    border-bottom: 1px solid #a8a29e;
+  }
+
+  a:hover {
+    color: #1f2937;
+    border-bottom-color: #1f2937;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: calc(100vh - 140px);
+  }
+
+  .sidebar {
+    border-right: 1px solid #e7e5e4;
+    background: #f5f5f4;
+    padding: 1.5rem;
+    position: sticky;
+    top: 65px;
+    height: calc(100vh - 65px);
+    overflow-y: auto;
+  }
+
+  .main-content {
+    padding: 2rem 4rem 2rem 5rem;
+    max-width: 75ch;
+  }
+
+  @media (max-width: 768px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+      display: none;
+    }
+
+    .main-content {
+      padding: 1.5rem;
+    }
+  }
+
+  @media print {
+    .header,
+    .sidebar,
+    .footer,
+    .mobile-menu-btn,
+    .back-link {
+      display: none !important;
+    }
+
+    .layout {
+      display: block;
+    }
+
+    .main-content {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    body::before {
+      content: "YourWillPro";
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      font-size: 20rem;
+      font-weight: 900;
+      font-family: var(--font-display);
+      color: #000000;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 9999;
+      white-space: nowrap;
+      letter-spacing: 0.5rem;
+    }
+
+    body::after {
+      content: "© YourWillPro";
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 10px;
+      color: #999;
+    }
+  }
+</style>

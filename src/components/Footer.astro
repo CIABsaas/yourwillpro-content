@@ -1,0 +1,47 @@
+---
+/**
+ * Footer.astro
+ * Shared footer component - single source of truth
+ * ALL values are explicit - using inline styles for guaranteed application
+ */
+---
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<footer style="background: #1a2e44; padding: 60px 64px 0;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; gap: 60px; padding-bottom: 48px;">
+    <div style="max-width: 280px;">
+      <div style="background: rgba(255, 255, 255, 0.9); padding: 12px 16px; border-radius: 8px; display: inline-block; margin-bottom: 16px;">
+        <img src="/images/ywp-logo.png" alt="YourWillPro" style="height: 40px; width: auto; display: block;">
+      </div>
+      <p style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.7); line-height: 1.5; margin: 0;">Helping Australian families protect what matters most.</p>
+    </div>
+
+    <div style="display: flex; gap: 60px;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <h4 style="font-family: Inter, -apple-system, sans-serif; font-size: 13px; font-weight: 600; color: #c9a227; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 8px 0;">Learn</h4>
+        <a href="/user-stories" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.8); text-decoration: none; border-bottom: none;">Real Stories</a>
+        <a href="/dictionary" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.8); text-decoration: none; border-bottom: none;">Dictionary</a>
+        <a href="/common-questions" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.8); text-decoration: none; border-bottom: none;">Your Questions</a>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <h4 style="font-family: Inter, -apple-system, sans-serif; font-size: 13px; font-weight: 600; color: #c9a227; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 8px 0;">Tools</h4>
+        <a href="/guides" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.8); text-decoration: none; border-bottom: none;">Guides</a>
+        <a href="/planning-tools" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.8); text-decoration: none; border-bottom: none;">Planning Tools</a>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <h4 style="font-family: Inter, -apple-system, sans-serif; font-size: 13px; font-weight: 600; color: #c9a227; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 8px 0;">About</h4>
+        <a href="/our-story" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.8); text-decoration: none; border-bottom: none;">Our Story</a>
+        <a href="/about" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.8); text-decoration: none; border-bottom: none;">About YourWillPro</a>
+        <a href="/feedback" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.8); text-decoration: none; border-bottom: none;">Contact Us</a>
+        <a href="/disclaimer" style="font-family: Inter, -apple-system, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.8); text-decoration: none; border-bottom: none;">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 24px 0; max-width: 1200px; margin: 0 auto;">
+    <p style="font-family: Inter, -apple-system, sans-serif; font-size: 13px; color: rgba(255, 255, 255, 0.5); text-align: center; margin: 0;">© 2025 YourWillPro. Educational content only — not legal advice.</p>
+  </div>
+</footer>

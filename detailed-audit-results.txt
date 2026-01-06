@@ -1,0 +1,91 @@
+=== DETAILED DICTIONARY AUDIT ===
+
+Benchmark: Administrator = 248 words
+Warning threshold (2x): 496 words
+Critical threshold (4x): 992 words
+
+## CRITICAL: FILES 4X+ TOO LONG (>992 words)
+| Term | Word Count | vs Benchmark |
+|------|------------|--------------|
+| contested-will | 2476 | 9x |
+| deathbed-will | 2383 | 9x |
+| digital-will | 2325 | 9x |
+| power-of-attorney | 2203 | 8x |
+| contingent-will | 2189 | 8x |
+| pour-over-will | 1964 | 7x |
+| conditional-will | 1928 | 7x |
+| pretermitted-child | 1906 | 7x |
+| pretermitted-heir | 1855 | 7x |
+| charitable-will | 1850 | 7x |
+| power-of-appointment | 1818 | 7x |
+| precatory-language | 1756 | 7x |
+| personal-representative | 1753 | 7x |
+| probate-assets | 1724 | 6x |
+| posthumous-child | 1680 | 6x |
+| principal | 1654 | 6x |
+| personal-property | 1589 | 6x |
+| per-stirpes | 1520 | 6x |
+| notice-to-creditors | 1484 | 5x |
+| pay-on-death-account | 1452 | 5x |
+| mirror-will | 1444 | 5x |
+| personal-effects | 1439 | 5x |
+| parent | 1428 | 5x |
+| mental-capacity | 1407 | 5x |
+| non-probate-assets | 1401 | 5x |
+| oral-will | 1395 | 5x |
+| nuncupative-will | 1381 | 5x |
+| no-contest-clause | 1378 | 5x |
+| mutual-will | 1364 | 5x |
+| next-of-kin | 1339 | 5x |
+| petition | 1337 | 5x |
+| per-capita | 1333 | 5x |
+| notary-public | 1331 | 5x |
+| partial-intestacy | 1285 | 5x |
+| nominee | 1261 | 5x |
+| bloodline-will | 1255 | 5x |
+| minor | 1159 | 4x |
+| ancillary-will | 1119 | 4x |
+| living-will | 1113 | 4x |
+| marital-deduction | 1072 | 4x |
+
+## WARNING: FILES 2-4X TOO LONG (496-992 words)
+| Term | Word Count | vs Benchmark |
+|------|------------|--------------|
+| living-trust | 987 | 3x |
+| probate | 910 | 3x |
+| life-interest | 765 | 3x |
+| life-insurance-trust | 759 | 3x |
+| lifetime-gift | 741 | 2x |
+| life-tenant | 735 | 2x |
+| life-estate | 730 | 2x |
+| life-insurance | 709 | 2x |
+| executor | 651 | 2x |
+| lapsed-gift | 650 | 2x |
+| letters-of-administration | 647 | 2x |
+| joint-will | 647 | 2x |
+| letters-testamentary | 633 | 2x |
+| joint-tenancy | 623 | 2x |
+| inter-vivos-trust | 607 | 2x |
+| irrevocable-trust | 601 | 2x |
+| joint-tenancy-with-right-of-survivorship | 599 | 2x |
+| interested-party | 583 | 2x |
+| legacy | 575 | 2x |
+| insolvent | 573 | 2x |
+| intestacy | 569 | 2x |
+| intestate-succession | 564 | 2x |
+| kindred | 562 | 2x |
+| legatee | 561 | 2x |
+| inventory | 555 | 2x |
+| intestate | 552 | 2x |
+| inheritance-tax | 546 | 2x |
+| intangible-property | 539 | 2x |
+| income-beneficiary | 523 | 2x |
+| incapacity | 515 | 2x |
+| inheritance | 508 | 2x |
+| issue | 497 | 2x |
+
+## SUMMARY BY WORD COUNT
+- Total entries reviewed: 257
+- Critical (4x+ benchmark): 40 entries
+- Warning (2-4x benchmark): 32 entries
+- Good (under 2x): 185 entries

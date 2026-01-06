@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const categories = await getCollection('categories');
+
+  const paths = categories
+    .filter(category => category.data.slug !== 'dictionary')
+    .map((category) => ({
+      params: { category: category.data.slug },
+      props: { category },
+    }));
+
+  return paths;
+}
+
+const { category } = Astro.props;
+const articles = await getCollection('articles');
+
+const categoryArticles = articles
+  .filter((article) => article.data.category === category.data.title)
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout title={category.data.title}>
+  <Sidebar slot="sidebar" currentCategory={category.data.slug} />
+
+  <article class="category-page">
+    <h1>{category.data.title}</h1>
+    <p class="description">{category.data.description}</p>
+
+    <div class="article-cards">
+      {categoryArticles.map((article) => (
+        <a href={`/${category.data.slug}/${article.data.slug}`} class="article-card">
+          <h2>{article.data.title}</h2>
+          {article.data.summary && <p>{article.data.summary}</p>}
+        </a>
+      ))}
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .category-page {
+    padding-top: 2rem;
+  }
+
+  .category-page h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #111827;
+  }
+
+  .description {
+    color: #6b7280;
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+
+  .article-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .article-card {
+    display: block;
+    padding: 1.25rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .article-card:hover {
+    border-color: #2563eb;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+  }
+
+  .article-card h2 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 0.25rem;
+  }
+
+  .article-card p {
+    color: #6b7280;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+</style>

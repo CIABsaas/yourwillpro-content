@@ -1,0 +1,916 @@
+---
+/**
+ * HomeLayout.astro
+ * Branded home/welcome page for YourWillPro content site
+ */
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  categories?: any[];
+  featuredStories?: any[];
+  recentArticles?: any[];
+}
+
+const { 
+  categories = [],
+  featuredStories = [],
+  recentArticles = []
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <title>YourWillPro | Protect What Matters</title>
+    <meta name="description" content="Clear guidance on wills, estate planning, and protecting your family's future." />
+  </head>
+  <body>
+
+    <Header />
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="light">Protect your family.</span> <span class="bold">Avoid the <span class="accent">mistakes.</span></span>
+        </h1>
+        <div class="title-underline"></div>
+        <p class="hero-subtitle">
+          Real stories. Clear guides. Plain-English answers.
+          Everything you need to get your will right.
+        </p>
+
+        <div class="stakes">
+          <div class="stake-item bad">
+            <div class="stake-icon">🏠</div>
+            <div class="stake-label">Homes lost</div>
+          </div>
+          <div class="stake-item bad">
+            <div class="stake-icon">💔</div>
+            <div class="stake-label">Relationships broken</div>
+          </div>
+          <div class="stake-item bad">
+            <div class="stake-icon">⚖️</div>
+            <div class="stake-label">Years in court</div>
+          </div>
+          <div class="stake-item good">
+            <div class="stake-icon">✓</div>
+            <div class="stake-label">Peace of mind</div>
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <a href="/user-stories" class="btn-primary">See What Can Go Wrong</a>
+          <a href="/common-questions" class="btn-secondary">Start Learning</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2>Explore Our Resources</h2>
+          <p>Everything you need to understand wills and estate planning</p>
+        </div>
+        
+        <div class="categories-grid">
+          <a href="/user-stories" class="category-card category-stories">
+            <div class="category-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3>Real Stories</h3>
+            <p>Learn from families who've been through the process — the good, the bad, and the lessons learned.</p>
+            <span class="category-link">Browse stories →</span>
+          </a>
+          
+          <a href="/am-i-protected" class="category-card category-tools">
+            <div class="category-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+            </div>
+            <h3>Planning Tools</h3>
+            <p>Interactive tools: quiz your readiness, check your will completeness, assess your family's risk level.</p>
+            <span class="category-link">Check now →</span>
+          </a>
+          
+          <a href="/common-questions" class="category-card category-faq">
+            <div class="category-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                <path d="M12 17h.01"/>
+              </svg>
+            </div>
+            <h3>Your Questions</h3>
+            <p>Quick answers to the questions everyone asks about wills, executors, and estate planning.</p>
+            <span class="category-link">Find answers →</span>
+          </a>
+          
+          <a href="/dictionary" class="category-card category-dictionary">
+            <div class="category-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              </svg>
+            </div>
+            <h3>Legal Dictionary</h3>
+            <p>Plain-English definitions of legal terms you'll encounter when dealing with wills and estates.</p>
+            <span class="category-link">Browse terms →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Featured Stories Section -->
+    <section class="featured-section">
+      <div class="section-inner">
+        <div class="section-header">
+          <h2>What Happens When Things Go Wrong</h2>
+          <p>Real families. Real consequences. Real lessons.</p>
+        </div>
+
+        <div class="featured-stories">
+          <a href="/user-stories/six-siblings-zero-trust" class="story-card warning">
+            <div class="story-tag">Cautionary tale</div>
+            <div class="story-title">Six siblings spent 6 years in court</div>
+            <div class="story-hint">One executor. Zero transparency. Complete breakdown.</div>
+          </a>
+
+          <a href="/user-stories/transparency-she-kept-everyone-informed" class="story-card success">
+            <div class="story-tag">Success story</div>
+            <div class="story-title">She kept everyone informed</div>
+            <div class="story-hint">11 months. No disputes. Peace of mind.</div>
+          </a>
+        </div>
+
+        <div class="section-cta">
+          <a href="/user-stories" class="btn-outline">Read All Stories</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Trust Section -->
+    <section class="trust-section">
+      <div class="section-inner">
+        <div class="trust-content">
+          <h2>Why trust our content?</h2>
+          <div class="trust-grid">
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+              </div>
+              <h4>Based on Real Cases</h4>
+              <p>Our stories come from actual court decisions and real family experiences.</p>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <h4>Expert Reviewed</h4>
+              <p>Content is reviewed by estate planning professionals for accuracy.</p>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="12" y1="16" x2="12" y2="12"/>
+                  <line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+              </div>
+              <h4>Plain English</h4>
+              <p>No legal jargon. We explain complex topics in language anyone can understand.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+    
+  </body>
+</html>
+
+<style>
+  :root {
+    --bg-warm: #FAFAF8;
+    --bg-cream: #f5f0e8;
+    --bg-dark: #1a1a1a;
+    --text-primary: #1a1a1a;
+    --text-secondary: #5a5a5a;
+    --text-muted: #8a8a8a;
+    --brand-navy: #1e3a5f;
+    --brand-navy-light: #2a4a73;
+    --accent-amber: #c9a227;
+    --accent-amber-light: #fef9e6;
+    --accent-coral: #e85d4c;
+    --accent-coral-light: #fef0ee;
+    --accent-green: #2e7d32;
+    --accent-green-light: #e8f5e9;
+    --accent-blue: #1976d2;
+    --accent-blue-light: #e3f2fd;
+    --border-light: #e8e6e1;
+    
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', -apple-system, sans-serif;
+    
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2.5rem;
+    --space-xl: 4rem;
+    --space-2xl: 6rem;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-body);
+    background-color: var(--bg-warm);
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-size: 17px;
+  }
+  
+  /* === HEADER === */
+  .header {
+    background: white;
+    border-bottom: 1px solid var(--border-light);
+    padding: var(--space-sm) var(--space-lg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+  }
+  
+  .logo-img {
+    height: 56px;
+    width: auto;
+  }
+  
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+  
+  .nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+
+  .nav-link:hover {
+    color: var(--brand-navy);
+  }
+
+  .nav-link.active {
+    color: var(--text-primary);
+    border-bottom-color: var(--text-primary);
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    padding: 8px;
+  }
+
+  .mobile-menu {
+    display: none;
+    background: var(--bg-warm);
+    border-bottom: 1px solid var(--border-light);
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .mobile-menu.open {
+    display: block;
+  }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .mobile-nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: var(--space-xs) 0;
+    transition: color 0.2s;
+  }
+
+  .mobile-nav a:hover {
+    color: var(--brand-navy);
+  }
+
+  /* === HERO === */
+  .hero {
+    position: relative;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(25, 118, 210, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(232, 93, 76, 0.08) 0%, transparent 50%),
+      var(--bg-cream);
+    padding: var(--space-2xl) var(--space-lg);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-title .light {
+    font-weight: 400;
+    color: var(--text-secondary);
+  }
+
+  .hero-title .bold {
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .hero-title .accent {
+    color: var(--accent-coral);
+  }
+
+  .title-underline {
+    width: 80px;
+    height: 4px;
+    background: var(--accent-coral);
+    margin: 0 auto var(--space-lg);
+    border-radius: 2px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto var(--space-xl);
+    line-height: 1.7;
+  }
+
+  .stakes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    flex-wrap: wrap;
+  }
+
+  .stake-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .stake-icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .stake-item.bad .stake-icon {
+    opacity: 0.7;
+  }
+
+  .stake-item.good .stake-icon {
+    color: var(--accent-green);
+  }
+
+  .stake-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .stake-item.good .stake-label {
+    color: var(--accent-green);
+    font-weight: 600;
+  }
+  
+  .hero-cta {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .btn-primary {
+    display: inline-block;
+    background: var(--accent-coral);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(232, 93, 76, 0.3);
+  }
+  
+  .btn-primary:hover {
+    background: #d64d3c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(232, 93, 76, 0.4);
+  }
+  
+  .btn-secondary {
+    display: inline-block;
+    background: white;
+    color: var(--brand-navy);
+    padding: 14px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.2s;
+    border: 2px solid var(--border-light);
+  }
+  
+  .btn-secondary:hover {
+    border-color: var(--brand-navy);
+    transform: translateY(-2px);
+  }
+
+  /* === SECTIONS === */
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--space-lg);
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+  
+  .section-badge {
+    display: inline-block;
+    background: var(--accent-amber-light);
+    color: var(--accent-amber);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-sm);
+  }
+  
+  .section-header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+  }
+  
+  .section-header p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .section-cta {
+    text-align: center;
+    margin-top: var(--space-xl);
+  }
+  
+  .btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--brand-navy);
+    padding: 14px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.2s;
+    border: 2px solid var(--brand-navy);
+  }
+  
+  .btn-outline:hover {
+    background: var(--brand-navy);
+    color: white;
+  }
+  
+  /* === CATEGORIES === */
+  .categories-section {
+    background: white;
+  }
+  
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+  }
+  
+  .category-card {
+    background: var(--bg-warm);
+    border-radius: 16px;
+    padding: var(--space-lg);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+  }
+  
+  .category-stories:hover { border-color: var(--accent-coral); }
+  .category-guides:hover { border-color: var(--accent-amber); }
+  .category-tools:hover { border-color: #7b1fa2; }
+  .category-faq:hover { border-color: var(--accent-blue); }
+  .category-dictionary:hover { border-color: var(--accent-green); }
+  
+  .category-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-md);
+  }
+  
+  .category-stories .category-icon { background: var(--accent-coral-light); }
+  .category-guides .category-icon { background: var(--accent-amber-light); }
+  .category-tools .category-icon { background: #f3e5f5; }
+  .category-faq .category-icon { background: var(--accent-blue-light); }
+  .category-dictionary .category-icon { background: var(--accent-green-light); }
+  
+  .category-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .category-stories .category-icon svg { stroke: var(--accent-coral); }
+  .category-guides .category-icon svg { stroke: var(--accent-amber); }
+  .category-tools .category-icon svg { stroke: #7b1fa2; }
+  .category-faq .category-icon svg { stroke: var(--accent-blue); }
+  .category-dictionary .category-icon svg { stroke: var(--accent-green); }
+  
+  .category-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+  }
+  
+  .category-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+  }
+  
+  .category-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--brand-navy);
+  }
+
+  .category-tools .category-link {
+    color: #7b1fa2;
+  }
+  
+  /* === FEATURED STORIES === */
+  .featured-section {
+    background: var(--bg-cream);
+  }
+
+  .featured-stories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+  }
+
+  .story-card {
+    background: white;
+    border-radius: 12px;
+    padding: var(--space-lg);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    transition: all 0.2s;
+    border: 2px solid transparent;
+  }
+
+  .story-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .story-card.warning {
+    border-left: 4px solid var(--accent-coral);
+  }
+
+  .story-card.warning:hover {
+    border-color: var(--accent-coral);
+  }
+
+  .story-card.success {
+    border-left: 4px solid var(--accent-green);
+  }
+
+  .story-card.success:hover {
+    border-color: var(--accent-green);
+  }
+
+  .story-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .story-card.warning .story-tag {
+    color: var(--accent-coral);
+  }
+
+  .story-card.success .story-tag {
+    color: var(--accent-green);
+  }
+
+  .story-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.3;
+  }
+
+  .story-hint {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  
+  /* === TRUST === */
+  .trust-section {
+    background: white;
+  }
+  
+  .trust-content h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+  
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+  
+  .trust-item {
+    text-align: center;
+    padding: var(--space-md);
+  }
+  
+  .trust-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--accent-green-light);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-md);
+  }
+  
+  .trust-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--accent-green);
+  }
+  
+  .trust-item h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+  }
+  
+  .trust-item p {
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+
+  /* === MOBILE MENU === */
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: var(--text-primary);
+  }
+
+  .mobile-menu-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 998;
+  }
+
+  .mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-menu-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+    padding: var(--space-lg);
+  }
+
+  .mobile-menu-panel.active {
+    transform: translateX(0);
+  }
+
+  .mobile-menu-close {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-muted);
+    padding: 8px;
+    line-height: 1;
+  }
+
+  .mobile-menu-close:hover {
+    color: var(--text-primary);
+  }
+
+  .mobile-menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    margin-top: var(--space-2xl);
+  }
+
+  .mobile-menu-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: var(--space-sm);
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+
+  .mobile-menu-link:hover {
+    background: var(--bg-cream);
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 1024px) {
+    .tagline {
+      display: none;
+    }
+
+    .featured-stories {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .main-nav {
+      gap: var(--space-md);
+    }
+
+    .mobile-menu-btn {
+      display: block;
+    }
+
+    .hero {
+      padding: var(--space-xl) var(--space-sm);
+    }
+
+    .stakes {
+      gap: var(--space-md);
+    }
+
+    .trust-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main-nav {
+      display: none;
+    }
+
+    .mobile-menu-btn {
+      display: block;
+    }
+
+    .header-inner {
+      justify-content: space-between;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+    }
+  }
+
+  @media (min-width: 481px) {
+    .mobile-menu {
+      display: none !important;
+    }
+  }
+</style>

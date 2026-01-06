@@ -1,0 +1,1203 @@
+---
+/**
+ * Probate Checklist Page
+ * Interactive checklist for probate process
+ */
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Probate Checklist | YourWillPro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-display: 'Source Serif 4', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --navy: #1a2e44;
+      --navy-light: #e9eef3;
+      --gold: #c9a227;
+      --gold-light: #faf6e9;
+      --sage: #4a7c59;
+      --sage-light: #eef4f0;
+      --coral: #e85d4c;
+      --coral-light: #fef0ee;
+      --bg: #ffffff;
+      --bg-light: #f7f8f9;
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --text-muted: #7a7a7a;
+      --border: #e2e2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    /* Header styles removed - using Header component */
+
+    /* === HERO === */
+    .hero {
+      background: var(--navy);
+      padding: 60px 64px;
+      text-align: center;
+    }
+
+    .hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201, 162, 39, 0.15);
+      color: var(--gold);
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: 52px;
+      color: white;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: rgba(255,255,255,0.9);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* === PROGRESS BAR === */
+    .progress-section {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 24px 64px;
+    }
+
+    .progress-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .progress-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    .progress-bar {
+      flex: 1;
+      height: 8px;
+      background: var(--navy-light);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--sage);
+      width: 0%;
+      transition: width 0.3s;
+    }
+
+    .progress-count {
+      font-size: 14px;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    /* === MAIN LAYOUT === */
+    .main-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 64px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 64px;
+      position: relative;
+    }
+
+    /* === SIDEBAR === */
+    .sidebar {
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+
+    .sidebar-title {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .section-list {
+      list-style: none;
+    }
+
+    .section-item {
+      margin-bottom: 4px;
+    }
+
+    .section-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .section-link:hover {
+      background: var(--bg-light);
+      color: var(--text-primary);
+    }
+
+    .section-count {
+      font-size: 12px;
+      color: var(--text-muted);
+      background: var(--navy-light);
+      padding: 2px 8px;
+      border-radius: 100px;
+    }
+
+    /* === CONTENT === */
+    .content {
+      min-width: 0;
+    }
+
+    /* === CHECKLIST SECTION === */
+    .checklist-section {
+      margin-bottom: 56px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--navy);
+    }
+
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      color: var(--navy);
+    }
+
+    .section-progress {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .checklist-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+    }
+
+    .checklist-item:hover {
+      border-color: var(--sage);
+      background: var(--sage-light);
+    }
+
+    .checklist-item.checked {
+      background: var(--sage-light);
+      border-color: var(--sage);
+    }
+
+    .checklist-item.checked .item-text {
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+
+    .checkbox {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border: 2px solid var(--border);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .checklist-item:hover .checkbox {
+      border-color: var(--sage);
+    }
+
+    .checklist-item.checked .checkbox {
+      background: var(--sage);
+      border-color: var(--sage);
+    }
+
+    .checkbox svg {
+      width: 16px;
+      height: 16px;
+      stroke-width: 3;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .checklist-item.checked .checkbox svg {
+      opacity: 1;
+    }
+
+    .item-text {
+      flex: 1;
+      font-size: 16px;
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+
+    /* === EMAIL CTA === */
+    .email-cta {
+      background: linear-gradient(135deg, var(--navy) 0%, #2a4a73 100%);
+      padding: 32px;
+      border-radius: var(--radius-md);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 24px;
+      align-items: center;
+      margin: 48px 0;
+    }
+
+    .email-cta-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(201, 162, 39, 0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .email-cta-icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--gold);
+    }
+
+    .email-cta-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .email-cta-text strong {
+      color: white;
+      font-size: 17px;
+    }
+
+    .email-cta-text span {
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+    }
+
+    .email-form {
+      display: flex;
+      gap: 8px;
+    }
+
+    .email-input {
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-size: 15px;
+      min-width: 240px;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .email-input::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .email-input:focus {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .email-submit {
+      padding: 12px 24px;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .email-submit:hover {
+      background: #b8922a;
+    }
+
+    /* === CTA SECTION === */
+    .cta-section {
+      background: var(--gold-light);
+      padding: 64px;
+      text-align: center;
+      border-radius: var(--radius-md);
+      margin: 64px 0;
+    }
+
+    .cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-family: var(--font-display);
+      font-size: 36px;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .cta-content p {
+      font-size: 18px;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .cta-btn-primary {
+      padding: 16px 32px;
+      background: var(--navy);
+      color: white;
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+
+    .cta-btn-primary:hover { background: #2a4a73; }
+
+    /* Footer styles removed - using Footer component */
+
+    /* === PRINT BLOCKING === */
+    @media print {
+      body * {
+        display: none !important;
+      }
+
+      body::before {
+        content: "This checklist is not available for printing. Visit YourWillPro.com.au to download the PDF version.";
+        display: block !important;
+        font-family: Inter, -apple-system, sans-serif;
+        font-size: 18px;
+        color: #1a2e44;
+        text-align: center;
+        padding: 100px 40px;
+        line-height: 1.6;
+      }
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 900px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 32px 24px;
+      }
+
+      .sidebar {
+        position: static;
+        display: none;
+      }
+
+      .progress-section, .cta-section {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .hero {
+        padding: 40px 24px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .email-cta {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 24px;
+      }
+
+      .email-form {
+        flex-direction: column;
+      }
+
+      .email-input {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .cta-content h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <Header />
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb" style="padding: 1rem 2rem; font-size: 0.85rem; color: #7a7a7a; background: white; border-bottom: 1px solid #e2e2e2;">
+    <a href="/" style="color: #7a7a7a; text-decoration: none;">Home</a>
+    <span style="margin: 0 0.5rem;">›</span>
+    <a href="/planning-tools/" style="color: #7a7a7a; text-decoration: none;">Planning Tools</a>
+    <span style="margin: 0 0.5rem;">›</span>
+    <a href="/planning-tools/checklists/" style="color: #7a7a7a; text-decoration: none;">Checklists</a>
+    <span style="margin: 0 0.5rem;">›</span>
+    <span>Probate Checklist</span>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">📋 Interactive Checklist</div>
+      <h1>Probate Checklist</h1>
+      <p>When someone dies, their executor must locate assets, notify relevant parties, and usually apply for probate. This checklist helps you gather what you'll need.</p>
+    </div>
+  </section>
+
+  <!-- PROGRESS BAR -->
+  <section class="progress-section">
+    <div class="progress-inner">
+      <span class="progress-label">Your progress</span>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <span class="progress-count"><span id="checked-count">0</span> of <span id="total-count">0</span> complete</span>
+    </div>
+  </section>
+
+  <!-- MAIN LAYOUT -->
+  <div class="main-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <h3 class="sidebar-title">Sections</h3>
+        <ul class="section-list">
+          <li class="section-item"><a href="#immediate" class="section-link">Immediate Steps <span class="section-count">7</span></a></li>
+          <li class="section-item"><a href="#documents" class="section-link">Documents to Locate <span class="section-count">7</span></a></li>
+          <li class="section-item"><a href="#financial" class="section-link">Financial Documents <span class="section-count">12</span></a></li>
+          <li class="section-item"><a href="#notify-death" class="section-link">Death Notifications <span class="section-count">8</span></a></li>
+          <li class="section-item"><a href="#notify-services" class="section-link">Service Cancellations <span class="section-count">7</span></a></li>
+          <li class="section-item"><a href="#notify-legal" class="section-link">Legal & Financial <span class="section-count">5</span></a></li>
+          <li class="section-item"><a href="#information" class="section-link">Information to Compile <span class="section-count">9</span></a></li>
+          <li class="section-item"><a href="#assets" class="section-link">Asset Inventory <span class="section-count">9</span></a></li>
+          <li class="section-item"><a href="#liabilities" class="section-link">Liabilities <span class="section-count">7</span></a></li>
+          <li class="section-item"><a href="#beneficiaries" class="section-link">Beneficiaries Info <span class="section-count">4</span></a></li>
+          <li class="section-item"><a href="#questions" class="section-link">Questions to Answer <span class="section-count">6</span></a></li>
+          <li class="section-item"><a href="#digital" class="section-link">Digital Matters <span class="section-count">6</span></a></li>
+          <li class="section-item"><a href="#where-to-look" class="section-link">Where to Look <span class="section-count">7</span></a></li>
+          <li class="section-item"><a href="#professional" class="section-link">Professional Help <span class="section-count">4</span></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+      <!-- IMMEDIATE STEPS -->
+      <section class="checklist-section" id="immediate">
+        <div class="section-header">
+          <h2>Immediate Steps</h2>
+          <span class="section-progress">First few days</span>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="1">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Locate the original will (not a copy)</span>
+          </div>
+          <div class="checklist-item" data-id="2">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Check if there are any later wills or codicils</span>
+          </div>
+          <div class="checklist-item" data-id="3">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Identify who the executor is — confirm you're the right person</span>
+          </div>
+          <div class="checklist-item" data-id="4">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Secure the deceased's home and valuables</span>
+          </div>
+          <div class="checklist-item" data-id="5">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Locate keys, access cards, and safe combinations</span>
+          </div>
+          <div class="checklist-item" data-id="6">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Arrange care for any pets</span>
+          </div>
+          <div class="checklist-item" data-id="7">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Notify immediate family members</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- EMAIL CTA -->
+      <div class="email-cta">
+        <div class="email-cta-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+        </div>
+        <div class="email-cta-text">
+          <strong>Want all checklists as a printable PDF?</strong>
+          <span>Complete executor toolkit — no spam, unsubscribe anytime</span>
+        </div>
+        <form class="email-form" id="checklist-form">
+          <input type="email" class="email-input" placeholder="Your email" required>
+          <button type="submit" class="email-submit">Send PDF</button>
+        </form>
+      </div>
+
+      <!-- DOCUMENTS TO LOCATE -->
+      <section class="checklist-section" id="documents">
+        <div class="section-header">
+          <h2>Documents to Locate</h2>
+          <span class="section-progress">For probate application</span>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="8">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Original will (and any codicils)</span>
+          </div>
+          <div class="checklist-item" data-id="9">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Death certificate (order multiple certified copies — you'll need them)</span>
+          </div>
+          <div class="checklist-item" data-id="10">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Birth certificate of deceased</span>
+          </div>
+          <div class="checklist-item" data-id="11">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Marriage certificate (if applicable)</span>
+          </div>
+          <div class="checklist-item" data-id="12">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Divorce decree (if applicable)</span>
+          </div>
+          <div class="checklist-item" data-id="13">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Deed poll or change of name certificate (if applicable)</span>
+          </div>
+          <div class="checklist-item" data-id="14">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Your own identification (executor)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINANCIAL DOCUMENTS -->
+      <section class="checklist-section" id="financial">
+        <div class="section-header">
+          <h2>Financial Documents to Gather</h2>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="15">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Bank statements from all accounts</span>
+          </div>
+          <div class="checklist-item" data-id="16">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Credit card statements</span>
+          </div>
+          <div class="checklist-item" data-id="17">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Mortgage documents</span>
+          </div>
+          <div class="checklist-item" data-id="18">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Property titles or ownership documents</span>
+          </div>
+          <div class="checklist-item" data-id="19">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Superannuation statements and fund contact details</span>
+          </div>
+          <div class="checklist-item" data-id="20">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Life insurance policies</span>
+          </div>
+          <div class="checklist-item" data-id="21">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Share certificates or share registry statements</span>
+          </div>
+          <div class="checklist-item" data-id="22">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Managed fund statements</span>
+          </div>
+          <div class="checklist-item" data-id="23">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Loan documents (money owed to or by deceased)</span>
+          </div>
+          <div class="checklist-item" data-id="24">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Vehicle registration papers</span>
+          </div>
+          <div class="checklist-item" data-id="25">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Tax returns (last 2-3 years)</span>
+          </div>
+          <div class="checklist-item" data-id="26">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Business records (if applicable)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- NOTIFY DEATH -->
+      <section class="checklist-section" id="notify-death">
+        <div class="section-header">
+          <h2>People and Organisations to Notify</h2>
+          <span class="section-progress">Death notification</span>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="27">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Banks and financial institutions</span>
+          </div>
+          <div class="checklist-item" data-id="28">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Superannuation fund(s)</span>
+          </div>
+          <div class="checklist-item" data-id="29">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Life insurance company</span>
+          </div>
+          <div class="checklist-item" data-id="30">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Employer (if still working)</span>
+          </div>
+          <div class="checklist-item" data-id="31">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Centrelink / Services Australia</span>
+          </div>
+          <div class="checklist-item" data-id="32">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Medicare</span>
+          </div>
+          <div class="checklist-item" data-id="33">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Private health insurer</span>
+          </div>
+          <div class="checklist-item" data-id="34">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Australian Taxation Office</span>
+          </div>
+          <div class="checklist-item" data-id="35">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Electoral commission</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- NOTIFY SERVICES -->
+      <section class="checklist-section" id="notify-services">
+        <div class="section-header">
+          <h2>Service Cancellations or Transfers</h2>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="36">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Utility companies (electricity, gas, water)</span>
+          </div>
+          <div class="checklist-item" data-id="37">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Phone and internet providers</span>
+          </div>
+          <div class="checklist-item" data-id="38">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Council (rates)</span>
+          </div>
+          <div class="checklist-item" data-id="39">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Insurance companies (home, car, contents)</span>
+          </div>
+          <div class="checklist-item" data-id="40">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Subscriptions and memberships</span>
+          </div>
+          <div class="checklist-item" data-id="41">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Streaming services</span>
+          </div>
+          <div class="checklist-item" data-id="42">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Post Office (redirect mail)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- NOTIFY LEGAL -->
+      <section class="checklist-section" id="notify-legal">
+        <div class="section-header">
+          <h2>Legal and Financial Contacts</h2>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="43">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Solicitor who prepared the will</span>
+          </div>
+          <div class="checklist-item" data-id="44">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Accountant</span>
+          </div>
+          <div class="checklist-item" data-id="45">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Financial adviser</span>
+          </div>
+          <div class="checklist-item" data-id="46">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Business partners (if applicable)</span>
+          </div>
+          <div class="checklist-item" data-id="47">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Landlord or tenants (if applicable)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- INFORMATION TO COMPILE -->
+      <section class="checklist-section" id="information">
+        <div class="section-header">
+          <h2>Information to Compile</h2>
+          <span class="section-progress">For the probate application</span>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="48">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Full legal name of deceased (and any other names used)</span>
+          </div>
+          <div class="checklist-item" data-id="49">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Date of death</span>
+          </div>
+          <div class="checklist-item" data-id="50">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Last address</span>
+          </div>
+          <div class="checklist-item" data-id="51">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Date of birth</span>
+          </div>
+          <div class="checklist-item" data-id="52">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Place of birth</span>
+          </div>
+          <div class="checklist-item" data-id="53">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Occupation</span>
+          </div>
+          <div class="checklist-item" data-id="54">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Marital status at death</span>
+          </div>
+          <div class="checklist-item" data-id="55">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Names and addresses of all beneficiaries</span>
+          </div>
+          <div class="checklist-item" data-id="56">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Names and addresses of executors</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ASSET INVENTORY -->
+      <section class="checklist-section" id="assets">
+        <div class="section-header">
+          <h2>Asset Inventory</h2>
+          <span class="section-progress">You'll need to value the estate</span>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="57">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Real estate — current valuations or appraisals</span>
+          </div>
+          <div class="checklist-item" data-id="58">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Bank account balances (at date of death)</span>
+          </div>
+          <div class="checklist-item" data-id="59">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Superannuation balance</span>
+          </div>
+          <div class="checklist-item" data-id="60">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Share values (at date of death)</span>
+          </div>
+          <div class="checklist-item" data-id="61">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Vehicle values</span>
+          </div>
+          <div class="checklist-item" data-id="62">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Valuable items (jewellery, art, collections)</span>
+          </div>
+          <div class="checklist-item" data-id="63">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Business interests</span>
+          </div>
+          <div class="checklist-item" data-id="64">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Money owed to the deceased</span>
+          </div>
+          <div class="checklist-item" data-id="65">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Any other assets</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- LIABILITIES -->
+      <section class="checklist-section" id="liabilities">
+        <div class="section-header">
+          <h2>Liabilities to Identify</h2>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="66">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Mortgage balance</span>
+          </div>
+          <div class="checklist-item" data-id="67">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Credit card balances</span>
+          </div>
+          <div class="checklist-item" data-id="68">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Personal loans</span>
+          </div>
+          <div class="checklist-item" data-id="69">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Outstanding bills</span>
+          </div>
+          <div class="checklist-item" data-id="70">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Tax liabilities</span>
+          </div>
+          <div class="checklist-item" data-id="71">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Money owed to others</span>
+          </div>
+          <div class="checklist-item" data-id="72">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Funeral expenses</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- BENEFICIARIES -->
+      <section class="checklist-section" id="beneficiaries">
+        <div class="section-header">
+          <h2>Beneficiaries Information</h2>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="73">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Full names of all beneficiaries named in the will</span>
+          </div>
+          <div class="checklist-item" data-id="74">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Current addresses</span>
+          </div>
+          <div class="checklist-item" data-id="75">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Relationship to deceased</span>
+          </div>
+          <div class="checklist-item" data-id="76">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Contact details</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUESTIONS -->
+      <section class="checklist-section" id="questions">
+        <div class="section-header">
+          <h2>Questions to Answer Before Applying</h2>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="77">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Is probate actually required? (small estates may not need it)</span>
+          </div>
+          <div class="checklist-item" data-id="78">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Which state has jurisdiction? (usually where deceased lived)</span>
+          </div>
+          <div class="checklist-item" data-id="79">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Are there any assets that pass outside the will? (joint property, super)</span>
+          </div>
+          <div class="checklist-item" data-id="80">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Are there any potential claims against the estate?</span>
+          </div>
+          <div class="checklist-item" data-id="81">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Are there any debts that need immediate attention?</span>
+          </div>
+          <div class="checklist-item" data-id="82">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Is there a family provision risk?</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- DIGITAL MATTERS -->
+      <section class="checklist-section" id="digital">
+        <div class="section-header">
+          <h2>Digital Matters</h2>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="83">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Email account access</span>
+          </div>
+          <div class="checklist-item" data-id="84">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Social media accounts (to memorialise or close)</span>
+          </div>
+          <div class="checklist-item" data-id="85">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Online banking passwords</span>
+          </div>
+          <div class="checklist-item" data-id="86">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Subscription services to cancel</span>
+          </div>
+          <div class="checklist-item" data-id="87">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Cloud storage with photos or documents</span>
+          </div>
+          <div class="checklist-item" data-id="88">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Cryptocurrency access (if any)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHERE TO LOOK -->
+      <section class="checklist-section" id="where-to-look">
+        <div class="section-header">
+          <h2>Where to Look for Documents</h2>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="89">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Home filing cabinet or desk</span>
+          </div>
+          <div class="checklist-item" data-id="90">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Safe or lockbox</span>
+          </div>
+          <div class="checklist-item" data-id="91">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Bank safe deposit box</span>
+          </div>
+          <div class="checklist-item" data-id="92">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">With their solicitor</span>
+          </div>
+          <div class="checklist-item" data-id="93">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">With their accountant</span>
+          </div>
+          <div class="checklist-item" data-id="94">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Email inbox (statements, policies)</span>
+          </div>
+          <div class="checklist-item" data-id="95">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Online accounts and portals</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROFESSIONAL HELP -->
+      <section class="checklist-section" id="professional">
+        <div class="section-header">
+          <h2>Professional Help</h2>
+          <span class="section-progress">Consider whether you need</span>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="96">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Probate solicitor (for the application)</span>
+          </div>
+          <div class="checklist-item" data-id="97">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Accountant (for tax returns and estate accounting)</span>
+          </div>
+          <div class="checklist-item" data-id="98">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Valuer (for real estate or valuables)</span>
+          </div>
+          <div class="checklist-item" data-id="99">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Financial adviser (for investment decisions)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="cta-section">
+        <div class="cta-content">
+          <h2>Next Steps</h2>
+          <p>With these documents and information gathered, you're ready to begin the probate process. The steps involved, time frames, and court requirements vary significantly by state.</p>
+          <p style="margin-top: 16px; font-size: 15px; color: #4b5563;">We recommend consulting with a probate solicitor in your state to guide you through the application process and ensure all requirements are met.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <Footer />
+
+  <!-- JAVASCRIPT FOR INTERACTIVITY -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const checklistItems = document.querySelectorAll('.checklist-item');
+      const progressFill = document.getElementById('progress-fill');
+      const checkedCount = document.getElementById('checked-count');
+      const totalCount = document.getElementById('total-count');
+
+      // Set total count
+      totalCount.textContent = checklistItems.length;
+
+      // Load saved state from localStorage
+      const savedState = JSON.parse(localStorage.getItem('probate-checklist') || '{}');
+
+      checklistItems.forEach(item => {
+        const id = item.dataset.id;
+        if (savedState[id]) {
+          item.classList.add('checked');
+        }
+
+        item.addEventListener('click', function() {
+          this.classList.toggle('checked');
+          updateProgress();
+          saveState();
+        });
+      });
+
+      function updateProgress() {
+        const checked = document.querySelectorAll('.checklist-item.checked').length;
+        const total = checklistItems.length;
+        const percent = (checked / total) * 100;
+
+        progressFill.style.width = percent + '%';
+        checkedCount.textContent = checked;
+      }
+
+      function saveState() {
+        const state = {};
+        checklistItems.forEach(item => {
+          state[item.dataset.id] = item.classList.contains('checked');
+        });
+        localStorage.setItem('probate-checklist', JSON.stringify(state));
+      }
+
+      // Initial progress update
+      updateProgress();
+
+      // Email form handler
+      const emailForm = document.getElementById('checklist-form');
+      if (emailForm) {
+        emailForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = this.querySelector('.email-input').value;
+          alert('PDF delivery feature coming soon! We\'ll send the complete executor toolkit to: ' + email);
+          this.reset();
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1316 @@
+---
+/**
+ * Feedback Page
+ * YourWillPro Content Site
+ * 
+ * Standalone layout (like GuideLayout) for full-width design
+ */
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const pageTitle = "Get in Touch";
+const pageDescription = "Have a question about estate planning? Found an error? Want to share your story? We'd love to hear from you.";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <title>{pageTitle} | YourWillPro</title>
+    <meta name="description" content={pageDescription} />
+  </head>
+  <body>
+
+    <Header />
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="separator">›</span>
+      <span>Feedback</span>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Get in <span class="accent">Touch</span></h1>
+        <p>Have a question? Found an error? Want to share your story? We'd love to hear from you.</p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="feedback-main">
+      
+      <section class="options-section">
+        <h2>What can we help you with?</h2>
+        
+        <div class="options-grid">
+          
+          <!-- Ask about a term -->
+          <div class="option-card option-navy" data-target="ask-term">
+            <div class="card-top-bar"></div>
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                <path d="M8 7h8"/>
+                <path d="M8 11h6"/>
+              </svg>
+            </div>
+            <h3>Ask about a term</h3>
+            <p>Can't find a word in our dictionary? Let us know and we'll add it.</p>
+            <span class="card-arrow">→</span>
+          </div>
+
+          <!-- Report an error -->
+          <div class="option-card option-red" data-target="report-error">
+            <div class="card-top-bar"></div>
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <h3>Report an error</h3>
+            <p>Spotted a mistake? Help us keep our information accurate.</p>
+            <span class="card-arrow">→</span>
+          </div>
+
+          <!-- General feedback -->
+          <div class="option-card option-teal" data-target="general">
+            <div class="card-top-bar"></div>
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                <path d="M8 9h8"/>
+                <path d="M8 13h6"/>
+              </svg>
+            </div>
+            <h3>General feedback</h3>
+            <p>Share your thoughts, suggestions, or just say hello.</p>
+            <span class="card-arrow">→</span>
+          </div>
+
+          <!-- Help me choose -->
+          <div class="option-card option-gold" data-target="choose-service">
+            <div class="card-top-bar"></div>
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+              </svg>
+            </div>
+            <h3>Help me choose a will service</h3>
+            <p>Not sure what's right for you? We can point you in the right direction.</p>
+            <span class="card-arrow">→</span>
+          </div>
+
+          <!-- Suggest improvement -->
+          <div class="option-card option-purple" data-target="suggestion">
+            <div class="card-top-bar"></div>
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18h6"/>
+                <path d="M10 22h4"/>
+                <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
+              </svg>
+            </div>
+            <h3>Suggest an improvement</h3>
+            <p>Have an idea to make YourWillPro better? We're all ears.</p>
+            <span class="card-arrow">→</span>
+          </div>
+
+          <!-- Share story -->
+          <div class="option-card option-coral" data-target="share-story">
+            <div class="card-top-bar"></div>
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              </svg>
+            </div>
+            <h3>Here is my story</h3>
+            <p>Your experience could help others. Share your estate planning journey.</p>
+            <span class="card-arrow">→</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Form Placeholder -->
+      <div class="form-placeholder" id="form-placeholder">
+        <p>👆 Select an option above to get started</p>
+      </div>
+
+      <!-- Form Sections -->
+
+      <!-- Ask about a term -->
+      <div class="feedback-form-wrapper hidden" data-form="ask-term">
+        <div class="form-container">
+          <div class="form-header">
+            <div class="form-icon option-navy">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                <path d="M8 7h8"/>
+                <path d="M8 11h6"/>
+              </svg>
+            </div>
+            <h2>Can't Find a Word?</h2>
+            <p>Our dictionary covers over 200 estate planning terms — but we know there's always more to add.</p>
+            <p>If you've come across a word or phrase that left you scratching your head, let us know. We'll research it, write it up in plain English, and add it to the dictionary.</p>
+          </div>
+
+          <form class="feedback-form" action="mailto:hello@yourwillpro.com.au" method="post" enctype="text/plain">
+            <input type="hidden" name="subject" value="Dictionary Term Request">
+
+            <div class="form-group">
+              <label for="term">The term or phrase <span class="required">*</span></label>
+              <input type="text" id="term" name="term" required placeholder="e.g., 'letters of administration'">
+            </div>
+
+            <div class="form-group">
+              <label for="source">Where did you encounter it?</label>
+              <input type="text" id="source" name="source" placeholder="e.g., in a will, on a government website, from a lawyer">
+              <span class="field-hint">This helps us understand the context</span>
+            </div>
+
+            <div class="form-group">
+              <label for="context">Any context that might help?</label>
+              <textarea id="context" name="context" rows="4" placeholder="Optional - add any additional details that might help us explain this term clearly"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="email-term">Your email (optional)</label>
+              <input type="email" id="email-term" name="email" placeholder="We'll let you know when we've added it">
+            </div>
+
+            <button type="submit" class="submit-btn">Send Request</button>
+          </form>
+
+          <div class="form-footer">
+            <p><strong>Recently Added Terms:</strong> We regularly update our dictionary based on reader requests. Your question might help hundreds of others who were wondering the same thing.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Report an error -->
+      <div class="feedback-form-wrapper hidden" data-form="report-error">
+        <div class="form-container">
+          <div class="form-header">
+            <div class="form-icon option-red">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <h2>Spotted a Mistake?</h2>
+            <p>We work hard to keep our information accurate — but we're human. If you've found an error, outdated information, or something that doesn't look right, please let us know.</p>
+            <p>Every correction helps make this resource better for everyone.</p>
+          </div>
+
+          <form class="feedback-form" action="mailto:hello@yourwillpro.com.au" method="post" enctype="text/plain">
+            <input type="hidden" name="subject" value="Error Report">
+
+            <div class="form-group">
+              <label for="page-url">Page or article where you found the error <span class="required">*</span></label>
+              <input type="text" id="page-url" name="page-url" required placeholder="e.g., /guides/choosing-the-right-type-of-will">
+              <span class="field-hint">Copy the URL or page title</span>
+            </div>
+
+            <div class="form-group">
+              <label>What's the problem? <span class="required">*</span></label>
+              <div class="checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="error-type" value="Factual error">
+                  <span>Factual error</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="error-type" value="Outdated information">
+                  <span>Outdated information</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="error-type" value="Broken link">
+                  <span>Broken link</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="error-type" value="Spelling or grammar">
+                  <span>Spelling or grammar</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="error-type" value="Something else">
+                  <span>Something else</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="error-description">Please describe the error <span class="required">*</span></label>
+              <textarea id="error-description" name="error-description" rows="4" required placeholder="Tell us what's wrong so we can fix it"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="correction">What should it say instead? (if you know)</label>
+              <textarea id="correction" name="correction" rows="3" placeholder="Optional - suggest the correct information"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="email-error">Your email (optional)</label>
+              <input type="email" id="email-error" name="email" placeholder="We'll let you know when it's fixed">
+            </div>
+
+            <button type="submit" class="submit-btn">Report Error</button>
+          </form>
+
+          <div class="form-footer">
+            <p><strong>Thank You:</strong> Accuracy matters — especially with legal information. We appreciate you taking the time to help us get it right.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- General feedback -->
+      <div class="feedback-form-wrapper hidden" data-form="general">
+        <div class="form-container">
+          <div class="form-header">
+            <div class="form-icon option-teal">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                <path d="M8 9h8"/>
+                <path d="M8 13h6"/>
+              </svg>
+            </div>
+            <h2>We'd Love to Hear From You</h2>
+            <p>Whether it's a suggestion, a question, or just a quick hello — your feedback helps shape YourWillPro.</p>
+            <p>This site was built because I couldn't find what I needed. If there's something you need that isn't here, tell us.</p>
+          </div>
+
+          <form class="feedback-form" action="mailto:hello@yourwillpro.com.au" method="post" enctype="text/plain">
+            <input type="hidden" name="subject" value="General Feedback">
+
+            <div class="form-group">
+              <label for="general-message">What's on your mind? <span class="required">*</span></label>
+              <textarea id="general-message" name="message" rows="6" required placeholder="Share your thoughts, suggestions, or questions..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>How would you rate your experience with YourWillPro?</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="rating" value="Very helpful">
+                  <span>Very helpful</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="rating" value="Somewhat helpful">
+                  <span>Somewhat helpful</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="rating" value="Neutral">
+                  <span>Neutral</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="rating" value="Could be better">
+                  <span>Could be better</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="rating" value="Not helpful">
+                  <span>Not helpful</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>How did you find us?</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="source" value="Google search">
+                  <span>Google search</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="source" value="Social media">
+                  <span>Social media</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="source" value="Friend or family recommendation">
+                  <span>Friend or family recommendation</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="source" value="Other">
+                  <span>Other</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email-general">Your email (optional)</label>
+              <input type="email" id="email-general" name="email" placeholder="If you'd like a response">
+            </div>
+
+            <button type="submit" class="submit-btn">Send Feedback</button>
+          </form>
+
+          <div class="form-footer">
+            <p><strong>Every Message Gets Read:</strong> I personally read every piece of feedback. Your input directly influences what we work on next.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Help me choose a will service -->
+      <div class="feedback-form-wrapper hidden" data-form="choose-service">
+        <div class="form-container">
+          <div class="form-header">
+            <div class="form-icon option-gold">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+              </svg>
+            </div>
+            <h2>Not Sure Where to Start?</h2>
+            <p>There are many ways to create a will — DIY kits, online services, solicitors, public trustees. The right choice depends on your situation.</p>
+            <p>Tell us a bit about yourself and we'll point you in the right direction.</p>
+          </div>
+
+          <form class="feedback-form" action="mailto:hello@yourwillpro.com.au" method="post" enctype="text/plain">
+            <input type="hidden" name="subject" value="Help Me Choose">
+
+            <div class="form-group">
+              <label>What best describes you? <span class="required">*</span></label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="situation" value="Single, no children, simple assets" required>
+                  <span>Single, no children, simple assets</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="situation" value="Married or de facto, no children">
+                  <span>Married or de facto, no children</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="situation" value="Parent with minor children">
+                  <span>Parent with minor children</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="situation" value="Blended family (stepchildren involved)">
+                  <span>Blended family (stepchildren involved)</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="situation" value="Business owner">
+                  <span>Business owner</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="situation" value="Significant assets or property">
+                  <span>Significant assets or property</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="situation" value="Complex family situation">
+                  <span>Complex family situation</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="situation" value="Other">
+                  <span>Other</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>What's your main concern? <span class="required">*</span></label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="concern" value="Cost — I want the cheapest option" required>
+                  <span>Cost — I want the cheapest option</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="concern" value="Speed — I need this done quickly">
+                  <span>Speed — I need this done quickly</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="concern" value="Complexity — My situation isn't straightforward">
+                  <span>Complexity — My situation isn't straightforward</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="concern" value="Confidence — I want to make sure it's done right">
+                  <span>Confidence — I want to make sure it's done right</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="concern" value="I'm not sure what I need">
+                  <span>I'm not sure what I need</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Have you had a will before?</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="previous-will" value="No, this is my first">
+                  <span>No, this is my first</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="previous-will" value="Yes, but it's outdated">
+                  <span>Yes, but it's outdated</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="previous-will" value="Yes, but my circumstances have changed">
+                  <span>Yes, but my circumstances have changed</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="additional-context">Anything else we should know?</label>
+              <textarea id="additional-context" name="additional-context" rows="4" placeholder="Optional - any other details that might help us recommend the right option"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="email-choose">Your email <span class="required">*</span></label>
+              <input type="email" id="email-choose" name="email" required placeholder="We'll send our recommendation">
+            </div>
+
+            <button type="submit" class="submit-btn">Get Recommendations</button>
+          </form>
+
+          <div class="form-footer">
+            <p><strong>What Happens Next:</strong> We'll review your answers and email you a personalised recommendation — including what to look for and questions to ask, regardless of which path you choose.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suggest an improvement -->
+      <div class="feedback-form-wrapper hidden" data-form="suggestion">
+        <div class="form-container">
+          <div class="form-header">
+            <div class="form-icon option-purple">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18h6"/>
+                <path d="M10 22h4"/>
+                <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
+              </svg>
+            </div>
+            <h2>Have an Idea?</h2>
+            <p>YourWillPro is a work in progress. If you've thought of something that would make this site more useful, we want to hear it.</p>
+            <p>No idea is too small. The best improvements often come from people using the site every day.</p>
+          </div>
+
+          <form class="feedback-form" action="mailto:hello@yourwillpro.com.au" method="post" enctype="text/plain">
+            <input type="hidden" name="subject" value="Improvement Suggestion">
+
+            <div class="form-group">
+              <label for="suggestion-idea">What would you like to see? <span class="required">*</span></label>
+              <textarea id="suggestion-idea" name="suggestion" rows="5" required placeholder="Describe your idea..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="suggestion-problem">What problem would this solve? <span class="required">*</span></label>
+              <textarea id="suggestion-problem" name="problem" rows="4" required placeholder="Help us understand why this would be valuable..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Which area does this relate to?</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="area" value="Dictionary">
+                  <span>Dictionary</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="area" value="Guides">
+                  <span>Guides</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="area" value="Stories">
+                  <span>Stories</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="area" value="Navigation / finding things">
+                  <span>Navigation / finding things</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="area" value="Design / readability">
+                  <span>Design / readability</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="area" value="New topic or content">
+                  <span>New topic or content</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="area" value="Tools or calculators">
+                  <span>Tools or calculators</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="area" value="Something else">
+                  <span>Something else</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>How important is this to you?</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="importance" value="Nice to have">
+                  <span>Nice to have</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="importance" value="Would be really useful">
+                  <span>Would be really useful</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="importance" value="I need this to get value from the site">
+                  <span>I need this to get value from the site</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email-suggestion">Your email (optional)</label>
+              <input type="email" id="email-suggestion" name="email" placeholder="If you'd like updates on your suggestion">
+            </div>
+
+            <button type="submit" class="submit-btn">Send Suggestion</button>
+          </form>
+
+          <div class="form-footer">
+            <p><strong>We're Listening:</strong> Every suggestion gets logged and reviewed. Many features on this site started as reader ideas. Yours could be next.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Share your story -->
+      <div class="feedback-form-wrapper hidden" data-form="share-story">
+        <div class="form-container">
+          <div class="form-header">
+            <div class="form-icon option-coral">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              </svg>
+            </div>
+            <h2>Your Experience Could Help Others</h2>
+            <p>Estate planning touches everyone eventually. Whether you've been through probate, dealt with a difficult executor, or simply learned something the hard way — your story matters.</p>
+            <p>Sharing what you've experienced can help others avoid the same pitfalls or feel less alone in a difficult process.</p>
+          </div>
+
+          <form class="feedback-form" action="mailto:hello@yourwillpro.com.au" method="post" enctype="text/plain">
+            <input type="hidden" name="subject" value="User Story Submission">
+
+            <div class="form-group">
+              <label for="story-content">What happened? <span class="required">*</span></label>
+              <textarea id="story-content" name="story" rows="8" required placeholder="Share as much or as little as you're comfortable with..."></textarea>
+              <span class="field-hint">All stories are anonymised before publication</span>
+            </div>
+
+            <div class="form-group">
+              <label for="story-lessons">What did you learn? <span class="required">*</span></label>
+              <textarea id="story-lessons" name="lessons" rows="5" required placeholder="What do you wish you'd known earlier?"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>What was the situation?</label>
+              <div class="checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="situation-type" value="Making my own will">
+                  <span>Making my own will</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="situation-type" value="Updating an existing will">
+                  <span>Updating an existing will</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="situation-type" value="Acting as executor">
+                  <span>Acting as executor</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="situation-type" value="Being a beneficiary">
+                  <span>Being a beneficiary</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="situation-type" value="Contesting a will">
+                  <span>Contesting a will</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="situation-type" value="Dealing with someone who died without a will">
+                  <span>Dealing with someone who died without a will</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="situation-type" value="Power of attorney issues">
+                  <span>Power of attorney issues</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" name="situation-type" value="Other">
+                  <span>Other</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Would you be willing to have your story featured?</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="permission" value="Yes, you can feature my story">
+                  <span>Yes, you can feature my story</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="permission" value="No, this is just for your information">
+                  <span>No, this is just for your information</span>
+                </label>
+              </div>
+              <span class="field-hint">We anonymise all stories and change identifying details</span>
+            </div>
+
+            <div class="form-group">
+              <label for="email-story">Your email (optional)</label>
+              <input type="email" id="email-story" name="email" placeholder="If we have follow-up questions">
+            </div>
+
+            <button type="submit" class="submit-btn">Share Story</button>
+          </form>
+
+          <div class="form-footer">
+            <p><strong>How We Use Stories:</strong> With your permission, we may adapt your experience into a story for our Stories section. All names and identifying details are changed. We never publish anything without your approval.</p>
+            <p>Real stories help people understand what's at stake — far better than any legal explanation ever could.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Direct Contact -->
+      <section class="contact-section">
+        <p>Prefer email? Reach us directly at <a href="mailto:hello@yourwillpro.com.au">hello@yourwillpro.com.au</a></p>
+      </section>
+
+    </main>
+
+    <Footer />
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.option-card');
+        const forms = document.querySelectorAll('.feedback-form-wrapper');
+        const placeholder = document.getElementById('form-placeholder');
+
+        cards.forEach(card => {
+          card.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = card.getAttribute('data-target');
+
+            // Check if clicking the already active card
+            const isActive = card.classList.contains('active');
+
+            // Hide all forms and remove active state from all cards
+            forms.forEach(form => form.classList.add('hidden'));
+            cards.forEach(c => c.classList.remove('active'));
+
+            if (isActive) {
+              // If was active, show placeholder
+              placeholder.classList.remove('hidden');
+            } else {
+              // Show selected form and mark card active
+              const targetForm = document.querySelector(`[data-form="${target}"]`);
+              if (targetForm) {
+                targetForm.classList.remove('hidden');
+                card.classList.add('active');
+                placeholder.classList.add('hidden');
+
+                // Smooth scroll to form
+                targetForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              }
+            }
+          });
+        });
+      });
+    </script>
+
+  </body>
+</html>
+
+<style is:global>
+  /* =====================================================
+     FEEDBACK PAGE - STANDALONE STYLES
+     ===================================================== */
+
+  :root {
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', -apple-system, sans-serif;
+    --brand-navy: #1e3a5f;
+    --brand-navy-light: #2a4a73;
+    --accent-coral: #e85d4c;
+    --bg-warm: #FAFAF8;
+    --text-primary: #1a1a1a;
+    --text-secondary: #5a5a5a;
+    --border-light: #e8e6e1;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--bg-warm);
+    color: var(--text-primary);
+    line-height: 1.7;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    padding: 1rem 2rem;
+    font-size: 0.85rem;
+    color: #7a7a7a;
+    background: white;
+    border-bottom: 1px solid #e2e2e2;
+  }
+
+  .breadcrumb a {
+    color: #7a7a7a;
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: var(--brand-navy);
+  }
+
+  .breadcrumb .separator {
+    margin: 0 0.5rem;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%);
+    padding: 5rem 2rem;
+    text-align: center;
+    color: white;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+  }
+
+  .hero h1 .accent {
+    font-style: italic;
+    font-weight: 400;
+    color: #e85d4c;
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* Main Content */
+  .feedback-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  /* Options Section */
+  .options-section {
+    margin-bottom: 3rem;
+  }
+
+  .options-section h2 {
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--brand-navy);
+    margin: 0 0 2.5rem;
+  }
+
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Option Cards */
+  .option-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem 1.5rem;
+    background: #fff;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  .card-top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    transition: height 0.2s ease;
+  }
+
+  .option-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(30, 58, 95, 0.15);
+    border-color: transparent;
+  }
+
+  .option-card:hover .card-top-bar {
+    height: 6px;
+  }
+
+  .option-card:hover .card-icon {
+    transform: scale(1.1);
+  }
+
+  .option-card:hover .card-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Card Colors */
+  .option-navy .card-top-bar { background: #1e3a5f; }
+  .option-navy .card-icon { background: rgba(30, 58, 95, 0.1); color: #1e3a5f; }
+
+  .option-red .card-top-bar { background: #DC2626; }
+  .option-red .card-icon { background: rgba(220, 38, 38, 0.1); color: #DC2626; }
+
+  .option-teal .card-top-bar { background: #0D9488; }
+  .option-teal .card-icon { background: rgba(13, 148, 136, 0.1); color: #0D9488; }
+
+  .option-gold .card-top-bar { background: #B8860B; }
+  .option-gold .card-icon { background: rgba(184, 134, 11, 0.1); color: #B8860B; }
+
+  .option-purple .card-top-bar { background: #7C3AED; }
+  .option-purple .card-icon { background: rgba(124, 58, 237, 0.1); color: #7C3AED; }
+
+  .option-coral .card-top-bar { background: #e85d4c; }
+  .option-coral .card-icon { background: rgba(232, 93, 76, 0.1); color: #e85d4c; }
+
+  /* Card Icon */
+  .card-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+
+  .card-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Card Content */
+  .option-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--brand-navy);
+    margin: 0 0 0.5rem;
+  }
+
+  .option-card p {
+    font-size: 0.9375rem;
+    color: #6B7280;
+    margin: 0;
+    line-height: 1.5;
+    flex-grow: 1;
+  }
+
+  /* Card Arrow */
+  .card-arrow {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #9CA3AF;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+  }
+
+  /* Contact Section */
+  .contact-section {
+    text-align: center;
+    padding: 1.5rem 2rem;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px dashed #D1D5DB;
+  }
+
+  .contact-section p {
+    margin: 0;
+    color: #6B7280;
+    font-size: 1rem;
+  }
+
+  .contact-section a {
+    color: var(--brand-navy);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid #B8860B;
+  }
+
+  .contact-section a:hover {
+    border-color: var(--brand-navy);
+  }
+
+  /* Hidden State */
+  .hidden {
+    display: none !important;
+  }
+
+  /* Form Placeholder */
+  .form-placeholder {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #9CA3AF;
+  }
+
+  .form-placeholder p {
+    font-size: 1.125rem;
+    margin: 0;
+  }
+
+  /* Active Card State */
+  .option-card.active {
+    border-color: #c9a227;
+    box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .option-card.active .card-top-bar {
+    background: #c9a227;
+    height: 6px;
+  }
+
+  /* Form Wrapper */
+  .feedback-form-wrapper {
+    margin-bottom: 3rem;
+  }
+
+  .form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+
+  .form-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .form-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+
+  .form-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .form-header h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--brand-navy);
+    margin: 0 0 1rem;
+  }
+
+  .form-header p {
+    color: #6B7280;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 0.75rem;
+  }
+
+  .form-header p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Form Styles */
+  .feedback-form {
+    margin: 2rem 0;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--brand-navy);
+    margin-bottom: 0.5rem;
+    font-size: 0.9375rem;
+  }
+
+  .required {
+    color: #DC2626;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+    background: #fff;
+  }
+
+  .form-group input[type="text"]:focus,
+  .form-group input[type="email"]:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--brand-navy);
+    box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .field-hint {
+    display: block;
+    font-size: 0.875rem;
+    color: #9CA3AF;
+    margin-top: 0.375rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--brand-navy);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(30, 58, 95, 0.2);
+  }
+
+  .submit-btn:hover {
+    background: var(--brand-navy-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(30, 58, 95, 0.3);
+  }
+
+  .submit-btn:active {
+    transform: translateY(0);
+  }
+
+  .form-footer {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px dashed #E5E7EB;
+  }
+
+  .form-footer p {
+    color: #6B7280;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Checkbox Group */
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    background: #fff;
+    transition: all 0.2s ease;
+  }
+
+  .checkbox-label:hover {
+    border-color: var(--brand-navy);
+    background: rgba(30, 58, 95, 0.02);
+  }
+
+  .checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--brand-navy);
+  }
+
+  .checkbox-label span {
+    color: var(--text-primary);
+    font-size: 0.9375rem;
+    user-select: none;
+  }
+
+  .checkbox-label:has(input:checked) {
+    border-color: var(--brand-navy);
+    background: rgba(30, 58, 95, 0.05);
+  }
+
+  /* Radio Group */
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    background: #fff;
+    transition: all 0.2s ease;
+  }
+
+  .radio-label:hover {
+    border-color: var(--brand-navy);
+    background: rgba(30, 58, 95, 0.02);
+  }
+
+  .radio-label input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--brand-navy);
+  }
+
+  .radio-label span {
+    color: var(--text-primary);
+    font-size: 0.9375rem;
+    user-select: none;
+  }
+
+  .radio-label:has(input:checked) {
+    border-color: var(--brand-navy);
+    background: rgba(30, 58, 95, 0.05);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .options-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding: 3rem 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.25rem;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+    }
+
+    .feedback-main {
+      padding: 2rem 1rem;
+    }
+
+    .options-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .option-card {
+      flex-direction: row;
+      text-align: left;
+      padding: 1.25rem 1.5rem;
+      gap: 1rem;
+    }
+
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+
+    .card-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .option-card h3 {
+      margin-bottom: 0.25rem;
+      font-size: 1.125rem;
+    }
+
+    .card-arrow {
+      position: static;
+      opacity: 0.5;
+      transform: none;
+      margin-left: auto;
+      align-self: center;
+    }
+
+    .form-container {
+      padding: 2rem 1.5rem;
+    }
+
+    .form-header h2 {
+      font-size: 1.75rem;
+    }
+
+    .form-icon {
+      width: 64px;
+      height: 64px;
+    }
+
+    .form-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+</style>

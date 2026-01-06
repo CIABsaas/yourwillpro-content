@@ -1,0 +1,1361 @@
+{
+  "duplicates": [
+    {
+      "path": "unpublished-content/19-how-long-does-probate-take.md",
+      "relativePath": "unpublished-content/19-how-long-does-probate-take.md",
+      "filename": "19-how-long-does-probate-take.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "How long does probate take?",
+        "slug": "how-long-does-probate-take",
+        "category": "Common Questions",
+        "order": "19",
+        "region": "Australia",
+        "status": "published",
+        "summary": "What affects probate timeframes and why they vary from estate to estate."
+      },
+      "duplicate": {
+        "match": "slug",
+        "category": "common-questions",
+        "file": "how-long-does-probate-take.md"
+      }
+    },
+    {
+      "path": "unpublished-content/can-i-refuse-to-be-an-executor.md",
+      "relativePath": "unpublished-content/can-i-refuse-to-be-an-executor.md",
+      "filename": "can-i-refuse-to-be-an-executor.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Can I refuse to be an executor?",
+        "summary": "Yes, you can refuse. Being named as executor doesn't obligate you to accept the role.",
+        "category": "Executors",
+        "slug": "can-i-refuse-to-be-an-executor",
+        "order": "21",
+        "status": "published"
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "can-i-refuse-to-be-an-executor.md"
+      }
+    },
+    {
+      "path": "unpublished-content/can-my-pet-be-a-beneficiary.md",
+      "relativePath": "unpublished-content/can-my-pet-be-a-beneficiary.md",
+      "filename": "can-my-pet-be-a-beneficiary.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Can my pet be a beneficiary?",
+        "summary": "Pets can't legally inherit. But you can make detailed arrangements to ensure they're cared for.",
+        "category": "Writing a Will",
+        "slug": "can-my-pet-be-a-beneficiary",
+        "order": "14",
+        "status": "published"
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "can-my-pet-be-a-beneficiary.md"
+      }
+    },
+    {
+      "path": "unpublished-content/conflict.md",
+      "relativePath": "unpublished-content/conflict.md",
+      "filename": "conflict.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Conflict - The Excavator and the Auction",
+        "slug": "conflict-the-excavator-and-the-auction",
+        "category": "Stories",
+        "issue": "Conflict",
+        "jurisdiction": "Australia",
+        "order": "4",
+        "status": "published",
+        "summary": "Two brothers flew across Australia to demolish their mother's house the day before it sold — just to spite their sister."
+      },
+      "duplicate": {
+        "match": "title",
+        "category": "user-stories",
+        "file": "the-excavator-and-the-auction.md"
+      }
+    },
+    {
+      "path": "unpublished-content/delay.md",
+      "relativePath": "unpublished-content/delay.md",
+      "filename": "delay.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Delay - Six Siblings, Zero Trust",
+        "slug": "delay-six-siblings-zero-trust",
+        "category": "Stories",
+        "issue": "Delay",
+        "jurisdiction": "UK",
+        "order": "1",
+        "status": "published",
+        "summary": "When one brother was named executor for both parents, a six-year family conflict followed."
+      },
+      "duplicate": {
+        "match": "title",
+        "category": "user-stories",
+        "file": "six-siblings-zero-trust.md"
+      }
+    },
+    {
+      "path": "unpublished-content/dictionary/_section.md",
+      "relativePath": "unpublished-content/dictionary/_section.md",
+      "filename": "_section.md",
+      "folder": "unpublished-content/dictionary",
+      "type": ".md",
+      "frontmatter": {
+        "slug": "dictionary",
+        "title": "Dictionary",
+        "description": "Plain-language explanations of common Will and Estate terms.",
+        "order": "06"
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "_section.md"
+      }
+    },
+    {
+      "path": "unpublished-content/diligence.md",
+      "relativePath": "unpublished-content/diligence.md",
+      "filename": "diligence.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Diligence - He Did the Work",
+        "slug": "diligence-he-did-the-work",
+        "category": "Stories",
+        "issue": "Diligence",
+        "jurisdiction": "Australia",
+        "order": "10",
+        "status": "published",
+        "summary": "The estate looked simple on paper. It wasn't. But the executor didn't cut corners — and that made all the difference."
+      },
+      "duplicate": {
+        "match": "slug",
+        "category": "user-stories",
+        "file": "diligence-he-did-the-work.md"
+      }
+    },
+    {
+      "path": "unpublished-content/emotional-side-of-being-an-executor.md",
+      "relativePath": "unpublished-content/emotional-side-of-being-an-executor.md",
+      "filename": "emotional-side-of-being-an-executor.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "The emotional side of being an executor",
+        "summary": "Being an executor means managing grief while handling complex responsibilities. Here's how to cope.",
+        "category": "Executors",
+        "slug": "emotional-side-of-being-an-executor",
+        "order": "23",
+        "status": "published"
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "emotional-side-of-being-an-executor.md"
+      }
+    },
+    {
+      "path": "unpublished-content/how-do-i-sign-my-will-correctly.md",
+      "relativePath": "unpublished-content/how-do-i-sign-my-will-correctly.md",
+      "filename": "how-do-i-sign-my-will-correctly.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "How do I sign my will correctly?",
+        "summary": "Getting the signing wrong can invalidate your entire will. Here's exactly what you need to do.",
+        "category": "Writing a Will",
+        "slug": "how-do-i-sign-my-will-correctly",
+        "order": "13",
+        "status": "published"
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "how-do-i-sign-my-will-correctly.md"
+      }
+    },
+    {
+      "path": "unpublished-content/how-long-does-it-take-to-process-a-will.md",
+      "relativePath": "unpublished-content/how-long-does-it-take-to-process-a-will.md",
+      "filename": "how-long-does-it-take-to-process-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "How long does it take to process a will?",
+        "summary": "Most estates take 6–12 months to administer. Complex estates can take years.",
+        "category": "Executors",
+        "slug": "how-long-does-it-take-to-process-a-will",
+        "order": "22",
+        "status": "published"
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "how-long-does-it-take-to-process-a-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/how-long-does-probate-take.md",
+      "relativePath": "unpublished-content/how-long-does-probate-take.md",
+      "filename": "how-long-does-probate-take.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "How long does probate take?",
+        "summary": "A straightforward probate takes 1–3 months. Complex or contested estates can take years.",
+        "category": "After Death",
+        "slug": "how-long-does-probate-take",
+        "order": "31",
+        "status": "published"
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "how-long-does-probate-take.md"
+      }
+    },
+    {
+      "path": "unpublished-content/how-to-write-a-letter-of-wishes.md",
+      "relativePath": "unpublished-content/how-to-write-a-letter-of-wishes.md",
+      "filename": "how-to-write-a-letter-of-wishes.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "How to write a letter of wishes",
+        "summary": "A letter of wishes explains your intentions and provides guidance your will can't cover. It's not legally binding, but it's invaluable.",
+        "category": "Writing a Will",
+        "slug": "how-to-write-a-letter-of-wishes",
+        "order": "16",
+        "status": "published"
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "how-to-write-a-letter-of-wishes.md"
+      }
+    },
+    {
+      "path": "unpublished-content/incapacity.md",
+      "relativePath": "unpublished-content/incapacity.md",
+      "filename": "incapacity.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Incapacity - The Executor Couldn't Act",
+        "slug": "incapacity-the-executor-couldnt-act",
+        "category": "Stories",
+        "issue": "Incapacity",
+        "jurisdiction": "Australia",
+        "order": "8",
+        "status": "published",
+        "summary": "A husband died and left everything to his wife. But by then, she had dementia — and couldn't act as executor."
+      },
+      "duplicate": {
+        "match": "slug",
+        "category": "user-stories",
+        "file": "incapacity-the-executor-couldnt-act.md"
+      }
+    },
+    {
+      "path": "unpublished-content/is-an-online-will-legally-valid.md",
+      "relativePath": "unpublished-content/is-an-online-will-legally-valid.md",
+      "filename": "is-an-online-will-legally-valid.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Is an online will legally valid?",
+        "summary": "Yes, online wills are legally valid in Australia — if they meet the same requirements as any other will.",
+        "category": "Writing a Will",
+        "slug": "is-an-online-will-legally-valid",
+        "order": "10",
+        "status": "published"
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "is-an-online-will-legally-valid.md"
+      }
+    },
+    {
+      "path": "unpublished-content/joint-wills-vs-mirror-wills.md",
+      "relativePath": "unpublished-content/joint-wills-vs-mirror-wills.md",
+      "filename": "joint-wills-vs-mirror-wills.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Joint wills vs mirror wills",
+        "summary": "They sound similar but work very differently. Most couples want mirror wills, not a joint will.",
+        "category": "Writing a Will",
+        "slug": "joint-wills-vs-mirror-wills",
+        "order": "12",
+        "status": "published"
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "joint-wills-vs-mirror-wills.md"
+      }
+    },
+    {
+      "path": "unpublished-content/leaving-gifts-to-charities.md",
+      "relativePath": "unpublished-content/leaving-gifts-to-charities.md",
+      "filename": "leaving-gifts-to-charities.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Leaving gifts to causes you love",
+        "summary": "Including a charity in your will is one of the most meaningful gifts you can make. Here's how to do it properly.",
+        "category": "Writing a Will",
+        "slug": "leaving-gifts-to-charities",
+        "order": "15",
+        "status": "published"
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "leaving-gifts-to-charities.md"
+      }
+    },
+    {
+      "path": "unpublished-content/misappropriation.md",
+      "relativePath": "unpublished-content/misappropriation.md",
+      "filename": "misappropriation.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Misappropriation - Mother Took It All",
+        "slug": "misappropriation-mother-took-it-all",
+        "category": "Stories",
+        "issue": "Misappropriation",
+        "jurisdiction": "UK",
+        "order": "2",
+        "status": "published",
+        "summary": "A mother and grandfather were trusted to hold an inheritance for two young women. They spent every penny."
+      },
+      "duplicate": {
+        "match": "title",
+        "category": "user-stories",
+        "file": "mother-took-it-all.md"
+      }
+    },
+    {
+      "path": "unpublished-content/mishandling.md",
+      "relativePath": "unpublished-content/mishandling.md",
+      "filename": "mishandling.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Mishandling - A Suspended Prison Sentence",
+        "slug": "mishandling-a-suspended-prison-sentence",
+        "category": "Stories",
+        "issue": "Mishandling",
+        "jurisdiction": "UK",
+        "order": "6",
+        "status": "published",
+        "summary": "An executor sold the house, kept the money, and ignored everyone who asked questions. He nearly went to prison."
+      },
+      "duplicate": {
+        "match": "title",
+        "category": "user-stories",
+        "file": "a-suspended-prison-sentence.md"
+      }
+    },
+    {
+      "path": "unpublished-content/obstruction.md",
+      "relativePath": "unpublished-content/obstruction.md",
+      "filename": "obstruction.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Obstruction - The House Sat Empty",
+        "slug": "obstruction-the-house-sat-empty",
+        "category": "Stories",
+        "issue": "Obstruction",
+        "jurisdiction": "Australia",
+        "order": "7",
+        "status": "published",
+        "summary": "A daughter was appointed executor of her mother's estate. Three and a half years later, nothing had been done — and the court removed her."
+      },
+      "duplicate": {
+        "match": "title",
+        "category": "user-stories",
+        "file": "the-house-sat-empty.md"
+      }
+    },
+    {
+      "path": "unpublished-content/online-wills-vs-lawyers-which-is-better.md",
+      "relativePath": "unpublished-content/online-wills-vs-lawyers-which-is-better.md",
+      "filename": "online-wills-vs-lawyers-which-is-better.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Online wills vs lawyers — which is better?",
+        "summary": "Neither is universally better. The right choice depends on your situation, complexity, and budget.",
+        "category": "Writing a Will",
+        "slug": "online-wills-vs-lawyers-which-is-better",
+        "order": "11",
+        "status": "published"
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "online-wills-vs-lawyers-which-is-better.md"
+      }
+    },
+    {
+      "path": "unpublished-content/planning/_section.md",
+      "relativePath": "unpublished-content/planning/_section.md",
+      "filename": "_section.md",
+      "folder": "unpublished-content/planning",
+      "type": ".md",
+      "frontmatter": {
+        "slug": "how-it-works",
+        "title": "How it Works",
+        "description": "Calm guidance to help you understand and plan a will.",
+        "order": "03"
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "_section.md"
+      }
+    },
+    {
+      "path": "unpublished-content/stories/_section.md",
+      "relativePath": "unpublished-content/stories/_section.md",
+      "filename": "_section.md",
+      "folder": "unpublished-content/stories",
+      "type": ".md",
+      "frontmatter": {
+        "slug": "user-stories",
+        "title": "User Stories",
+        "description": "Real experiences from people who have been through the process.",
+        "order": "04"
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "_section.md"
+      }
+    },
+    {
+      "path": "unpublished-content/the-unequal-shares-conversation.md",
+      "relativePath": "unpublished-content/the-unequal-shares-conversation.md",
+      "filename": "the-unequal-shares-conversation.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "The unequal shares conversation",
+        "summary": "Leaving more to one child than another? Here's how to explain your decision — and whether you should.",
+        "category": "Parenting",
+        "slug": "the-unequal-shares-conversation",
+        "order": "35",
+        "status": "published"
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "the-unequal-shares-conversation.md"
+      }
+    },
+    {
+      "path": "unpublished-content/transparency.md",
+      "relativePath": "unpublished-content/transparency.md",
+      "filename": "transparency.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Transparency - She Kept Everyone Informed",
+        "slug": "transparency-she-kept-everyone-informed",
+        "category": "Stories",
+        "issue": "Transparency",
+        "jurisdiction": "Australia",
+        "order": "9",
+        "status": "published",
+        "summary": "When their father died, three adult children faced the task of winding up a complicated estate. The eldest sister was executor — and she got it right."
+      },
+      "duplicate": {
+        "match": "slug",
+        "category": "user-stories",
+        "file": "transparency-she-kept-everyone-informed.md"
+      }
+    },
+    {
+      "path": "unpublished-content/undue-influence.md",
+      "relativePath": "unpublished-content/undue-influence.md",
+      "filename": "undue-influence.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Undue Influence - The Carer Who Inherited",
+        "slug": "undue-influence-the-carer-who-inherited",
+        "category": "Stories",
+        "issue": "Undue Influence",
+        "jurisdiction": "UK",
+        "order": "11",
+        "status": "published",
+        "summary": "A daughter moved in to care for her elderly mother. Six years later, her mother changed her will to leave the house to her alone. Her brothers contested — and lost."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "dictionary",
+        "file": "undue-influence.md"
+      }
+    },
+    {
+      "path": "unpublished-content/what-does-an-executor-do.md",
+      "relativePath": "unpublished-content/what-does-an-executor-do.md",
+      "filename": "what-does-an-executor-do.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "What does an executor do?",
+        "summary": "An executor is responsible for carrying out your will. It's a significant job with legal obligations.",
+        "category": "Executors",
+        "slug": "what-does-an-executor-do",
+        "order": "20",
+        "status": "published"
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "what-does-an-executor-do.md"
+      }
+    },
+    {
+      "path": "unpublished-content/what-is-probate.md",
+      "relativePath": "unpublished-content/what-is-probate.md",
+      "filename": "what-is-probate.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "What is probate?",
+        "summary": "Probate is the legal process that validates a will and gives the executor authority to manage the estate.",
+        "category": "After Death",
+        "slug": "what-is-probate",
+        "order": "30",
+        "status": "published"
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "what-is-probate.md"
+      }
+    },
+    {
+      "path": "unpublished-content/when-your-parents-wont-make-a-will.md",
+      "relativePath": "unpublished-content/when-your-parents-wont-make-a-will.md",
+      "filename": "when-your-parents-wont-make-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "When your parents won't make a will",
+        "summary": "It's frustrating when parents resist estate planning. Here's how to have the conversation — and what to do if they still won't.",
+        "category": "Parenting",
+        "slug": "when-your-parents-wont-make-a-will",
+        "order": "34",
+        "status": "published"
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "when-your-parents-wont-make-a-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-blended-families-need-a-will.md",
+      "relativePath": "unpublished-content/why-blended-families-need-a-will.md",
+      "filename": "why-blended-families-need-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why blended families need a will",
+        "summary": "Stepchildren, ex-spouses, and complex dynamics require careful planning. Standard wills don't work for blended families.",
+        "group": "Getting Started",
+        "quickAnswer": "Stepchildren have no automatic inheritance rights in Australia. Without a will, your assets may skip the children you've helped raise and go only to biological relatives. Blended families need specific, deliberate planning."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-blended-families-need-a-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-business-owners-need-a-will.md",
+      "relativePath": "unpublished-content/why-business-owners-need-a-will.md",
+      "filename": "why-business-owners-need-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why business owners need a will",
+        "summary": "Your business is more than an asset — it's your legacy, your employees' livelihoods, and possibly your family's future income.",
+        "group": "Getting Started",
+        "quickAnswer": "Without proper planning, your business could collapse when you die — leaving employees without jobs, debts unpaid, and your family fighting over what's left. A will (plus business succession planning) keeps everything running."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-business-owners-need-a-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-de-facto-couples-need-a-will.md",
+      "relativePath": "unpublished-content/why-de-facto-couples-need-a-will.md",
+      "filename": "why-de-facto-couples-need-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why de facto couples need a will",
+        "summary": "Living together isn't the same as being married — at least not when it comes to your estate.",
+        "group": "Getting Started",
+        "quickAnswer": "De facto partners may have rights under intestacy law, but proving the relationship after death can be expensive and stressful. A will removes all doubt and protects your partner."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-de-facto-couples-need-a-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-divorced-people-need-a-new-will.md",
+      "relativePath": "unpublished-content/why-divorced-people-need-a-new-will.md",
+      "filename": "why-divorced-people-need-a-new-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why divorced people need a new will",
+        "summary": "Your marriage ended, but your old will might still benefit your ex. Here's what to check.",
+        "group": "Getting Started",
+        "quickAnswer": "Divorce doesn't automatically revoke your will in most Australian states — it just removes your ex-spouse as a beneficiary. But if they were your main beneficiary, your estate might not go where you expect."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-divorced-people-need-a-new-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-expats-need-a-will.md",
+      "relativePath": "unpublished-content/why-expats-need-a-will.md",
+      "filename": "why-expats-need-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why expats and overseas Australians need a will",
+        "summary": "Living overseas complicates everything — including what happens to your assets when you die.",
+        "group": "Getting Started",
+        "quickAnswer": "Australian assets need an Australian will. But if you have assets in multiple countries, you may need multiple wills. Without proper planning, your estate could face delays, extra taxes, and legal battles across jurisdictions."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-expats-need-a-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-farmers-need-a-will.md",
+      "relativePath": "unpublished-content/why-farmers-need-a-will.md",
+      "filename": "why-farmers-need-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why farmers need a will",
+        "summary": "Family farms involve land, businesses, and generations of work. Succession planning is essential to keep the farm in the family.",
+        "group": "Getting Started",
+        "quickAnswer": "Farm succession is notoriously difficult — balancing the needs of farming and non-farming children, managing debt, and keeping the farm viable. Without proper planning, families tear apart and farms get sold. A will is just the starting point."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-farmers-need-a-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-fifo-workers-need-a-will.md",
+      "relativePath": "unpublished-content/why-fifo-workers-need-a-will.md",
+      "filename": "why-fifo-workers-need-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why FIFO workers need a will",
+        "summary": "Remote work, higher risks, and time away from family — FIFO life makes estate planning essential.",
+        "group": "Getting Started",
+        "quickAnswer": "FIFO work often means higher income, higher risk, and long periods away from family. If something happens at a remote site, your family needs clear instructions and access to everything — a will ensures they have it."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-fifo-workers-need-a-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-financial-wellbeing-includes-having-a-will.md",
+      "relativePath": "unpublished-content/why-financial-wellbeing-includes-having-a-will.md",
+      "filename": "why-financial-wellbeing-includes-having-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why financial wellbeing includes having a will",
+        "summary": "A will isn't just about death — it's about taking control of your financial life and protecting what you've built.",
+        "group": "Getting Started",
+        "quickAnswer": "Financial wellbeing means being in control of your money — now and in the future. A will is part of that control. Without one, you're leaving your family's financial future to chance and outdated laws."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-financial-wellbeing-includes-having-a-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-gen-x-needs-a-will-now.md",
+      "relativePath": "unpublished-content/why-gen-x-needs-a-will-now.md",
+      "filename": "why-gen-x-needs-a-will-now.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why Gen X needs a will now",
+        "summary": "You're in your peak earning years with complex responsibilities. Here's why your will can't wait.",
+        "group": "Getting Started",
+        "quickAnswer": "Gen X typically has the most complex estates — mortgages, super, investments, ageing parents, and children at different life stages. Without a current will, you're leaving a mess for everyone."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-gen-x-needs-a-will-now.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-millennials-need-a-will.md",
+      "relativePath": "unpublished-content/why-millennials-need-a-will.md",
+      "filename": "why-millennials-need-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why millennials need a will",
+        "summary": "You're young, but you're not invincible. Here's why a will matters even in your 20s and 30s.",
+        "group": "Getting Started",
+        "quickAnswer": "If you have superannuation, a car, savings, or digital assets, you have an estate. Without a will, the law decides who gets it — and that might not be who you'd choose."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-millennials-need-a-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-new-homeowners-need-a-will.md",
+      "relativePath": "unpublished-content/why-new-homeowners-need-a-will.md",
+      "filename": "why-new-homeowners-need-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why new homeowners need a will",
+        "summary": "You just bought your biggest asset. Now it's time to protect it — and the people who matter.",
+        "group": "Getting Started",
+        "quickAnswer": "Your home is probably your largest asset. How it's owned and what happens to it when you die depends on your ownership structure and your will. Getting this wrong can cost your family hundreds of thousands."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-new-homeowners-need-a-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-newly-married-couples-need-a-will.md",
+      "relativePath": "unpublished-content/why-newly-married-couples-need-a-will.md",
+      "filename": "why-newly-married-couples-need-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why newly married couples need a will",
+        "summary": "Marriage changes everything — including what happens to your will. Here's what you need to know.",
+        "group": "Getting Started",
+        "quickAnswer": "In most Australian states, getting married automatically revokes any existing will. If you don't make a new one, you could die intestate — even if you had a perfectly good will before the wedding."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-newly-married-couples-need-a-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-parents-of-young-children-need-a-will.md",
+      "relativePath": "unpublished-content/why-parents-of-young-children-need-a-will.md",
+      "filename": "why-parents-of-young-children-need-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why parents of young children need a will",
+        "summary": "Your children depend on you completely. A will ensures they're cared for — no matter what.",
+        "group": "Getting Started",
+        "quickAnswer": "Without a will, the court decides who raises your children if both parents die. With a will, you choose their guardian, protect their inheritance with a trust, and give your family clear direction during an impossible time."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-parents-of-young-children-need-a-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-people-with-chronic-illness-need-a-will.md",
+      "relativePath": "unpublished-content/why-people-with-chronic-illness-need-a-will.md",
+      "filename": "why-people-with-chronic-illness-need-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why people with chronic illness need a will",
+        "summary": "Living with illness means planning ahead. A will protects your family and gives you peace of mind.",
+        "group": "Getting Started",
+        "quickAnswer": "A chronic illness diagnosis is a prompt to get your affairs in order — not because you're dying, but because you're taking control. A will is part of that, alongside Powers of Attorney and advance care planning."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-people-with-chronic-illness-need-a-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-people-with-investment-properties-need-a-will.md",
+      "relativePath": "unpublished-content/why-people-with-investment-properties-need-a-will.md",
+      "filename": "why-people-with-investment-properties-need-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why people with investment properties need a will",
+        "summary": "Investment properties come with CGT, ownership structures, and beneficiary decisions your will needs to address.",
+        "group": "Getting Started",
+        "quickAnswer": "Investment properties don't get a CGT-free death uplift like your home does. Your beneficiaries inherit your cost base, meaning they could face significant CGT when they sell. Proper planning can minimise the tax burden."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-people-with-investment-properties-need-a-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-people-with-super-need-a-will.md",
+      "relativePath": "unpublished-content/why-people-with-super-need-a-will.md",
+      "filename": "why-people-with-super-need-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why people with superannuation need a will",
+        "summary": "Your super is probably your biggest asset — but it doesn't automatically go through your will.",
+        "group": "Getting Started",
+        "quickAnswer": "Superannuation operates outside your will unless you take specific steps. Without a valid binding death benefit nomination, your super fund's trustee decides who gets your super — and it might not be who you'd choose."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-people-with-super-need-a-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-retirees-need-to-update-their-will.md",
+      "relativePath": "unpublished-content/why-retirees-need-to-update-their-will.md",
+      "filename": "why-retirees-need-to-update-their-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why retirees need to update their will",
+        "summary": "Retirement changes everything — your assets, your lifestyle, your priorities. Your will should reflect that.",
+        "group": "Getting Started",
+        "quickAnswer": "The will you made while working probably doesn't reflect your retirement reality. Downsizing, super drawdowns, grandchildren, and changing family dynamics all mean it's time for a fresh look."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-retirees-need-to-update-their-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-self-funded-retirees-need-a-will.md",
+      "relativePath": "unpublished-content/why-self-funded-retirees-need-a-will.md",
+      "filename": "why-self-funded-retirees-need-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why self-funded retirees need a will",
+        "summary": "Complex assets, SMSFs, and tax planning make estate planning essential for self-funded retirees.",
+        "group": "Getting Started",
+        "quickAnswer": "Self-funded retirees often have complex estates — SMSFs, investment portfolios, multiple properties. Without careful planning, your beneficiaries could face unnecessary tax bills and administrative nightmares."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-self-funded-retirees-need-a-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-single-parents-need-a-will.md",
+      "relativePath": "unpublished-content/why-single-parents-need-a-will.md",
+      "filename": "why-single-parents-need-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why single parents need a will",
+        "summary": "As a single parent, you're the safety net. A will ensures your children are protected if something happens to you.",
+        "group": "Getting Started",
+        "quickAnswer": "Without a will, the court decides who raises your children and who manages their inheritance. As a single parent, you can't afford to leave these decisions to chance."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-single-parents-need-a-will.md"
+      }
+    },
+    {
+      "path": "unpublished-content/why-single-people-no-children-need-a-will.md",
+      "relativePath": "unpublished-content/why-single-people-no-children-need-a-will.md",
+      "filename": "why-single-people-no-children-need-a-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Why single people with no children need a will",
+        "summary": "No partner, no kids — but that doesn't mean no will. Here's why your estate still needs a plan.",
+        "group": "Getting Started",
+        "quickAnswer": "Without a will, your estate goes to your closest relatives in a fixed order — parents, then siblings, then nieces and nephews. If that's not what you want, or you want to include friends, partners, or charities, you need a will."
+      },
+      "duplicate": {
+        "match": "filename",
+        "category": "common-questions",
+        "file": "why-single-people-no-children-need-a-will.md"
+      }
+    }
+  ],
+  "newCommonQuestions": [
+    {
+      "path": "unpublished-content/11-what-happens-to-superannuation-when-i-die.md",
+      "relativePath": "unpublished-content/11-what-happens-to-superannuation-when-i-die.md",
+      "filename": "11-what-happens-to-superannuation-when-i-die.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "What happens to superannuation when I die?",
+        "slug": "what-happens-to-superannuation-when-i-die",
+        "category": "Common Questions",
+        "order": "11",
+        "region": "Australia",
+        "status": "published",
+        "summary": "How superannuation is handled after death and why it doesn’t automatically follow your will."
+      }
+    },
+    {
+      "path": "unpublished-content/12-what-happens-to-debts-after-death.md",
+      "relativePath": "unpublished-content/12-what-happens-to-debts-after-death.md",
+      "filename": "12-what-happens-to-debts-after-death.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "What happens to debts after death?",
+        "slug": "what-happens-to-debts-after-death",
+        "category": "Common Questions",
+        "order": "12",
+        "region": "Australia",
+        "status": "published",
+        "summary": "How debts are dealt with after someone dies, and what family members are and aren’t responsible for."
+      }
+    },
+    {
+      "path": "unpublished-content/13-can-i-change-my-will-later.md",
+      "relativePath": "unpublished-content/13-can-i-change-my-will-later.md",
+      "filename": "13-can-i-change-my-will-later.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Can I change my will later?",
+        "slug": "can-i-change-my-will-later",
+        "category": "Common Questions",
+        "order": "13",
+        "region": "Australia",
+        "status": "published",
+        "summary": "Why wills are meant to change over time as your life and circumstances change."
+      }
+    },
+    {
+      "path": "unpublished-content/14-does-marriage-or-divorce-affect-my-will.md",
+      "relativePath": "unpublished-content/14-does-marriage-or-divorce-affect-my-will.md",
+      "filename": "14-does-marriage-or-divorce-affect-my-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Does marriage or divorce affect my will?",
+        "slug": "does-marriage-or-divorce-affect-my-will",
+        "category": "Common Questions",
+        "order": "14",
+        "region": "Australia",
+        "status": "published",
+        "summary": "How relationship changes can automatically affect an existing will in Australia."
+      }
+    },
+    {
+      "path": "unpublished-content/15-can-i-leave-someone-out-of-my-will.md",
+      "relativePath": "unpublished-content/15-can-i-leave-someone-out-of-my-will.md",
+      "filename": "15-can-i-leave-someone-out-of-my-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Can I leave someone out of my will?",
+        "slug": "can-i-leave-someone-out-of-my-will",
+        "category": "Common Questions",
+        "order": "15",
+        "region": "Australia",
+        "status": "published",
+        "summary": "How exclusion works under Australian law and why careful planning matters."
+      }
+    },
+    {
+      "path": "unpublished-content/16-what-happens-to-my-children-if-i-die.md",
+      "relativePath": "unpublished-content/16-what-happens-to-my-children-if-i-die.md",
+      "filename": "16-what-happens-to-my-children-if-i-die.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "What happens to my children if I die?",
+        "slug": "what-happens-to-my-children-if-i-die",
+        "category": "Common Questions",
+        "order": "16",
+        "region": "Australia",
+        "status": "published",
+        "summary": "How a will helps provide guidance about guardianship for children under 18."
+      }
+    },
+    {
+      "path": "unpublished-content/17-is-a-handwritten-will-valid.md",
+      "relativePath": "unpublished-content/17-is-a-handwritten-will-valid.md",
+      "filename": "17-is-a-handwritten-will-valid.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Is a handwritten will valid?",
+        "slug": "is-a-handwritten-will-valid",
+        "category": "Common Questions",
+        "order": "17",
+        "region": "Australia",
+        "status": "published",
+        "summary": "When informal wills may be recognised, and why they often cause problems."
+      }
+    },
+    {
+      "path": "unpublished-content/18-where-should-i-store-my-will.md",
+      "relativePath": "unpublished-content/18-where-should-i-store-my-will.md",
+      "filename": "18-where-should-i-store-my-will.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Where should I store my will?",
+        "slug": "where-should-i-store-my-will",
+        "category": "Common Questions",
+        "order": "18",
+        "region": "Australia",
+        "status": "published",
+        "summary": "Why safe storage and clear access matter once a will needs to be used."
+      }
+    },
+    {
+      "path": "unpublished-content/20-do-wills-cover-digital-assets.md",
+      "relativePath": "unpublished-content/20-do-wills-cover-digital-assets.md",
+      "filename": "20-do-wills-cover-digital-assets.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Do wills cover digital assets?",
+        "slug": "do-wills-cover-digital-assets",
+        "category": "Common Questions",
+        "order": "20",
+        "region": "Australia",
+        "status": "published",
+        "summary": "How digital accounts and online assets are handled after death."
+      }
+    }
+  ],
+  "newUserStories": [
+    {
+      "path": "unpublished-content/disobedience.md",
+      "relativePath": "unpublished-content/disobedience.md",
+      "filename": "disobedience.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Disobedience - His Brother Did Nothing",
+        "slug": "disobedience-his-brother-did-nothing",
+        "category": "Stories",
+        "issue": "Disobedience",
+        "jurisdiction": "Australia",
+        "order": "3",
+        "status": "published",
+        "summary": "A woman's partner died and left everything to her. His brother was executor — and refused to act."
+      }
+    },
+    {
+      "path": "unpublished-content/non-compliance.md",
+      "relativePath": "unpublished-content/non-compliance.md",
+      "filename": "non-compliance.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Non-Compliance - The Court Threw It Out",
+        "slug": "non-compliance-the-court-threw-it-out",
+        "category": "Stories",
+        "issue": "Non-Compliance",
+        "jurisdiction": "Australia",
+        "order": "5",
+        "status": "published",
+        "summary": "Her sons helped write her will. They also witnessed it. The court declared the entire document invalid."
+      }
+    },
+    {
+      "path": "unpublished-content/the-blended-family-that-didnt-fight.md",
+      "relativePath": "unpublished-content/the-blended-family-that-didnt-fight.md",
+      "filename": "the-blended-family-that-didnt-fight.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Preparation — The Blended Family That Didn't Fight",
+        "summary": "Four kids from two marriages, a family home, and decades of accumulated tension. This estate had every ingredient for disaster. Instead, it settled in five months with zero disputes.",
+        "category": "Stories",
+        "group": "Right Way",
+        "issue": "Preparation",
+        "jurisdiction": "Australia",
+        "court": "No court involvement",
+        "slug": "the-blended-family-that-didnt-fight",
+        "order": "12",
+        "status": "published",
+        "featured": "false",
+        "readTime": "5 min read"
+      }
+    },
+    {
+      "path": "unpublished-content/the-brother-who-stepped-back.md",
+      "relativePath": "unpublished-content/the-brother-who-stepped-back.md",
+      "filename": "the-brother-who-stepped-back.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Humility — The Brother Who Stepped Back",
+        "summary": "Named as executor because he was the eldest son, Michael realised he was the wrong person for the job. What he did next saved his family.",
+        "category": "Stories",
+        "group": "Right Way",
+        "issue": "Humility",
+        "jurisdiction": "New Zealand",
+        "court": "No court involvement",
+        "slug": "the-brother-who-stepped-back",
+        "order": "13",
+        "status": "published",
+        "featured": "false",
+        "readTime": "4 min read"
+      }
+    }
+  ],
+  "newGuides": [
+    {
+      "path": "unpublished-content/who-gets-what-guide.docx",
+      "relativePath": "unpublished-content/who-gets-what-guide.docx",
+      "filename": "who-gets-what-guide.docx",
+      "folder": "unpublished-content",
+      "type": ".docx",
+      "frontmatter": null
+    }
+  ],
+  "newDictionary": [],
+  "feedback": [
+    {
+      "path": "unpublished-content/Feedback/ask-about-a-term.md",
+      "relativePath": "unpublished-content/Feedback/ask-about-a-term.md",
+      "filename": "ask-about-a-term.md",
+      "folder": "unpublished-content/Feedback",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Ask About a Term",
+        "slug": "ask-about-a-term",
+        "icon": "document",
+        "color": "blue"
+      }
+    },
+    {
+      "path": "unpublished-content/Feedback/general-feedback.md",
+      "relativePath": "unpublished-content/Feedback/general-feedback.md",
+      "filename": "general-feedback.md",
+      "folder": "unpublished-content/Feedback",
+      "type": ".md",
+      "frontmatter": {
+        "title": "General Feedback",
+        "slug": "general-feedback",
+        "icon": "chat",
+        "color": "teal"
+      }
+    },
+    {
+      "path": "unpublished-content/Feedback/help-me-choose-a-will-service.md",
+      "relativePath": "unpublished-content/Feedback/help-me-choose-a-will-service.md",
+      "filename": "help-me-choose-a-will-service.md",
+      "folder": "unpublished-content/Feedback",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Help Me Choose a Will Service",
+        "slug": "help-me-choose-a-will-service",
+        "icon": "compass",
+        "color": "gold"
+      }
+    },
+    {
+      "path": "unpublished-content/Feedback/here-is-my-story.md",
+      "relativePath": "unpublished-content/Feedback/here-is-my-story.md",
+      "filename": "here-is-my-story.md",
+      "folder": "unpublished-content/Feedback",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Here is My Story",
+        "slug": "here-is-my-story",
+        "icon": "heart",
+        "color": "pink"
+      }
+    },
+    {
+      "path": "unpublished-content/Feedback/report-an-error.md",
+      "relativePath": "unpublished-content/Feedback/report-an-error.md",
+      "filename": "report-an-error.md",
+      "folder": "unpublished-content/Feedback",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Report an Error",
+        "slug": "report-an-error",
+        "icon": "alert",
+        "color": "red"
+      }
+    },
+    {
+      "path": "unpublished-content/Feedback/suggest-an-improvement.md",
+      "relativePath": "unpublished-content/Feedback/suggest-an-improvement.md",
+      "filename": "suggest-an-improvement.md",
+      "folder": "unpublished-content/Feedback",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Suggest an Improvement",
+        "slug": "suggest-an-improvement",
+        "icon": "lightbulb",
+        "color": "purple"
+      }
+    },
+    {
+      "path": "unpublished-content/ask-about-a-term.md",
+      "relativePath": "unpublished-content/ask-about-a-term.md",
+      "filename": "ask-about-a-term.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Ask About a Term",
+        "slug": "ask-about-a-term",
+        "icon": "document",
+        "color": "blue"
+      }
+    },
+    {
+      "path": "unpublished-content/general-feedback.md",
+      "relativePath": "unpublished-content/general-feedback.md",
+      "filename": "general-feedback.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "General Feedback",
+        "slug": "general-feedback",
+        "icon": "chat",
+        "color": "teal"
+      }
+    },
+    {
+      "path": "unpublished-content/help-me-choose-a-will-service.md",
+      "relativePath": "unpublished-content/help-me-choose-a-will-service.md",
+      "filename": "help-me-choose-a-will-service.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Help Me Choose a Will Service",
+        "slug": "help-me-choose-a-will-service",
+        "icon": "compass",
+        "color": "gold"
+      }
+    },
+    {
+      "path": "unpublished-content/here-is-my-story.md",
+      "relativePath": "unpublished-content/here-is-my-story.md",
+      "filename": "here-is-my-story.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Here is My Story",
+        "slug": "here-is-my-story",
+        "icon": "heart",
+        "color": "pink"
+      }
+    },
+    {
+      "path": "unpublished-content/report-an-error.md",
+      "relativePath": "unpublished-content/report-an-error.md",
+      "filename": "report-an-error.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Report an Error",
+        "slug": "report-an-error",
+        "icon": "alert",
+        "color": "red"
+      }
+    },
+    {
+      "path": "unpublished-content/suggest-an-improvement.md",
+      "relativePath": "unpublished-content/suggest-an-improvement.md",
+      "filename": "suggest-an-improvement.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "Suggest an Improvement",
+        "slug": "suggest-an-improvement",
+        "icon": "lightbulb",
+        "color": "purple"
+      }
+    }
+  ],
+  "other": [
+    {
+      "path": "unpublished-content/about-us.md",
+      "relativePath": "unpublished-content/about-us.md",
+      "filename": "about-us.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": {
+        "title": "About Us",
+        "slug": "about-us"
+      }
+    },
+    {
+      "path": "unpublished-content/sitemap.md",
+      "relativePath": "unpublished-content/sitemap.md",
+      "filename": "sitemap.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": null
+    }
+  ],
+  "unclear": [
+    {
+      "path": "unpublished-content/will-dispute-case-studies.md",
+      "relativePath": "unpublished-content/will-dispute-case-studies.md",
+      "filename": "will-dispute-case-studies.md",
+      "folder": "unpublished-content",
+      "type": ".md",
+      "frontmatter": null
+    }
+  ]
+}

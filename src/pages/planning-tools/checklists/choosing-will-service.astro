@@ -1,0 +1,1061 @@
+---
+/**
+ * Choosing a Will Service Checklist
+ * Interactive guide to evaluate will service options
+ */
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choosing a Will Service Checklist | YourWillPro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-display: 'Source Serif 4', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --navy: #1a2e44;
+      --navy-light: #e9eef3;
+      --gold: #c9a227;
+      --gold-light: #faf6e9;
+      --sage: #4a7c59;
+      --sage-light: #eef4f0;
+      --coral: #e85d4c;
+      --coral-light: #fef0ee;
+      --bg: #ffffff;
+      --bg-light: #f7f8f9;
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --text-muted: #7a7a7a;
+      --border: #e2e2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    /* Header styles removed - using Header component */
+
+    .hero {
+      background: var(--navy);
+      padding: 60px 64px;
+      text-align: center;
+    }
+
+    .hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201, 162, 39, 0.15);
+      color: var(--gold);
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: 52px;
+      color: white;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: rgba(255,255,255,0.9);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .progress-section {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 24px 64px;
+    }
+
+    .progress-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .progress-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    .progress-bar {
+      flex: 1;
+      height: 8px;
+      background: var(--navy-light);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--sage);
+      width: 0%;
+      transition: width 0.3s;
+    }
+
+    .progress-count {
+      font-size: 14px;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .main-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 64px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 64px;
+      position: relative;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+
+    .sidebar-title {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .section-list {
+      list-style: none;
+    }
+
+    .section-item {
+      margin-bottom: 4px;
+    }
+
+    .section-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .section-link:hover {
+      background: var(--bg-light);
+      color: var(--text-primary);
+    }
+
+    .section-count {
+      font-size: 12px;
+      color: var(--text-muted);
+      background: var(--navy-light);
+      padding: 2px 8px;
+      border-radius: 100px;
+    }
+
+    .content {
+      min-width: 0;
+    }
+
+    .checklist-section {
+      margin-bottom: 56px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--navy);
+    }
+
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      color: var(--navy);
+    }
+
+    .section-progress {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .checklist-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+    }
+
+    .checklist-item:hover {
+      border-color: var(--sage);
+      background: var(--sage-light);
+    }
+
+    .checklist-item.checked {
+      background: var(--sage-light);
+      border-color: var(--sage);
+    }
+
+    .checklist-item.checked .item-text {
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+
+    .checkbox {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border: 2px solid var(--border);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .checklist-item:hover .checkbox {
+      border-color: var(--sage);
+    }
+
+    .checklist-item.checked .checkbox {
+      background: var(--sage);
+      border-color: var(--sage);
+    }
+
+    .checkbox svg {
+      width: 16px;
+      height: 16px;
+      stroke-width: 3;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .checklist-item.checked .checkbox svg {
+      opacity: 1;
+    }
+
+    .item-text {
+      flex: 1;
+      font-size: 16px;
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+
+    .email-cta {
+      background: linear-gradient(135deg, var(--navy) 0%, #2a4a73 100%);
+      padding: 32px;
+      border-radius: var(--radius-md);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 24px;
+      align-items: center;
+      margin: 48px 0;
+    }
+
+    .email-cta-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(201, 162, 39, 0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .email-cta-icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--gold);
+    }
+
+    .email-cta-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .email-cta-text strong {
+      color: white;
+      font-size: 17px;
+    }
+
+    .email-cta-text span {
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+    }
+
+    .email-form {
+      display: flex;
+      gap: 8px;
+    }
+
+    .email-input {
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-size: 15px;
+      min-width: 240px;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .email-input::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .email-input:focus {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .email-submit {
+      padding: 12px 24px;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .email-submit:hover {
+      background: #b8922a;
+    }
+
+    .cta-section {
+      background: var(--gold-light);
+      padding: 64px;
+      text-align: center;
+      border-radius: var(--radius-md);
+      margin: 64px 0;
+    }
+
+    .cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-family: var(--font-display);
+      font-size: 36px;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .cta-content p {
+      font-size: 18px;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .cta-btn-primary {
+      padding: 16px 32px;
+      background: var(--navy);
+      color: white;
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+
+    .cta-btn-primary:hover { background: #2a4a73; }
+
+    /* Footer styles removed - using Footer component */
+
+    /* === PRINT BLOCKING === */
+    @media print {
+      body * {
+        display: none !important;
+      }
+
+      body::before {
+        content: "This checklist is not available for printing. Visit YourWillPro.com.au to download the PDF version.";
+        display: block !important;
+        font-family: Inter, -apple-system, sans-serif;
+        font-size: 18px;
+        color: #1a2e44;
+        text-align: center;
+        padding: 100px 40px;
+        line-height: 1.6;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 32px 24px;
+      }
+
+      .sidebar {
+        position: static;
+        display: none;
+      }
+
+      .progress-section, .cta-section {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .hero {
+        padding: 40px 24px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .email-cta {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 24px;
+      }
+
+      .email-form {
+        flex-direction: column;
+      }
+
+      .email-input {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .cta-content h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <Header />
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb" style="padding: 1rem 2rem; font-size: 0.85rem; color: #7a7a7a; background: white; border-bottom: 1px solid #e2e2e2;">
+    <a href="/" style="color: #7a7a7a; text-decoration: none;">Home</a>
+    <span style="margin: 0 0.5rem;">›</span>
+    <a href="/planning-tools/" style="color: #7a7a7a; text-decoration: none;">Planning Tools</a>
+    <span style="margin: 0 0.5rem;">›</span>
+    <a href="/planning-tools/checklists/" style="color: #7a7a7a; text-decoration: none;">Checklists</a>
+    <span style="margin: 0 0.5rem;">›</span>
+    <span>Choosing a Will Service</span>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">🔍 Decision Guide</div>
+      <h1>Choosing a Will Service</h1>
+      <p>There are many ways to create a will — from DIY kits to high-end solicitors. The right choice depends on your circumstances. Use this checklist to evaluate your options.</p>
+    </div>
+  </section>
+
+  <section class="progress-section">
+    <div class="progress-inner">
+      <span class="progress-label">Your progress</span>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <span class="progress-count"><span id="checked-count">0</span> of <span id="total-count">0</span> complete</span>
+    </div>
+  </section>
+
+  <div class="main-layout">
+
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <h3 class="sidebar-title">Sections</h3>
+        <ul class="section-list">
+          <li class="section-item"><a href="#assessment" class="section-link">Your Situation <span class="section-count">8</span></a></li>
+          <li class="section-item"><a href="#complexity" class="section-link">Complexity Indicators <span class="section-count">9</span></a></li>
+          <li class="section-item"><a href="#diy" class="section-link">DIY Will Kit <span class="section-count">8</span></a></li>
+          <li class="section-item"><a href="#online" class="section-link">Online Will Service <span class="section-count">8</span></a></li>
+          <li class="section-item"><a href="#solicitor" class="section-link">Solicitor <span class="section-count">9</span></a></li>
+          <li class="section-item"><a href="#trustee" class="section-link">Trustee Company <span class="section-count">7</span></a></li>
+          <li class="section-item"><a href="#questions" class="section-link">Questions to Ask <span class="section-count">7</span></a></li>
+          <li class="section-item"><a href="#red-flags" class="section-link">Red Flags <span class="section-count">7</span></a></li>
+          <li class="section-item"><a href="#cost" class="section-link">Cost vs Risk <span class="section-count">4</span></a></li>
+          <li class="section-item"><a href="#online-check" class="section-link">Online Services Check <span class="section-count">7</span></a></li>
+          <li class="section-item"><a href="#decision" class="section-link">Making Your Decision <span class="section-count">5</span></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="content">
+
+      <section class="checklist-section" id="assessment">
+        <div class="section-header">
+          <h2>Your Situation Assessment</h2>
+          <span class="section-progress">Answer these first</span>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="1">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Is your situation straightforward or complex?</span>
+          </div>
+          <div class="checklist-item" data-id="2">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Do you have significant assets or a modest estate?</span>
+          </div>
+          <div class="checklist-item" data-id="3">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Do you have a blended family (stepchildren, multiple marriages)?</span>
+          </div>
+          <div class="checklist-item" data-id="4">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Do you own a business or have business partners?</span>
+          </div>
+          <div class="checklist-item" data-id="5">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Do you have assets in multiple states or countries?</span>
+          </div>
+          <div class="checklist-item" data-id="6">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Do you have family members with special needs?</span>
+          </div>
+          <div class="checklist-item" data-id="7">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Do you have any unusual wishes that might be challenged?</span>
+          </div>
+          <div class="checklist-item" data-id="8">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Is anyone likely to contest your will?</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="checklist-section" id="complexity">
+        <div class="section-header">
+          <h2>Complexity Indicators</h2>
+          <span class="section-progress">You likely need professional advice if</span>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="9">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">You own a business or partnership shares</span>
+          </div>
+          <div class="checklist-item" data-id="10">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">You have assets held in trusts or company structures</span>
+          </div>
+          <div class="checklist-item" data-id="11">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">You have a blended family with potential competing claims</span>
+          </div>
+          <div class="checklist-item" data-id="12">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">You want to exclude close family members</span>
+          </div>
+          <div class="checklist-item" data-id="13">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">You have assets overseas</span>
+          </div>
+          <div class="checklist-item" data-id="14">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">You have a family member who needs special provision (disability, addiction)</span>
+          </div>
+          <div class="checklist-item" data-id="15">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">You're in a de facto relationship and it's complicated</span>
+          </div>
+          <div class="checklist-item" data-id="16">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">You expect someone will challenge your will</span>
+          </div>
+          <div class="checklist-item" data-id="17">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Your total estate exceeds several million dollars</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="email-cta">
+        <div class="email-cta-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+        </div>
+        <div class="email-cta-text">
+          <strong>Want all checklists as a printable PDF?</strong>
+          <span>Complete will planning toolkit — no spam, unsubscribe anytime</span>
+        </div>
+        <form class="email-form" id="checklist-form">
+          <input type="email" class="email-input" placeholder="Your email" required>
+          <button type="submit" class="email-submit">Send PDF</button>
+        </form>
+      </div>
+
+      <section class="checklist-section" id="diy">
+        <div class="section-header">
+          <h2>Option 1: DIY Will Kit</h2>
+          <span class="section-progress">Pros and cons</span>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="18">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">PRO: Cheapest option ($20-50)</span>
+          </div>
+          <div class="checklist-item" data-id="19">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">PRO: Complete privacy</span>
+          </div>
+          <div class="checklist-item" data-id="20">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">PRO: Done immediately</span>
+          </div>
+          <div class="checklist-item" data-id="21">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">CON: No guidance through the process</span>
+          </div>
+          <div class="checklist-item" data-id="22">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">CON: Easy to make mistakes that invalidate the will</span>
+          </div>
+          <div class="checklist-item" data-id="23">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">CON: No one checks your work</span>
+          </div>
+          <div class="checklist-item" data-id="24">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">CON: Witness requirements often misunderstood</span>
+          </div>
+          <div class="checklist-item" data-id="25">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">CON: High rate of problems at probate</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="checklist-section" id="online">
+        <div class="section-header">
+          <h2>Option 2: Online Will Service</h2>
+          <span class="section-progress">Pros and cons</span>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="26">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">PRO: Affordable ($100-400)</span>
+          </div>
+          <div class="checklist-item" data-id="27">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">PRO: Guided process with prompts and explanations</span>
+          </div>
+          <div class="checklist-item" data-id="28">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">PRO: Convenient — complete from home</span>
+          </div>
+          <div class="checklist-item" data-id="29">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">PRO: Templates reviewed by lawyers</span>
+          </div>
+          <div class="checklist-item" data-id="30">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">PRO: Help resources available</span>
+          </div>
+          <div class="checklist-item" data-id="31">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">CON: Less personalised than seeing a solicitor</span>
+          </div>
+          <div class="checklist-item" data-id="32">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">CON: May not suit complex situations</span>
+          </div>
+          <div class="checklist-item" data-id="33">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">CON: You need to assess whether your situation fits</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="checklist-section" id="solicitor">
+        <div class="section-header">
+          <h2>Option 3: Solicitor</h2>
+          <span class="section-progress">Pros and cons</span>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="34">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">PRO: Personalised advice for your situation</span>
+          </div>
+          <div class="checklist-item" data-id="35">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">PRO: Can handle any complexity</span>
+          </div>
+          <div class="checklist-item" data-id="36">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">PRO: Professional assessment of risks</span>
+          </div>
+          <div class="checklist-item" data-id="37">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">PRO: Can advise on estate planning beyond the will</span>
+          </div>
+          <div class="checklist-item" data-id="38">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">PRO: Someone to contact if problems arise</span>
+          </div>
+          <div class="checklist-item" data-id="39">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">CON: Most expensive ($500-2000+)</span>
+          </div>
+          <div class="checklist-item" data-id="40">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">CON: Need appointments — less convenient</span>
+          </div>
+          <div class="checklist-item" data-id="41">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">CON: Quality varies significantly between firms</span>
+          </div>
+          <div class="checklist-item" data-id="42">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">CON: May try to sell additional services</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="checklist-section" id="trustee">
+        <div class="section-header">
+          <h2>Option 4: Trustee Company Will</h2>
+          <span class="section-progress">Pros and cons</span>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="43">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">PRO: Often free if they're appointed as executor</span>
+          </div>
+          <div class="checklist-item" data-id="44">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">PRO: Professional executor service included</span>
+          </div>
+          <div class="checklist-item" data-id="45">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">PRO: No burden on family members</span>
+          </div>
+          <div class="checklist-item" data-id="46">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">CON: Executor fees come from your estate later</span>
+          </div>
+          <div class="checklist-item" data-id="47">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">CON: Less personal service for your beneficiaries</span>
+          </div>
+          <div class="checklist-item" data-id="48">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">CON: May be slow and bureaucratic</span>
+          </div>
+          <div class="checklist-item" data-id="49">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">CON: Family loses control of the process</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="checklist-section" id="questions">
+        <div class="section-header">
+          <h2>Questions to Ask Any Provider</h2>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="50">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">What's included in the price?</span>
+          </div>
+          <div class="checklist-item" data-id="51">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">What happens if I need to make changes later?</span>
+          </div>
+          <div class="checklist-item" data-id="52">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Are the templates or documents reviewed by qualified lawyers?</span>
+          </div>
+          <div class="checklist-item" data-id="53">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">What support is available if I get stuck?</span>
+          </div>
+          <div class="checklist-item" data-id="54">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">How do I properly sign and witness the will?</span>
+          </div>
+          <div class="checklist-item" data-id="55">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Where should I store the completed will?</span>
+          </div>
+          <div class="checklist-item" data-id="56">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">What if my situation changes?</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="checklist-section" id="red-flags">
+        <div class="section-header">
+          <h2>Red Flags — Avoid Providers That:</h2>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="57">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Offer free wills with strings attached (usually want executor appointment)</span>
+          </div>
+          <div class="checklist-item" data-id="58">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Pressure you to decide immediately</span>
+          </div>
+          <div class="checklist-item" data-id="59">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Can't explain their pricing clearly</span>
+          </div>
+          <div class="checklist-item" data-id="60">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Have no clear complaints or support process</span>
+          </div>
+          <div class="checklist-item" data-id="61">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Won't let you see samples of their documents</span>
+          </div>
+          <div class="checklist-item" data-id="62">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Have poor or no reviews</span>
+          </div>
+          <div class="checklist-item" data-id="63">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Claim one will fits all situations</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="checklist-section" id="cost">
+        <div class="section-header">
+          <h2>Cost vs Risk Assessment</h2>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="64">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">What could a mistake cost your family? (delays, legal fees, disputes)</span>
+          </div>
+          <div class="checklist-item" data-id="65">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">What's the value of your estate?</span>
+          </div>
+          <div class="checklist-item" data-id="66">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">How much stress and complexity would an invalid will create?</span>
+          </div>
+          <div class="checklist-item" data-id="67">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Is saving $200 worth the risk of getting it wrong?</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="checklist-section" id="online-check">
+        <div class="section-header">
+          <h2>For Online Services, Check:</h2>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="68">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Is the service Australian-based and compliant with Australian law?</span>
+          </div>
+          <div class="checklist-item" data-id="69">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Are templates specific to your state?</span>
+          </div>
+          <div class="checklist-item" data-id="70">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Is there clear information about when you should seek legal advice instead?</span>
+          </div>
+          <div class="checklist-item" data-id="71">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">What support is available (phone, chat, email)?</span>
+          </div>
+          <div class="checklist-item" data-id="72">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Can you review and update your will later?</span>
+          </div>
+          <div class="checklist-item" data-id="73">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Is there a satisfaction guarantee?</span>
+          </div>
+          <div class="checklist-item" data-id="74">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">How is your data protected?</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="checklist-section" id="decision">
+        <div class="section-header">
+          <h2>Making Your Decision</h2>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-item" data-id="75">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Have you honestly assessed your complexity level?</span>
+          </div>
+          <div class="checklist-item" data-id="76">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Does the option you're considering match your needs?</span>
+          </div>
+          <div class="checklist-item" data-id="77">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Have you compared at least 2-3 options?</span>
+          </div>
+          <div class="checklist-item" data-id="78">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Are you comfortable with the support available?</span>
+          </div>
+          <div class="checklist-item" data-id="79">
+            <div class="checkbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <span class="item-text">Does the price represent fair value for what's included?</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="cta-content">
+          <h2>Ready to Get Started?</h2>
+          <p>If your situation is straightforward, an online will service offers the best balance of guidance, convenience, and value.</p>
+          <div class="cta-buttons">
+            <a href="https://yourwillpro.com.au" class="cta-btn-primary">See If YourWillPro Is Right For You</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <Footer />
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const checklistItems = document.querySelectorAll('.checklist-item');
+      const progressFill = document.getElementById('progress-fill');
+      const checkedCount = document.getElementById('checked-count');
+      const totalCount = document.getElementById('total-count');
+
+      totalCount.textContent = checklistItems.length;
+
+      const savedState = JSON.parse(localStorage.getItem('choosing-will-service-checklist') || '{}');
+
+      checklistItems.forEach(item => {
+        const id = item.dataset.id;
+        if (savedState[id]) {
+          item.classList.add('checked');
+        }
+
+        item.addEventListener('click', function() {
+          this.classList.toggle('checked');
+          updateProgress();
+          saveState();
+        });
+      });
+
+      function updateProgress() {
+        const checked = document.querySelectorAll('.checklist-item.checked').length;
+        const total = checklistItems.length;
+        const percent = (checked / total) * 100;
+
+        progressFill.style.width = percent + '%';
+        checkedCount.textContent = checked;
+      }
+
+      function saveState() {
+        const state = {};
+        checklistItems.forEach(item => {
+          state[item.dataset.id] = item.classList.contains('checked');
+        });
+        localStorage.setItem('choosing-will-service-checklist', JSON.stringify(state));
+      }
+
+      updateProgress();
+
+      const emailForm = document.getElementById('checklist-form');
+      if (emailForm) {
+        emailForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = this.querySelector('.email-input').value;
+          alert('PDF delivery feature coming soon! We\'ll send the complete will planning toolkit to: ' + email);
+          this.reset();
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,742 @@
+---
+/**
+ * QuestionLayout.astro
+ * Magazine + Sidebar layout for individual question pages
+ */
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+interface Props {
+  title: string;
+  summary?: string;
+  quickAnswer?: string;
+  category?: string;
+  relatedQuestions?: string[];
+  relatedGuides?: string[];
+  relatedChecklists?: string[];
+}
+
+const { title, summary, quickAnswer, category = 'Getting Started' } = Astro.props;
+
+// Get all questions for sidebar
+const allArticles = await getCollection('articles');
+const questions = allArticles.filter(article =>
+  (article.data.category === 'Common Questions' || article.data.category === 'Is This You?') &&
+  article.data.status === 'published'
+);
+const sortedQuestions = questions.sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
+
+// Define category structure for sidebar
+const categoryStructure = {
+  "Getting Started": [
+    "what-is-a-will",
+    "why-do-i-need-a-will",
+    "what-happens-if-i-die-without-a-will"
+  ],
+  "Writing a Will": [
+    "is-it-expensive-to-make-a-will",
+    "what-should-my-will-include",
+    "do-i-need-a-will-with-few-assets"
+  ],
+  "Executors": [
+    "what-does-an-executor-actually-do",
+    "who-should-i-choose-as-my-executor"
+  ],
+  "After Death": [
+    "what-if-i-change-my-mind-later",
+    "when-should-i-update-my-will"
+  ],
+  "Family Situations": [
+    "what-if-i-want-to-leave-more-to-one-child",
+    "can-i-leave-my-spouse-out-of-my-will",
+    "what-if-my-children-dont-get-along",
+    "how-do-i-protect-children-from-previous-relationship",
+    "can-i-exclude-someone-who-expects-to-inherit"
+  ],
+  "Protecting Your Wishes": [
+    "how-do-i-reduce-chance-of-will-being-contested",
+    "should-i-explain-my-decisions-in-my-will",
+    "what-if-someone-pressures-me-to-change-my-will"
+  ],
+  "Other Planning": [
+    "what-is-an-enduring-power-of-attorney-and-poa"
+  ]
+};
+
+// Create lookup map
+const questionsMap = new Map(sortedQuestions.map(q => [q.data.slug, q]));
+
+// Get current question slug from URL
+const currentSlug = Astro.url.pathname.split('/').filter(Boolean).pop() || '';
+
+// Find next and previous questions
+const currentIndex = sortedQuestions.findIndex(q => q.data.slug === currentSlug);
+const nextQuestion = currentIndex >= 0 && currentIndex < sortedQuestions.length - 1
+  ? sortedQuestions[currentIndex + 1]
+  : null;
+const prevQuestion = currentIndex > 0
+  ? sortedQuestions[currentIndex - 1]
+  : null;
+
+// Get related resources from props
+const { relatedGuides = [], relatedChecklists = [] } = Astro.props;
+const hasRelated = relatedGuides.length > 0 || relatedChecklists.length > 0;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/ywp-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>{title} | YourWillPro</title>
+    {summary && <meta name="description" content={summary} />}
+  </head>
+  <body>
+
+    <Header />
+
+    <!-- Breadcrumb -->
+    <nav class="question-breadcrumb">
+      <div class="breadcrumb-container">
+        <a href="/">Home</a>
+        <span class="sep">›</span>
+        <a href="/common-questions">Common Questions</a>
+        <span class="sep">›</span>
+        <span class="current-page">{title}</span>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="question-hero">
+      <div class="hero-container">
+        <div class="q-circle">Q</div>
+        <div class="cat-tag">{category}</div>
+        <h1 class="hero-title">{title}</h1>
+        {summary && <p class="hero-desc">{summary}</p>}
+      </div>
+    </section>
+
+    <!-- Main Layout -->
+    <main class="question-main">
+      <div class="content-grid">
+
+        <!-- Sidebar -->
+        <aside class="question-sidebar">
+          <h2 class="sidebar-heading">All Questions</h2>
+          <nav class="sidebar-navigation">
+            {Object.entries(categoryStructure).map(([categoryName, questionSlugs]) => (
+              <div class="sidebar-category">
+                <h3 class="cat-heading">{categoryName}</h3>
+                <ul class="cat-list">
+                  {questionSlugs.map(slug => {
+                    const question = questionsMap.get(slug);
+                    const isActive = slug === currentSlug;
+                    return question ? (
+                      <li class={isActive ? 'active-item' : ''}>
+                        <a href={`/common-questions/${question.data.slug}`}>
+                          {question.data.title}
+                        </a>
+                      </li>
+                    ) : null;
+                  })}
+                </ul>
+              </div>
+            ))}
+          </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="question-content">
+
+          <!-- Quick Answer Box (if exists) -->
+          {quickAnswer && (
+            <div class="quick-box">
+              <div class="quick-label">⚡ The Short Answer</div>
+              <div class="quick-text" set:html={quickAnswer} />
+            </div>
+          )}
+
+          <!-- Article Body -->
+          <article class="article-content">
+            <slot />
+
+            <!-- Navigation -->
+            {(prevQuestion || nextQuestion) && (
+              <nav class="article-nav">
+                {prevQuestion && (
+                  <a href={`/common-questions/${prevQuestion.data.slug}`} class="nav-btn prev-btn">
+                    <span class="nav-dir">← Previous</span>
+                    <span class="nav-text">{prevQuestion.data.title}</span>
+                  </a>
+                )}
+                {nextQuestion && (
+                  <a href={`/common-questions/${nextQuestion.data.slug}`} class="nav-btn next-btn">
+                    <span class="nav-dir">Next →</span>
+                    <span class="nav-text">{nextQuestion.data.title}</span>
+                  </a>
+                )}
+              </nav>
+            )}
+          </article>
+
+          <!-- Related Resources -->
+          {hasRelated && (
+            <div class="related-box">
+              <h2 class="related-heading">📚 Related Resources</h2>
+              <div class="related-list">
+                {relatedGuides.map((guide: string) => (
+                  <a href={`/guides/${guide}`} class="related-item">
+                    <span class="rel-icon">📖</span>
+                    <span class="rel-text">{guide.replace(/-/g, ' ')}</span>
+                  </a>
+                ))}
+                {relatedChecklists.map((checklist: string) => (
+                  <a href={`/planning-tools/checklists/${checklist}`} class="related-item">
+                    <span class="rel-icon">✓</span>
+                    <span class="rel-text">{checklist.replace(/-/g, ' ')}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+        </div>
+
+      </div>
+    </main>
+
+    <Footer />
+
+  </body>
+</html>
+
+<style>
+  /* Reset and base */
+  :global(html) {
+    box-sizing: border-box;
+  }
+
+  :global(*, *:before, *:after) {
+    box-sizing: inherit;
+  }
+
+  /* Breadcrumb */
+  .question-breadcrumb {
+    background: #fff;
+    border-bottom: 1px solid #e2e2e2;
+    padding: 0.75rem 2rem;
+  }
+
+  .breadcrumb-container {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-family: 'Inter', -apple-system, sans-serif;
+  }
+
+  .breadcrumb-container a {
+    color: #7a7a7a;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb-container a:hover {
+    color: #1a2e44;
+  }
+
+  .sep {
+    color: #7a7a7a;
+  }
+
+  .current-page {
+    color: #1a2e44;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 300px;
+  }
+
+  /* Hero Section */
+  .question-hero {
+    background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .q-circle {
+    width: 56px;
+    height: 56px;
+    background: #c9a227;
+    color: #1a2e44;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0 auto 1rem;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .cat-tag {
+    display: inline-block;
+    padding: 0.375rem 0.875rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #c9a227;
+    background: rgba(201, 162, 39, 0.2);
+    border-radius: 4px;
+    margin-bottom: 1.25rem;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .hero-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+  }
+
+  .hero-desc {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Main Layout */
+  .question-main {
+    background: #f7f8f9;
+    padding: 2rem;
+    min-height: calc(100vh - 400px);
+  }
+
+  .content-grid {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  /* Sidebar */
+  .question-sidebar {
+    position: sticky;
+    top: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+  }
+
+  .question-sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .question-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .question-sidebar::-webkit-scrollbar-thumb {
+    background: #e2e2e2;
+    border-radius: 3px;
+  }
+
+  .sidebar-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #7a7a7a;
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #c9a227;
+  }
+
+  .sidebar-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .sidebar-category {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+
+  .cat-heading {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #1a2e44;
+    letter-spacing: 0.03em;
+    margin: 0 0 0.25rem;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .cat-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .cat-list li {
+    border-left: 2px solid transparent;
+    transition: all 0.2s;
+  }
+
+  .cat-list li.active-item {
+    border-left-color: #c9a227;
+    background: #faf6e9;
+  }
+
+  .cat-list li.active-item a {
+    color: #1a2e44;
+    font-weight: 600;
+  }
+
+  .cat-list a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    color: #4a4a4a;
+    text-decoration: none;
+    transition: all 0.2s;
+    border-radius: 4px;
+    line-height: 1.4;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .cat-list li:hover {
+    border-left-color: #c9a227;
+    background: #faf6e9;
+  }
+
+  .cat-list a:hover {
+    color: #1a2e44;
+  }
+
+  /* Main Content */
+  .question-content {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Quick Answer Box */
+  .quick-box {
+    background: #fff;
+    border-left: 4px solid #c9a227;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .quick-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #c9a227;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .quick-text {
+    font-size: 1rem;
+    color: #4a4a4a;
+    line-height: 1.7;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .quick-text :global(p) {
+    margin-bottom: 0.75rem;
+  }
+
+  .quick-text :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .quick-text :global(strong) {
+    color: #1a2e44;
+    font-weight: 600;
+  }
+
+  /* Article Body */
+  .article-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    font-size: 1.0625rem;
+    line-height: 1.8;
+  }
+
+  .article-content :global(p) {
+    margin-bottom: 1.25rem;
+    color: #4a4a4a;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .article-content :global(h2) {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1a2e44;
+    margin: 2rem 0 1rem;
+  }
+
+  .article-content :global(h2:first-child) {
+    margin-top: 0;
+  }
+
+  .article-content :global(h3) {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a2e44;
+    margin: 1.5rem 0 0.75rem;
+  }
+
+  .article-content :global(ul),
+  .article-content :global(ol) {
+    margin: 1.25rem 0;
+    padding-left: 1.75rem;
+  }
+
+  .article-content :global(li) {
+    margin-bottom: 0.5rem;
+    color: #4a4a4a;
+  }
+
+  .article-content :global(strong) {
+    color: #1a2e44;
+    font-weight: 600;
+  }
+
+  .article-content :global(a) {
+    color: #1a2e44;
+    text-decoration: underline;
+    transition: color 0.2s;
+  }
+
+  .article-content :global(a:hover) {
+    color: #c9a227;
+  }
+
+  .article-content :global(hr) {
+    border: none;
+    border-top: 1px solid #e2e2e2;
+    margin: 2rem 0;
+  }
+
+  /* Article Navigation */
+  .article-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e2e2;
+  }
+
+  .nav-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    padding: 1rem;
+    background: #f7f8f9;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .prev-btn {
+    text-align: left;
+  }
+
+  .next-btn {
+    text-align: right;
+    margin-left: auto;
+  }
+
+  .nav-btn:hover {
+    border-color: #c9a227;
+    background: #faf6e9;
+  }
+
+  .nav-dir {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #c9a227;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .nav-text {
+    font-size: 0.9375rem;
+    color: #1a2e44;
+    font-weight: 500;
+    line-height: 1.3;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Related Resources */
+  .related-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .related-heading {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a2e44;
+    margin: 0 0 1.25rem;
+  }
+
+  .related-list {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .related-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    background: #f7f8f9;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .related-item:hover {
+    border-color: #c9a227;
+    background: #faf6e9;
+  }
+
+  .rel-icon {
+    font-size: 1.125rem;
+    flex-shrink: 0;
+  }
+
+  .rel-text {
+    color: #1a2e44;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    text-transform: capitalize;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .question-sidebar {
+      position: relative;
+      top: 0;
+      order: 2;
+      max-height: none;
+    }
+
+    .question-content {
+      order: 1;
+      max-width: none;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .question-main {
+      padding: 1.5rem;
+    }
+
+    .question-breadcrumb {
+      padding: 0.75rem 1.5rem;
+    }
+
+    .current-page {
+      max-width: 180px;
+    }
+
+    .question-hero {
+      padding: 2.5rem 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 1.75rem;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+    }
+
+    .q-circle {
+      width: 48px;
+      height: 48px;
+      font-size: 1.25rem;
+    }
+
+    .article-content {
+      padding: 1.75rem;
+      font-size: 1rem;
+    }
+
+    .article-content :global(h2) {
+      font-size: 1.25rem;
+    }
+
+    .quick-box {
+      padding: 1.25rem;
+    }
+
+    .related-box {
+      padding: 1.5rem;
+    }
+
+    .nav-btn {
+      padding: 0.875rem;
+    }
+  }
+</style>
