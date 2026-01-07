@@ -147,10 +147,7 @@ import Footer from '../components/Footer.astro';
       z-index: 2;
     }
 
-    .hero-new .card-icon {
-      font-size: 2.25rem;
-      margin-bottom: 0.5rem;
-    }
+    /* Icon removed - no longer needed */
 
     .hero-new .card-title {
       font-size: 1.25rem;
@@ -168,23 +165,23 @@ import Footer from '../components/Footer.astro';
 
     /* Card background images */
     .hero-new .card-stories::before {
-      background: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=500&fit=crop') center/cover;
+      background: url('/images/hero/hero-stories-lg.webp') center/cover, #e85d4c;
     }
 
     .hero-new .card-dictionary::before {
-      background: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=500&fit=crop') center/cover;
+      background: url('/images/hero/hero-dictionary-lg.webp') center/cover, #1a2e44;
     }
 
-    .hero-new .card-tools::before {
-      background: url('https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400&h=500&fit=crop') center/cover;
+    .hero-new .card-guides::before {
+      background: url('/images/hero/hero-guides-lg.webp') center/cover, #c9a227;
     }
 
     .hero-new .card-questions::before {
-      background: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=500&fit=crop') center/cover;
+      background: url('/images/hero/hero-questions-lg.webp') center/cover, #2a9d8f;
     }
 
-    .hero-new .card-checklists::before {
-      background: url('https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=400&h=500&fit=crop') center/cover;
+    .hero-new .card-tools::before {
+      background: url('/images/hero/hero-tools-lg.webp') center/cover, #4a7c59;
     }
 
     /* Scroll indicator */
@@ -378,7 +375,7 @@ import Footer from '../components/Footer.astro';
     .featured-img-main {
       width: 100%;
       aspect-ratio: 4/3;
-      background: url('/images/stories/featured-1.png') center/cover;
+      background: url('/images/ui/featured-1.png') center/cover;
       border-radius: var(--radius-xl);
     }
 
@@ -1150,9 +1147,7 @@ import Footer from '../components/Footer.astro';
         border-radius: 12px;
       }
 
-      .hero-new .card-icon {
-        font-size: 1.75rem;
-      }
+      /* Icon removed - no longer needed */
 
       .hero-new .card-title {
         font-size: 1rem;
@@ -1213,43 +1208,38 @@ import Footer from '../components/Footer.astro';
     </div>
 
     <div class="cards-container">
-      <a href="/user-stories" class="card card-stories">
+      <a href="/user-stories/" class="card card-stories">
         <div class="card-content">
-          <div class="card-icon">📖</div>
-          <div class="card-title">Stories</div>
-          <div class="card-desc">Real cases — what went wrong & right</div>
+          <div class="card-title">Real Stories</div>
+          <div class="card-desc">What went wrong & right</div>
         </div>
       </a>
 
-      <a href="/dictionary" class="card card-dictionary">
+      <a href="/dictionary/" class="card card-dictionary">
         <div class="card-content">
-          <div class="card-icon">📚</div>
           <div class="card-title">Dictionary</div>
-          <div class="card-desc">260+ terms explained simply</div>
+          <div class="card-desc">260+ terms explained</div>
         </div>
       </a>
 
-      <a href="/planning-tools" class="card card-tools">
+      <a href="/guides/" class="card card-guides">
         <div class="card-content">
-          <div class="card-icon">🛠</div>
-          <div class="card-title">Tools</div>
-          <div class="card-desc">Planners, guides & calculators</div>
+          <div class="card-title">Guides</div>
+          <div class="card-desc">Deep dives & how-tos</div>
         </div>
       </a>
 
-      <a href="/common-questions" class="card card-questions">
+      <a href="/common-questions/" class="card card-questions">
         <div class="card-content">
-          <div class="card-icon">❓</div>
           <div class="card-title">Questions</div>
           <div class="card-desc">55 common answers</div>
         </div>
       </a>
 
-      <a href="/planning-tools/checklists" class="card card-checklists">
+      <a href="/planning-tools/" class="card card-tools">
         <div class="card-content">
-          <div class="card-icon">✓</div>
-          <div class="card-title">Checklists</div>
-          <div class="card-desc">Step-by-step to-dos</div>
+          <div class="card-title">Tools</div>
+          <div class="card-desc">Planners & checklists</div>
         </div>
       </a>
     </div>
@@ -1282,7 +1272,7 @@ import Footer from '../components/Footer.astro';
     <div class="stats-inner">
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-card-image" style="background-image: url('/images/stories/stats-1.png')"></div>
+          <div class="stat-card-image" style="background-image: url('/images/ui/stats-1.png')"></div>
           <div class="stat-card-content">
             <div class="stat-number">60%</div>
             <div class="stat-label">of adults have no will</div>
@@ -1290,7 +1280,7 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         <div class="stat-card">
-          <div class="stat-card-image" style="background-image: url('/images/stories/stats-2.png')"></div>
+          <div class="stat-card-image" style="background-image: url('/images/ui/stats-2.png')"></div>
           <div class="stat-card-content">
             <div class="stat-number">9-18</div>
             <div class="stat-label">months average probate</div>
@@ -1298,7 +1288,7 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         <div class="stat-card">
-          <div class="stat-card-image" style="background-image: url('/images/stories/stats-3.png')"></div>
+          <div class="stat-card-image" style="background-image: url('/images/ui/stats-3.png')"></div>
           <div class="stat-card-content">
             <div class="stat-number">$35k</div>
             <div class="stat-label">avg contested will cost</div>
@@ -1306,7 +1296,7 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         <div class="stat-card">
-          <div class="stat-card-image" style="background-image: url('/images/stories/stats-4.png')"></div>
+          <div class="stat-card-image" style="background-image: url('/images/ui/stats-4.png')"></div>
           <div class="stat-card-content">
             <div class="stat-number">73%</div>
             <div class="stat-label">disputes avoidable</div>
@@ -1346,7 +1336,7 @@ import Footer from '../components/Footer.astro';
       </div>
       <div class="explore-grid">
         <a href="/user-stories" class="explore-card">
-          <div class="explore-card-image" style="background-image: url('/images/stories/explore-1.png')">
+          <div class="explore-card-image" style="background-image: url('/images/ui/explore-1.png')">
             <span class="explore-card-tag tag-stories">Stories</span>
           </div>
           <div class="explore-card-content">
@@ -1360,7 +1350,7 @@ import Footer from '../components/Footer.astro';
         </a>
 
         <a href="/dictionary" class="explore-card">
-          <div class="explore-card-image" style="background-image: url('/images/stories/explore-2.png')">
+          <div class="explore-card-image" style="background-image: url('/images/ui/explore-2.png')">
             <span class="explore-card-tag tag-dictionary">Dictionary</span>
           </div>
           <div class="explore-card-content">
@@ -1374,7 +1364,7 @@ import Footer from '../components/Footer.astro';
         </a>
 
         <a href="/common-questions" class="explore-card">
-          <div class="explore-card-image" style="background-image: url('/images/stories/explore-3.png')">
+          <div class="explore-card-image" style="background-image: url('/images/ui/explore-3.png')">
             <span class="explore-card-tag tag-questions">Questions</span>
           </div>
           <div class="explore-card-content">
@@ -1388,7 +1378,7 @@ import Footer from '../components/Footer.astro';
         </a>
 
         <a href="/am-i-protected" class="explore-card">
-          <div class="explore-card-image" style="background-image: url('/images/stories/explore-4.png')">
+          <div class="explore-card-image" style="background-image: url('/images/ui/explore-4.png')">
             <span class="explore-card-tag tag-tools">Tools</span>
           </div>
           <div class="explore-card-content">
@@ -1402,7 +1392,7 @@ import Footer from '../components/Footer.astro';
         </a>
 
         <a href="/guides/who-do-you-really-trust" class="explore-card">
-          <div class="explore-card-image" style="background-image: url('/images/stories/explore-5.png')">
+          <div class="explore-card-image" style="background-image: url('/images/ui/explore-5.png')">
             <span class="explore-card-tag tag-guides">Guides</span>
           </div>
           <div class="explore-card-content">
@@ -1416,7 +1406,7 @@ import Footer from '../components/Footer.astro';
         </a>
 
         <a href="/planning-tools/checklists/" class="explore-card">
-          <div class="explore-card-image" style="background-image: url('/images/stories/explore-6.png')">
+          <div class="explore-card-image" style="background-image: url('/images/ui/explore-6.png')">
             <span class="explore-card-tag tag-tools">Checklists</span>
           </div>
           <div class="explore-card-content">
@@ -1509,28 +1499,28 @@ import Footer from '../components/Footer.astro';
       </div>
       <div class="story-gallery-grid">
         <a href="/user-stories" class="story-gallery-card">
-          <div class="story-gallery-image" style="background-image: url('/images/stories/gallery-1.png')">
+          <div class="story-gallery-image" style="background-image: url('/images/ui/gallery-1.png')">
             <div class="story-gallery-overlay">
               <span class="story-gallery-title">Mother Took It All</span>
             </div>
           </div>
         </a>
         <a href="/user-stories" class="story-gallery-card">
-          <div class="story-gallery-image" style="background-image: url('/images/stories/gallery-2.png')">
+          <div class="story-gallery-image" style="background-image: url('/images/ui/gallery-2.png')">
             <div class="story-gallery-overlay">
               <span class="story-gallery-title">The Excavator & The Auction</span>
             </div>
           </div>
         </a>
         <a href="/user-stories" class="story-gallery-card">
-          <div class="story-gallery-image" style="background-image: url('/images/stories/gallery-3.png')">
+          <div class="story-gallery-image" style="background-image: url('/images/ui/gallery-3.png')">
             <div class="story-gallery-overlay">
               <span class="story-gallery-title">A Suspended Sentence</span>
             </div>
           </div>
         </a>
         <a href="/user-stories" class="story-gallery-card">
-          <div class="story-gallery-image" style="background-image: url('/images/stories/gallery-4.png')">
+          <div class="story-gallery-image" style="background-image: url('/images/ui/gallery-4.png')">
             <div class="story-gallery-overlay">
               <span class="story-gallery-title">Brother-In-Law Did Nothing</span>
             </div>
