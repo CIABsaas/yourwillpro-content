@@ -235,14 +235,23 @@ const hasRelated = relatedGuides.length > 0 || relatedChecklists.length > 0;
   </body>
 </html>
 
-<style>
+<style is:global>
   /* Reset and base */
-  :global(html) {
+  * {
     box-sizing: border-box;
   }
 
-  :global(*, *:before, *:after) {
-    box-sizing: inherit;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  body {
+    overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
   }
 
   /* Breadcrumb */

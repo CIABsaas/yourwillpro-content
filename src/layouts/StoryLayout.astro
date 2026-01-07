@@ -256,13 +256,19 @@ const line2 = headlineParts.length > 1 ? headlineParts[1] : null;
     padding: 0;
     box-sizing: border-box;
   }
-  
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
   body {
     font-family: var(--font-body);
     background-color: var(--bg-warm);
     color: var(--text-primary);
     line-height: 1.7;
     font-size: 17px;
+    overflow-x: hidden;
   }
 
   /* === BREADCRUMB === */
