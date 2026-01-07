@@ -39,4 +39,4 @@ User-agent: Applebot-Extended
 Disallow: /
 
 # Sitemap
-Sitemap: https://yourwillpro.com/sitemap.xml
+Sitemap: https://yourwillpro.com.au/sitemap-index.xml

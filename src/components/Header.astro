@@ -1,19 +1,18 @@
 ---
 /**
  * Header.astro
- * Shared navigation component - single source of truth
- * ALL values are explicit - no CSS variables
+ * Mobile-responsive navigation with hamburger menu
  */
 ---
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <header class="header">
   <div class="header-inner">
     <a href="/" class="logo">
-      <img src="/images/logo/ywp-logo.png" alt="YourWillPro" class="logo-img">
+      <img src="/images/logo/ywp-logo-trans.png" alt="YourWillPro" class="logo-img">
     </a>
-    <nav class="main-nav">
+
+    <!-- Desktop Nav -->
+    <nav class="main-nav desktop-nav">
       <a href="/user-stories/" class="nav-link">Real Stories</a>
       <a href="/dictionary/" class="nav-link">Dictionary</a>
       <a href="/guides/" class="nav-link">Guides</a>
@@ -21,22 +20,39 @@
       <a href="/planning-tools/" class="nav-link">Tools</a>
       <a href="/feedback/" class="nav-link">Feedback</a>
     </nav>
+
+    <!-- Hamburger Button -->
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
   </div>
+
+  <!-- Mobile Nav (hidden by default) -->
+  <nav class="mobile-nav">
+    <a href="/user-stories/" class="mobile-nav-link">Real Stories</a>
+    <a href="/dictionary/" class="mobile-nav-link">Dictionary</a>
+    <a href="/guides/" class="mobile-nav-link">Guides</a>
+    <a href="/common-questions/" class="mobile-nav-link">Questions</a>
+    <a href="/planning-tools/" class="mobile-nav-link">Tools</a>
+    <a href="/feedback/" class="mobile-nav-link">Feedback</a>
+  </nav>
 </header>
 
 <style>
   .header {
-    background: white;
-    border-bottom: 1px solid #e2e2e2;
-    padding: 18px 64px;
+    background: #0b2a5a;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   }
 
   .header-inner {
     max-width: 1300px;
     margin: 0 auto;
+    padding: 16px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -49,38 +65,150 @@
   }
 
   .logo-img {
-    height: 56px;
+    height: 50px;
     width: auto;
   }
 
-  .main-nav {
+  .desktop-nav {
     display: flex;
-    gap: 36px;
+    gap: 32px;
   }
 
   .nav-link {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #e5e7eb;
+    font-size: 16px;
+    font-weight: 600;
     text-decoration: none;
-    color: #4a4a4a;
-    font-weight: 500;
-    font-size: 15px;
     padding: 8px 0;
-    border-bottom: 2px solid transparent;
-    transition: all 0.2s;
+    transition: color 0.2s;
   }
 
   .nav-link:hover {
-    color: #1a2e44;
-    border-bottom-color: #c9a227;
+    color: #ffffff;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+  }
+
+  .hamburger-line {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .hamburger.active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .mobile-nav {
+    display: none;
+    background: #0b2a5a;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+
+  .mobile-nav.open {
+    max-height: 400px;
+    padding: 16px 0;
+  }
+
+  .mobile-nav-link {
+    color: #e5e7eb;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 14px 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .mobile-nav-link:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-nav-link:hover {
+    background: rgba(255,255,255,0.1);
+    color: #ffffff;
   }
 
   @media (max-width: 900px) {
-    .header {
-      padding: 16px 24px;
+    .header-inner {
+      padding: 14px 20px;
     }
 
-    .main-nav {
+    .logo-img {
+      height: 42px;
+    }
+
+    .desktop-nav {
       display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .mobile-nav {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .header-inner {
+      padding: 12px 16px;
+    }
+
+    .logo-img {
+      height: 36px;
+    }
+
+    .mobile-nav-link {
+      padding: 12px 16px;
+      font-size: 16px;
     }
   }
 </style>
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.querySelector('.mobile-nav');
+
+  hamburger?.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded',
+      hamburger.classList.contains('active').toString()
+    );
+    mobileNav?.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger?.classList.remove('active');
+      mobileNav?.classList.remove('open');
+    });
+  });
+</script>

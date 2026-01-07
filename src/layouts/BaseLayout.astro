@@ -90,6 +90,11 @@ const sortedCategories = categories.sort((a, b) => a.data.order - b.data.order);
     padding: 0;
   }
 
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
   :root {
     --font-display: 'Playfair Display', Georgia, serif;
     --font-body: 'DM Sans', -apple-system, sans-serif;
@@ -108,6 +113,7 @@ const sortedCategories = categories.sort((a, b) => a.data.order - b.data.order);
     background: #ffffff;
     color: #1f2937;
     line-height: 1.8;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {

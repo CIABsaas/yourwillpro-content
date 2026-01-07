@@ -60,169 +60,123 @@ import Footer from '../components/Footer.astro';
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
     body {
       font-family: var(--font-body);
       background: var(--bg);
       color: var(--text-primary);
       line-height: 1.65;
       font-size: 16px;
+      overflow-x: hidden;
     }
 
-    /* === NEW APPLE-STYLE HERO === */
-    .hero-new {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 3rem 2rem;
-      text-align: center;
+    /* === NEW HERO SECTION === */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 88px 40px 100px;
       background: #ffffff;
     }
 
-    .hero-new .hero-content {
-      max-width: 800px;
-      margin-bottom: 4rem;
+    .hero {
+      display: flex;
+      align-items: flex-start;
+      gap: 64px;
     }
 
-    .hero-new h1 {
-      font-size: 4rem;
-      font-weight: 600;
-      color: #1d1d1f;
-      margin-bottom: 1.5rem;
-      line-height: 1.1;
-      letter-spacing: -2px;
+    .hero-left {
+      flex: 1 1 52%;
+      padding-right: 20px;
     }
 
-    .hero-new .hero-intro {
-      font-size: 1.35rem;
-      color: #86868b;
-      margin-bottom: 0.75rem;
+    h1 {
+      margin: 0 0 24px 0;
+      font-size: 72px;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .sub {
+      max-width: 480px;
+      font-size: 26px;
       line-height: 1.5;
-      font-weight: 400;
+      color: #475569;
+      margin-bottom: 28px;
     }
 
-    .hero-new .hero-tagline {
-      font-size: 1.35rem;
-      color: #1d1d1f;
-      font-weight: 500;
+    .kicker {
+      font-size: 24px;
+      font-weight: 700;
+      color: #0f172a;
     }
 
-    .hero-new .cards-container {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      max-width: 1100px;
-      margin-bottom: 3rem;
+    .hero-right {
+      flex: 1 1 48%;
     }
 
-    .hero-new .card {
-      width: 150px;
-      height: 180px;
-      border-radius: 16px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      text-align: center;
-      color: white;
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 540px;
+    }
+
+    .card {
       position: relative;
+      height: 180px;
+      border-radius: 20px;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 1.5rem;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .hero-new .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-size: cover;
-      background-position: center;
-      z-index: 0;
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     }
 
-    .hero-new .card::after {
-      content: '';
+    .card::after {
+      content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%);
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.6));
       z-index: 1;
     }
 
-    .hero-new .card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    .hero-new .card-content {
-      position: relative;
+    .card-label {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 16px;
+      color: #ffffff;
       z-index: 2;
     }
 
-    /* Icon removed - no longer needed */
-
-    .hero-new .card-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 0.35rem;
-      letter-spacing: -0.3px;
+    .card-title {
+      font-size: 26px;
+      font-weight: 800;
+      margin: 0;
     }
 
-    .hero-new .card-desc {
-      font-size: 0.8rem;
+    .card-desc {
+      margin-top: 4px;
+      font-size: 15px;
+      font-weight: 500;
       opacity: 0.9;
-      line-height: 1.35;
-      font-weight: 400;
-    }
-
-    /* Card background images */
-    .hero-new .card-stories::before {
-      background: url('/images/hero/hero-stories-lg.webp') center/cover, #e85d4c;
-    }
-
-    .hero-new .card-dictionary::before {
-      background: url('/images/hero/hero-dictionary-lg.webp') center/cover, #1a2e44;
-    }
-
-    .hero-new .card-guides::before {
-      background: url('/images/hero/hero-guides-lg.webp') center/cover, #c9a227;
-    }
-
-    .hero-new .card-questions::before {
-      background: url('/images/hero/hero-questions-lg.webp') center/cover, #2a9d8f;
-    }
-
-    .hero-new .card-tools::before {
-      background: url('/images/hero/hero-tools-lg.webp') center/cover, #4a7c59;
-    }
-
-    /* Scroll indicator */
-    .hero-new .scroll-indicator {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      color: #86868b;
-      font-size: 0.8rem;
-      font-weight: 400;
-    }
-
-    .hero-new .scroll-indicator span {
-      font-size: 1.25rem;
-      animation: float 2s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(6px); }
     }
 
     .btn-primary {
@@ -1111,6 +1065,18 @@ import Footer from '../components/Footer.astro';
       }
     }
 
+    @media (max-width: 1024px) {
+      main {
+        padding: 72px 24px 80px;
+      }
+      h1 {
+        font-size: 56px;
+      }
+      .sub {
+        font-size: 22px;
+      }
+    }
+
     @media (max-width: 1100px) {
       .featured-inner { grid-template-columns: 1fr; gap: 80px; }
       .featured-pullquote { right: 20px; bottom: -30px; }
@@ -1123,6 +1089,20 @@ import Footer from '../components/Footer.astro';
     }
 
     @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        gap: 48px;
+      }
+      .hero-left {
+        padding-right: 0;
+      }
+      .sub {
+        max-width: 100%;
+      }
+      .cards {
+        max-width: 100%;
+      }
+
       .trust-strip-inner {
         flex-direction: column;
         text-align: center;
@@ -1135,46 +1115,30 @@ import Footer from '../components/Footer.astro';
 
     }
 
-    @media (max-width: 768px) {
-      /* New Hero Mobile Responsive */
-      .hero-new {
-        padding: 2rem 1.5rem;
-        min-height: calc(100vh - 60px);
+    @media (max-width: 600px) {
+      /* Hero Mobile Responsive */
+      main {
+        padding: 40px 16px 60px;
       }
 
-      .hero-new h1 {
-        font-size: 2.5rem;
-        letter-spacing: -1px;
+      h1 {
+        font-size: 36px;
       }
 
-      .hero-new .hero-intro,
-      .hero-new .hero-tagline {
-        font-size: 1.1rem;
+      .sub {
+        font-size: 18px;
       }
 
-      .hero-new .hero-content {
-        margin-bottom: 3rem;
+      .kicker {
+        font-size: 18px;
       }
 
-      .hero-new .cards-container {
-        gap: 0.75rem;
+      .cards {
+        grid-template-columns: 1fr;
       }
 
-      .hero-new .card {
-        width: calc(50% - 0.5rem);
-        height: 135px;
-        padding: 1rem;
-        border-radius: 12px;
-      }
-
-      /* Icon removed - no longer needed */
-
-      .hero-new .card-title {
-        font-size: 1rem;
-      }
-
-      .hero-new .card-desc {
-        font-size: 0.75rem;
+      .card {
+        height: 140px;
       }
 
       .callout-strip { padding: 16px 24px; }
@@ -1201,13 +1165,13 @@ import Footer from '../components/Footer.astro';
     }
 
     @media (max-width: 400px) {
-      .hero-new h1 {
-        font-size: 2rem;
+      /* Extra small mobile adjustments */
+      .kicker {
+        font-size: 16px;
       }
 
-      .hero-new .card {
-        width: 100%;
-        height: 105px;
+      .card {
+        height: 120px;
       }
     }
   </style>
@@ -1216,59 +1180,54 @@ import Footer from '../components/Footer.astro';
 
   <Header />
 
-  <!-- New Apple-style Hero -->
-  <section class="hero-new">
-    <div class="hero-content">
-      <h1>Thinking about your will?</h1>
-      <p class="hero-intro">
-        Whether you're starting from scratch, updating an old one,
-        or just wondering if you're covered — this free resource has the answers.
-      </p>
-      <p class="hero-tagline">Deep dives or quick answers. You choose.</p>
-    </div>
+  <!-- New Hero Section -->
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Thinking about your will?</h1>
+        <p class="sub">
+          Whether you're starting from scratch, updating an old one, or just
+          wondering if you're covered — this free resource has the answers.
+        </p>
+        <p class="kicker">
+          Deep dives or quick answers. You choose.
+        </p>
+      </div>
 
-    <div class="cards-container">
-      <a href="/user-stories/" class="card card-stories">
-        <div class="card-content">
-          <div class="card-title">Real Stories</div>
-          <div class="card-desc">What went wrong & right</div>
+      <div class="hero-right">
+        <div class="cards">
+          <a href="/user-stories/" class="card">
+            <img src="/images/hero/hero-stories-lg.webp" alt="Real Stories">
+            <div class="card-label">
+              <div class="card-title">Real Stories</div>
+              <div class="card-desc">What went wrong & right</div>
+            </div>
+          </a>
+          <a href="/guides/" class="card">
+            <img src="/images/hero/hero-guides-lg.webp" alt="Guides">
+            <div class="card-label">
+              <div class="card-title">Guides</div>
+              <div class="card-desc">Deep dives & how-tos</div>
+            </div>
+          </a>
+          <a href="/common-questions/" class="card">
+            <img src="/images/hero/hero-questions-lg.webp" alt="Questions">
+            <div class="card-label">
+              <div class="card-title">Questions</div>
+              <div class="card-desc">91 common answers</div>
+            </div>
+          </a>
+          <a href="/planning-tools/" class="card">
+            <img src="/images/hero/hero-tools-lg.webp" alt="Tools">
+            <div class="card-label">
+              <div class="card-title">Tools</div>
+              <div class="card-desc">Planners & checklists</div>
+            </div>
+          </a>
         </div>
-      </a>
-
-      <a href="/dictionary/" class="card card-dictionary">
-        <div class="card-content">
-          <div class="card-title">Dictionary</div>
-          <div class="card-desc">260+ terms explained</div>
-        </div>
-      </a>
-
-      <a href="/guides/" class="card card-guides">
-        <div class="card-content">
-          <div class="card-title">Guides</div>
-          <div class="card-desc">Deep dives & how-tos</div>
-        </div>
-      </a>
-
-      <a href="/common-questions/" class="card card-questions">
-        <div class="card-content">
-          <div class="card-title">Questions</div>
-          <div class="card-desc">55 common answers</div>
-        </div>
-      </a>
-
-      <a href="/planning-tools/" class="card card-tools">
-        <div class="card-content">
-          <div class="card-title">Tools</div>
-          <div class="card-desc">Planners & checklists</div>
-        </div>
-      </a>
-    </div>
-
-    <div class="scroll-indicator">
-      <span>↓</span>
-      Explore more
-    </div>
-  </section>
+      </div>
+    </section>
+  </main>
 
   <!-- New Here Banner -->
   <div style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
@@ -1285,7 +1244,7 @@ import Footer from '../components/Footer.astro';
   </div>
 
   <div class="callout-strip">
-    <p>⚠️ <strong>Did you know?</strong> 60% of Australians don't have a valid will. <a href="/am-i-protected">Check if you're protected →</a></p>
+    <p>⚠️ <strong>Did you know?</strong> 60% of Australians don't have a valid will. <a href="/planning-tools">Check if you're protected →</a></p>
   </div>
 
   <section class="stats-section">
@@ -1397,7 +1356,7 @@ import Footer from '../components/Footer.astro';
           </div>
         </a>
 
-        <a href="/am-i-protected" class="explore-card">
+        <a href="/planning-tools" class="explore-card">
           <div class="explore-card-image" style="background-image: url('/images/ui/explore-4.png')">
             <span class="explore-card-tag tag-tools">Tools</span>
           </div>
@@ -1607,7 +1566,7 @@ import Footer from '../components/Footer.astro';
       <div class="cta-badge">🛡️ Free Assessment</div>
       <h2>Is your family <em>protected?</em></h2>
       <p>Take our 3-minute quiz to find out if you're covered — and discover any gaps that could leave your family vulnerable.</p>
-      <a href="/am-i-protected" class="cta-btn">Check My Protection →</a>
+      <a href="/planning-tools" class="cta-btn">Check My Protection →</a>
     </div>
   </section>
 
