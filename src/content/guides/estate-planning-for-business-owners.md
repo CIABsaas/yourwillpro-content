@@ -497,7 +497,7 @@ Complex rules. Requires advance planning. Not automatic.
 **Dictionary Terms:**
 - [Executor](/dictionary/executor)
 - [Testamentary Trust](/dictionary/testamentary-trust)
-- [Capital Gains Tax](/dictionary/capital-gains-tax)
+- Capital Gains Tax
 - [Beneficiary](/dictionary/beneficiary)
 
 **Guides:**

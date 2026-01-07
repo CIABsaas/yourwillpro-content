@@ -24,7 +24,7 @@ region: "International"
   <h3>⏱ When you'll encounter this term</h3>
   <p>People often underestimate their assets. You might think you don't have much, but when you add up your super, death benefits from insurance, a modest home, a car, and personal possessions, it can total a substantial sum.</p>
   <p>Some assets don't form part of your estate and can't be distributed by your will. These include superannuation (which is controlled by the fund's rules and your nomination), jointly owned property with right of survivorship, and assets held in certain trust structures. Understanding which assets you actually control through your will is an important part of estate planning.</p>
-  <p>**Related terms:** [Estate](/dictionary/estate), [Liabilities](/dictionary/liabilities), [Gross Estate](/dictionary/gross-estate), [Net Estate](/dictionary/net-estate)</p>
+  <p>**Related terms:** [Estate](/dictionary/estate), Liabilities, [Gross Estate](/dictionary/gross-estate), Net Estate</p>
   <p>---</p>
 </div>
 

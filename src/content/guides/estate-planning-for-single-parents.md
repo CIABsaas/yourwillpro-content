@@ -418,7 +418,7 @@ Consider age-appropriate conversations:
 - [Testamentary Trust](/dictionary/testamentary-trust)
 - [Trustee](/dictionary/trustee)
 - [Binding Death Benefit Nomination](/dictionary/binding-death-benefit-nomination)
-- [Letter of Wishes](/dictionary/letter-of-wishes)
+- Letter of Wishes
 
 **Guides:**
 - [How to Choose the Right Executor](/guides/how-to-choose-the-right-executor)

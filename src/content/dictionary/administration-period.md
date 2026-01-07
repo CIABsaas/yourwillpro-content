@@ -24,7 +24,7 @@ region: "International"
   <h3>⏱ When you'll encounter this term</h3>
   <p>During this period, beneficiaries usually can't access their inheritance. The executor is working through a legal checklist that can't be rushed.</p>
   <p>If you're waiting for an inheritance, it's normal to feel frustrated by the delay. But the executor has legal duties to fulfill and can face personal liability if they distribute assets prematurely and something goes wrong. Patience, while difficult, protects everyone involved.</p>
-  <p>**Related terms:** [Executor](/dictionary/executor), [Probate](/dictionary/probate), [Grant of Probate](/dictionary/grant-of-probate), [Distribution](/dictionary/distribution)</p>
+  <p>**Related terms:** [Executor](/dictionary/executor), [Probate](/dictionary/probate), Grant of Probate, [Distribution](/dictionary/distribution)</p>
   <p>---</p>
 </div>
 

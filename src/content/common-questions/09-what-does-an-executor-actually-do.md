@@ -27,9 +27,9 @@ Clear records and instructions make this role much easier.
 
 **Dictionary**
 - [Executor](/dictionary/executor)
-- [Grant of Probate](/dictionary/grant-of-probate)
+- Grant of Probate
 - [Distribution](/dictionary/distribution)
 - [Inventory](/dictionary/inventory)
-- [Liabilities](/dictionary/liabilities)
+- Liabilities
 
 ---

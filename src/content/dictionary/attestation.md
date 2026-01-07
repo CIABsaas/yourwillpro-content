@@ -24,7 +24,7 @@ region: "International"
   <h3>⏱ When you'll encounter this term</h3>
   <p>In Australia, a will generally requires two witnesses who are both present at the same time. The witnesses must be over 18 and should not be beneficiaries of the will (or married to beneficiaries), as this can invalidate their gifts.</p>
   <p>As a witness, you're not reading the will or verifying its contents—you're simply confirming the signing process. If you're asked to witness a will, take it seriously. Make sure the person signs in your presence, and that both witnesses are there together. If there's any coercion or the person seems confused, don't witness the document.</p>
-  <p>**Related terms:** [Witness](/dictionary/witness), [Execution](/dictionary/execution), [Self-Proving Affidavit](/dictionary/self-proving-affidavit), [Testamentary Capacity](/dictionary/testamentary-capacity)</p>
+  <p>**Related terms:** [Witness](/dictionary/witness), Execution, [Self-Proving Affidavit](/dictionary/self-proving-will), [Testamentary Capacity](/dictionary/testamentary-capacity)</p>
   <p>---</p>
 </div>
 

@@ -125,7 +125,7 @@ If you're setting up a trust for loved ones, think carefully about who you appoi
 
 - [Trustee](/dictionary/trustee)
 - [Fiduciary Duty](/dictionary/fiduciary-duty)
-- [Devastavit](/dictionary/devastavit)
+- Devastavit
 - [Testamentary Trust](/dictionary/testamentary-trust)
 - [What does an executor actually do?](/common-questions/what-does-an-executor-actually-do)
 

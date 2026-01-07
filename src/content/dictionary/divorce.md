@@ -26,7 +26,7 @@ region: "International"
   <p>Divorce appears in estate planning whenever there's been a change in marital status. After a divorce, you'll need to review and likely update your will, power of attorney documents, and beneficiary designations. If you don't update these documents, your estate might not be distributed according to your current wishes.</p>
   <p>The timing of divorce and death can create complicated situations. If someone dies while divorce proceedings are still pending, the surviving spouse may still have inheritance rights. Once a divorce is finalized, most jurisdictions treat former spouses as having predeceased each other for estate purposes.</p>
   <p>Many people don't realize that divorce doesn't automatically update all their estate planning documents. While your will might be partially revoked by law, documents like powers of attorney or enduring guardianship appointments typically need to be manually revoked and replaced. Taking care of these updates promptly after divorce protects your interests and ensures your affairs are handled by people you currently trust.</p>
-  <p>**Related terms:** [Beneficiary](/dictionary/beneficiary), [Revocation](/dictionary/revocation), [Marital Property](/dictionary/marital-property)</p>
+  <p>**Related terms:** [Beneficiary](/dictionary/beneficiary), [Revocation](/dictionary/revocation), [Marital Property](/dictionary/marital-deduction)</p>
   <p>---</p>
 </div>
 

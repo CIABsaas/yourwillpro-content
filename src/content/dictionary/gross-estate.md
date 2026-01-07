@@ -26,7 +26,7 @@ region: "International"
   <p>In jurisdictions with estate tax, the executor must calculate the gross estate to determine if tax is owed. This involves valuing every asset at its fair market value as of the date of death. Real estate needs appraisals, businesses need valuations, and all financial accounts must be tallied.</p>
   <p>The gross estate can include some assets you might not expect. Life insurance proceeds are included if you owned the policy. Retirement accounts and superannuation are generally part of the gross estate. Property you gave away but retained some control over or benefit from might still be included. Joint property is included at least partially, depending on the ownership structure and who provided the funds to purchase it.</p>
   <p>For most people, particularly in countries without estate tax like Australia, the gross estate calculation is mainly an accounting exercise to understand what assets exist and what they're worth. The executor uses this information to properly administer the estate and ensure fair distribution, even if no tax is involved.</p>
-  <p>**Related terms:** [Estate](/dictionary/estate), [Net Estate](/dictionary/net-estate), [Estate Tax](/dictionary/estate-tax), [Fair Market Value](/dictionary/fair-market-value)</p>
+  <p>**Related terms:** [Estate](/dictionary/estate), Net Estate, [Estate Tax](/dictionary/estate-tax), [Fair Market Value](/dictionary/fair-market-value)</p>
   <p>---</p>
 </div>
 

@@ -32,15 +32,15 @@ region: "International"
   <p>Joint wills also create confusion during probate. After the first death, is the will revoked as to the deceased and binding as to the survivor? Can the survivor spend capital or only income? The answers vary by jurisdiction and depend on the specific wording, but the questions themselves create expense and uncertainty.</p>
   <p>The modern alternative is mirror wills—separate but coordinated wills for each spouse. Mirror wills typically have identical provisions (everything to the spouse, then to the children), but they remain separate documents. Each spouse can revoke or change their own will independently. When one spouse dies, the survivor retains full freedom to make a new will if circumstances change.</p>
   <p>If you want to ensure property ultimately goes to specific beneficiaries regardless of what the survivor does, a trust is a better tool than a joint will. A testamentary trust can provide income to the surviving spouse while protecting the capital for your children.</p>
-  <p>**Related terms:** [Mutual wills](/dictionary/mutual-wills), [Mirror wills](/dictionary/mirror-wills), [Will](/dictionary/will), [Testamentary trust](/dictionary/testamentary-trust)</p>
+  <p>**Related terms:** [Mutual wills](/dictionary/mutual-will), [Mirror wills](/dictionary/mirror-will), [Will](/dictionary/will), [Testamentary trust](/dictionary/testamentary-trust)</p>
   <p>---</p>
 </div>
 
 ## Learn More
 
 **Related Dictionary Terms**
-- [Mutual wills](/dictionary/mutual-wills)
-- [Mirror wills](/dictionary/mirror-wills)
+- [Mutual wills](/dictionary/mutual-will)
+- [Mirror wills](/dictionary/mirror-will)
 
 **Common Questions**
 - [Should my spouse and I have separate wills?](/common-questions/should-my-spouse-and-i-have-separate-wills)

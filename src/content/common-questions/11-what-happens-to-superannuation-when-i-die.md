@@ -23,9 +23,9 @@ Because of this, it's important that your super arrangements and your will are c
 - [Who should I choose as my executor?](/common-questions/who-should-i-choose-as-my-executor)
 
 **Dictionary**
-- [Superannuation](/dictionary/superannuation)
+- [Superannuation](/dictionary/superannuation-death-benefit)
 - [Binding Death Benefit Nomination](/dictionary/binding-death-benefit-nomination)
 - [Death Benefit](/dictionary/death-benefit)
-- [Superannuation Dependant](/dictionary/superannuation-dependant)
+- Superannuation Dependant
 
 ---

@@ -453,7 +453,7 @@ While avoiding probate sounds attractive, it's not always the right strategy:
 - [Executor](/dictionary/executor)
 - [Letters of Administration](/dictionary/letters-of-administration)
 - [Intestacy](/dictionary/intestacy)
-- [Grant of Probate](/dictionary/grant-of-probate)
+- Grant of Probate
 
 **Guides:**
 - [How to Choose the Right Executor](/guides/how-to-choose-the-right-executor)

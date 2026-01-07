@@ -173,7 +173,7 @@ For anyone making a will, the lesson is simple: choose someone who will actually
 
 - [Executor](/dictionary/executor)
 - [Probate](/dictionary/probate)
-- [Probate Delays](/dictionary/probate-delays)
+- [Probate Delays](/dictionary/probate-process)
 - [Fiduciary Duty](/dictionary/fiduciary-duty)
 - [What does an executor actually do?](/common-questions/what-does-an-executor-actually-do)
 

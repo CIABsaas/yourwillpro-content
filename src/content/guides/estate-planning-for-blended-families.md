@@ -486,7 +486,7 @@ Before finalizing your estate plan, work through these questions together:
 **Dictionary Terms:**
 - [Testamentary Trust](/dictionary/testamentary-trust)
 - [Life Interest](/dictionary/life-estate)
-- [Family Provision Claim](/dictionary/family-provision-claim)
+- Family Provision Claim
 - [Binding Death Benefit Nomination](/dictionary/binding-death-benefit-nomination)
 - [Intestacy](/dictionary/intestacy)
 

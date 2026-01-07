@@ -30,14 +30,14 @@ region: "International"
   <p>The inventory process can also uncover surprises. You might find accounts or assets the deceased never mentioned. Or you might discover debts that need to be paid before any distribution to beneficiaries. Taking the time to do a thorough search and create a complete inventory early in the administration saves problems later.</p>
   <p>In some jurisdictions, you must file the inventory with the court within a specific timeframe. In others, you only need to provide it to beneficiaries on request. But even where it's not legally required, creating an inventory is good practice—it's essential for managing the estate properly and defending your administration if questions arise.</p>
   <p>As you administer the estate, you'll update the inventory to reflect what's been sold, what's been distributed, and what remains. By the end, you'll be able to show a complete accounting from the initial inventory through to final distribution.</p>
-  <p>**Related terms:** [Estate assets](/dictionary/estate-assets), [Executor](/dictionary/executor), [Probate](/dictionary/probate), [Estate administration](/dictionary/estate-administration)</p>
+  <p>**Related terms:** Estate assets, [Executor](/dictionary/executor), [Probate](/dictionary/probate), [Estate administration](/dictionary/estate-administration)</p>
   <p>---</p>
 </div>
 
 ## Learn More
 
 **Related Dictionary Terms**
-- [Estate assets](/dictionary/estate-assets)
+- Estate assets
 - [Executor](/dictionary/executor)
 
 **Common Questions**

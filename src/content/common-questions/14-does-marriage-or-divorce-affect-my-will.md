@@ -25,7 +25,7 @@ Reviewing your will after relationship changes is essential.
 **Dictionary**
 - [Revocation](/dictionary/revocation)
 - [Surviving Spouse](/dictionary/surviving-spouse)
-- [Domestic Partner](/dictionary/domestic-partner)
+- Domestic Partner
 - [Intestate](/dictionary/intestate)
 
 ---

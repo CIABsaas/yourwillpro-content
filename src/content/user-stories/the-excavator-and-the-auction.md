@@ -129,8 +129,8 @@ No inheritance is worth what this family lost.
 ## Related topics
 
 - [Executor](/dictionary/executor)
-- [Family Provision Claim](/dictionary/family-provision-claim)
-- [Devastavit](/dictionary/devastavit)
+- Family Provision Claim
+- Devastavit
 - [Can I leave someone out of my will?](/common-questions/can-i-leave-someone-out-of-my-will)
 - [Who should I choose as my executor?](/common-questions/who-should-i-choose-as-my-executor)
 

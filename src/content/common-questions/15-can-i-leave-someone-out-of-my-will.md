@@ -24,8 +24,8 @@ Careful planning reduces the risk of disputes.
 
 **Dictionary**
 - [Disinherit](/dictionary/disinherit)
-- [Family Provision Claim](/dictionary/family-provision-claim)
-- [Dependant](/dictionary/dependant)
+- Family Provision Claim
+- Dependant
 - [Testamentary Capacity](/dictionary/testamentary-capacity)
 
 ---

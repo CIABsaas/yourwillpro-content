@@ -33,7 +33,7 @@ region: "International"
   <p>Third, a joint tenant can sever the joint tenancy unilaterally by transferring their interest to themselves as a tenant in common. This destroys the right of survivorship without the other owners' consent.</p>
   <p>Fourth, joint tenancy doesn't solve all succession problems. It only works for one generation—when the last joint tenant dies, the property goes through their estate anyway.</p>
   <p>Joint tenancy works well for simple situations like a marital home. But for more complex estates, particularly with blended families or where you want to control who ultimately inherits, other arrangements like trusts might be more appropriate.</p>
-  <p>**Related terms:** [Joint tenancy with right of survivorship](/dictionary/joint-tenancy-with-right-of-survivorship), [Tenancy in common](/dictionary/tenancy-in-common), [Right of survivorship](/dictionary/right-of-survivorship), [Severing joint tenancy](/dictionary/severing-joint-tenancy)</p>
+  <p>**Related terms:** [Joint tenancy with right of survivorship](/dictionary/joint-tenancy-with-right-of-survivorship), [Tenancy in common](/dictionary/tenancy-in-common), [Right of survivorship](/dictionary/right-of-survivorship), Severing joint tenancy</p>
   <p>---</p>
 </div>
 

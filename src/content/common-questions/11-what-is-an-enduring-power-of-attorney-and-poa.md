@@ -162,7 +162,7 @@ Then, hopefully, you'll never need them. But if you do, they'll be there.
 **Dictionary**
 - [Power of Attorney](/dictionary/power-of-attorney)
 - [Enduring Power of Attorney](/dictionary/enduring-power-of-attorney)
-- [Attorney](/dictionary/attorney)
+- [Attorney-in-Fact](/dictionary/attorney-in-fact)
 - [Capacity](/dictionary/capacity)
 
 ---

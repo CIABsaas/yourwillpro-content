@@ -26,7 +26,7 @@ region: "International"
   <p>You'll rarely encounter actual dower rights in modern estate planning, as they've been eliminated in most places. However, the term occasionally appears in old property titles or historical legal documents. Some older property deeds might reference "dower rights" that were released or waived when the property was previously transferred.</p>
   <p>The concept behind dower, protecting surviving spouses from disinheritance, continues in modern law through different mechanisms. Most jurisdictions now have family provision laws or forced heirship rules that serve a similar purpose. These allow spouses (and sometimes other dependents) to claim against an estate if the deceased didn't make adequate provision for them.</p>
   <p>Understanding dower helps explain why modern law gives spouses certain protected inheritance rights. The principle that you can't completely disinherit your spouse without good reason stems from the same concern that created dower rights: ensuring that people who depended on the deceased aren't left without support.</p>
-  <p>**Related terms:** [Elective Share](/dictionary/elective-share), [Family Provision](/dictionary/family-provision), [Life Estate](/dictionary/life-estate)</p>
+  <p>**Related terms:** [Elective Share](/dictionary/elective-share), Family Provision, [Life Estate](/dictionary/life-estate)</p>
   <p>---</p>
 </div>
 
@@ -34,7 +34,7 @@ region: "International"
 
 **Related Dictionary Terms**
 - [Elective Share](/dictionary/elective-share)
-- [Family Provision](/dictionary/family-provision)
+- Family Provision
 
 **Common Questions**
 - [What is a will?](/common-questions/what-is-a-will)

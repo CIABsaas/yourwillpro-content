@@ -26,7 +26,7 @@ region: "International"
   <p>In estate planning documents, references to force and effect typically appear when discussing validity, revocation, or duration. A will might declare it is "made in full force and effect" to emphasize its validity. A power of attorney might specify conditions under which it remains "in force and effect."</p>
   <p>The phrase also appears when discussing whether old documents remain valid. If you make a new will, your old will is no longer "in force and effect" because the new will revoked it. If you revoke a power of attorney, it no longer has "force and effect" and your attorney can no longer act under it.</p>
   <p>Understanding this phrase helps you read and interpret legal documents. When you see language about something being "in full force and effect," it's simply confirming that the document or provision is valid and operative. When a document says it "shall remain in force and effect until" a certain event, it's specifying how long the document stays valid.</p>
-  <p>**Related terms:** [Revocation](/dictionary/revocation), [Validity](/dictionary/validity), [Operative](/dictionary/operative)</p>
+  <p>**Related terms:** [Revocation](/dictionary/revocation), Validity, Operative</p>
   <p>---</p>
 </div>
 

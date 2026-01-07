@@ -29,14 +29,14 @@ region: "International"
   <p>Some jurisdictions also give your homestead special status when it comes to inheritance. There might be rules about a surviving spouse's right to continue living in the homestead, even if the will leaves it to someone else. Or there might be limitations on your ability to give away or mortgage your homestead without your spouse's consent.</p>
   <p>For tax purposes, your homestead may qualify for exemptions or concessions that don't apply to other property. This can affect both property taxes during your lifetime and capital gains or inheritance taxes after death.</p>
   <p>When you're making a will, it's worth understanding these rules and thinking carefully about what happens to your homestead. Do you want your spouse to be able to stay there? Should it be sold and the proceeds divided? The answers may be influenced by the legal protections and obligations that already apply to homestead property in your jurisdiction.</p>
-  <p>**Related terms:** [Primary residence](/dictionary/primary-residence), [Homestead exemption](/dictionary/homestead-exemption), [Real property](/dictionary/real-property), [Estate assets](/dictionary/estate-assets)</p>
+  <p>**Related terms:** Primary residence, [Homestead exemption](/dictionary/homestead-exemption), [Real property](/dictionary/real-property), Estate assets</p>
   <p>---</p>
 </div>
 
 ## Learn More
 
 **Related Dictionary Terms**
-- [Primary residence](/dictionary/primary-residence)
+- Primary residence
 - [Homestead exemption](/dictionary/homestead-exemption)
 
 **Common Questions**

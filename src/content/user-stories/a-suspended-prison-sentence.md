@@ -143,9 +143,9 @@ If you're making a will, choose someone who will take the role seriously. If you
 ## Related topics
 
 - [Executor](/dictionary/executor)
-- [Devastavit](/dictionary/devastavit)
+- Devastavit
 - [Probate](/dictionary/probate)
-- [Breach of Fiduciary Duty](/dictionary/breach-of-fiduciary-duty)
+- Breach of Fiduciary Duty
 - [Who should I choose as my executor?](/common-questions/who-should-i-choose-as-my-executor)
 
 *Based on Totton & Anor v Totton [2022] EWHC 2345 (Ch). Some details have been simplified.*

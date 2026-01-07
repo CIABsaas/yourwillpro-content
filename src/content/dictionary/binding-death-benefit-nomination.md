@@ -24,7 +24,7 @@ region: "Australia"
   <h3>⏱ When you'll encounter this term</h3>
   <p>To be valid, a binding nomination must meet specific requirements: it must be in writing, signed and dated by you in the presence of two witnesses (who must be over 18 and not named beneficiaries), and it usually expires after three years (though some funds now offer non-lapsing binding nominations).</p>
   <p>You can only nominate eligible people: your dependants (spouse, children, someone financially dependent on you, or someone in an interdependency relationship with you) or your estate. If you nominate your estate, your super becomes part of your estate and gets distributed according to your will. Many people do this to maintain consistency between their super and will, though there can be tax implications to consider.</p>
-  <p>**Related terms:** [Superannuation](/dictionary/superannuation), [Non-Binding Nomination](/dictionary/non-binding-nomination), [Death Benefit](/dictionary/death-benefit), [Superannuation Dependant](/dictionary/superannuation-dependant)</p>
+  <p>**Related terms:** [Superannuation](/dictionary/superannuation-death-benefit), Non-Binding Nomination, [Death Benefit](/dictionary/death-benefit), Superannuation Dependant</p>
   <p>---</p>
 </div>
 

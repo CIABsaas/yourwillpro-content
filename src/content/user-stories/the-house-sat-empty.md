@@ -130,6 +130,6 @@ And when inaction drags on long enough, the only way forward is through the cour
 
 - [Executor](/dictionary/executor)
 - [Probate](/dictionary/probate)
-- [Capital gains tax](/dictionary/capital-gains-tax)
+- Capital gains tax
 - [Letters of administration](/dictionary/letters-of-administration)
 - [What happens if an executor doesn't do their job?](/common-questions/what-happens-if-an-executor-doesnt-do-their-job)

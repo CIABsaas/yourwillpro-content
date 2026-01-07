@@ -24,7 +24,7 @@ region: "International"
   <h3>⏱ When you'll encounter this term</h3>
   <p>Bequests can be specific (a particular item), pecuniary (a fixed sum of money), or residuary (what's left after other gifts and debts are paid). Being clear about what you're leaving and to whom prevents confusion and disputes.</p>
   <p>If the thing you've bequeathed no longer exists when you die—say, you left someone your car but you sold it years ago—that's called ademption, and the gift fails. The person doesn't get equivalent value unless your will specifically says so. This is why keeping your will current matters.</p>
-  <p>**Related terms:** [Legacy](/dictionary/legacy), [Gift](/dictionary/gift), [Pecuniary Gift](/dictionary/pecuniary-gift), [Residuary Estate](/dictionary/residuary-estate)</p>
+  <p>**Related terms:** [Legacy](/dictionary/legacy), [Gift](/dictionary/gift), Pecuniary Gift, [Residuary Estate](/dictionary/residuary-estate)</p>
   <p>---</p>
 </div>
 

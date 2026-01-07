@@ -466,7 +466,7 @@ By the time your will is read, your funeral may already be over.
 **Dictionary**
 - [Superannuation](/dictionary/superannuation-death-benefit)
 - [Joint tenancy](/dictionary/joint-tenancy)
-- [Tenants in common](/dictionary/tenants-in-common)
+- Tenants in common
 - [Binding death benefit nomination](/dictionary/binding-death-benefit-nomination)
 - [Estate](/dictionary/estate)
 - [Executor](/dictionary/executor)

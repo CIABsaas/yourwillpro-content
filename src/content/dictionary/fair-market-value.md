@@ -26,7 +26,7 @@ region: "International"
   <p>Accurate valuation at fair market value is crucial for estate administration. The executor uses these values to prepare estate tax returns (in jurisdictions with estate tax), to fairly divide assets when the will calls for percentage distributions, and to ensure all parties receive their proper share.</p>
   <p>Beneficiaries sometimes disagree with valuations, particularly for items with emotional significance or for assets without clear market comparables. A family home might be valued at market price, but beneficiaries who grew up there might feel it's "worth more." Conversely, beneficiaries receiving money might scrutinize valuations of property going to others, suspecting overvaluation.</p>
   <p>For tax purposes, fair market value creates the cost basis for beneficiaries. If you inherit a house valued at fair market value of five hundred thousand dollars at death, that becomes your cost basis. If you later sell it for six hundred thousand dollars, you only pay capital gains tax on the hundred-thousand-dollar gain, not on the full value. This "step-up in basis" can provide significant tax advantages.</p>
-  <p>**Related terms:** [Valuation](/dictionary/valuation), [Estate Administration](/dictionary/estate-administration), [Capital Gains Tax](/dictionary/capital-gains-tax)</p>
+  <p>**Related terms:** Valuation, [Estate Administration](/dictionary/estate-administration), Capital Gains Tax</p>
   <p>---</p>
 </div>
 

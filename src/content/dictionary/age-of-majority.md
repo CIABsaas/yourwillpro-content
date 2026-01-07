@@ -24,7 +24,7 @@ region: "International"
   <h3>⏱ When you'll encounter this term</h3>
   <p>In wills, the age of majority matters because you must be at least 18 to make a valid will (with limited exceptions for married persons or those on active military service). Many wills also specify that beneficiaries must reach the age of majority—or sometimes an older age like 21 or 25—before receiving their inheritance.</p>
   <p>If you die leaving minor children, they can't inherit directly. Instead, the inheritance is usually held in trust for them until they reach the specified age. This protects young people from receiving large sums before they're equipped to manage them.</p>
-  <p>**Related terms:** [Minor](/dictionary/minor), [Infant](/dictionary/infant), [Testamentary Capacity](/dictionary/testamentary-capacity), [Trust](/dictionary/trust)</p>
+  <p>**Related terms:** [Minor](/dictionary/minor), Infant, [Testamentary Capacity](/dictionary/testamentary-capacity), [Trust](/dictionary/trust)</p>
   <p>---</p>
 </div>
 

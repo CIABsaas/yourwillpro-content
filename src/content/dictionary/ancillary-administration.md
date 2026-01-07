@@ -24,7 +24,7 @@ region: "International"
   <h3>⏱ When you'll encounter this term</h3>
   <p>In Australia, if you own property in multiple states—say, a home in Victoria and a holiday house in Queensland—your executor may need to obtain separate probate in each state. This adds time and expense to estate administration.</p>
   <p>Some people try to simplify this by transferring all property into a trust structure or ensuring bank accounts are held jointly. However, these strategies have other implications that need careful consideration. If you own property across multiple jurisdictions, discuss with an estate planning professional whether restructuring might save your estate future complications.</p>
-  <p>**Related terms:** [Probate](/dictionary/probate), [Resealing](/dictionary/resealing), [Grant of Probate](/dictionary/grant-of-probate), [Real Property](/dictionary/real-property)</p>
+  <p>**Related terms:** [Probate](/dictionary/probate), Resealing, Grant of Probate, [Real Property](/dictionary/real-property)</p>
   <p>---</p>
 </div>
 

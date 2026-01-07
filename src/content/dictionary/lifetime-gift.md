@@ -39,7 +39,7 @@ region: "International"
 - Could this gift cause family conflict?
 - Is there a better way to achieve your goals?</p>
   <p>For major gifts, get advice from an estate planning lawyer and perhaps a tax professional or financial adviser.</p>
-  <p>**Related terms:** [Gift](/dictionary/gift), [Inter vivos](/dictionary/inter-vivos), [Estate planning](/dictionary/estate-planning), [Testamentary gift](/dictionary/testamentary-gift)</p>
+  <p>**Related terms:** [Gift](/dictionary/gift), [Inter vivos](/dictionary/inter-vivos-trust), [Estate planning](/dictionary/estate-planning), Testamentary gift</p>
   <p>---</p>
 </div>
 

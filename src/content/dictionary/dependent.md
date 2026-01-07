@@ -26,7 +26,7 @@ region: "International"
   <p>When someone dies, their dependents may have special legal protections. In many jurisdictions, dependents can make a claim against the estate if the will doesn't adequately provide for them, even if the deceased deliberately left them out.</p>
   <p>For example, if you're supporting an adult child with a disability, they may be considered your dependent. If your will leaves everything to charity and nothing to that child, they might successfully challenge the will in court. The same applies to elderly parents you've been financially supporting or a spouse who relied on your income.</p>
   <p>Courts typically look at the actual financial relationship, not just the legal label. If someone can demonstrate they were genuinely dependent on you for their basic needs, they may have rights under family provision laws, regardless of what your will says.</p>
-  <p>**Related terms:** [Beneficiary](/dictionary/beneficiary), [Family Provision Claim](/dictionary/family-provision-claim), [Intestate](/dictionary/intestate), [Spouse](/dictionary/spouse)</p>
+  <p>**Related terms:** [Beneficiary](/dictionary/beneficiary), Family Provision Claim, [Intestate](/dictionary/intestate), [Spouse](/dictionary/spouse)</p>
   <p>---</p>
 </div>
 
@@ -34,6 +34,6 @@ region: "International"
 
 **Related Dictionary Terms**
 - [Beneficiary](/dictionary/beneficiary)
-- [Family Provision Claim](/dictionary/family-provision-claim)
+- Family Provision Claim
 
 ---

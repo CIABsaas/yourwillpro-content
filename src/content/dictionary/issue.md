@@ -29,7 +29,7 @@ region: "International"
   <p>This is particularly useful for gifts that might not be distributed for many years. In a trust that continues after your death, referring to someone's "issue" ensures that future generations are included without needing to amend the document.</p>
   <p>The main alternative to "issue" is naming people specifically or using terms like "children" or "descendants." Each approach has trade-offs. "Issue" is comprehensive but can seem impersonal. Naming individuals is clear but inflexible. "Children" is straightforward but excludes grandchildren and later generations.</p>
   <p>When you're interpreting a will or trust document that uses "issue," remember it means all descendants, not just the next generation. And if you're a beneficiary wondering whether you're included when a document refers to someone's "issue," the question is: are you descended from that person in a direct line? If yes, you're their issue.</p>
-  <p>**Related terms:** [Descendants](/dictionary/descendants), [Per stirpes](/dictionary/per-stirpes), [Beneficiary](/dictionary/beneficiary), [Lineal descendant](/dictionary/lineal-descendant)</p>
+  <p>**Related terms:** [Descendants](/dictionary/descendants), [Per stirpes](/dictionary/per-stirpes), [Beneficiary](/dictionary/beneficiary), Lineal descendant</p>
   <p>---</p>
 </div>
 

@@ -136,9 +136,9 @@ Helen and Robert thought they were making things simple by putting Marcus in cha
 ## Related topics
 
 - [Executor](/dictionary/executor)
-- [Executor Removal](/dictionary/executor-removal)
+- Executor Removal
 - [Fiduciary Duty](/dictionary/fiduciary-duty)
-- [Probate Delays](/dictionary/probate-delays)
+- [Probate Delays](/dictionary/probate-process)
 - [Who should I choose as my executor?](/common-questions/who-should-i-choose-as-my-executor)
 
 *Based on Fernandez v Fernandez [2025] EWHC 2373 (Ch). Names have been changed.*

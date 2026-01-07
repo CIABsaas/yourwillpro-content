@@ -28,7 +28,7 @@ region: "International"
   <p>But if you die without a will—or if your will is invalid—your heirs at law inherit everything. That might mean your property goes to family members you're estranged from, or to distant relatives you've never met, simply because they fit the legal definition.</p>
   <p>Understanding who your heirs at law would be can help you decide whether you need a will. If the intestacy rules would distribute your property the way you want anyway, you might feel less urgency. But for most people, the default rules don't match their intentions—especially if you have a blended family, if you want to leave something to friends or charities, or if you want to exclude someone who would otherwise inherit.</p>
   <p>Even if you have a will, your heirs at law can still matter. If your will fails to dispose of some property, or if a gift lapses, or if the will is successfully challenged, your heirs at law may inherit what's left.</p>
-  <p>**Related terms:** [Heir](/dictionary/heir), [Intestate succession](/dictionary/intestate-succession), [Next of kin](/dictionary/next-of-kin), [Statutory legacy](/dictionary/statutory-legacy)</p>
+  <p>**Related terms:** [Heir](/dictionary/heir), [Intestate succession](/dictionary/intestate-succession), [Next of kin](/dictionary/next-of-kin), Statutory legacy</p>
   <p>---</p>
 </div>
 

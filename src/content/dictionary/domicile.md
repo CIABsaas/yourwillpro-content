@@ -26,14 +26,14 @@ region: "International"
   <p>Domicile becomes important when dealing with international estates or when someone has lived in multiple places. Lawyers need to determine domicile to know which jurisdiction's laws apply to the estate. This affects everything from how the will is interpreted to which taxes are payable.</p>
   <p>For people who have moved countries or who split their time between multiple locations, domicile can be complex to establish. Someone might live in Australia for part of the year but still be domiciled in the UK if they intend to eventually return there. This intention is the key factor, and it's often established through evidence of ongoing ties and future plans.</p>
   <p>Disputes about domicile can delay estate administration and create tax complications. If you've moved permanently to a new country or state, it's wise to establish clear evidence of your new domicile through actions like updating your will, changing your driver's license, registering to vote, and documenting your intention to make the new place your permanent home.</p>
-  <p>**Related terms:** [Jurisdiction](/dictionary/jurisdiction), [Probate](/dictionary/probate), [Estate Tax](/dictionary/estate-tax)</p>
+  <p>**Related terms:** Jurisdiction, [Probate](/dictionary/probate), [Estate Tax](/dictionary/estate-tax)</p>
   <p>---</p>
 </div>
 
 ## Learn More
 
 **Related Dictionary Terms**
-- [Jurisdiction](/dictionary/jurisdiction)
+- Jurisdiction
 - [Probate](/dictionary/probate)
 
 **Common Questions**

@@ -24,7 +24,7 @@ region: "International"
   <h3>⏱ When you'll encounter this term</h3>
   <p>You might encounter this term in very old wills or legal documents, particularly those from British legal traditions where male-line inheritance was emphasized.</p>
   <p>Modern intestacy laws in Australia treat maternal and paternal relatives equally. The term persists mainly in legal dictionaries and historical documents rather than active practice.</p>
-  <p>**Related terms:** [Degree of Relationship](/dictionary/degree-of-relationship), [Issue](/dictionary/issue), [Collateral Descendant](/dictionary/collateral-descendant), [Intestate](/dictionary/intestate)</p>
+  <p>**Related terms:** Degree of Relationship, [Issue](/dictionary/issue), Collateral Descendant, [Intestate](/dictionary/intestate)</p>
   <p>---</p>
 </div>
 

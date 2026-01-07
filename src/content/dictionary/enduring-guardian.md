@@ -26,7 +26,7 @@ region: "Australia"
   <p>In Australia, an enduring guardian appointment is one of the key estate planning documents alongside your will and enduring power of attorney. Each state and territory has its own legislation governing enduring guardianships, with slightly different names and requirements in each jurisdiction.</p>
   <p>Your enduring guardian only has authority once you've lost capacity to make decisions yourself. Before that point, you continue making your own decisions about your care and lifestyle. Capacity is usually assessed by a doctor or medical professional when questions arise about whether you can make your own decisions.</p>
   <p>Choosing an enduring guardian is a deeply personal decision. This person will potentially make crucial decisions about your medical treatment and living arrangements. Most people choose a spouse, adult child, other close family member, or trusted friend. The person should know your values and wishes, be willing to take on this responsibility, and be someone you trust to act in your best interests even in difficult situations.</p>
-  <p>**Related terms:** [Enduring Power of Attorney](/dictionary/enduring-power-of-attorney), [Medical Power of Attorney](/dictionary/medical-power-of-attorney), [Advance Care Directive](/dictionary/advance-care-directive)</p>
+  <p>**Related terms:** [Enduring Power of Attorney](/dictionary/enduring-power-of-attorney), Medical Power of Attorney, [Advance Care Directive](/dictionary/advance-care-directive)</p>
   <p>---</p>
 </div>
 

@@ -24,7 +24,7 @@ region: "International"
   <h3>⏱ When you'll encounter this term</h3>
   <p>Without careful planning, blended families face common problems: a will might unintentionally exclude children from a previous relationship, or assets might all go to a new partner who later changes their will and cuts out your children entirely.</p>
   <p>Many people in blended families use testamentary trusts or life interest arrangements to balance these competing interests—perhaps giving a surviving partner the right to live in the family home for their lifetime, with the property passing to children after. There's no one-size-fits-all solution; it requires thinking through scenarios and being explicit about your intentions.</p>
-  <p>**Related terms:** [Testamentary Trust](/dictionary/testamentary-trust), [Life Interest](/dictionary/life-interest), [Second Marriage](/dictionary/second-marriage), [Family Provision Claim](/dictionary/family-provision-claim)</p>
+  <p>**Related terms:** [Testamentary Trust](/dictionary/testamentary-trust), [Life Interest](/dictionary/life-interest), Second Marriage, Family Provision Claim</p>
   <p>---</p>
 </div>
 

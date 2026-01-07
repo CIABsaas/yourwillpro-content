@@ -26,7 +26,7 @@ region: "International"
   <p>Understanding disposition is important when reading wills and trusts. The entire purpose of these documents is to make dispositions of property—to say who gets what and when.</p>
   <p>Courts sometimes examine whether a disposition was valid. For a testamentary disposition (one made through a will) to be effective, the will itself must be valid, the person making it must have had capacity, and the property being disposed of must have actually belonged to the deceased. You can't make a valid disposition of property you don't own.</p>
   <p>Dispositions can also be challenged if they were made under undue influence or fraud. If someone pressured you into making a disposition in their favor, a court might set it aside. Similarly, if you made a large disposition shortly before death when you lacked capacity, beneficiaries might challenge whether that disposition should stand.</p>
-  <p>**Related terms:** [Bequest](/dictionary/bequest), [Distribution](/dictionary/distribution), [Transfer](/dictionary/transfer), [Gift](/dictionary/gift)</p>
+  <p>**Related terms:** [Bequest](/dictionary/bequest), [Distribution](/dictionary/distribution), [Transfer](/dictionary/transfer-on-death), [Gift](/dictionary/gift)</p>
   <p>---</p>
 </div>
 

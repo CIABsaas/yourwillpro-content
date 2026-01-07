@@ -26,7 +26,7 @@ region: "International"
   <p>In estate administration, courts supervise probate proceedings, resolve will contests, approve executor actions, and settle disputes between beneficiaries. Even uncontested estates typically require some court involvement to officially transfer assets.</p>
   <p>Court processes are formal and public. Documents filed with courts become public records (with limited exceptions). Proceedings follow specific rules. Deadlines matter. Failing to respond appropriately to court requirements can result in default judgments or other negative consequences.</p>
   <p>You'll interact with courts when probating estates, contesting wills, seeking guardianships or conservatorships, or resolving trust disputes. Understanding which court has jurisdiction, what that court's procedures require, and when court involvement is necessary are essential aspects of estate administration. Many people use lawyers for court matters because the procedures are complex and mistakes have significant consequences.</p>
-  <p>**Related terms:** [Probate Court](/dictionary/probate-court), [Jurisdiction](/dictionary/jurisdiction), [Judge](/dictionary/judge)</p>
+  <p>**Related terms:** [Probate Court](/dictionary/probate-court), Jurisdiction, Judge</p>
   <p>---</p>
 </div>
 

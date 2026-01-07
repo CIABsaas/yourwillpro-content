@@ -24,7 +24,7 @@ region: "International"
   <h3>⏱ When you'll encounter this term</h3>
   <p>In estate planning, the term agent often appears in powers of attorney, where you appoint someone as your attorney (agent) to make financial or medical decisions if you can't.</p>
   <p>The scope of an agent's authority should be clearly defined. A general power of attorney gives broad powers; a limited power might only authorize specific transactions, like selling a particular property. Always choose someone trustworthy and capable—your agent's decisions are legally your decisions.</p>
-  <p>**Related terms:** [Power of Attorney](/dictionary/power-of-attorney), [Attorney](/dictionary/attorney), [Principal](/dictionary/principal), [Enduring Power of Attorney](/dictionary/enduring-power-of-attorney)</p>
+  <p>**Related terms:** [Power of Attorney](/dictionary/power-of-attorney), [Attorney-in-Fact](/dictionary/attorney-in-fact), [Principal](/dictionary/principal), [Enduring Power of Attorney](/dictionary/enduring-power-of-attorney)</p>
   <p>---</p>
 </div>
 

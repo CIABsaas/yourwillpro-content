@@ -24,7 +24,7 @@ region: "International"
   <h3>⏱ When you'll encounter this term</h3>
   <p>In estate matters, affidavits are commonly used in probate applications to confirm facts about the deceased, the will, and the executor. For example, an executor might swear an affidavit stating they've searched for any later wills and found none.</p>
   <p>You might also encounter affidavits in family provision claims, where people swear to facts about their relationship with the deceased or their financial circumstances. The person who swears the affidavit is called the deponent.</p>
-  <p>**Related terms:** [Probate](/dictionary/probate), [Notarised](/dictionary/notarised), [Execution](/dictionary/execution), [Self-Proving Affidavit](/dictionary/self-proving-affidavit)</p>
+  <p>**Related terms:** [Probate](/dictionary/probate), Notarised, Execution, [Self-Proving Affidavit](/dictionary/self-proving-will)</p>
   <p>---</p>
 </div>
 

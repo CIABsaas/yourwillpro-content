@@ -24,7 +24,7 @@ region: "International"
   <h3>⏱ When you'll encounter this term</h3>
   <p>This distinction matters in some legal contexts, particularly around inheritance when someone dies without a will (intestate) and in certain prohibited relationship rules.</p>
   <p>In most Australian intestacy laws, relationships by affinity don't automatically create inheritance rights—your brother-in-law typically wouldn't inherit from you if you died without a will, even if you were close. However, they might have grounds for a family provision claim if they were financially dependent on you.</p>
-  <p>**Related terms:** [Intestate](/dictionary/intestate), [Next of Kin](/dictionary/next-of-kin), [Family Provision Claim](/dictionary/family-provision-claim), [Degree of Relationship](/dictionary/degree-of-relationship)</p>
+  <p>**Related terms:** [Intestate](/dictionary/intestate), [Next of Kin](/dictionary/next-of-kin), Family Provision Claim, Degree of Relationship</p>
   <p>---</p>
 </div>
 

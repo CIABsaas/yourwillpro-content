@@ -128,7 +128,7 @@ The cost of a professionally prepared will is a few hundred dollars. The cost of
 - [Intestacy](/dictionary/intestacy)
 - [Witness](/dictionary/witness)
 - [Testamentary Capacity](/dictionary/testamentary-capacity)
-- [Knowledge and Approval](/dictionary/knowledge-and-approval)
+- Knowledge and Approval
 - [What makes a will valid?](/common-questions/what-makes-a-will-valid)
 
 *Based on Wehbe v Giotopoulos [2023] NSWSC 827. Names have been changed.*

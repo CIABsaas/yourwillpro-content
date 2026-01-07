@@ -34,7 +34,7 @@ region: "International"
   <p>Your legacy might be reduced or eliminated if the estate is insolvent (debts exceed assets). Creditors get paid before beneficiaries, so if there's not enough to go around, legatees might receive less than the will specified or nothing at all.</p>
   <p>If your legacy is a specific item that no longer exists when the testator dies (they sold it or gave it away), your legacy fails through ademption. You don't get an equivalent item or the cash value—the gift simply doesn't happen.</p>
   <p>As a legatee, you should also be aware of your tax position. In Australia, receiving a legacy generally doesn't attract tax. In other jurisdictions like the UK or certain US states, inheritance tax or estate tax might reduce what you receive, though the tax is usually paid by the estate before distribution.</p>
-  <p>**Related terms:** [Legacy](/dictionary/legacy), [Beneficiary](/dictionary/beneficiary), [Devisee](/dictionary/devisee), [Executor](/dictionary/executor)</p>
+  <p>**Related terms:** [Legacy](/dictionary/legacy), [Beneficiary](/dictionary/beneficiary), Devisee, [Executor](/dictionary/executor)</p>
   <p>---</p>
 </div>
 

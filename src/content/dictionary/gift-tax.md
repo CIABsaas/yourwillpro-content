@@ -26,7 +26,7 @@ region: "International"
   <p>Gift tax rules vary dramatically by country. The United States has a federal gift tax with lifetime exemptions measured in millions of dollars. Australia has no gift tax at all—you can give away as much as you want during your lifetime without tax consequences (though other tax implications might arise, such as capital gains tax). The UK doesn't have gift tax per se, but gifts made within seven years of death can be subject to inheritance tax.</p>
   <p>In jurisdictions with gift tax, lifetime gifts and estate transfers often share a combined exemption. If you use part of your lifetime exemption by making large gifts while alive, you have less exemption available to shelter your estate from estate tax when you die. This unified approach prevents tax avoidance through strategic timing of transfers.</p>
   <p>Even in countries without gift tax, making large lifetime gifts can have tax and legal implications. Gifts might trigger capital gains tax if you're transferring appreciated property. Large gifts made shortly before death might be scrutinized to ensure they weren't made to defraud creditors or deprive dependents of support. Professional advice is important when considering substantial lifetime gifts as part of estate planning.</p>
-  <p>**Related terms:** [Estate Tax](/dictionary/estate-tax), [Gift](/dictionary/gift), [Annual Exclusion](/dictionary/annual-exclusion)</p>
+  <p>**Related terms:** [Estate Tax](/dictionary/estate-tax), [Gift](/dictionary/gift), Annual Exclusion</p>
   <p>---</p>
 </div>
 

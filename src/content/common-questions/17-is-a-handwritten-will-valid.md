@@ -24,8 +24,8 @@ Formal wills are far more reliable.
 
 **Dictionary**
 - [Holographic Will](/dictionary/holographic-will)
-- [Execution](/dictionary/execution)
+- Execution
 - [Witness](/dictionary/witness)
-- [Valid](/dictionary/valid)
+- [Valid](/dictionary/valid-will)
 
 ---

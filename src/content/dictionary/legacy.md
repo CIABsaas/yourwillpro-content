@@ -30,7 +30,7 @@ region: "International"
   <p>The distinction matters because specific legacies have priority in estate administration. If the estate doesn't have enough to pay all debts, cover expenses, and fulfill all gifts, specific legacies are paid before general ones. And if a specific item you've left as a legacy is no longer in your estate when you die (you sold it or gave it away), that legacy fails through ademption.</p>
   <p>When you're receiving a legacy, you might have questions about when and how it will be paid. Generally, the executor must first pay the deceased's debts and funeral expenses, then specific legacies, then general legacies, and finally distribute the residuary estate. If you've been left a specific legacy and the executor can locate the item, you should receive it relatively quickly—though you might need to wait until the executor has confirmed all debts are covered and the estate is solvent.</p>
   <p>For tax purposes, the treatment of legacies varies by jurisdiction. In Australia, receiving a legacy generally doesn't attract tax—there's no inheritance tax. In the UK, the estate might pay inheritance tax before distributing legacies, which could reduce what you receive. And in some jurisdictions, large legacies might have other tax implications.</p>
-  <p>**Related terms:** [Bequest](/dictionary/bequest), [Devise](/dictionary/devise), [Beneficiary](/dictionary/beneficiary), [Specific legacy](/dictionary/specific-legacy)</p>
+  <p>**Related terms:** [Bequest](/dictionary/bequest), [Devise](/dictionary/devise), [Beneficiary](/dictionary/beneficiary), Specific legacy</p>
   <p>---</p>
 </div>
 

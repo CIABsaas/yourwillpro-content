@@ -19,18 +19,20 @@ interface Props {
   jurisdiction?: string;
   issue?: string;
   headings?: { depth: number; slug: string; text: string }[];
+  ogImage?: string;
 }
 
-const { 
-  title, 
-  summary, 
-  heroImage, 
+const {
+  title,
+  summary,
+  heroImage,
   readTime = "8 min read",
   author,
   reviewer,
   jurisdiction,
   issue,
-  headings = []
+  headings = [],
+  ogImage
 } = Astro.props;
 
 // Filter headings for sidebar (only h2)
@@ -56,6 +58,24 @@ const line2 = headlineParts.length > 1 ? headlineParts[1] : null;
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <title>{title} | YourWillPro</title>
     <meta name="description" content={summary} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={Astro.url.href} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:title" content={`${title} | YourWillPro`} />
+    <meta property="og:description" content={summary} />
+    <meta property="og:image" content={ogImage || heroImage || "https://yourwillpro.com.au/images/og/og-default.png"} />
+    <meta property="og:site_name" content="YourWillPro" />
+    <meta property="og:locale" content="en_AU" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={summary} />
+    <meta name="twitter:image" content={ogImage || heroImage || "https://yourwillpro.com.au/images/og/og-default.png"} />
   </head>
   <body class={heroImage ? 'has-hero-image' : ''}>
 

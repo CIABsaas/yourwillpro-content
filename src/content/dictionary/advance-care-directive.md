@@ -24,7 +24,7 @@ region: "Australia"
   <h3>⏱ When you'll encounter this term</h3>
   <p>This document is separate from your will—it operates during your life, not after death. Each Australian state and territory has different names and rules for these documents: Advance Care Directive (SA, NT), Advance Care Plan (Vic, Tas), Advance Health Directive (Qld), Advance Care Planning (NSW, ACT), or Advance Health Directive (WA).</p>
   <p>Medical professionals must consider your directive, but in emergencies where your directive isn't immediately available or clear, they'll act in your best medical interests. Having conversations with your doctor and family about your directive helps ensure your wishes are understood and respected.</p>
-  <p>**Related terms:** [Enduring Power of Attorney](/dictionary/enduring-power-of-attorney), [Medical Power of Attorney](/dictionary/medical-power-of-attorney), [Capacity](/dictionary/capacity), [Substitute Decision Maker](/dictionary/substitute-decision-maker)</p>
+  <p>**Related terms:** [Enduring Power of Attorney](/dictionary/enduring-power-of-attorney), Medical Power of Attorney, [Capacity](/dictionary/capacity), Substitute Decision Maker</p>
   <p>---</p>
 </div>
 

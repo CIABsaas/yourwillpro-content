@@ -24,7 +24,7 @@ region: "International"
   <h3>⏱ When you'll encounter this term</h3>
   <p>Being clear about your beneficiaries helps avoid confusion and disputes. Instead of "my children," consider naming each child specifically. If you want a charity to benefit, include their full legal name and ABN.</p>
   <p>Beneficiaries don't have any rights to your assets during your lifetime—only after you die and the will takes effect. You can change your beneficiaries at any time by updating your will.</p>
-  <p>**Related terms:** [Alternate Beneficiary](/dictionary/alternate-beneficiary), [Primary Beneficiary](/dictionary/primary-beneficiary), [Contingent Beneficiary](/dictionary/contingent-beneficiary), [Residual Beneficiary](/dictionary/residual-beneficiary)</p>
+  <p>**Related terms:** [Alternate Beneficiary](/dictionary/alternate-beneficiary), Primary Beneficiary, [Contingent Beneficiary](/dictionary/contingent-beneficiary), Residual Beneficiary</p>
   <p>---</p>
 </div>
 

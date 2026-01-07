@@ -1,0 +1,91 @@
+# Missing Dictionary Terms - To Create Later
+# Generated: 2026-01-07
+# Total: 52 terms
+# These terms are referenced in content but don't exist yet
+# All links to these terms have been removed (text preserved)
+
+## High Priority (3+ references) - 11 terms
+
+1. family-provision (13 refs)
+   - Used in: dower.md, elective-share.md
+
+2. family-provision-claim (10 refs)
+   - Used in: can-i-leave-someone-out-of-my-will.md, the-excavator-and-the-auction.md,
+     estate-planning-for-blended-families.md, augmented-estate.md, dependent.md,
+     affinity.md, disinherit.md, blended-family.md
+
+3. grant-of-probate (6 refs)
+   - Used in: what-does-an-executor-actually-do.md, where-should-i-store-my-will.md,
+     understanding-probate.md, administration-period.md, ancillary-administration.md,
+     letters-testamentary.md
+
+4. estate-assets (5 refs)
+5. execution (4 refs)
+6. capital-gains-tax (4 refs)
+7. lineal-descendant (3 refs)
+8. liabilities (3 refs)
+9. jurisdiction (3 refs)
+10. devastavit (3 refs)
+11. bankruptcy (3 refs)
+
+## Medium Priority (2 references) - 9 terms
+
+12. superannuation-dependant
+13. primary-residence
+14. primary-beneficiary
+15. non-binding-nomination
+16. net-estate
+17. medical-power-of-attorney
+18. executor-removal
+19. degree-of-relationship
+20. devisee
+
+## Low Priority (1 reference) - 32 terms
+
+21. annual-exclusion
+22. anti-lapse-statute
+23. collateral-descendant
+24. de-facto-partner
+25. dependant
+26. domestic-partner
+27. estate-account
+28. exemption
+29. future-interest
+30. infant
+31. judge
+32. knowledge-and-approval
+33. letter-of-wishes
+34. notarised
+35. notional-estate
+36. operative
+37. pecuniary-gift
+38. resealing
+39. residual-beneficiary
+40. second-marriage
+41. severing-joint-tenancy
+42. specific-legacy
+43. statutory-legacy
+44. statutory-rights
+45. substitute-decision-maker
+46. tax
+47. tenants-in-common
+48. testamentary-gift
+49. validity
+50. valuation
+51. waste
+
+---
+
+## Notes
+
+- All markdown links to these terms have been removed from content files
+- The text/labels have been preserved (only the hyperlinks were removed)
+- These terms should be created following the standard dictionary term template
+- Priority should be given to high-priority terms (11 terms, 3+ references each)
+- Total references removed: 77 link occurrences across 23 files
+
+## Status
+
+✅ All broken links removed (2026-01-07)
+✅ Site builds successfully without broken dictionary links
+⏳ Dictionary term pages to be created in future content sprint

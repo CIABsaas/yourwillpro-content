@@ -41,7 +41,7 @@ region: "International"
   <p>If you want to sell the property—perhaps to move into a care facility—you generally need the remaindermen to agree and participate in the sale. They own the future interest, so any buyer needs them to release their rights. If the remaindermen refuse, you're stuck. You can sell your life interest, but who wants to buy a property interest that ends on your death?</p>
   <p>Some life estates are created through trusts rather than direct ownership, which can provide more flexibility. A trust might give the trustee power to sell property and reinvest the proceeds, or to pay capital to the life tenant in certain circumstances. This can help address the inflexibility problems that plague traditional life estates.</p>
   <p>If you're a life tenant and having difficulties with remaindermen or questions about your rights and responsibilities, seek legal advice specific to your jurisdiction. The rules vary, and the specific language creating the life estate matters.</p>
-  <p>**Related terms:** [Life estate](/dictionary/life-estate), [Life interest](/dictionary/life-interest), [Remainderman](/dictionary/remainderman), [Waste](/dictionary/waste)</p>
+  <p>**Related terms:** [Life estate](/dictionary/life-estate), [Life interest](/dictionary/life-interest), [Remainderman](/dictionary/remainderman), Waste</p>
   <p>---</p>
 </div>
 

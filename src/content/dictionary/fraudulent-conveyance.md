@@ -26,7 +26,7 @@ region: "International"
   <p>Fraudulent conveyance issues often arise in estate planning when someone tries to protect assets from creditors by transferring them to family members. While legitimate asset protection planning exists, simply giving everything away to avoid creditors doesn't work. Courts can reach back and undo these transfers, making the property available to satisfy debts.</p>
   <p>The time period for challenging fraudulent conveyances varies by jurisdiction but is typically several years. If you transferred your house to your daughter five years ago and you now die with significant debts, creditors might challenge that transfer as fraudulent if you received nothing in return and evidence suggests you transferred it to keep it from creditors.</p>
   <p>Fraudulent conveyance laws also affect lifetime gifts in estate planning. If someone makes large gifts shortly before death while insolvent or knowing they're dying with significant debts, those gifts might be challenged as fraudulent conveyances. Creditors can sometimes require beneficiaries to return gifted property to pay the deceased's debts. This is why it's important to address debts properly rather than trying to hide assets through transfers.</p>
-  <p>**Related terms:** [Creditor](/dictionary/creditor), [Insolvency](/dictionary/insolvency), [Asset Protection](/dictionary/asset-protection)</p>
+  <p>**Related terms:** [Creditor](/dictionary/creditor), [Insolvency](/dictionary/insolvent), [Asset Protection](/dictionary/asset-protection-trust)</p>
   <p>---</p>
 </div>
 

@@ -23,7 +23,7 @@ Understanding this can prevent unnecessary worry.
 - [What happens if I die without a will?](/common-questions/what-happens-if-i-die-without-a-will)
 
 **Dictionary**
-- [Liabilities](/dictionary/liabilities)
+- Liabilities
 - [Creditor](/dictionary/creditor)
 - [Estate](/dictionary/estate)
 - [Executor](/dictionary/executor)

@@ -26,7 +26,7 @@ region: "International"
   <p>Elective share laws exist in many U.S. states but not in all jurisdictions. Australia, for example, doesn't have elective share provisions but has similar spousal protections through family provision laws. Understanding whether your jurisdiction has elective share rules is important for estate planning.</p>
   <p>These laws exist because marriage is considered to create mutual obligations and shared economic interests. They prevent someone from completely disinheritng their spouse without consequence. However, they usually only apply to assets that the deceased owned individually. Property held jointly or with designated beneficiaries typically passes outside the estate and isn't subject to the elective share.</p>
   <p>If you're married and planning your estate, elective share laws might limit your ability to leave your property exactly as you wish. You can't use a will to circumvent your spouse's basic rights. However, spouses can waive their elective share rights through prenuptial or postnuptial agreements, which allows for more flexible estate planning if both parties agree.</p>
-  <p>**Related terms:** [Community Property](/dictionary/community-property), [Family Provision](/dictionary/family-provision), [Statutory Rights](/dictionary/statutory-rights)</p>
+  <p>**Related terms:** [Community Property](/dictionary/community-property), Family Provision, Statutory Rights</p>
   <p>---</p>
 </div>
 

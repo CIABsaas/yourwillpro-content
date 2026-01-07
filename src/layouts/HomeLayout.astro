@@ -11,12 +11,14 @@ interface Props {
   categories?: any[];
   featuredStories?: any[];
   recentArticles?: any[];
+  ogImage?: string;
 }
 
-const { 
+const {
   categories = [],
   featuredStories = [],
-  recentArticles = []
+  recentArticles = [],
+  ogImage
 } = Astro.props;
 ---
 
@@ -31,6 +33,24 @@ const {
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <title>YourWillPro | Protect What Matters</title>
     <meta name="description" content="Clear guidance on wills, estate planning, and protecting your family's future." />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={Astro.url.href} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:title" content="YourWillPro | Protect What Matters" />
+    <meta property="og:description" content="Clear guidance on wills, estate planning, and protecting your family's future." />
+    <meta property="og:image" content={ogImage || "https://yourwillpro.com.au/images/og/og-default.png"} />
+    <meta property="og:site_name" content="YourWillPro" />
+    <meta property="og:locale" content="en_AU" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="YourWillPro | Protect What Matters" />
+    <meta name="twitter:description" content="Clear guidance on wills, estate planning, and protecting your family's future." />
+    <meta name="twitter:image" content={ogImage || "https://yourwillpro.com.au/images/og/og-default.png"} />
   </head>
   <body>
 

@@ -129,5 +129,5 @@ If you've been named as an executor, here's what Sarah's approach looked like in
 - [Executor](/dictionary/executor)
 - [Probate](/dictionary/probate)
 - [Beneficiary](/dictionary/beneficiary)
-- [Estate account](/dictionary/estate-account)
+- Estate account
 - [What does an executor have to tell beneficiaries?](/common-questions/what-does-an-executor-have-to-tell-beneficiaries)

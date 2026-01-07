@@ -32,7 +32,7 @@ region: "International"
   <p>Anti-lapse laws exist in many jurisdictions, but they don't apply to all beneficiaries. Typically, they only save gifts to close relatives like children, grandchildren, or siblings—and only by redirecting the gift to that relative's descendants. They usually don't apply to gifts to friends, charities, or distant relatives. And the specific rules vary by location.</p>
   <p>The risk of relying on anti-lapse laws is that you lose control. The law decides where the gift goes, and it might not match your intentions. Maybe you'd have preferred the gift go to your residuary beneficiaries, or to someone else entirely. By including your own substitutional provisions, you maintain that control.</p>
   <p>For your residuary estate—the catch-all that covers everything not specifically gifted—it's also important to name backup beneficiaries. If your residuary beneficiaries predecease you and you have no substitutes, you could end up dying partially intestate, with the law deciding what happens to at least part of your estate.</p>
-  <p>**Related terms:** [Beneficiary](/dictionary/beneficiary), [Residuary estate](/dictionary/residuary-estate), [Anti-lapse statute](/dictionary/anti-lapse-statute), [Ademption](/dictionary/ademption)</p>
+  <p>**Related terms:** [Beneficiary](/dictionary/beneficiary), [Residuary estate](/dictionary/residuary-estate), Anti-lapse statute, [Ademption](/dictionary/ademption)</p>
   <p>---</p>
 </div>
 

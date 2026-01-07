@@ -29,7 +29,7 @@ region: "International"
   <p>A trust with an income beneficiary solves this. Your spouse receives all the income the trust generates for life, giving them financial security. When they die, the capital passes to your children. The spouse gets support, the children eventually inherit, and no one has to fight over it.</p>
   <p>The trustee managing this arrangement has to balance competing interests. They need to generate enough income to support the income beneficiary, but they also have to preserve the capital for the remainder beneficiaries. This can create tension—especially if the income beneficiary wants higher returns (which might mean riskier investments) while the remainder beneficiaries want the capital protected.</p>
   <p>This is why choosing the right trustee and giving them clear guidance in your will matters so much when you're setting up this kind of arrangement.</p>
-  <p>**Related terms:** [Beneficiary](/dictionary/beneficiary), [Trust](/dictionary/trust), [Trustee](/dictionary/trustee), [Remainder beneficiary](/dictionary/remainder-beneficiary)</p>
+  <p>**Related terms:** [Beneficiary](/dictionary/beneficiary), [Trust](/dictionary/trust), [Trustee](/dictionary/trustee), [Remainder beneficiary](/dictionary/remainderman)</p>
   <p>---</p>
 </div>
 

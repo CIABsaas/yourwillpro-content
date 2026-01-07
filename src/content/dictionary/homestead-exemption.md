@@ -29,7 +29,7 @@ region: "International"
   <p>Homestead exemptions can also influence decisions about how you hold property. In some jurisdictions, you might need to formally declare a homestead to claim the protection. In others, it applies automatically to your primary residence.</p>
   <p>If you're in the United States, homestead exemption laws can be particularly important in estate planning, especially if you're concerned about creditor claims or Medicaid recovery. In Australia, the concept is less central but related protections exist under bankruptcy law and in some state-specific provisions.</p>
   <p>In the UK, homestead exemptions don't exist in the same form, though there are other protections for primary residences in certain circumstances—such as rules about when a trustee in bankruptcy can force the sale of a family home.</p>
-  <p>**Related terms:** [Creditor](/dictionary/creditor), [Bankruptcy](/dictionary/bankruptcy), [Estate assets](/dictionary/estate-assets), [Probate](/dictionary/probate)</p>
+  <p>**Related terms:** [Creditor](/dictionary/creditor), Bankruptcy, Estate assets, [Probate](/dictionary/probate)</p>
   <p>---</p>
 </div>
 
@@ -37,7 +37,7 @@ region: "International"
 
 **Related Dictionary Terms**
 - [Creditor](/dictionary/creditor)
-- [Bankruptcy](/dictionary/bankruptcy)
+- Bankruptcy
 
 **Common Questions**
 - [Can creditors claim against my estate?](/common-questions/can-creditors-claim-against-my-estate)

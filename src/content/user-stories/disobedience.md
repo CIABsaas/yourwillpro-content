@@ -95,8 +95,8 @@ If you're choosing an executor, choose someone who will honour your decisions â€
 
 - [Executor](/dictionary/executor)
 - [Probate](/dictionary/probate)
-- [De Facto Partner](/dictionary/de-facto-partner)
-- [Executor Removal](/dictionary/executor-removal)
+- De Facto Partner
+- Executor Removal
 - [What happens if an executor doesn't do their job?](/common-questions/what-happens-if-an-executor-doesnt-do-their-job)
 
 *Based on Australian court records. Names have been changed.*

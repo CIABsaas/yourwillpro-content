@@ -30,7 +30,7 @@ region: "International"
   <p>If you're in the UK and your estate is likely to exceed the IHT threshold, estate planning can help reduce the tax burden. Gifts made more than seven years before death are generally exempt. Leaving assets to a spouse or charity is tax-free. And various reliefs exist for business property, agricultural property, and family homes passed to direct descendants.</p>
   <p>In jurisdictions that do have inheritance tax, the amount typically depends on the relationship between you and the beneficiary. Close family members often pay lower rates or have higher exemptions than distant relatives or friends.</p>
   <p>Understanding whether inheritance tax applies in your situation—and if so, what steps you can take to minimize it—is an important part of estate planning. But don't assume you need to worry about it without first checking the rules in your jurisdiction.</p>
-  <p>**Related terms:** [Estate tax](/dictionary/estate-tax), [Beneficiary](/dictionary/beneficiary), [Exemption](/dictionary/exemption), [Tax](/dictionary/tax)</p>
+  <p>**Related terms:** [Estate tax](/dictionary/estate-tax), [Beneficiary](/dictionary/beneficiary), Exemption, Tax</p>
   <p>---</p>
 </div>
 

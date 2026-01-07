@@ -33,7 +33,7 @@ region: "International"
   <p>Fourth, there are tax implications. In some jurisdictions, creating a life estate might trigger capital gains tax or gift tax. And the tax treatment when the property passes to the remaindermen can be complicated.</p>
   <p>Modern estate planning often uses trusts instead of life estates to achieve similar goals with more flexibility. A testamentary trust can give someone the right to live in a property or receive income from it for life, while preserving the capital for others—but with a trustee who can manage the property, deal with maintenance issues, and even sell and replace the property if that's in everyone's best interest.</p>
   <p>If you're considering creating a life estate or if you're a life tenant or remainderman, get legal advice about your specific situation. The rules about rights and responsibilities vary by jurisdiction, and what seems simple on paper can become complex in practice.</p>
-  <p>**Related terms:** [Life tenant](/dictionary/life-tenant), [Remainderman](/dictionary/remainderman), [Future interest](/dictionary/future-interest), [Trust](/dictionary/trust)</p>
+  <p>**Related terms:** [Life tenant](/dictionary/life-tenant), [Remainderman](/dictionary/remainderman), Future interest, [Trust](/dictionary/trust)</p>
   <p>---</p>
 </div>
 

@@ -26,7 +26,7 @@ region: "International"
   <p>Disinheritance is a sensitive topic because it often reflects family conflict. You might choose to disinherit someone because of estrangement, past behavior, or because you've already provided for them in other ways during your lifetime.</p>
   <p>If you want to disinherit someone, it's important to do it clearly and correctly. Courts sometimes overturn disinheritance if it's not done properly. You should state the person's name and make it clear that the exclusion is intentional, not an oversight. Some people include a brief explanation, though this isn't always required.</p>
   <p>Be aware that even if you successfully disinherit someone, they may still be able to challenge your will through a family provision claim if they were financially dependent on you or had a reasonable expectation of support from your estate.</p>
-  <p>**Related terms:** [Will](/dictionary/will), [Family Provision Claim](/dictionary/family-provision-claim), [Beneficiary](/dictionary/beneficiary), [Intestate](/dictionary/intestate)</p>
+  <p>**Related terms:** [Will](/dictionary/will), Family Provision Claim, [Beneficiary](/dictionary/beneficiary), [Intestate](/dictionary/intestate)</p>
   <p>---</p>
 </div>
 
@@ -34,7 +34,7 @@ region: "International"
 
 **Related Dictionary Terms**
 - [Will](/dictionary/will)
-- [Family Provision Claim](/dictionary/family-provision-claim)
+- Family Provision Claim
 
 **Common Questions**
 - [What is a will?](/common-questions/what-is-a-will)

@@ -26,7 +26,7 @@ region: "International"
   <p>In older legal documents and formal wills, you'll often see the term "devise" used to distinguish real property from personal property. This distinction matters in some jurisdictions because historically, different rules applied to how land and personal possessions could be transferred after death.</p>
   <p>For example, a will might say: "I devise my property at 42 Oak Street to my son, and I bequeath my jewelry to my daughter." The house is devised; the jewelry is bequeathed.</p>
   <p>The person who receives a devise is called a devisee. So if your aunt devises her cottage to you, you're the devisee of that property.</p>
-  <p>**Related terms:** [Bequest](/dictionary/bequest), [Legacy](/dictionary/legacy), [Real Property](/dictionary/real-property), [Devisee](/dictionary/devisee)</p>
+  <p>**Related terms:** [Bequest](/dictionary/bequest), [Legacy](/dictionary/legacy), [Real Property](/dictionary/real-property), Devisee</p>
   <p>---</p>
 </div>
 

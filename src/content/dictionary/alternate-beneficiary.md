@@ -24,7 +24,7 @@ region: "International"
   <h3>⏱ When you'll encounter this term</h3>
   <p>Without naming alternates, a failed gift typically falls into your residuary estate (the leftover pot) and gets distributed according to those provisions. This might not align with your wishes.</p>
   <p>For example, if you leave your car to your brother but he dies before you, you might want it to go to his children rather than into the general residue. Naming alternates ensures your intent is clear. Many people name alternates for all significant gifts, particularly when leaving assets to elderly relatives or friends.</p>
-  <p>**Related terms:** [Beneficiary](/dictionary/beneficiary), [Contingent Beneficiary](/dictionary/contingent-beneficiary), [Primary Beneficiary](/dictionary/primary-beneficiary), [Lapse](/dictionary/lapse)</p>
+  <p>**Related terms:** [Beneficiary](/dictionary/beneficiary), [Contingent Beneficiary](/dictionary/contingent-beneficiary), Primary Beneficiary, [Lapse](/dictionary/lapsed-gift)</p>
   <p>---</p>
 </div>
 

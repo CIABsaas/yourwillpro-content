@@ -24,7 +24,7 @@ region: "International"
   <h3>⏱ When you'll encounter this term</h3>
   <p>Common examples include superannuation death benefit nominations, life insurance policies, and some bank accounts. These designations sit outside your will and often pass directly to the named person without going through probate.</p>
   <p>The catch is keeping them up to date. A beneficiary designation you made years ago might not reflect your current wishes. If you've married, divorced, had children, or experienced other life changes, check these designations. They're binding, even if they contradict your will or your current family situation.</p>
-  <p>**Related terms:** [Beneficiary](/dictionary/beneficiary), [Binding Death Benefit Nomination](/dictionary/binding-death-benefit-nomination), [Non-Binding Nomination](/dictionary/non-binding-nomination), [Superannuation](/dictionary/superannuation)</p>
+  <p>**Related terms:** [Beneficiary](/dictionary/beneficiary), [Binding Death Benefit Nomination](/dictionary/binding-death-benefit-nomination), Non-Binding Nomination, [Superannuation](/dictionary/superannuation-death-benefit)</p>
   <p>---</p>
 </div>
 

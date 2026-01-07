@@ -26,7 +26,7 @@ region: "Australia"
   <p>Each Australian state and territory has its own legislation governing enduring powers of attorney, so the exact requirements and name might vary slightly depending on where you live. However, the concept is the same across Australia: appointing someone to manage your financial affairs if you can't.</p>
   <p>Creating an enduring power of attorney is one of the essential estate planning steps in Australia, alongside making a will and appointing an enduring guardian. Without this document, if you lose capacity, your family would need to apply to a tribunal or court to be appointed as your financial manager, which is stressful, expensive, and time-consuming.</p>
   <p>The person you appoint has significant power over your finances, so choose someone you trust completely. Many people appoint their spouse or an adult child. You can appoint multiple attorneys and specify whether they must act together or can act separately. Consider appointing a backup attorney in case your first choice is unable or unwilling to act when the time comes.</p>
-  <p>**Related terms:** [Durable Power of Attorney](/dictionary/durable-power-of-attorney), [Enduring Guardian](/dictionary/enduring-guardian), [Attorney](/dictionary/attorney)</p>
+  <p>**Related terms:** [Durable Power of Attorney](/dictionary/durable-power-of-attorney), [Enduring Guardian](/dictionary/enduring-guardian), [Attorney-in-Fact](/dictionary/attorney-in-fact)</p>
   <p>---</p>
 </div>
 

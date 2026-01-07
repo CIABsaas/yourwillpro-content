@@ -25,6 +25,6 @@ Accessibility matters as much as security.
 **Dictionary**
 - [Executor](/dictionary/executor)
 - [Probate](/dictionary/probate)
-- [Grant of Probate](/dictionary/grant-of-probate)
+- Grant of Probate
 
 ---

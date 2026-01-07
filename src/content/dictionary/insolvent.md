@@ -29,7 +29,7 @@ region: "International"
   <p>As executor, you have a legal duty to pay creditors in the correct order. If you pay the wrong creditors first, or if you distribute assets to beneficiaries before ensuring all debts are covered, you could be personally liable for the shortfall. This is one reason why executors must advertise for creditors and wait the required time before distributing the estate.</p>
   <p>If you think an estate might be insolvent, get legal advice immediately. You might need to apply to the court for directions on how to proceed. And in some cases, it might be appropriate to decline the role of executor altogether—you're not required to take on the responsibility if the estate is hopelessly insolvent and complex.</p>
   <p>For your own estate planning, if you're concerned about dying with debts, remember that most debts die with you—your family won't inherit your credit card debt or personal loans. But secured debts like mortgages stay with the property, so if you want your family to inherit your house, you'll need to ensure they can either pay off or refinance the mortgage.</p>
-  <p>**Related terms:** [Creditor](/dictionary/creditor), [Debt](/dictionary/debt), [Estate](/dictionary/estate), [Bankruptcy](/dictionary/bankruptcy)</p>
+  <p>**Related terms:** [Creditor](/dictionary/creditor), [Debt](/dictionary/debts), [Estate](/dictionary/estate), Bankruptcy</p>
   <p>---</p>
 </div>
 
@@ -37,7 +37,7 @@ region: "International"
 
 **Related Dictionary Terms**
 - [Creditor](/dictionary/creditor)
-- [Debt](/dictionary/debt)
+- [Debt](/dictionary/debts)
 
 **Common Questions**
 - [Can creditors claim against my estate?](/common-questions/can-creditors-claim-against-my-estate)

@@ -30,14 +30,14 @@ region: "International"
   <p>This is why keeping good records is so important. Your executor needs to know what accounts you have, where your digital assets are stored, and how to access them. Some intangible property—like cryptocurrency held in a wallet only you can access—might be permanently lost if you don't leave clear instructions about how to recover it.</p>
   <p>When you're drafting your will, make sure your residuary clause is broad enough to capture intangible property. A gift of "all my personal belongings" might not include shares or digital assets—you might need specific provisions or a broader clause that covers "all my property of whatsoever nature."</p>
   <p>And if you're an executor, don't just look for physical assets. Check for bank statements, investment accounts, patent registrations, business interests, and digital property. Intangible assets can be just as valuable as tangible ones—sometimes more so.</p>
-  <p>**Related terms:** [Tangible property](/dictionary/tangible-property), [Personal property](/dictionary/personal-property), [Digital assets](/dictionary/digital-assets), [Estate assets](/dictionary/estate-assets)</p>
+  <p>**Related terms:** [Tangible property](/dictionary/tangible-personal-property), [Personal property](/dictionary/personal-property), [Digital assets](/dictionary/digital-assets), Estate assets</p>
   <p>---</p>
 </div>
 
 ## Learn More
 
 **Related Dictionary Terms**
-- [Tangible property](/dictionary/tangible-property)
+- [Tangible property](/dictionary/tangible-personal-property)
 - [Personal property](/dictionary/personal-property)
 
 **Common Questions**

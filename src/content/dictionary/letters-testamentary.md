@@ -37,7 +37,7 @@ region: "International"
   <p>You'll need to provide copies of letters testamentary to banks, investment firms, insurance companies, government agencies, and anyone else holding assets of the estate. Most institutions will want to see an official copy with the court seal, not just a photocopy.</p>
   <p>If you're dealing with property in multiple jurisdictions, you might need to obtain ancillary letters testamentary in each location. For example, if the deceased lived in one state but owned property in another, you might need letters testamentary from the probate court in each state.</p>
   <p>Letters testamentary remain in effect until the estate is fully administered and closed, at which point your authority as executor ends. If you need to resign before completion, the court can revoke the letters and appoint a successor executor.</p>
-  <p>**Related terms:** [Probate](/dictionary/probate), [Grant of probate](/dictionary/grant-of-probate), [Executor](/dictionary/executor), [Letters of administration](/dictionary/letters-of-administration)</p>
+  <p>**Related terms:** [Probate](/dictionary/probate), Grant of probate, [Executor](/dictionary/executor), [Letters of administration](/dictionary/letters-of-administration)</p>
   <p>---</p>
 </div>
 
