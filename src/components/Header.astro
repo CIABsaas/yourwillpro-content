@@ -65,7 +65,7 @@
   }
 
   .logo-img {
-    height: 50px;
+    height: 64px;
     width: auto;
   }
 
@@ -76,7 +76,7 @@
 
   .nav-link {
     color: #e5e7eb;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     text-decoration: none;
     padding: 8px 0;
@@ -85,6 +85,22 @@
 
   .nav-link:hover {
     color: #ffffff;
+  }
+
+  .nav-link.active {
+    color: #ffffff;
+    position: relative;
+  }
+
+  .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    height: 3px;
+    background: #c9a227;
+    border-radius: 2px;
   }
 
   .hamburger {
@@ -160,7 +176,7 @@
     }
 
     .logo-img {
-      height: 42px;
+      height: 52px;
     }
 
     .desktop-nav {
@@ -183,7 +199,7 @@
     }
 
     .logo-img {
-      height: 36px;
+      height: 44px;
     }
 
     .mobile-nav-link {
@@ -194,6 +210,7 @@
 </style>
 
 <script>
+  // Mobile menu toggle
   const hamburger = document.querySelector('.hamburger');
   const mobileNav = document.querySelector('.mobile-nav');
 
@@ -211,4 +228,31 @@
       mobileNav?.classList.remove('open');
     });
   });
+
+  // Active state management
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  // Remove active from all
+  navLinks.forEach(link => link.classList.remove('active'));
+
+  // Set active based on current path
+  if (currentPath === '/' || currentPath === '') {
+    // Homepage - no active state
+  } else if (currentPath.includes('/user-stories')) {
+    document.querySelector('a[href="/user-stories/"]')?.classList.add('active');
+  } else if (currentPath.includes('/dictionary')) {
+    document.querySelector('a[href="/dictionary/"]')?.classList.add('active');
+  } else if (currentPath.includes('/guides')) {
+    document.querySelector('a[href="/guides/"]')?.classList.add('active');
+  } else if (currentPath.includes('/common-questions')) {
+    document.querySelector('a[href="/common-questions/"]')?.classList.add('active');
+  } else if (currentPath.includes('/planning-tools')) {
+    document.querySelector('a[href="/planning-tools/"]')?.classList.add('active');
+  } else if (currentPath.includes('/feedback')) {
+    document.querySelector('a[href="/feedback/"]')?.classList.add('active');
+  } else {
+    // Default to Dictionary for all other pages
+    document.querySelector('a[href="/dictionary/"]')?.classList.add('active');
+  }
 </script>
