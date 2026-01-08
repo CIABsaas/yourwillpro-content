@@ -124,6 +124,14 @@ const hasRelated = relatedGuides.length > 0 || relatedChecklists.length > 0;
     <section class="question-hero">
       <div class="hero-container">
         <!-- Breadcrumb -->
+        <nav class="breadcrumb">
+          <a href="/">Home</a>
+          <span class="breadcrumb-separator">›</span>
+          <a href="/common-questions">Common Questions</a>
+          <span class="breadcrumb-separator">›</span>
+          <span>{title}</span>
+        </nav>
+
         <div class="q-circle">Q</div>
         <div class="cat-tag">{category}</div>
         <h1 class="hero-title">{title}</h1>
@@ -242,6 +250,30 @@ const hasRelated = relatedGuides.length > 0 || relatedChecklists.length > 0;
     font-size: 16px;
     line-height: 1.6;
     margin: 0;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    padding-bottom: 24px;
+    margin: 0;
+    background: none;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb a:hover {
+    color: #ffffff;
+  }
+
+  .breadcrumb-separator,
+  .breadcrumb > span {
+    color: rgba(255, 255, 255, 0.5);
   }
 
   /* Hero Section */
@@ -668,6 +700,10 @@ const hasRelated = relatedGuides.length > 0 || relatedChecklists.length > 0;
   @media (max-width: 600px) {
     .question-main {
       padding: 1.5rem;
+    }
+
+    .question-breadcrumb {
+      padding: 0.75rem 1.5rem;
     }
 
     .current-page {

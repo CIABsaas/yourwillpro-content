@@ -283,10 +283,109 @@ const {
     overflow-x: hidden;
   }
   
+  /* === HEADER === */
+  .header {
+    background: white;
+    border-bottom: 1px solid var(--border-light);
+    padding: var(--space-sm) var(--space-lg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+  }
+  
+  .logo-img {
+    height: 56px;
+    width: auto;
+  }
+  
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+  
+  .nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+
+  .nav-link:hover {
+    color: var(--brand-navy);
+  }
+
+  .nav-link.active {
+    color: var(--text-primary);
+    border-bottom-color: var(--text-primary);
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    padding: 8px;
+  }
+
+  .mobile-menu {
+    display: none;
+    background: var(--bg-warm);
+    border-bottom: 1px solid var(--border-light);
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .mobile-menu.open {
+    display: block;
+  }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .mobile-nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: var(--space-xs) 0;
+    transition: color 0.2s;
+  }
+
+  .mobile-nav a:hover {
+    color: var(--brand-navy);
+  }
+
   /* === HERO === */
   .hero {
     position: relative;
-    background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%);
+    background:
+      radial-gradient(circle at 20% 50%, rgba(25, 118, 210, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(232, 93, 76, 0.08) 0%, transparent 50%),
+      var(--bg-cream);
     padding: var(--space-2xl) var(--space-lg);
     text-align: center;
     overflow: hidden;

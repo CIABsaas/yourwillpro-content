@@ -96,6 +96,11 @@ const colors = categoryColors[categorySlug] || categoryColors['guides'];
     {categorySlug === 'user-stories' ? (
       <section class="category-hero">
         <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+          <a href="/">Home</a>
+          <span class="breadcrumb-separator">›</span>
+          <span>{title}</span>
+        </nav>
         <h1 class="category-title">These families learned the hard way.<br /><span class="title-highlight">You don't have to.</span></h1>
         <div class="title-accent"></div>
         <p class="category-subtitle">Real experiences from people who have been through the process.</p>
@@ -110,6 +115,11 @@ const colors = categoryColors[categorySlug] || categoryColors['guides'];
     ) : categorySlug === 'guides' ? (
       <section class="category-hero category-hero--guides">
         <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+          <a href="/">Home</a>
+          <span class="breadcrumb-separator">›</span>
+          <span>{title}</span>
+        </nav>
         <h1 class="category-title">Complex processes made simple.</h1>
         <div class="title-accent title-accent--green"></div>
         <p class="category-subtitle">Step-by-step walkthroughs to guide you through every decision.</p>
@@ -123,6 +133,11 @@ const colors = categoryColors[categorySlug] || categoryColors['guides'];
     ) : categorySlug === 'dictionary' ? (
       <section class="category-hero category-hero--dictionary">
         <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+          <a href="/">Home</a>
+          <span class="breadcrumb-separator">›</span>
+          <span>{title}</span>
+        </nav>
         <h1 class="category-title">Legal jargon, translated.</h1>
         <div class="title-accent title-accent--navy"></div>
         <p class="category-subtitle">Finally understand what lawyers, courts, and documents are actually saying.</p>
@@ -209,7 +224,7 @@ const colors = categoryColors[categorySlug] || categoryColors['guides'];
               >
                 {article.data.heroImage && (
                   <div class="card-image">
-                    <img src={article.data.heroImage} alt={article.data.title} />
+                    <img src={article.data.heroImage} alt="" />
                   </div>
                 )}
                 <div class="card-content">
@@ -321,6 +336,30 @@ const colors = categoryColors[categorySlug] || categoryColors['guides'];
     line-height: 1.7;
     font-size: 17px;
     overflow-x: hidden;
+  }
+
+  /* === BREADCRUMB === */
+  .breadcrumb {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    padding-bottom: 24px;
+    margin: 0;
+    background: none;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .breadcrumb a:hover {
+    color: #ffffff;
+  }
+
+  .breadcrumb-separator,
+  .breadcrumb > span {
+    color: rgba(255, 255, 255, 0.5);
   }
 
   /* === BACK BUTTON === */
@@ -599,7 +638,7 @@ const colors = categoryColors[categorySlug] || categoryColors['guides'];
 
   /* === HERO === */
   .hero {
-    background: linear-gradient(135deg, #1a2e44 0%, #2a4560 100%);
+    background: var(--accent-blue-light);
     padding: var(--space-lg) var(--space-lg);
     max-height: 30vh;
     text-align: center;

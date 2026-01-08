@@ -72,12 +72,6 @@ const stateData = {
     law: "Powers of Attorney Act 2006, Guardianship and Management of Property Act 1991"
   }
 };
-
-const breadcrumbs = [
-  { label: "Home", href: "/" },
-  { label: "Planning Tools", href: "/planning-tools/" },
-  { label: "Power of Attorney", href: "/planning-tools/power-of-attorney/" }
-];
 ---
 
 <!DOCTYPE html>
@@ -95,20 +89,6 @@ const breadcrumbs = [
 <Header />
 
 <main class="poa-page">
-    <!-- Breadcrumbs -->
-    <nav class="breadcrumbs" aria-label="Breadcrumb">
-      <ol>
-        {breadcrumbs.map((crumb, index) => (
-          <li>
-            {index < breadcrumbs.length - 1 ? (
-              <a href={crumb.href}>{crumb.label}</a>
-            ) : (
-              <span aria-current="page">{crumb.label}</span>
-            )}
-          </li>
-        ))}
-      </ol>
-    </nav>
 
     <!-- Hero Section -->
     <header class="hero">
@@ -491,41 +471,6 @@ const breadcrumbs = [
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
-  }
-
-  /* Breadcrumbs */
-  .breadcrumbs {
-    padding: 1.5rem 0;
-    font-size: 0.875rem;
-  }
-
-  .breadcrumbs ol {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    align-items: center;
-  }
-
-  .breadcrumbs li:not(:last-child)::after {
-    content: "›";
-    margin-left: 0.5rem;
-    color: var(--gray-300);
-  }
-
-  .breadcrumbs a {
-    color: var(--navy);
-    text-decoration: none;
-  }
-
-  .breadcrumbs a:hover {
-    text-decoration: underline;
-  }
-
-  .breadcrumbs span[aria-current] {
-    color: var(--gray-600);
   }
 
   /* Hero Section */

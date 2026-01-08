@@ -86,20 +86,11 @@ const difficultyColor = difficultyColors[difficulty] || 'var(--accent-green)';
 
     <Header />
 
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb" style="padding: 1rem 2rem; font-size: 0.85rem; color: #7a7a7a; background: white; border-bottom: 1px solid #e2e2e2;">
-      <a href="/" style="color: #7a7a7a; text-decoration: none;">Home</a>
-      <span style="margin: 0 0.5rem;">›</span>
-      <a href="/guides/" style="color: #7a7a7a; text-decoration: none;">Guides</a>
-      <span style="margin: 0 0.5rem;">›</span>
-      <span>{title}</span>
-    </nav>
-
     <!-- Hero Section -->
     <section class="hero">
       {heroImage && (
         <div class="hero-image">
-          <img src={heroImage} alt="" />
+          <img src={heroImage} alt={title} />
         </div>
       )}
       
@@ -292,11 +283,6 @@ const difficultyColor = difficultyColors[difficulty] || 'var(--accent-green)';
     overflow-x: hidden;
   }
 
-  /* === BREADCRUMB === */
-  .breadcrumb a:hover {
-    color: #c9a227;
-  }
-
   /* === PROGRESS BAR === */
   .progress-bar {
     position: fixed;
@@ -436,7 +422,7 @@ const difficultyColor = difficultyColors[difficulty] || 'var(--accent-green)';
   }
   
   .quick-jump-inner {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -474,7 +460,7 @@ const difficultyColor = difficultyColors[difficulty] || 'var(--accent-green)';
   
   /* === MAIN LAYOUT === */
   .main-layout {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 280px 1fr;
@@ -574,7 +560,7 @@ const difficultyColor = difficultyColors[difficulty] || 'var(--accent-green)';
   
   /* === CONTENT === */
   .content {
-    max-width: 720px;
+    max-width: 800px;
     background: white;
     border-radius: 16px;
     padding: var(--space-xl);
@@ -1076,7 +1062,7 @@ const difficultyColor = difficultyColors[difficulty] || 'var(--accent-green)';
   }
   
   .trust-inner {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -1285,6 +1271,20 @@ const difficultyColor = difficultyColors[difficulty] || 'var(--accent-green)';
     
     .step-number {
       margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding: 32px 16px;
+    }
+
+    .main-layout {
+      padding: 24px 16px;
+    }
+
+    .content {
+      padding: 24px 16px;
     }
   }
 </style>
