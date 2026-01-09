@@ -1,0 +1,241 @@
+---
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>60% of Australian Adults Have No Will | YourWillPro</title>
+  <meta name="description" content="Why do 60% of Australian adults have no will? Explore the reasons, risks, and what you can do to protect your family.">
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourwillpro.com.au/stats/no-will/" />
+  <meta property="og:title" content="60% of Australian Adults Have No Will | YourWillPro" />
+  <meta property="og:description" content="Why do 60% of Australian adults have no will? Explore the reasons, risks, and what you can do to protect your family." />
+  <meta property="og:image" content="https://yourwillpro.com.au/images/og/og-default.png" />
+
+  <style>
+    :root {
+      --navy: #1a2e44;
+      --gold: #c9a227;
+      --bg: #ffffff;
+      --bg-light: #f7f8f9;
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', -apple-system, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    .breadcrumb {
+      padding: 1rem 2rem;
+      font-size: 0.85rem;
+      color: #7a7a7a;
+      background: white;
+      border-bottom: 1px solid #e2e2e2;
+    }
+
+    .breadcrumb a {
+      color: #7a7a7a;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      background: linear-gradient(rgba(26, 46, 68, 0.85), rgba(26, 46, 68, 0.85)), url('/images/ui/stats-1.png');
+      background-size: cover;
+      background-position: center;
+      padding: 4rem 2rem;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-stat {
+      font-family: var(--font-display);
+      font-size: 5rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero-source {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .content h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      color: var(--navy);
+      margin: 2rem 0 1rem;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+      line-height: 1.8;
+    }
+
+    .content ul {
+      margin: 1rem 0 1.5rem 1.5rem;
+      color: var(--text-secondary);
+    }
+
+    .content li {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .cta-box {
+      background: var(--bg-light);
+      border-left: 4px solid var(--gold);
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .cta-box h3 {
+      font-family: var(--font-display);
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .related-links {
+      background: var(--bg-light);
+      padding: 2rem;
+      margin-top: 2rem;
+      border-radius: 8px;
+    }
+
+    .related-links h3 {
+      font-family: var(--font-display);
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .related-links a {
+      display: block;
+      color: var(--navy);
+      text-decoration: none;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #e2e2e2;
+    }
+
+    .related-links a:hover {
+      color: var(--gold);
+    }
+
+    .related-links a:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 3rem 1.5rem; }
+      .hero-stat { font-size: 3.5rem; }
+      .hero h1 { font-size: 1.75rem; }
+      .content { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<Header />
+
+<nav class="breadcrumb">
+  <a href="/">Home</a>
+  <span style="margin: 0 0.5rem;">›</span>
+  <span>60% Have No Will</span>
+</nav>
+
+<section class="hero">
+  <div class="hero-stat">60%</div>
+  <h1>of Australian Adults Have No Will</h1>
+  <p class="hero-source">Source: Australian Bureau of Statistics, 2023</p>
+</section>
+
+<main class="content">
+
+  <p>More than half of all Australian adults have not prepared a will. This means that if they died tomorrow, their assets would be distributed according to government intestacy rules — not their wishes.</p>
+
+  <h2>Why Don't People Have Wills?</h2>
+
+  <p>Research consistently shows the same reasons:</p>
+
+  <ul>
+    <li><strong>Procrastination</strong> — "I'll get around to it eventually"</li>
+    <li><strong>Perceived complexity</strong> — "It's too complicated and expensive"</li>
+    <li><strong>Discomfort</strong> — "I don't want to think about death"</li>
+    <li><strong>Assumptions</strong> — "Everything will just go to my spouse anyway"</li>
+    <li><strong>Youth</strong> — "I'm too young to need a will"</li>
+  </ul>
+
+  <h2>What Happens Without a Will?</h2>
+
+  <p>When someone dies without a will (called dying "intestate"), the state decides who gets what. In Australia, this typically means:</p>
+
+  <ul>
+    <li>Your spouse may not receive everything — children may be entitled to a share</li>
+    <li>De facto partners may need to prove their relationship in court</li>
+    <li>Blended families face complicated division rules</li>
+    <li>Your preferred executor has no authority — the court appoints an administrator</li>
+    <li>Guardianship of minor children is decided by the court, not you</li>
+    <li>Charities, friends, or carers you wanted to include receive nothing</li>
+  </ul>
+
+  <div class="cta-box">
+    <h3>The Real Risk</h3>
+    <p>Dying without a will doesn't just create inconvenience — it can cause family conflict, legal costs, and outcomes you never intended. The people you love most may spend months navigating courts instead of grieving.</p>
+  </div>
+
+  <h2>What You Can Do</h2>
+
+  <p>Creating a will is simpler than most people think. A basic will can be completed in under an hour. The key is to start — even a simple will is far better than no will at all.</p>
+
+  <p>If your situation involves blended families, significant assets, business interests, or potential disputes, consider getting professional advice to ensure your will is properly structured.</p>
+
+  <div class="related-links">
+    <h3>Related Resources</h3>
+    <a href="/guides/what-happens-if-you-die-without-a-will/">What Happens If You Die Without a Will?</a>
+    <a href="/dictionary/intestate/">Dictionary: Intestate</a>
+    <a href="/dictionary/letters-of-administration/">Dictionary: Letters of Administration</a>
+    <a href="/common-questions/do-i-really-need-a-will/">Do I Really Need a Will?</a>
+    <a href="/common-questions/what-happens-to-my-assets-if-i-die-without-a-will/">What Happens to My Assets If I Die Without a Will?</a>
+    <a href="/start-here/">Start Here: Estate Planning Basics</a>
+  </div>
+
+</main>
+
+<Footer />
+
+</body>
+</html>

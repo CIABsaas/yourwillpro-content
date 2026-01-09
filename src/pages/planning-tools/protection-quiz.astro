@@ -1,0 +1,777 @@
+---
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Is Your Family Protected? Free Assessment | YourWillPro</title>
+  <meta name="description" content="Take our free 3-minute quiz to find out if your family is protected — and discover any gaps in your estate planning.">
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourwillpro.com.au/planning-tools/protection-quiz/" />
+  <meta property="og:title" content="Is Your Family Protected? Free Assessment | YourWillPro" />
+  <meta property="og:description" content="Take our free 3-minute quiz to discover gaps in your estate planning." />
+  <meta property="og:image" content="https://yourwillpro.com.au/images/og/og-default.png" />
+
+  <style>
+    :root {
+      --navy: #1a2e44;
+      --gold: #c9a227;
+      --gold-light: #faf6e9;
+      --bg: #ffffff;
+      --bg-light: #f7f8f9;
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', -apple-system, sans-serif;
+      --success: #22c55e;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-light);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    .breadcrumb {
+      padding: 1rem 2rem;
+      font-size: 0.85rem;
+      color: #7a7a7a;
+      background: white;
+      border-bottom: 1px solid #e2e2e2;
+    }
+
+    .breadcrumb a { color: #7a7a7a; text-decoration: none; }
+    .breadcrumb a:hover { color: var(--gold); }
+
+    .quiz-container {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .quiz-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .quiz-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .quiz-header h1 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .quiz-header h1 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .quiz-header p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+
+    .quiz-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      margin-bottom: 1.5rem;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: #e2e2e2;
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--gold);
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+
+    .progress-text {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .question-number {
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .question-text {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      padding: 1rem 1.25rem;
+      border: 2px solid #e2e2e2;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .option:hover {
+      border-color: var(--gold);
+      background: var(--gold-light);
+    }
+
+    .option.selected {
+      border-color: var(--gold);
+      background: var(--gold-light);
+    }
+
+    .option input {
+      display: none;
+    }
+
+    .option-circle {
+      width: 22px;
+      height: 22px;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .option.selected .option-circle {
+      border-color: var(--gold);
+      background: var(--gold);
+    }
+
+    .option.selected .option-circle::after {
+      content: '✓';
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .option-text {
+      font-size: 1rem;
+      color: var(--text-primary);
+    }
+
+    .quiz-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+
+    .btn-back {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 2px solid #e2e2e2;
+    }
+
+    .btn-back:hover {
+      border-color: var(--navy);
+      color: var(--navy);
+    }
+
+    .btn-next {
+      background: var(--navy);
+      color: white;
+      margin-left: auto;
+    }
+
+    .btn-next:hover {
+      background: #2a4560;
+    }
+
+    .btn-next:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    /* Results */
+    .results-hidden { display: none; }
+
+    .results-card {
+      text-align: center;
+    }
+
+    .score-circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      color: white;
+    }
+
+    .score-circle.high { background: var(--success); }
+    .score-circle.medium { background: var(--warning); }
+    .score-circle.low { background: var(--danger); }
+
+    .score-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .score-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .results-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .results-summary {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .results-breakdown {
+      text-align: left;
+      background: var(--bg-light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .results-breakdown h3 {
+      font-family: var(--font-display);
+      color: var(--navy);
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    .breakdown-item {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #e2e2e2;
+    }
+
+    .breakdown-item:last-child {
+      border-bottom: none;
+    }
+
+    .breakdown-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .breakdown-icon.yes {
+      background: #dcfce7;
+      color: var(--success);
+    }
+
+    .breakdown-icon.no {
+      background: #fee2e2;
+      color: var(--danger);
+    }
+
+    .breakdown-icon.partial {
+      background: #fef3c7;
+      color: var(--warning);
+    }
+
+    .breakdown-text {
+      flex: 1;
+    }
+
+    .next-steps {
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+    .next-steps h3 {
+      font-family: var(--font-display);
+      color: var(--navy);
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    .next-steps ul {
+      list-style: none;
+    }
+
+    .next-steps li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .next-steps li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    .next-steps a {
+      color: var(--navy);
+      text-decoration: underline;
+      text-decoration-color: var(--gold);
+    }
+
+    .next-steps a:hover {
+      color: var(--gold);
+    }
+
+    .btn-restart {
+      background: var(--gold);
+      color: white;
+    }
+
+    .btn-restart:hover {
+      background: #b8922a;
+    }
+
+    @media (max-width: 768px) {
+      .quiz-header h1 { font-size: 1.75rem; }
+      .question-text { font-size: 1.25rem; }
+      .quiz-card { padding: 1.5rem; }
+      .quiz-nav { flex-direction: column; }
+      .btn { width: 100%; }
+      .btn-next { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<Header />
+
+<nav class="breadcrumb">
+  <a href="/">Home</a>
+  <span style="margin: 0 0.5rem;">›</span>
+  <a href="/planning-tools/">Planning Tools</a>
+  <span style="margin: 0 0.5rem;">›</span>
+  <span>Protection Quiz</span>
+</nav>
+
+<div class="quiz-container">
+
+  <div class="quiz-header">
+    <span class="quiz-badge">🛡 Free Assessment</span>
+    <h1>Is your family <em>protected?</em></h1>
+    <p>Answer 10 quick questions to find out where you stand.</p>
+  </div>
+
+  <!-- Quiz Questions -->
+  <div id="quiz-questions" class="quiz-card">
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress" style="width: 10%"></div>
+    </div>
+    <div class="progress-text" id="progress-text">Question 1 of 10</div>
+
+    <div id="question-container">
+      <div class="question-number">Question 1</div>
+      <div class="question-text" id="question-text">Do you have a valid, signed will?</div>
+
+      <div class="options" id="options">
+        <!-- Options populated by JS -->
+      </div>
+    </div>
+
+    <div class="quiz-nav">
+      <button class="btn btn-back" id="btn-back" style="visibility: hidden;">← Back</button>
+      <button class="btn btn-next" id="btn-next" disabled>Next →</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div id="quiz-results" class="quiz-card results-card results-hidden">
+    <div class="score-circle" id="score-circle">
+      <div class="score-number" id="score-number">0</div>
+      <div class="score-label">out of 10</div>
+    </div>
+
+    <h2 class="results-title" id="results-title">Your Results</h2>
+    <p class="results-summary" id="results-summary"></p>
+
+    <div class="results-breakdown" id="results-breakdown">
+      <h3>Your Answers</h3>
+      <!-- Populated by JS -->
+    </div>
+
+    <div class="next-steps" id="next-steps">
+      <h3>Recommended Next Steps</h3>
+      <ul id="recommendations">
+        <!-- Populated by JS -->
+      </ul>
+    </div>
+
+    <button class="btn btn-restart" onclick="restartQuiz()">Take Quiz Again</button>
+  </div>
+
+</div>
+
+<Footer />
+
+<script>
+  const questions = [
+    {
+      id: 1,
+      text: "Do you have a valid, signed will?",
+      options: [
+        { text: "Yes, and it's up to date", score: 2 },
+        { text: "Yes, but it might be outdated", score: 1 },
+        { text: "No, I don't have a will", score: 0 }
+      ],
+      category: "will"
+    },
+    {
+      id: 2,
+      text: "Have you appointed an executor you trust?",
+      options: [
+        { text: "Yes, and they've agreed to act", score: 2 },
+        { text: "Yes, but I haven't discussed it with them", score: 1 },
+        { text: "No, or I'm not sure", score: 0 }
+      ],
+      category: "executor"
+    },
+    {
+      id: 3,
+      text: "Do you have an Enduring Power of Attorney?",
+      options: [
+        { text: "Yes, for both financial and medical decisions", score: 2 },
+        { text: "Yes, but only for one type", score: 1 },
+        { text: "No, I don't have one", score: 0 }
+      ],
+      category: "poa"
+    },
+    {
+      id: 4,
+      text: "Have you nominated beneficiaries for your superannuation?",
+      options: [
+        { text: "Yes, with a binding death benefit nomination", score: 2 },
+        { text: "Yes, but it's non-binding or I'm not sure", score: 1 },
+        { text: "No, or I haven't checked", score: 0 }
+      ],
+      category: "super"
+    },
+    {
+      id: 5,
+      text: "Does your family know where to find your important documents?",
+      options: [
+        { text: "Yes, they know exactly where everything is", score: 2 },
+        { text: "Partially — some people know some things", score: 1 },
+        { text: "No, I haven't told anyone", score: 0 }
+      ],
+      category: "documents"
+    },
+    {
+      id: 6,
+      text: "Have you reviewed your will after major life changes (marriage, divorce, children, property)?",
+      options: [
+        { text: "Yes, I update it regularly", score: 2 },
+        { text: "I've updated it once or twice", score: 1 },
+        { text: "No, or I've never updated it", score: 0 }
+      ],
+      category: "updates"
+    },
+    {
+      id: 7,
+      text: "If you have minor children, have you appointed a guardian in your will?",
+      options: [
+        { text: "Yes, and we've discussed it with them", score: 2 },
+        { text: "Yes, but haven't confirmed with them", score: 1 },
+        { text: "No, or not applicable", score: 0 }
+      ],
+      category: "guardian"
+    },
+    {
+      id: 8,
+      text: "Do you have a list of your assets and where they're held?",
+      options: [
+        { text: "Yes, a comprehensive and current list", score: 2 },
+        { text: "Partially — I know roughly what I have", score: 1 },
+        { text: "No, it's all in my head", score: 0 }
+      ],
+      category: "assets"
+    },
+    {
+      id: 9,
+      text: "Have you considered whether anyone might contest your will?",
+      options: [
+        { text: "Yes, and I've taken steps to address it", score: 2 },
+        { text: "I've thought about it but done nothing", score: 1 },
+        { text: "No, I haven't considered this", score: 0 }
+      ],
+      category: "contest"
+    },
+    {
+      id: 10,
+      text: "Do you have adequate life insurance for your dependents?",
+      options: [
+        { text: "Yes, enough to cover their needs", score: 2 },
+        { text: "Some, but probably not enough", score: 1 },
+        { text: "No, or I'm not sure", score: 0 }
+      ],
+      category: "insurance"
+    }
+  ];
+
+  let currentQuestion = 0;
+  let answers = [];
+
+  const questionText = document.getElementById('question-text');
+  const optionsContainer = document.getElementById('options');
+  const btnNext = document.getElementById('btn-next');
+  const btnBack = document.getElementById('btn-back');
+  const progress = document.getElementById('progress');
+  const progressText = document.getElementById('progress-text');
+  const quizQuestions = document.getElementById('quiz-questions');
+  const quizResults = document.getElementById('quiz-results');
+
+  function renderQuestion() {
+    const q = questions[currentQuestion];
+    document.querySelector('.question-number').textContent = `Question ${currentQuestion + 1}`;
+    questionText.textContent = q.text;
+
+    optionsContainer.innerHTML = q.options.map((opt, i) => `
+      <label class="option" data-index="${i}">
+        <input type="radio" name="answer" value="${i}">
+        <span class="option-circle"></span>
+        <span class="option-text">${opt.text}</span>
+      </label>
+    `).join('');
+
+    // Restore previous answer if exists
+    if (answers[currentQuestion] !== undefined) {
+      const prevAnswer = answers[currentQuestion];
+      const options = document.querySelectorAll('.option');
+      options[prevAnswer].classList.add('selected');
+      btnNext.disabled = false;
+    } else {
+      btnNext.disabled = true;
+    }
+
+    // Add click handlers
+    document.querySelectorAll('.option').forEach(opt => {
+      opt.addEventListener('click', () => selectOption(opt));
+    });
+
+    // Update progress
+    progress.style.width = `${((currentQuestion + 1) / questions.length) * 100}%`;
+    progressText.textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
+
+    // Show/hide back button
+    btnBack.style.visibility = currentQuestion === 0 ? 'hidden' : 'visible';
+
+    // Update next button text
+    btnNext.textContent = currentQuestion === questions.length - 1 ? 'See Results →' : 'Next →';
+  }
+
+  function selectOption(opt) {
+    document.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+    opt.classList.add('selected');
+    answers[currentQuestion] = parseInt(opt.dataset.index);
+    btnNext.disabled = false;
+  }
+
+  btnNext.addEventListener('click', () => {
+    if (currentQuestion < questions.length - 1) {
+      currentQuestion++;
+      renderQuestion();
+    } else {
+      showResults();
+    }
+  });
+
+  btnBack.addEventListener('click', () => {
+    if (currentQuestion > 0) {
+      currentQuestion--;
+      renderQuestion();
+    }
+  });
+
+  function showResults() {
+    quizQuestions.classList.add('results-hidden');
+    quizResults.classList.remove('results-hidden');
+
+    // Calculate score
+    let totalScore = 0;
+    answers.forEach((answerIndex, qIndex) => {
+      totalScore += questions[qIndex].options[answerIndex].score;
+    });
+
+    const maxScore = questions.length * 2;
+    const percentage = (totalScore / maxScore) * 100;
+    const displayScore = Math.round((totalScore / maxScore) * 10);
+
+    // Update score display
+    const scoreCircle = document.getElementById('score-circle');
+    const scoreNumber = document.getElementById('score-number');
+    scoreNumber.textContent = displayScore;
+
+    if (percentage >= 70) {
+      scoreCircle.className = 'score-circle high';
+      document.getElementById('results-title').textContent = 'Well Protected!';
+      document.getElementById('results-summary').textContent =
+        "Great news — you've taken important steps to protect your family. There may still be a few areas to strengthen, but you're ahead of most Australians.";
+    } else if (percentage >= 40) {
+      scoreCircle.className = 'score-circle medium';
+      document.getElementById('results-title').textContent = 'Some Gaps to Address';
+      document.getElementById('results-summary').textContent =
+        "You've made a start, but there are some important gaps in your estate planning. The good news is these are usually straightforward to fix.";
+    } else {
+      scoreCircle.className = 'score-circle low';
+      document.getElementById('results-title').textContent = 'Your Family May Be at Risk';
+      document.getElementById('results-summary').textContent =
+        "There are significant gaps in your estate planning. Without action, your family could face legal complications, delays, and unnecessary stress.";
+    }
+
+    // Show breakdown
+    const breakdown = document.getElementById('results-breakdown');
+    let breakdownHTML = '<h3>Your Answers</h3>';
+
+    answers.forEach((answerIndex, qIndex) => {
+      const q = questions[qIndex];
+      const answer = q.options[answerIndex];
+      let iconClass = answer.score === 2 ? 'yes' : answer.score === 1 ? 'partial' : 'no';
+      let icon = answer.score === 2 ? '✓' : answer.score === 1 ? '~' : '✗';
+
+      breakdownHTML += `
+        <div class="breakdown-item">
+          <div class="breakdown-icon ${iconClass}">${icon}</div>
+          <div class="breakdown-text">${q.text}<br><small style="color: #7a7a7a;">${answer.text}</small></div>
+        </div>
+      `;
+    });
+
+    breakdown.innerHTML = breakdownHTML;
+
+    // Generate recommendations
+    const recommendations = document.getElementById('recommendations');
+    let recsHTML = '';
+
+    answers.forEach((answerIndex, qIndex) => {
+      const q = questions[qIndex];
+      const answer = q.options[answerIndex];
+
+      if (answer.score < 2) {
+        switch(q.category) {
+          case 'will':
+            recsHTML += '<li><a href="/start-here/">Learn how to create or update your will</a></li>';
+            break;
+          case 'executor':
+            recsHTML += '<li><a href="/common-questions/who-should-i-choose-as-my-executor/">Choose the right executor</a></li>';
+            break;
+          case 'poa':
+            recsHTML += '<li><a href="/dictionary/enduring-power-of-attorney/">Learn about Enduring Power of Attorney</a></li>';
+            break;
+          case 'super':
+            recsHTML += '<li><a href="/dictionary/binding-death-benefit-nomination/">Set up a binding death benefit nomination</a></li>';
+            break;
+          case 'documents':
+            recsHTML += '<li><a href="/planning-tools/checklists/asset-inventory/">Create an asset inventory your family can find</a></li>';
+            break;
+          case 'updates':
+            recsHTML += '<li><a href="/common-questions/how-often-should-i-update-my-will/">When to update your will</a></li>';
+            break;
+          case 'guardian':
+            recsHTML += '<li><a href="/common-questions/what-happens-to-my-children-if-i-die/">How to choose a guardian</a></li>';
+            break;
+          case 'assets':
+            recsHTML += '<li><a href="/planning-tools/checklists/asset-inventory/">Create a comprehensive asset list</a></li>';
+            break;
+          case 'contest':
+            recsHTML += '<li><a href="/guides/protecting-your-beneficiaries/">Protect against will contests</a></li>';
+            break;
+          case 'insurance':
+            recsHTML += '<li><a href="/dictionary/life-insurance/">Review your life insurance needs</a></li>';
+            break;
+        }
+      }
+    });
+
+    if (recsHTML === '') {
+      recsHTML = '<li><a href="/start-here/">Continue learning about estate planning</a></li>';
+    }
+
+    recommendations.innerHTML = recsHTML;
+  }
+
+  function restartQuiz() {
+    currentQuestion = 0;
+    answers = [];
+    quizResults.classList.add('results-hidden');
+    quizQuestions.classList.remove('results-hidden');
+    renderQuestion();
+  }
+
+  // Initialize
+  renderQuestion();
+</script>
+
+</body>
+</html>

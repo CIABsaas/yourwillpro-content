@@ -939,6 +939,7 @@ import Footer from '../components/Footer.astro';
       border-radius: var(--radius-lg);
       overflow: hidden;
       text-align: center;
+      text-decoration: none;
     }
 
     .stat-card-image {
@@ -1254,38 +1255,38 @@ import Footer from '../components/Footer.astro';
   <section class="stats-section">
     <div class="stats-inner">
       <div class="stats-grid">
-        <div class="stat-card">
+        <a href="/stats/no-will" class="stat-card">
           <div class="stat-card-image" style="background-image: url('/images/ui/stats-1.png')"></div>
           <div class="stat-card-content">
             <div class="stat-number">60%</div>
             <div class="stat-label">of adults have no will</div>
             <div class="stat-source">ABS 2023</div>
           </div>
-        </div>
-        <div class="stat-card">
+        </a>
+        <a href="/stats/probate-time" class="stat-card">
           <div class="stat-card-image" style="background-image: url('/images/ui/stats-2.png')"></div>
           <div class="stat-card-content">
             <div class="stat-number">9-18</div>
-            <div class="stat-label">months average probate</div>
+            <div class="stat-label">months to settle an estate (probate)</div>
             <div class="stat-source">State Courts</div>
           </div>
-        </div>
-        <div class="stat-card">
+        </a>
+        <a href="/stats/contested-will-cost" class="stat-card">
           <div class="stat-card-image" style="background-image: url('/images/ui/stats-3.png')"></div>
           <div class="stat-card-content">
             <div class="stat-number">$35k</div>
-            <div class="stat-label">avg contested will cost</div>
+            <div class="stat-label">average cost when a will is disputed</div>
             <div class="stat-source">Law Society</div>
           </div>
-        </div>
-        <div class="stat-card">
+        </a>
+        <a href="/stats/disputes-avoidable" class="stat-card">
           <div class="stat-card-image" style="background-image: url('/images/ui/stats-4.png')"></div>
           <div class="stat-card-content">
             <div class="stat-number">73%</div>
-            <div class="stat-label">disputes avoidable</div>
+            <div class="stat-label">of estate disputes are avoidable</div>
             <div class="stat-source">Legal Studies</div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -1332,7 +1333,7 @@ import Footer from '../components/Footer.astro';
           </div>
         </a>
 
-        <a href="/dictionary" class="explore-card">
+        <a href="/dictionary/probate" class="explore-card">
           <div class="explore-card-image" style="background-image: url('/images/ui/explore-2.png')">
             <span class="explore-card-tag tag-dictionary">Dictionary</span>
           </div>
@@ -1346,7 +1347,7 @@ import Footer from '../components/Footer.astro';
           </div>
         </a>
 
-        <a href="/common-questions" class="explore-card">
+        <a href="/common-questions/do-i-need-a-lawyer" class="explore-card">
           <div class="explore-card-image" style="background-image: url('/images/ui/explore-3.png')">
             <span class="explore-card-tag tag-questions">Questions</span>
           </div>
@@ -1481,28 +1482,28 @@ import Footer from '../components/Footer.astro';
         <p>Learn from families who've been through it</p>
       </div>
       <div class="story-gallery-grid">
-        <a href="/user-stories" class="story-gallery-card">
+        <a href="/user-stories/mother-took-it-all" class="story-gallery-card">
           <div class="story-gallery-image" style="background-image: url('/images/ui/gallery-1.png')">
             <div class="story-gallery-overlay">
               <span class="story-gallery-title">Mother Took It All</span>
             </div>
           </div>
         </a>
-        <a href="/user-stories" class="story-gallery-card">
+        <a href="/user-stories/the-excavator-and-the-auction" class="story-gallery-card">
           <div class="story-gallery-image" style="background-image: url('/images/ui/gallery-2.png')">
             <div class="story-gallery-overlay">
               <span class="story-gallery-title">The Excavator & The Auction</span>
             </div>
           </div>
         </a>
-        <a href="/user-stories" class="story-gallery-card">
+        <a href="/user-stories/a-suspended-prison-sentence" class="story-gallery-card">
           <div class="story-gallery-image" style="background-image: url('/images/ui/gallery-3.png')">
             <div class="story-gallery-overlay">
               <span class="story-gallery-title">A Suspended Sentence</span>
             </div>
           </div>
         </a>
-        <a href="/user-stories" class="story-gallery-card">
+        <a href="/user-stories/brother-in-law-did-nothing." class="story-gallery-card">
           <div class="story-gallery-image" style="background-image: url('/images/ui/gallery-4.png')">
             <div class="story-gallery-overlay">
               <span class="story-gallery-title">Brother-In-Law Did Nothing</span>
@@ -1570,7 +1571,7 @@ import Footer from '../components/Footer.astro';
       <div class="cta-badge">🛡️ Free Assessment</div>
       <h2>Is your family <em>protected?</em></h2>
       <p>Take our 3-minute quiz to find out if you're covered — and discover any gaps that could leave your family vulnerable.</p>
-      <a href="/planning-tools" class="cta-btn">Check My Protection →</a>
+      <a href="/planning-tools/protection-quiz" class="cta-btn">Check My Protection →</a>
     </div>
   </section>
 
