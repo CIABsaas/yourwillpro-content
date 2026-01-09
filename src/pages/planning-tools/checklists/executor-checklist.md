@@ -152,8 +152,6 @@
 
 Once you've chosen your executor and confirmed they're willing, you're ready to include them in your will.
 
-**Create your will at [YourWillPro.com.au](https://yourwillpro.com.au)**
-
 ---
 
 *This checklist is for guidance only. It does not constitute legal advice.*

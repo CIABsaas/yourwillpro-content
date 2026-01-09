@@ -274,8 +274,6 @@ With these documents and information gathered, you're ready to begin the probate
 
 The steps involved, time frames, and court requirements vary significantly by state. Getting guidance through the process can save time and avoid costly mistakes.
 
-**Need help navigating probate? Visit [YourWillPro.com.au/probate](https://yourwillpro.com.au/probate)**
-
 ---
 
 *This checklist is for information gathering only. It does not constitute legal advice. Probate requirements and processes vary by state and territory.*

@@ -9,6 +9,21 @@ import Footer from '../components/Footer.astro';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sitemap - YourWillPro</title>
   <meta name="description" content="Complete sitemap of YourWillPro. Browse all guides, user stories, dictionary terms, common questions, and planning tools for Australian estate planning.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={Astro.url.href} />
+  <meta property="og:title" content="Sitemap - YourWillPro" />
+  <meta property="og:description" content="Complete sitemap of YourWillPro. Browse all guides, user stories, dictionary terms, common questions, and planning tools for Australian estate planning." />
+  <meta property="og:image" content="https://yourwillpro.com.au/images/og/og-default.png" />
+  <meta property="og:site_name" content="YourWillPro" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sitemap - YourWillPro" />
+  <meta name="twitter:description" content="Complete sitemap of YourWillPro. Browse all guides, user stories, dictionary terms, common questions, and planning tools for Australian estate planning." />
+  <meta name="twitter:image" content="https://yourwillpro.com.au/images/og/og-default.png" />
+
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {

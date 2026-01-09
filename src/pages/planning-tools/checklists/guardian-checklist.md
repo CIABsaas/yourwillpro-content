@@ -208,8 +208,6 @@
 
 Once you've chosen a guardian and confirmed they're willing, you can name them in your will.
 
-**Create your will at [YourWillPro.com.au](https://yourwillpro.com.au)**
-
 ---
 
 *This checklist is for guidance only. Guardianship appointments in wills express your wishes but may not be legally binding in all circumstances. Courts ultimately decide based on the child's best interests.*

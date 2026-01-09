@@ -200,8 +200,6 @@ _________________________________________________________________
 
 With your asset list complete, you're ready to start thinking about who should receive what.
 
-**Ready to create your will?** Visit [YourWillPro.com.au](https://yourwillpro.com.au) to get started.
-
 ---
 
 *This checklist is for information gathering only. It does not constitute legal advice.*

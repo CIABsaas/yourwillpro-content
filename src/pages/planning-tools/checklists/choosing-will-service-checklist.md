@@ -206,8 +206,6 @@
 
 If your situation is straightforward, an online will service offers the best balance of guidance, convenience, and value.
 
-**See if YourWillPro suits your needs at [YourWillPro.com.au](https://yourwillpro.com.au)**
-
 ---
 
 *This checklist is for guidance only. It does not constitute legal advice.*

@@ -162,8 +162,6 @@
 
 With this information gathered, you're ready to create your will.
 
-**Start your will at [YourWillPro.com.au](https://yourwillpro.com.au)**
-
 ---
 
 *This checklist is for preparation purposes only. It does not constitute legal advice.*

@@ -24,6 +24,20 @@ const pageDescription = "Have a question about estate planning? Found an error? 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <title>{pageTitle} | YourWillPro</title>
     <meta name="description" content={pageDescription} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:title" content="Get in Touch | YourWillPro" />
+    <meta property="og:description" content="Have a question about estate planning? Found an error? Want to share your story? We'd love to hear from you." />
+    <meta property="og:image" content="https://yourwillpro.com.au/images/og/og-default.png" />
+    <meta property="og:site_name" content="YourWillPro" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Get in Touch | YourWillPro" />
+    <meta name="twitter:description" content="Have a question about estate planning? Found an error? Want to share your story? We'd love to hear from you." />
+    <meta name="twitter:image" content="https://yourwillpro.com.au/images/og/og-default.png" />
   </head>
   <body>
 
