@@ -7,7 +7,7 @@ summary: "The person appointed by the court to handle someone's estate when ther
 pronunciation: "/ədˈmɪnɪstreɪtər/"
 wordType: "noun"
 relatedTerms: ["Executor", "Intestate", "Letters of Administration", "Grant of Probate"]
-relatedStory: "six-siblings-zero-trust"
+relatedStory: "five-siblings-one-executor"
 status: "published"
 ---
 

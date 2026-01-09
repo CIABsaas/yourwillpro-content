@@ -9,7 +9,7 @@ pronunciation: "/ɪɡˈzɛkjətə/"
 wordType: "noun"
 jurisdictions: ["AU", "UK", "US"]
 relatedTerms: ["administrator", "estate-administration", "beneficiary", "probate"]
-relatedStory: "six-siblings-zero-trust"
+relatedStory: "five-siblings-one-executor"
 ---
 
 <div class="two-column">

@@ -474,9 +474,9 @@ Before finalizing your estate plan, work through these questions together:
 ## Real families, real lessons
 
 <div class="real-case">
-  <h4>📖 Related Story: Six Siblings, Zero Trust</h4>
-  <p>Helen and Robert's blended family fell apart after both parents died. Their will named one son as executor — a son from Robert's first marriage who also inherited the family home. Five siblings spent six years in court fighting over what they felt was unfair treatment. A testamentary trust with independent trustees could have prevented the conflict.</p>
-  <p><a href="/user-stories/six-siblings-zero-trust">Read the full story →</a></p>
+  <h4>📖 Related Story: Five Siblings, One Executor</h4>
+  <p>When homemade wills were discovered years after Jean and Alexander Fernandez died, one son became sole executor of both estates. The siblings alleged inconsistent accounts, conflicts of interest, and lack of transparency. After more than a decade of delays and disputes, the court removed the executor. Independent professionals with no family ties could have prevented years of litigation.</p>
+  <p><a href="/user-stories/five-siblings-one-executor">Read the full story →</a></p>
 </div>
 
 ---
