@@ -1,0 +1,43 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/ywp-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Page Not Found | YourWillPro</title>
+    <meta name="description" content="The page you're looking for doesn't exist. Return to YourWillPro for estate planning guides and resources." />
+  </head>
+  <body style="margin: 0; font-family: 'DM Sans', sans-serif; background: #fafaf8; color: #1a2e44;">
+
+    <Header />
+
+    <main style="min-height: 60vh; display: flex; align-items: center; justify-content: center; padding: 80px 24px; text-align: center;">
+      <div style="max-width: 500px;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin: 0 0 16px;">Page Not Found</h1>
+        <p style="font-size: 1.125rem; color: #5a5a5a; margin: 0 0 32px; line-height: 1.6;">
+          Sorry, the page you're looking for doesn't exist or has been moved.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/" style="background: #1a2e44; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600;">Go to Homepage</a>
+          <a href="/start-here" style="background: #c9a227; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600;">Start Here</a>
+        </div>
+        <p style="margin-top: 48px; font-size: 0.9rem; color: #8a8a8a;">
+          Looking for something specific? Try our <a href="/dictionary/" style="color: #c9a227;">Dictionary</a>,
+          <a href="/guides/" style="color: #c9a227;">Guides</a>, or
+          <a href="/common-questions/" style="color: #c9a227;">Common Questions</a>.
+        </p>
+      </div>
+    </main>
+
+    <Footer />
+
+  </body>
+</html>

@@ -10,7 +10,7 @@
 import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
 
-const pageTitle = "Power of Attorney Australia - Complete Guide";
+const pageTitle = "Power of Attorney Australia - Complete Guide | YourWillPro";
 const pageDescription = "Learn about Power of Attorney in Australia. Understand types (General, Enduring, Medical), state requirements, and how to choose your attorney. Free guide.";
 
 // State data for the interactive selector
@@ -1160,26 +1160,6 @@ const stateData = {
         header.setAttribute('aria-expanded', !isExpanded);
         content.classList.toggle('expanded', !isExpanded);
       });
-    });
-    
-    // Email Form Handler
-    const notifyForm = document.getElementById('poa-notify-form');
-    const successMessage = document.getElementById('form-success');
-    
-    notifyForm?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const formData = new FormData(notifyForm);
-      const email = formData.get('email');
-      
-      // Here you would connect to your email capture system
-      // For now, just show success message
-      console.log('POA notification signup:', email);
-      
-      notifyForm.style.display = 'none';
-      if (successMessage) {
-        successMessage.style.display = 'block';
-      }
     });
   });
 </script>
