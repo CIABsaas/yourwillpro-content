@@ -1,0 +1,5 @@
+name = "yourwillpro-content"
+compatibility_date = "2024-01-01"
+
+[vars]
+# Runtime variables are set in Cloudflare dashboard
