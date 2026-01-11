@@ -98,11 +98,11 @@ import Footer from '../components/Footer.astro';
     }
 
     h1 {
-      margin: 0 0 24px 0;
-      font-size: 72px;
+      margin: 0 0 20px 0;
+      font-size: 56px;
       line-height: 1.15;
-      letter-spacing: -0.03em;
-      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-weight: 700;
       color: #0f172a;
     }
 
@@ -150,8 +150,7 @@ import Footer from '../components/Footer.astro';
 
     .card {
       position: relative;
-      height: 210px;
-      min-height: 210px;
+      height: 180px;
       border-radius: 20px;
       overflow: hidden;
       text-decoration: none;
@@ -573,71 +572,59 @@ import Footer from '../components/Footer.astro';
       margin: 0;
     }
 
-    /* Context Section (Atmospheric) */
-    .context-section {
-      background-image: url('/images/ui/stats-1.png');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      padding: 60px 64px;
+    /* Stats Section */
+    .stats-quiet {
+      padding: 50px 64px 40px;
+      background: var(--bg-light);
     }
 
-    .context-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(26, 46, 68, 0.88);
-      z-index: 0;
-    }
-
-    .context-section > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .context-inner {
+    .stats-quiet-inner {
       max-width: 1100px;
       margin: 0 auto;
     }
 
-    .context-section h2 {
+    .stats-quiet h2 {
       font-family: var(--font-display);
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: 600;
-      color: #ffffff;
+      color: var(--text-secondary);
       margin-bottom: 32px;
       text-align: center;
     }
 
-    .context-list {
+    .stats-quiet-list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
+      gap: 28px;
     }
 
-    .context-item {
+    .stat-quiet-item {
       text-align: center;
+      padding: 24px;
+      background: white;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
     }
 
-    .context-text {
-      font-size: 16px;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.92);
-      margin-bottom: 0;
+    .stat-quiet-item p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-primary);
+      margin-bottom: 12px;
     }
 
-    .context-secondary {
-      display: block;
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.6);
-      margin-top: 8px;
+    .stat-quiet-source {
+      font-size: 12px;
+      color: var(--text-muted);
     }
 
-    .context-source {
-      font-size: 0.75rem;
-      color: rgba(255, 255, 255, 0.5);
-      margin-top: 32px;
-      text-align: center;
+    .stat-quiet-source a {
+      color: var(--text-muted);
+      text-decoration: underline;
+    }
+
+    .stat-quiet-source a:hover {
+      color: var(--navy);
     }
 
     .info-boxes { padding: 40px 64px 60px; background: white; }
@@ -935,7 +922,7 @@ import Footer from '../components/Footer.astro';
         padding: 72px 24px 80px;
       }
       h1 {
-        font-size: 56px;
+        font-size: 44px;
       }
       .hero-subtitle {
         font-size: 18px;
@@ -947,7 +934,7 @@ import Footer from '../components/Footer.astro';
       .featured-pullquote { right: 20px; bottom: -30px; }
       .explore-grid { grid-template-columns: repeat(2, 1fr); }
       .tools-list { grid-template-columns: 1fr; }
-      .context-list { grid-template-columns: 1fr; }
+      .stats-quiet-list { grid-template-columns: 1fr; }
       .info-grid { grid-template-columns: 1fr; }
       .story-gallery-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -974,7 +961,7 @@ import Footer from '../components/Footer.astro';
       }
 
       h1 {
-        font-size: 36px;
+        font-size: 32px;
       }
 
       .hero-subtitle {
@@ -998,7 +985,7 @@ import Footer from '../components/Footer.astro';
       .explore { padding: 64px 24px; }
       .explore-grid { grid-template-columns: 1fr; }
       .practical-tools { padding: 48px 24px; }
-      .context-section { padding: 48px 24px; }
+      .stats-quiet { padding: 48px 24px; }
       .info-boxes { padding: 64px 24px; }
       .story-gallery { padding: 64px 24px; }
       .story-gallery-grid { grid-template-columns: 1fr 1fr; }
@@ -1034,32 +1021,32 @@ import Footer from '../components/Footer.astro';
 
       <div class="hero-right">
         <div class="cards">
-          <a href="/guides/making-a-will" class="card">
-            <img src="/images/hero/hero-guides-lg.webp" alt="Making your first will">
+          <a href="/user-stories/" class="card">
+            <img src="/images/hero/hero-stories-lg.webp" alt="Family estate disputes and executor cautionary tales">
             <div class="card-label">
-              <div class="card-title">Making your first will</div>
-              <div class="card-desc">Where to start</div>
+              <div class="card-title">Real Stories</div>
+              <div class="card-desc">Examples based on real situations</div>
             </div>
           </a>
-          <a href="/guides/updating-your-will" class="card">
-            <img src="/images/hero/hero-tools-lg.webp" alt="Updating a will">
+          <a href="/guides/" class="card">
+            <img src="/images/hero/hero-guides-lg.webp" alt="Estate planning and probate process guides">
             <div class="card-label">
-              <div class="card-title">Updating a will</div>
-              <div class="card-desc">When circumstances change</div>
+              <div class="card-title">Guides</div>
+              <div class="card-desc">Topic-based explanations</div>
             </div>
           </a>
-          <a href="/guides/blended-families" class="card">
-            <img src="/images/hero/hero-questions-lg.webp" alt="Blended families">
+          <a href="/common-questions/" class="card">
+            <img src="/images/hero/hero-questions-lg.webp" alt="Common questions about wills and estate planning">
             <div class="card-label">
-              <div class="card-title">Blended families</div>
-              <div class="card-desc">Complex situations</div>
+              <div class="card-title">Questions</div>
+              <div class="card-desc">Short, plain-English answers</div>
             </div>
           </a>
-          <a href="/guides/probate" class="card">
-            <img src="/images/hero/hero-stories-lg.webp" alt="When someone passes">
+          <a href="/planning-tools/" class="card">
+            <img src="/images/hero/hero-tools-lg.webp" alt="Estate planning checklists and worksheets">
             <div class="card-label">
-              <div class="card-title">When someone passes</div>
-              <div class="card-desc">What happens next</div>
+              <div class="card-title">Tools</div>
+              <div class="card-desc">Checklists and worksheets</div>
             </div>
           </a>
         </div>
@@ -1069,9 +1056,9 @@ import Footer from '../components/Footer.astro';
 
   <!-- New Here Section -->
   <div style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <div style="background: #faf6e9; border: 1px solid #e6dcc2; border-left: 4px solid #c9a227; border-radius: 12px; padding: 20px 2rem 20px 20px; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;">
+    <div style="background: #faf6e9; border: 1px solid #e6dcc2; border-radius: 12px; padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;">
       <div style="flex: 1; min-width: 250px;">
-        <h3 style="font-family: 'Source Serif 4', serif; color: #1a2e44; font-size: 1.2rem; font-weight: 600; margin: 0 0 0.25rem 0;">New here?</h3>
+        <h3 style="font-family: 'Source Serif 4', serif; color: #1a2e44; font-size: 1.2rem; margin: 0 0 0.25rem 0;">New here?</h3>
         <p style="color: #4a4a4a; font-size: 0.9rem; margin: 0;">The material on this site is organised to help you find what you need, whether you're looking for an overview or a specific answer.</p>
       </div>
       <div>
@@ -1161,25 +1148,24 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- Context Section (Atmospheric) -->
-  <section class="context-section">
-    <div class="context-inner">
-      <h2>Why this matters</h2>
-      <div class="context-list">
-        <div class="context-item">
-          <p class="context-text">Approximately two-thirds of Australian adults either have no will, or have one that may be outdated or incomplete.
-            <span class="context-secondary">Based on: 55-60% without any will (NSW Trustee 2023, Finder 2023) plus 25% of existing wills not current (Maurice Blackburn 2019)</span>
-          </p>
+  <!-- Stats Section (Reintroduced) -->
+  <section class="stats-quiet">
+    <div class="stats-quiet-inner">
+      <h2>Some context</h2>
+      <div class="stats-quiet-list">
+        <div class="stat-quiet-item">
+          <p>Over half of Australian adults do not have a will</p>
+          <div class="stat-quiet-source">Source: <a href="/stats/no-will">ABS 2023</a></div>
         </div>
 
-        <div class="context-item">
-          <p class="context-text">Disputes arising from unclear or outdated estate plans are a common source of family conflict, with contested matters often involving significant legal costs.</p>
-          <p class="context-secondary">Reported figures commonly exceed $30,000. Sources: State courts, legal research.</p>
+        <div class="stat-quiet-item">
+          <p>Family disputes are a common cause of estate litigation</p>
+          <div class="stat-quiet-source">Source: <a href="/stats/disputes-avoidable">Legal Studies</a></div>
         </div>
 
-        <div class="context-item">
-          <p class="context-text">Even when a will exists, it may be incomplete or no longer reflect current circumstances, increasing the likelihood of disputes.</p>
-          <p class="context-secondary">Studies suggest many disputes could have been reduced through clearer planning.</p>
+        <div class="stat-quiet-item">
+          <p>Many wills are outdated or incomplete</p>
+          <div class="stat-quiet-source">Source: <a href="/stats/probate-time">State Courts</a></div>
         </div>
       </div>
     </div>

@@ -99,28 +99,19 @@ import Footer from '../components/Footer.astro';
 
     h1 {
       margin: 0 0 24px 0;
-      font-size: 72px;
+      font-size: 56px;
       line-height: 1.15;
-      letter-spacing: -0.03em;
-      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-weight: 700;
       color: #0f172a;
-    }
-
-    .hero-subtitle {
-      max-width: 580px;
-      font-size: 20px;
-      line-height: 1.5;
-      color: #475569;
-      margin-bottom: 24px;
-      font-weight: 500;
     }
 
     .purpose-sentence {
       max-width: 580px;
-      font-size: 16px;
+      font-size: 18px;
       line-height: 1.6;
-      color: #64748b;
-      margin-bottom: 12px;
+      color: #475569;
+      margin-bottom: 16px;
     }
 
     .sub {
@@ -150,8 +141,7 @@ import Footer from '../components/Footer.astro';
 
     .card {
       position: relative;
-      height: 210px;
-      min-height: 210px;
+      height: 180px;
       border-radius: 20px;
       overflow: hidden;
       text-decoration: none;
@@ -510,136 +500,6 @@ import Footer from '../components/Footer.astro';
     .explore-card-footer span { color: var(--text-muted); }
     .explore-card-footer strong { color: var(--navy); font-weight: 600; }
 
-    /* Practical Tools Section */
-    .practical-tools {
-      padding: 50px 64px 40px;
-      background: white;
-    }
-
-    .practical-tools-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .practical-tools h2 {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 12px;
-    }
-
-    .practical-tools-intro {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: var(--text-secondary);
-      margin-bottom: 36px;
-      max-width: 700px;
-    }
-
-    .tools-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .tool-item {
-      padding: 24px;
-      background: var(--bg-light);
-      border-radius: var(--radius-md);
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.2s;
-      border: 1px solid var(--border);
-    }
-
-    .tool-item:hover {
-      border-color: var(--navy);
-      background: white;
-    }
-
-    .tool-item h3 {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-
-    .tool-item p {
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--text-secondary);
-      margin: 0;
-    }
-
-    /* Context Section (Atmospheric) */
-    .context-section {
-      background-image: url('/images/ui/stats-1.png');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      padding: 60px 64px;
-    }
-
-    .context-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(26, 46, 68, 0.88);
-      z-index: 0;
-    }
-
-    .context-section > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .context-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .context-section h2 {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 32px;
-      text-align: center;
-    }
-
-    .context-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-
-    .context-item {
-      text-align: center;
-    }
-
-    .context-text {
-      font-size: 16px;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.92);
-      margin-bottom: 0;
-    }
-
-    .context-secondary {
-      display: block;
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.6);
-      margin-top: 8px;
-    }
-
-    .context-source {
-      font-size: 0.75rem;
-      color: rgba(255, 255, 255, 0.5);
-      margin-top: 32px;
-      text-align: center;
-    }
-
     .info-boxes { padding: 40px 64px 60px; background: white; }
 
     .info-boxes-inner {
@@ -853,11 +713,62 @@ import Footer from '../components/Footer.astro';
       font-weight: 500;
     }
 
+    .stats-section { padding: 60px 64px 40px; background: var(--bg-light); }
+
     .section-divider {
       max-width: 1200px;
       margin: 0 auto;
       height: 1px;
       background: var(--border);
+    }
+
+    .stats-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+
+    .stat-card {
+      background: var(--bg-light);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .stat-card-image {
+      height: 120px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .stat-card-content { padding: 28px 20px; }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .stat-source {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-style: italic;
     }
 
     .cta {
@@ -935,10 +846,10 @@ import Footer from '../components/Footer.astro';
         padding: 72px 24px 80px;
       }
       h1 {
-        font-size: 56px;
+        font-size: 44px;
       }
-      .hero-subtitle {
-        font-size: 18px;
+      .sub {
+        font-size: 20px;
       }
     }
 
@@ -946,10 +857,9 @@ import Footer from '../components/Footer.astro';
       .featured-inner { grid-template-columns: 1fr; gap: 80px; }
       .featured-pullquote { right: 20px; bottom: -30px; }
       .explore-grid { grid-template-columns: repeat(2, 1fr); }
-      .tools-list { grid-template-columns: 1fr; }
-      .context-list { grid-template-columns: 1fr; }
       .info-grid { grid-template-columns: 1fr; }
       .story-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 900px) {
@@ -974,15 +884,19 @@ import Footer from '../components/Footer.astro';
       }
 
       h1 {
-        font-size: 36px;
-      }
-
-      .hero-subtitle {
-        font-size: 16px;
+        font-size: 32px;
       }
 
       .purpose-sentence {
-        font-size: 14px;
+        font-size: 16px;
+      }
+
+      .sub {
+        font-size: 18px;
+      }
+
+      .kicker {
+        font-size: 18px;
       }
 
       .cards {
@@ -997,17 +911,21 @@ import Footer from '../components/Footer.astro';
       .featured-pullquote { position: relative; bottom: 0; right: 0; margin-top: 24px; max-width: 100%; }
       .explore { padding: 64px 24px; }
       .explore-grid { grid-template-columns: 1fr; }
-      .practical-tools { padding: 48px 24px; }
-      .context-section { padding: 48px 24px; }
       .info-boxes { padding: 64px 24px; }
       .story-gallery { padding: 64px 24px; }
       .story-gallery-grid { grid-template-columns: 1fr 1fr; }
+      .stats-section { padding: 64px 24px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
       .cta { padding: 48px 24px; }
       .cta h2 { font-size: 1.75rem; }
       .legitimacy-anchor { padding: 32px 24px 16px; }
     }
 
     @media (max-width: 400px) {
+      .kicker {
+        font-size: 16px;
+      }
+
       .card {
         height: 120px;
       }
@@ -1022,8 +940,7 @@ import Footer from '../components/Footer.astro';
   <main>
     <section class="hero">
       <div class="hero-left">
-        <h1>Thinking about your will?</h1>
-        <p class="hero-subtitle">This site provides clear, plain-English explanations of wills, estate planning, and common family situations.</p>
+        <h1>Plain-English guides to wills, estate planning, and common family situations</h1>
         <p class="purpose-sentence">
           This site exists to help people understand estate planning before speaking to a professional or making decisions.
         </p>
@@ -1034,32 +951,32 @@ import Footer from '../components/Footer.astro';
 
       <div class="hero-right">
         <div class="cards">
-          <a href="/guides/making-a-will" class="card">
-            <img src="/images/hero/hero-guides-lg.webp" alt="Making your first will">
+          <a href="/user-stories/" class="card">
+            <img src="/images/hero/hero-stories-lg.webp" alt="Family estate disputes and executor cautionary tales">
             <div class="card-label">
-              <div class="card-title">Making your first will</div>
-              <div class="card-desc">Where to start</div>
+              <div class="card-title">Real Stories</div>
+              <div class="card-desc">Examples based on real situations</div>
             </div>
           </a>
-          <a href="/guides/updating-your-will" class="card">
-            <img src="/images/hero/hero-tools-lg.webp" alt="Updating a will">
+          <a href="/guides/" class="card">
+            <img src="/images/hero/hero-guides-lg.webp" alt="Estate planning and probate process guides">
             <div class="card-label">
-              <div class="card-title">Updating a will</div>
-              <div class="card-desc">When circumstances change</div>
+              <div class="card-title">Guides</div>
+              <div class="card-desc">Topic-based explanations</div>
             </div>
           </a>
-          <a href="/guides/blended-families" class="card">
-            <img src="/images/hero/hero-questions-lg.webp" alt="Blended families">
+          <a href="/common-questions/" class="card">
+            <img src="/images/hero/hero-questions-lg.webp" alt="Common questions about wills and estate planning">
             <div class="card-label">
-              <div class="card-title">Blended families</div>
-              <div class="card-desc">Complex situations</div>
+              <div class="card-title">Questions</div>
+              <div class="card-desc">Short, plain-English answers</div>
             </div>
           </a>
-          <a href="/guides/probate" class="card">
-            <img src="/images/hero/hero-stories-lg.webp" alt="When someone passes">
+          <a href="/planning-tools/" class="card">
+            <img src="/images/hero/hero-tools-lg.webp" alt="Estate planning checklists and worksheets">
             <div class="card-label">
-              <div class="card-title">When someone passes</div>
-              <div class="card-desc">What happens next</div>
+              <div class="card-title">Tools</div>
+              <div class="card-desc">Checklists and worksheets</div>
             </div>
           </a>
         </div>
@@ -1067,20 +984,20 @@ import Footer from '../components/Footer.astro';
     </section>
   </main>
 
-  <!-- New Here Section -->
+  <!-- New Here Banner -->
   <div style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <div style="background: #faf6e9; border: 1px solid #e6dcc2; border-left: 4px solid #c9a227; border-radius: 12px; padding: 20px 2rem 20px 20px; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;">
+    <div style="background: #faf6e9; border: 1px solid #e6dcc2; border-radius: 12px; padding: 1.5rem 2rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
       <div style="flex: 1; min-width: 250px;">
-        <h3 style="font-family: 'Source Serif 4', serif; color: #1a2e44; font-size: 1.2rem; font-weight: 600; margin: 0 0 0.25rem 0;">New here?</h3>
-        <p style="color: #4a4a4a; font-size: 0.9rem; margin: 0;">The material on this site is organised to help you find what you need, whether you're looking for an overview or a specific answer.</p>
+        <h3 style="font-family: 'Source Serif 4', serif; color: #1a2e44; font-size: 1.2rem; margin: 0 0 0.25rem 0;">New here?</h3>
+        <p style="color: #4a4a4a; font-size: 0.9rem; margin: 0;">The material is organised into sections to help you find what you need.</p>
       </div>
       <div>
-        <a href="/start-here" style="color:#1a2e44; font-size:0.9rem; font-weight:600; text-decoration: underline; text-underline-offset: 3px;">How to use this site →</a>
+        <a href="/start-here" style="color:#1a2e44; font-size:0.9rem; font-weight:600; text-decoration: underline; text-underline-offset: 3px;">How to use this site</a>
       </div>
     </div>
   </div>
 
-  <!-- Reference Section -->
+  <!-- Reference Section (moved before Featured Story) -->
   <section class="explore">
     <div class="explore-inner">
       <div class="section-header">
@@ -1127,60 +1044,6 @@ import Footer from '../components/Footer.astro';
             <p>Examples based on real-world situations that show how estate-planning issues can arise in families.</p>
           </div>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Practical Tools Section (NEW) -->
-  <section class="practical-tools">
-    <div class="practical-tools-inner">
-      <h2>Practical tools</h2>
-      <p class="practical-tools-intro">Simple tools and summaries that some readers use to organise information before speaking with a professional.</p>
-
-      <div class="tools-list">
-        <a href="/planning-tools/checklists/" class="tool-item">
-          <h3>Planning checklists</h3>
-          <p>Step-by-step lists covering common estate-planning considerations.</p>
-        </a>
-
-        <a href="/planning-tools/top-10/" class="tool-item">
-          <h3>Top 10 summaries</h3>
-          <p>Short overviews of frequently misunderstood topics.</p>
-        </a>
-
-        <a href="/planning-tools/power-of-attorney/" class="tool-item">
-          <h3>Power of attorney</h3>
-          <p>Explanations and guidance on how POA works and when it is relevant.</p>
-        </a>
-
-        <a href="/planning-tools/" class="tool-item">
-          <h3>Worksheets</h3>
-          <p>Printable summaries some people use to gather information.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Context Section (Atmospheric) -->
-  <section class="context-section">
-    <div class="context-inner">
-      <h2>Why this matters</h2>
-      <div class="context-list">
-        <div class="context-item">
-          <p class="context-text">Approximately two-thirds of Australian adults either have no will, or have one that may be outdated or incomplete.
-            <span class="context-secondary">Based on: 55-60% without any will (NSW Trustee 2023, Finder 2023) plus 25% of existing wills not current (Maurice Blackburn 2019)</span>
-          </p>
-        </div>
-
-        <div class="context-item">
-          <p class="context-text">Disputes arising from unclear or outdated estate plans are a common source of family conflict, with contested matters often involving significant legal costs.</p>
-          <p class="context-secondary">Reported figures commonly exceed $30,000. Sources: State courts, legal research.</p>
-        </div>
-
-        <div class="context-item">
-          <p class="context-text">Even when a will exists, it may be incomplete or no longer reflect current circumstances, increasing the likelihood of disputes.</p>
-          <p class="context-secondary">Studies suggest many disputes could have been reduced through clearer planning.</p>
-        </div>
       </div>
     </div>
   </section>
