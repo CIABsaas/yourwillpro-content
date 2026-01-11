@@ -692,42 +692,79 @@ const pageDescription = "Have a question about estate planning? Found an error? 
     <Footer />
 
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const cards = document.querySelectorAll('.option-card');
-        const forms = document.querySelectorAll('.feedback-form-wrapper');
-        const placeholder = document.getElementById('form-placeholder');
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.option-card');
+    const forms = document.querySelectorAll('.feedback-form-wrapper');
+    const placeholder = document.getElementById('form-placeholder');
 
-        cards.forEach(card => {
-          card.addEventListener('click', (e) => {
-            e.preventDefault();
-            const target = card.getAttribute('data-target');
+    // Card selection logic
+    cards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = card.getAttribute('data-target');
+        const isActive = card.classList.contains('active');
 
-            // Check if clicking the already active card
-            const isActive = card.classList.contains('active');
+        forms.forEach(form => form.classList.add('hidden'));
+        cards.forEach(c => c.classList.remove('active'));
 
-            // Hide all forms and remove active state from all cards
-            forms.forEach(form => form.classList.add('hidden'));
-            cards.forEach(c => c.classList.remove('active'));
-
-            if (isActive) {
-              // If was active, show placeholder
-              placeholder.classList.remove('hidden');
-            } else {
-              // Show selected form and mark card active
-              const targetForm = document.querySelector(`[data-form="${target}"]`);
-              if (targetForm) {
-                targetForm.classList.remove('hidden');
-                card.classList.add('active');
-                placeholder.classList.add('hidden');
-
-                // Smooth scroll to form
-                targetForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-              }
-            }
-          });
-        });
+        if (isActive) {
+          placeholder.classList.remove('hidden');
+        } else {
+          const targetForm = document.querySelector(`[data-form="${target}"]`);
+          if (targetForm) {
+            targetForm.classList.remove('hidden');
+            card.classList.add('active');
+            placeholder.classList.add('hidden');
+            targetForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        }
       });
-    </script>
+    });
+
+    // Form submission logic
+    document.querySelectorAll('.feedback-form').forEach(form => {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const submitBtn = form.querySelector('.submit-btn');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        const formWrapper = form.closest('.feedback-form-wrapper');
+        const formType = formWrapper.getAttribute('data-form');
+        
+        const formData = new FormData(form);
+        formData.append('formType', formType);
+
+        try {
+          const response = await fetch('/api/feedback', {
+            method: 'POST',
+            body: formData,
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            form.innerHTML = `
+              <div style="text-align: center; padding: 2rem;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">✓</div>
+                <h3 style="color: #1e3a5f; margin-bottom: 0.5rem;">Thank You!</h3>
+                <p style="color: #6B7280;">Your message has been sent. We'll be in touch if needed.</p>
+              </div>
+            `;
+          } else {
+            throw new Error(result.error || 'Failed to send');
+          }
+        } catch (error) {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+          alert('Sorry, there was a problem sending your message. Please try again or email us directly.');
+        }
+      });
+    });
+  });
+</script>
 
   </body>
 </html>
