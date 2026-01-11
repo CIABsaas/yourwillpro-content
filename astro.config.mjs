@@ -12,10 +12,3 @@ export default defineConfig({
     sitemap(),
   ],
 });
-```
-
-Save, then:
-```
-git add .
-git commit -m "Fix Astro config"
-git push
