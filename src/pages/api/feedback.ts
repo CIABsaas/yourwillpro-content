@@ -20,7 +20,7 @@ const SUBJECTS: Record<string, string> = {
   'share-story': 'User Story Submission',
 };
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request, locals }) => {
   try {
     const formData = await request.formData();
     const formType = formData.get('formType') as string;
@@ -28,6 +28,18 @@ export const POST: APIRoute = async ({ request }) => {
     
     const recipient = RECIPIENTS[formType] || 'don@yourwillpro.com.au';
     const subject = SUBJECTS[formType] || 'Website Feedback';
+    
+    // Get API key from Cloudflare runtime environment
+    const runtime = (locals as any).runtime;
+    const apiKey = runtime?.env?.RESEND_API_KEY;
+    
+    if (!apiKey) {
+      console.error('RESEND_API_KEY not found in environment');
+      return new Response(JSON.stringify({ success: false, error: 'Configuration error' }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
     
     // Build email body from form data
     const fields: string[] = [];
@@ -49,7 +61,7 @@ export const POST: APIRoute = async ({ request }) => {
     const resendResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${import.meta.env.RESEND_API_KEY}`,
+        'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
